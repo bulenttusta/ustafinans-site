@@ -1,19 +1,14 @@
-/* Kurumsal Değişkenler */
 :root {
     --primary-blue: #0b1522;
-    --corporate-slate: #1e293b;
     --gold-accent: #c5a059;
-    --text-muted: #94a3b8;
     --light-bg: #f8fafc;
 }
 
 * { margin:0; padding:0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.8; background: #fff; }
+body { font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.8; }
 
 .container { width: 90%; max-width: 1300px; margin: auto; }
-.text-center { text-align: center; }
 
-/* Header ve Logo Büyüklüğü */
 .main-header {
     background: #fff;
     padding: 30px 0;
@@ -22,61 +17,48 @@ body { font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.8; backg
 }
 .logo-area h1 {
     font-family: 'Cinzel', serif;
-    font-size: 24px;
-    letter-spacing: 2px;
+    font-size: 26px;
+    letter-spacing: 1px;
     color: var(--primary-blue);
-    margin-bottom: 10px;
     text-align: center;
+    margin-bottom: 10px;
 }
-.main-nav ul {
-    display: flex; justify-content: center; list-style: none; gap: 30px;
-}
-.main-nav a {
-    text-decoration: none; color: var(--corporate-slate); font-weight: 600; font-size: 14px; text-transform: uppercase;
-}
+.main-nav ul { display: flex; justify-content: center; list-style: none; gap: 40px; }
+.main-nav a { text-decoration: none; color: #1e293b; font-weight: 700; text-transform: uppercase; font-size: 13px; }
 
-/* Hero Section */
 .hero {
-    height: 70vh;
+    height: 65vh;
     background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070') no-repeat center center/cover;
     position: relative; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center;
 }
 .hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(11, 21, 34, 0.85); }
 .hero-content { position: relative; z-index: 2; max-width: 900px; }
-.hero h2 { font-size: 3.5rem; margin-bottom: 20px; font-weight: 700; line-height: 1.2; }
-.badge { display: inline-block; background: var(--gold-accent); padding: 5px 15px; border-radius: 3px; font-size: 12px; margin-bottom: 15px; }
+.hero h2 { font-size: 3.2rem; margin-bottom: 20px; font-weight: 700; }
+.badge { background: var(--gold-accent); padding: 5px 15px; border-radius: 3px; font-size: 12px; margin-bottom: 15px; display: inline-block; }
 
-/* Hakkımızda Bölümü */
-.about-corporate { padding: 120px 0; }
+.about-corporate { padding: 100px 0; }
 .flex-box { display: flex; gap: 80px; align-items: center; }
 .about-text { flex: 1.2; }
-.about-text h2 { font-size: 2.5rem; margin-bottom: 25px; color: var(--primary-blue); }
+.about-text h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--primary-blue); }
 .about-image { flex: 0.8; }
-.about-image img { width: 100%; border-radius: 4px; box-shadow: 20px 20px 0 #f1f5f9; }
+.about-image img { width: 100%; border-radius: 4px; box-shadow: 15px 15px 0 #f1f5f9; }
 
-/* Hizmetler Grid Sistemi */
 .services-area { background: var(--light-bg); padding: 100px 0; }
-.section-title { font-size: 2.5rem; margin-bottom: 60px; color: var(--primary-blue); font-weight: 700; }
-.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-.service-card { background: #fff; overflow: hidden; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
-.service-card:hover { transform: translateY(-10px); }
-.service-card img { width: 100%; height: 250px; object-fit: cover; }
+.section-title { font-size: 2.5rem; margin-bottom: 60px; text-align: center; }
+.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
+.service-card { background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.service-card img { width: 100%; height: 260px; object-fit: cover; }
 .card-info { padding: 40px; }
-.card-info h3 { margin-bottom: 15px; font-size: 1.3rem; color: var(--primary-blue); border-bottom: 2px solid var(--gold-accent); display: inline-block; padding-bottom: 5px; }
+.card-info h3 { margin-bottom: 15px; color: var(--primary-blue); font-size: 1.4rem; border-bottom: 2px solid var(--gold-accent); display: inline-block; }
 
-/* Arka Plan Renk Varyasyonları */
-.dark-bg { border-top: 4px solid var(--primary-blue); }
-.grey-bg { border-top: 4px solid var(--gold-accent); }
+.dark-bg { border-top: 5px solid var(--primary-blue); }
+.grey-bg { border-top: 5px solid var(--gold-accent); }
 
-/* Bottom İletişim Alanı */
-.bottom-area { background: var(--primary-blue); color: #fff; padding: 80px 0; border-top: 5px solid var(--gold-accent); }
-.regions-list h4, .contact-footer h4 { color: var(--gold-accent); margin-bottom: 20px; font-size: 1.2rem; }
-.contact-footer p { margin-bottom: 10px; }
-
-footer { padding: 30px; text-align: center; font-size: 12px; color: #94a3b8; background: #fff; }
+.bottom-area { background: var(--primary-blue); color: #fff; padding: 80px 0; }
+.regions-list h4, .contact-footer h4 { color: var(--gold-accent); margin-bottom: 20px; }
 
 @media (max-width: 992px) {
     .flex-box { flex-direction: column; text-align: center; }
-    .hero h2 { font-size: 2.2rem; }
     .logo-area h1 { font-size: 18px; }
+    .hero h2 { font-size: 2rem; }
 }
