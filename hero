@@ -1,0 +1,6 @@
+.hero{
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(7,11,22,.92), rgba(11,22,53,.92)),
+    url("https://source.unsplash.com/1600x900/?finance,analytics,office") center/cover no-repeat;
+}
