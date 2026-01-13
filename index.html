@@ -1,393 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Usta Finans ve Yönetim Danışmanlığı A.Ş.</title>
-  <meta name="description" content="KOBİ’ler için kurumsal finans, nakit akışı, bütçe, kârlılık & maliyet analizi, KPI ve yönetim raporlaması danışmanlığı." />
-
-  <meta property="og:title" content="Usta Finans ve Yönetim Danışmanlığı A.Ş." />
-  <meta property="og:description" content="Finansı görünür kılın. Disiplin kurun. Ölçün ve büyütün." />
-  <meta property="og:type" content="website" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usta Finans ve Yönetim Danışmanlığı A.Ş.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="container topbar__inner">
-      <div class="topbar__left">
-        <span class="pulse" aria-hidden="true"></span>
-        <span>Kurumsal Finans • Yönetim Danışmanlığı • KOBİ Odaklı</span>
-      </div>
-      <div class="topbar__right">
-        <a href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a>
-        <span class="sep">•</span>
-        <a href="tel:+905334234855">+90 533 423 48 55</a>
-        <span class="sep">•</span>
-        <a class="wa" href="https://wa.me/905334234855" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="#home" aria-label="Ana sayfa">
-        <span class="brand__mark" aria-hidden="true">UF</span>
-        <span class="brand__text">
-          <strong>Usta Finans ve Yönetim Danışmanlığı A.Ş.</strong>
-          <small>Finansı görünür kılın. Disiplin kurun. Ölçün ve büyütün.</small>
-        </span>
-      </a>
-
-      <nav class="nav" aria-label="Menü">
-        <a href="#hizmetler">Hizmetler</a>
-        <a href="#yaklasim">Yaklaşım</a>
-        <a href="#ciktilar">Çıktılar</a>
-        <a href="#sss">SSS</a>
-        <a class="nav__cta" href="#teklif">Teklif Al</a>
-      </nav>
-
-      <button class="menuBtn" aria-label="Menü" onclick="document.body.classList.toggle('menuOpen')">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <div class="mobileMenu">
-      <a href="#hizmetler" onclick="document.body.classList.remove('menuOpen')">Hizmetler</a>
-      <a href="#yaklasim" onclick="document.body.classList.remove('menuOpen')">Yaklaşım</a>
-      <a href="#ciktilar" onclick="document.body.classList.remove('menuOpen')">Çıktılar</a>
-      <a href="#sss" onclick="document.body.classList.remove('menuOpen')">SSS</a>
-      <a class="btn btn--primary" href="#teklif" onclick="document.body.classList.remove('menuOpen')">Teklif Al</a>
-      <a class="btn btn--ghost" href="#iletisim" onclick="document.body.classList.remove('menuOpen')">İletişim</a>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <main id="home" class="hero">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="hero__overlay" aria-hidden="true"></div>
-
-    <div class="container hero__inner">
-      <div class="hero__left">
-        <div class="chips">
-          <span class="chip">Premium Danışmanlık</span>
-          <span class="chip chip--soft">KOBİ Odaklı</span>
-          <span class="chip chip--soft">Ölçülebilir Sistem</span>
-        </div>
-
-        <h1>
-          Nakit akışı kontrolü, kârlılık disiplini ve kurumsal raporlama ile
-          <span class="grad">finansı yönetilebilir</span> hale getiriyoruz.
-        </h1>
-
-        <p class="lead">
-          Usta Finans ve Yönetim Danışmanlığı A.Ş.; bütçe ve nakit akışı yönetimi, maliyet-kârlılık analizi,
-          KPI & yönetim raporlaması, banka ilişkileri ve kurumsal yapılandırma alanlarında işletmelere
-          uygulamalı danışmanlık sunar.
-        </p>
-
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="#teklif">Ücretsiz Ön Görüşme</a>
-          <a class="btn btn--ghost" href="#hizmetler">Hizmetleri İncele</a>
-        </div>
-
-        <div class="proof">
-          <div class="proof__item">
-            <div class="proof__icon">✓</div>
-            <div>
-              <strong>İlk 30 gün</strong>
-              <span>Teşhis + aksiyon planı + raporlama taslağı</span>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>USTA <span>FİNANS</span></h1>
             </div>
-          </div>
-          <div class="proof__item">
-            <div class="proof__icon">▣</div>
-            <div>
-              <strong>12 hafta</strong>
-              <span>KPI & yönetim raporu + kontrol ritmi</span>
+            <nav>
+                <ul>
+                    <li><a href="#home">Anasayfa</a></li>
+                    <li><a href="#services">Hizmetlerimiz</a></li>
+                    <li><a href="#locations">Bölgelerimiz</a></li>
+                    <li><a href="#contact">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>İşletmenizin Geleceğini Güvenle İnşa Edin</h2>
+            <p>KOBİ ve Kurumsal Şirketler için Profesyonel Finans ve Yönetim Çözümleri</p>
+            <a href="#services" class="btn-primary">Hizmetlerimizi Keşfedin</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Uzmanlık Alanlarımız</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Finansal Danışmanlık</h3>
+                    <p>Nakit akışı, bütçeleme ve mali analiz süreçlerinizi optimize ediyoruz.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-sitemap"></i>
+                    <h3>Yönetim Danışmanlığı</h3>
+                    <p>Kurumsallaşma ve stratejik yönetim ile şirketinizi geleceğe hazırlıyoruz.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>ERP Danışmanlığı</h3>
+                    <p>Dijital dönüşüm süreçlerinizde en doğru ERP sistemlerini entegre ediyoruz.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Muhasebe ve Vergi</h3>
+                    <p>Mevzuata tam uyumlu, riskleri minimize eden vergi planlaması.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Kredi Danışmanlığı</h3>
+                    <p>Doğru finansman kaynaklarına, en uygun maliyetle ulaşmanızı sağlıyoruz.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Yeniden Yapılandırma</h3>
+                    <p>Borç ve sermaye yapınızı sürdürülebilir bir zemine oturtuyoruz.</p>
+                </div>
             </div>
-          </div>
-          <div class="proof__item">
-            <div class="proof__icon">⎯</div>
-            <div>
-              <strong>6 ay</strong>
-              <span>Kurumsallaşma ve sürdürülebilir takip</span>
+        </div>
+    </section>
+
+    <section id="locations" class="locations">
+        <div class="container">
+            <h3>Hizmet Verdiğimiz İller</h3>
+            <p>Bodrum, Muğla, İstanbul, Ankara, İzmir, Antalya, Aydın</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Bize Ulaşın</h2>
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>0533 423 48 55</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>bulentusta@ustafinans.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-globe"></i>
+                    <p>www.ustafinans.net</p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <aside class="heroCard">
-        <div class="heroCard__head">
-          <h3>Odak Alanları</h3>
-          <p>Hızlı etki yaratan finansal dönüşüm alanları</p>
-        </div>
+    <footer>
+        <p>&copy; 2024 Usta Finans ve Yönetim Danışmanlığı A.Ş. Tüm Hakları Saklıdır.</p>
+    </footer>
 
-        <ul class="checklist">
-          <li><span>✓</span> 13 haftalık nakit akışı & likidite</li>
-          <li><span>✓</span> Bütçe & sapma analizi</li>
-          <li><span>✓</span> Maliyet ve kârlılık kırılımı</li>
-          <li><span>✓</span> KPI pano & yönetim raporu</li>
-          <li><span>✓</span> Banka dili, limit/teminat optimizasyonu</li>
-          <li><span>✓</span> Süreç & kurumsal yapılandırma</li>
-        </ul>
-
-        <div class="heroCard__cta">
-          <a class="btn btn--primary btn--full" href="#teklif">Teklif Al</a>
-          <a class="btn btn--ghost btn--full" href="#iletisim">İletişim</a>
-          <div class="miniNote">Not: Kapsam, ön görüşme sonrası ihtiyaçlarınıza göre netleştirilir.</div>
-        </div>
-      </aside>
-    </div>
-  </main>
-
-  <!-- Strip -->
-  <section class="strip">
-    <div class="container strip__inner">
-      <div class="strip__card">
-        <strong>Finansı görünür kıl</strong>
-        <span>Doğru rapor, doğru karar.</span>
-      </div>
-      <div class="strip__card">
-        <strong>Disiplin kur</strong>
-        <span>Ritim, sorumluluk, takip.</span>
-      </div>
-      <div class="strip__card">
-        <strong>Ölç ve büyüt</strong>
-        <span>KPI ile sürdürülebilir sonuç.</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="hizmetler" class="section">
-    <div class="container">
-      <div class="sectionHead">
-        <h2>Hizmetler</h2>
-        <p>İhtiyaca göre modüler; uygulamaya dönük; ölçülebilir sonuç üreten danışmanlık.</p>
-      </div>
-
-      <div class="grid3">
-        <article class="card card--service">
-          <div class="ico">📊</div>
-          <h3>Bütçe, Nakit Akışı ve Likidite Yönetimi</h3>
-          <p>Gelir-gider planı, 13 haftalık nakit akışı, stres senaryoları ve takip ritmi.</p>
-          <ul>
-            <li>Likidite risk haritası</li>
-            <li>Alacak-stok-borç optimizasyonu</li>
-            <li>Haftalık takip ve aksiyon</li>
-          </ul>
-        </article>
-
-        <article class="card card--service">
-          <div class="ico">💡</div>
-          <h3>Maliyet, Kârlılık ve Fiyatlandırma</h3>
-          <p>Kârlılığı görünür kılar; maliyet kırılımlarını netleştirir; fiyatı rasyonelleştiririz.</p>
-          <ul>
-            <li>Katkı payı / brüt kâr analizi</li>
-            <li>Ürün/hizmet bazlı kârlılık</li>
-            <li>Fiyatlandırma stratejisi</li>
-          </ul>
-        </article>
-
-        <article class="card card--service">
-          <div class="ico">🧭</div>
-          <h3>Yönetim Raporlaması & KPI Sistemi</h3>
-          <p>Karar almayı hızlandıran sade, güçlü ve düzenli bir raporlama omurgası kurarız.</p>
-          <ul>
-            <li>Aylık yönetim raporu</li>
-            <li>KPI pano ve hedef takibi</li>
-            <li>Sapma/aksiyon yönetimi</li>
-          </ul>
-        </article>
-
-        <article class="card card--service">
-          <div class="ico">🏛️</div>
-          <h3>Kurumsal Yapılandırma</h3>
-          <p>Süreçleri, sorumlulukları ve kontrol mekanizmasını netleştirir; ölçeklenebilir yapı kurarız.</p>
-          <ul>
-            <li>Süreç tasarımı</li>
-            <li>Görev ve yetki matrisi</li>
-            <li>İç kontrol disiplini</li>
-          </ul>
-        </article>
-
-        <article class="card card--service">
-          <div class="ico">🏦</div>
-          <h3>Banka İlişkileri & Finansman</h3>
-          <p>Finansman dilini güçlendirir, banka iletişimini sistematik hale getiririz.</p>
-          <ul>
-            <li>Kredi dosyası hazırlığı</li>
-            <li>Limit/teminat optimizasyonu</li>
-            <li>Yapılandırma senaryoları</li>
-          </ul>
-        </article>
-
-        <article class="card card--service">
-          <div class="ico">🧩</div>
-          <h3>KOBİ CFO Programı (3–6 Ay)</h3>
-          <p>Teşhis → sistem kurulum → uygulama koçluğu → sürdürülebilir takip.</p>
-          <ul>
-            <li>Haftalık ilerleme toplantısı</li>
-            <li>Şablonlar & araç seti</li>
-            <li>Performans ölçümü</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Approach -->
-  <section id="yaklasim" class="section section--alt">
-    <div class="container">
-      <div class="sectionHead">
-        <h2>Yaklaşım</h2>
-        <p>“Teşhis + doğru öncelik + sıkı takip” ile dönüşümü yönetiriz.</p>
-      </div>
-
-      <div class="steps">
-        <div class="step">
-          <span class="n">1</span>
-          <h3>Teşhis</h3>
-          <p>Finansal fotoğraf, nakit akışı, risk ve darboğaz analizi.</p>
-        </div>
-        <div class="step">
-          <span class="n">2</span>
-          <h3>Öncelik</h3>
-          <p>En yüksek etki yaratacak 5–7 aksiyonun seçimi.</p>
-        </div>
-        <div class="step">
-          <span class="n">3</span>
-          <h3>Sistem</h3>
-          <p>KPI, raporlama, bütçe ve kontrol mekanizmasının kurulumu.</p>
-        </div>
-        <div class="step">
-          <span class="n">4</span>
-          <h3>Uygulama</h3>
-          <p>Haftalık ritim, aylık rapor ve sürekli iyileştirme döngüsü.</p>
-        </div>
-      </div>
-
-      <div class="ctaBand">
-        <div>
-          <h3>İlk görüşmede ne yapıyoruz?</h3>
-          <p>Hedefi netleştirip (nakit/kârlılık/raporlama), hızlı bir “ön teşhis” çıkarıyor; yol haritasını paylaşıyoruz.</p>
-        </div>
-        <a class="btn btn--primary" href="#teklif">Görüşme Planla</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Deliverables -->
-  <section id="ciktilar" class="section">
-    <div class="container">
-      <div class="sectionHead">
-        <h2>Beklenen Çıktılar</h2>
-        <p>Her işletmeye özel; ancak ortak hedef: finansı görünür ve yönetilebilir hale getirmek.</p>
-      </div>
-
-      <div class="pillGrid">
-        <div class="pill"><strong>13 Haftalık Nakit Akışı</strong><span>Likidite görünürlüğü ve stres senaryoları</span></div>
-        <div class="pill"><strong>Bütçe & Sapma Analizi</strong><span>Aylık hedef–gerçekleşen takibi</span></div>
-        <div class="pill"><strong>Kârlılık & Maliyet Kırılımı</strong><span>Ürün/müşteri bazında katkı payı</span></div>
-        <div class="pill"><strong>KPI Panosu</strong><span>Karar hızını artıran net göstergeler</span></div>
-        <div class="pill"><strong>Aylık Yönetim Raporu</strong><span>Az sayfa, net mesaj, aksiyon takibi</span></div>
-        <div class="pill"><strong>Süreç & Sorumluluk</strong><span>Kurumsal yapı: görev–yetki–kontrol</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="sss" class="section section--alt">
-    <div class="container">
-      <div class="sectionHead">
-        <h2>Sık Sorulanlar</h2>
-        <p>Kısa ve net.</p>
-      </div>
-
-      <div class="faq">
-        <details class="qa" open>
-          <summary>Danışmanlık süresi ve çalışma ritmi nasıl?</summary>
-          <p>İlk ay teşhis ve plan; ardından haftalık takip + aylık yönetim raporu. Tipik program 3–6 ay.</p>
-        </details>
-        <details class="qa">
-          <summary>Hangi veriler gerekiyor?</summary>
-          <p>Satış/alış, banka hareketleri, stok ve cari liste, temel mali tablolar. Eksikse birlikte tamamlarız.</p>
-        </details>
-        <details class="qa">
-          <summary>Somut çıktılar neler?</summary>
-          <p>13 haftalık nakit akışı, bütçe ve sapma analizi, KPI pano, aylık yönetim raporu ve aksiyon takip listesi.</p>
-        </details>
-        <details class="qa">
-          <summary>Gizlilik?</summary>
-          <p>İsterseniz karşılıklı gizlilik (NDA) ile başlarız. Sektör/isim gizleyerek referans yayınlarız.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="teklif" class="section">
-    <div class="container">
-      <div class="sectionHead">
-        <h2>Teklif Al / Ön Görüşme</h2>
-        <p>En hızlı iletişim: WhatsApp.</p>
-      </div>
-
-      <div class="contactGrid">
-        <div class="card">
-          <h3>İletişim</h3>
-          <div class="cItem"><span>📧</span><a href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a></div>
-          <div class="cItem"><span>📞</span><a href="tel:+905334234855">+90 533 423 48 55</a></div>
-          <div class="cItem"><span>💬</span><a href="https://wa.me/905334234855" target="_blank" rel="noopener">WhatsApp’tan mesaj gönder</a></div>
-          <p class="note">Mesajınızda sektör + çalışan sayısı + ana problem yazarsanız daha hızlı netleşir.</p>
-        </div>
-
-        <div class="card formCard" id="iletisim">
-          <h3>Hızlı Mesaj</h3>
-          <p class="note">Form istemezseniz, aşağıdaki butonla WhatsApp’a geçebilirsiniz.</p>
-          <a class="btn btn--primary btn--full" href="https://wa.me/905334234855" target="_blank" rel="noopener">WhatsApp’a Git</a>
-          <a class="btn btn--ghost btn--full" href="mailto:bulentusta@ustafinans.net?subject=Teklif%20Talebi%20-%20Usta%20Finans">E-posta Gönder</a>
-          <div class="miniNote">Not: Bu sayfa tanıtım amaçlıdır. Kapsam ve ücretlendirme teklif ile netleşir.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div>
-        <div class="footer__brand">Usta Finans ve Yönetim Danışmanlığı A.Ş.</div>
-        <div class="footer__muted">© <span id="y"></span> • Tüm hakları saklıdır.</div>
-      </div>
-      <div class="footer__links">
-        <a href="#hizmetler">Hizmetler</a>
-        <a href="#yaklasim">Yaklaşım</a>
-        <a href="#teklif">Teklif</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const id = a.getAttribute('href');
-        if (!id || id === '#') return;
-        const el = document.querySelector(id);
-        if (!el) return;
-        e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        document.body.classList.remove('menuOpen');
-      });
-    });
-  </script>
 </body>
 </html>
