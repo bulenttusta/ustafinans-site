@@ -1,4 +1,46 @@
 :root{
+  --bg0:#070b16;
+  --bg1:#0b1635;
+  --accent:#6d5efc;
+  --accent2:#4aa3ff;
+}
+
+body{
+  background: #0a0f22;
+}
+
+/* HERO arka plan: görselsiz premium */
+.hero{
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 600px at 15% 25%, rgba(74,163,255,.20), transparent 55%),
+    radial-gradient(1000px 500px at 70% 35%, rgba(109,94,252,.18), transparent 60%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+}
+
+/* İnce “noise” efekti (görsel yok) */
+.hero::after{
+  content:"";
+  position:absolute; inset:-40%;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.02) 0 1px, transparent 1px 4px);
+  opacity:.15;
+  transform: rotate(8deg);
+  pointer-events:none;
+}
+
+/* Cam efekti kart */
+.glass{
+  background: rgba(12,18,40,.55);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+}
+:root{
   --bg:#070b16;
   --bg2:#0b1530;
   --ink:#0b1220;
