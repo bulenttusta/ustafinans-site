@@ -4,11 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Usta Finans ve Yönetim Danışmanlığı A.Ş.</title>
-  <meta name="description" content="KOBİ’ler için kurumsal finans, nakit akışı, bütçe, kârlılık ve yönetim raporlaması danışmanlığı. Ölçülebilir sistem, uygulanabilir sonuç." />
+  <meta name="description" content="KOBİ’ler için kurumsal finans, nakit akışı, bütçe, kârlılık & maliyet analizi, KPI ve yönetim raporlaması danışmanlığı." />
 
-  <!-- Social preview -->
   <meta property="og:title" content="Usta Finans ve Yönetim Danışmanlığı A.Ş." />
-  <meta property="og:description" content="Finansı görünür kılar, sistemi kurar, sonucu ölçeriz." />
+  <meta property="og:description" content="Finansı görünür kılın. Disiplin kurun. Ölçün ve büyütün." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,18 +17,18 @@
 </head>
 
 <body>
-  <!-- Top bar -->
+  <!-- Topbar -->
   <div class="topbar">
     <div class="container topbar__inner">
       <div class="topbar__left">
-        <span class="pulse"></span>
+        <span class="pulse" aria-hidden="true"></span>
         <span>Kurumsal Finans • Yönetim Danışmanlığı • KOBİ Odaklı</span>
       </div>
       <div class="topbar__right">
         <a href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a>
-        <span class="dot">•</span>
+        <span class="sep">•</span>
         <a href="tel:+905334234855">+90 533 423 48 55</a>
-        <span class="dot">•</span>
+        <span class="sep">•</span>
         <a class="wa" href="https://wa.me/905334234855" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
@@ -39,8 +38,8 @@
   <header class="header">
     <div class="container header__inner">
       <a class="brand" href="#home" aria-label="Ana sayfa">
-        <span class="brand__mark">UF</span>
-        <span class="brand__txt">
+        <span class="brand__mark" aria-hidden="true">UF</span>
+        <span class="brand__text">
           <strong>Usta Finans ve Yönetim Danışmanlığı A.Ş.</strong>
           <small>Finansı görünür kılın. Disiplin kurun. Ölçün ve büyütün.</small>
         </span>
@@ -49,7 +48,7 @@
       <nav class="nav" aria-label="Menü">
         <a href="#hizmetler">Hizmetler</a>
         <a href="#yaklasim">Yaklaşım</a>
-        <a href="#vaka">Vaka Çalışmaları</a>
+        <a href="#ciktilar">Çıktılar</a>
         <a href="#sss">SSS</a>
         <a class="nav__cta" href="#teklif">Teklif Al</a>
       </nav>
@@ -62,7 +61,7 @@
     <div class="mobileMenu">
       <a href="#hizmetler" onclick="document.body.classList.remove('menuOpen')">Hizmetler</a>
       <a href="#yaklasim" onclick="document.body.classList.remove('menuOpen')">Yaklaşım</a>
-      <a href="#vaka" onclick="document.body.classList.remove('menuOpen')">Vaka Çalışmaları</a>
+      <a href="#ciktilar" onclick="document.body.classList.remove('menuOpen')">Çıktılar</a>
       <a href="#sss" onclick="document.body.classList.remove('menuOpen')">SSS</a>
       <a class="btn btn--primary" href="#teklif" onclick="document.body.classList.remove('menuOpen')">Teklif Al</a>
       <a class="btn btn--ghost" href="#iletisim" onclick="document.body.classList.remove('menuOpen')">İletişim</a>
@@ -71,14 +70,15 @@
 
   <!-- Hero -->
   <main id="home" class="hero">
-    <div class="hero__overlay"></div>
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
 
     <div class="container hero__inner">
       <div class="hero__left">
-        <div class="kicker">
+        <div class="chips">
           <span class="chip">Premium Danışmanlık</span>
-          <span class="chip chip--soft">Ölçülebilir Sistem</span>
           <span class="chip chip--soft">KOBİ Odaklı</span>
+          <span class="chip chip--soft">Ölçülebilir Sistem</span>
         </div>
 
         <h1>
@@ -87,9 +87,9 @@
         </h1>
 
         <p class="lead">
-          Usta Finans ve Yönetim Danışmanlığı A.Ş. olarak; bütçe ve nakit akışı yönetimi,
-          maliyet-kârlılık analizi, KPI & raporlama, banka ilişkileri ve kurumsal yapılandırma alanlarında
-          işletmelere uygulamalı danışmanlık sunuyoruz.
+          Usta Finans ve Yönetim Danışmanlığı A.Ş.; bütçe ve nakit akışı yönetimi, maliyet-kârlılık analizi,
+          KPI & yönetim raporlaması, banka ilişkileri ve kurumsal yapılandırma alanlarında işletmelere
+          uygulamalı danışmanlık sunar.
         </p>
 
         <div class="hero__cta">
@@ -123,7 +123,7 @@
       </div>
 
       <aside class="heroCard">
-        <div class="heroCard__top">
+        <div class="heroCard__head">
           <h3>Odak Alanları</h3>
           <p>Hızlı etki yaratan finansal dönüşüm alanları</p>
         </div>
@@ -230,7 +230,7 @@
 
         <article class="card card--service">
           <div class="ico">🧩</div>
-          <h3>KOBİ Dönüşüm Programı (3–6 Ay)</h3>
+          <h3>KOBİ CFO Programı (3–6 Ay)</h3>
           <p>Teşhis → sistem kurulum → uygulama koçluğu → sürdürülebilir takip.</p>
           <ul>
             <li>Haftalık ilerleme toplantısı</li>
@@ -283,48 +283,21 @@
     </div>
   </section>
 
-  <!-- Case studies -->
-  <section id="vaka" class="section">
+  <!-- Deliverables -->
+  <section id="ciktilar" class="section">
     <div class="container">
       <div class="sectionHead">
-        <h2>Vaka Çalışmaları (Örnek Format)</h2>
-        <p>Gerçek vakaları istersen isim/sector gizleyerek yayınlarız. Şimdilik “premium şablon” koydum.</p>
+        <h2>Beklenen Çıktılar</h2>
+        <p>Her işletmeye özel; ancak ortak hedef: finansı görünür ve yönetilebilir hale getirmek.</p>
       </div>
 
-      <div class="cases">
-        <article class="case">
-          <img src="assets/case-1.jpg" alt="Vaka görseli" loading="lazy">
-          <div class="case__body">
-            <div class="tag">Nakit Akışı</div>
-            <h3>13 haftalık nakit akışı ile likidite riski düşürüldü</h3>
-            <p>
-              Problem: Tahsilat gecikmeleri ve stok şişmesi nedeniyle likidite baskısı.<br/>
-              Çözüm: 13 haftalık nakit akışı + tahsilat/stok aksiyonları + haftalık takip.
-            </p>
-            <div class="metrics">
-              <div class="metric"><strong>4 hafta</strong><span>görünürlük</span></div>
-              <div class="metric"><strong>12 hafta</strong><span>kontrol</span></div>
-              <div class="metric"><strong>6 ay</strong><span>süreklilik</span></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="case">
-          <img src="assets/case-2.jpg" alt="Vaka görseli" loading="lazy">
-          <div class="case__body">
-            <div class="tag tag--2">Kârlılık</div>
-            <h3>Ürün bazlı kârlılık ile fiyatlandırma güncellendi</h3>
-            <p>
-              Problem: Görünmeyen maliyetler ve hatalı fiyatlandırma.<br/>
-              Çözüm: Maliyet sınıflaması + katkı payı analizi + fiyat politikası.
-            </p>
-            <div class="metrics">
-              <div class="metric"><strong>KPI</strong><span>pano</span></div>
-              <div class="metric"><strong>Rapor</strong><span>disiplini</span></div>
-              <div class="metric"><strong>Aksiyon</strong><span>takibi</span></div>
-            </div>
-          </div>
-        </article>
+      <div class="pillGrid">
+        <div class="pill"><strong>13 Haftalık Nakit Akışı</strong><span>Likidite görünürlüğü ve stres senaryoları</span></div>
+        <div class="pill"><strong>Bütçe & Sapma Analizi</strong><span>Aylık hedef–gerçekleşen takibi</span></div>
+        <div class="pill"><strong>Kârlılık & Maliyet Kırılımı</strong><span>Ürün/müşteri bazında katkı payı</span></div>
+        <div class="pill"><strong>KPI Panosu</strong><span>Karar hızını artıran net göstergeler</span></div>
+        <div class="pill"><strong>Aylık Yönetim Raporu</strong><span>Az sayfa, net mesaj, aksiyon takibi</span></div>
+        <div class="pill"><strong>Süreç & Sorumluluk</strong><span>Kurumsal yapı: görev–yetki–kontrol</span></div>
       </div>
     </div>
   </section>
@@ -334,7 +307,7 @@
     <div class="container">
       <div class="sectionHead">
         <h2>Sık Sorulanlar</h2>
-        <p>Kurumsal görünmesi için net ve kısa cevaplar.</p>
+        <p>Kısa ve net.</p>
       </div>
 
       <div class="faq">
@@ -358,12 +331,12 @@
     </div>
   </section>
 
-  <!-- Offer / Contact -->
+  <!-- Contact -->
   <section id="teklif" class="section">
     <div class="container">
       <div class="sectionHead">
         <h2>Teklif Al / Ön Görüşme</h2>
-        <p>2 dakikada bilgileri bırakın; size geri dönüş yapalım.</p>
+        <p>En hızlı iletişim: WhatsApp.</p>
       </div>
 
       <div class="contactGrid">
@@ -372,48 +345,21 @@
           <div class="cItem"><span>📧</span><a href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a></div>
           <div class="cItem"><span>📞</span><a href="tel:+905334234855">+90 533 423 48 55</a></div>
           <div class="cItem"><span>💬</span><a href="https://wa.me/905334234855" target="_blank" rel="noopener">WhatsApp’tan mesaj gönder</a></div>
-          <div class="note">
-            Mesajınızda “sektör + çalışan sayısı + ana problem” yazarsanız ön görüşme çok daha verimli olur.
-          </div>
+          <p class="note">Mesajınızda sektör + çalışan sayısı + ana problem yazarsanız daha hızlı netleşir.</p>
         </div>
 
-        <!-- Form: Şimdilik demo. Sonraki adımda Formspree ile canlı yapacağız -->
-        <form class="card form" onsubmit="return fakeSubmit(event)">
-          <h3>Hızlı Form</h3>
-
-          <div class="row">
-            <label>Ad Soyad</label>
-            <input required placeholder="Ad Soyad" />
-          </div>
-
-          <div class="row">
-            <label>Şirket</label>
-            <input required placeholder="Şirket adı" />
-          </div>
-
-          <div class="row">
-            <label>E-posta</label>
-            <input required type="email" placeholder="ornek@firma.com" />
-          </div>
-
-          <div class="row">
-            <label>Telefon</label>
-            <input required placeholder="+90 ..." />
-          </div>
-
-          <div class="row">
-            <label>İhtiyaç</label>
-            <textarea rows="4" placeholder="Nakit akışı / kârlılık / raporlama / finansman..."></textarea>
-          </div>
-
-          <button class="btn btn--primary btn--full" type="submit">Gönder</button>
-          <div class="miniNote">Bu form demo. İstersen 10 dakikada gerçek forma bağlarız.</div>
-        </form>
+        <div class="card formCard" id="iletisim">
+          <h3>Hızlı Mesaj</h3>
+          <p class="note">Form istemezseniz, aşağıdaki butonla WhatsApp’a geçebilirsiniz.</p>
+          <a class="btn btn--primary btn--full" href="https://wa.me/905334234855" target="_blank" rel="noopener">WhatsApp’a Git</a>
+          <a class="btn btn--ghost btn--full" href="mailto:bulentusta@ustafinans.net?subject=Teklif%20Talebi%20-%20Usta%20Finans">E-posta Gönder</a>
+          <div class="miniNote">Not: Bu sayfa tanıtım amaçlıdır. Kapsam ve ücretlendirme teklif ile netleşir.</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer id="iletisim" class="footer">
+  <footer class="footer">
     <div class="container footer__inner">
       <div>
         <div class="footer__brand">Usta Finans ve Yönetim Danışmanlığı A.Ş.</div>
@@ -430,22 +376,18 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
         const id = a.getAttribute('href');
         if (!id || id === '#') return;
         const el = document.querySelector(id);
         if (!el) return;
         e.preventDefault();
-        el.scrollIntoView({behavior:'smooth', block:'start'});
-      })
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.body.classList.remove('menuOpen');
+      });
     });
-
-    function fakeSubmit(e){
-      e.preventDefault();
-      alert("Form demo. İstersen bunu gerçek forma bağlayalım (Formspree/Google Forms).");
-      return false;
-    }
   </script>
 </body>
 </html>
