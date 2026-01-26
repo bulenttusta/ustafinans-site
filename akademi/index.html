@@ -6,26 +6,52 @@
   <title>Usta Finans / Finans Uzmanı Akademisi | ustafinans.net</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Inter, sans-serif; margin:0; background:#f9fafc; color:#1a1a1a; }
+    body { font-family: 'Inter', sans-serif; margin:0; background:#f9fafc; color:#1a1a1a; scroll-behavior: smooth; }
     .wrap { max-width:1200px; margin:0 auto; padding:0 20px; }
-    .topbar { background:#fff; border-bottom:1px solid #ddd; }
-    .topbar .inner { display:flex; justify-content:space-between; align-items:center; padding:12px 0; }
+    
+    /* Topbar */
+    .topbar { background:#fff; border-bottom:1px solid #ddd; position: sticky; top: 0; z-index: 1000; }
+    .topbar .inner { display:flex; justify-content:space-between; align-items:center; padding:12px 20px; }
     .brand { display:flex; align-items:center; gap:12px; }
     .brand img { height:48px; }
-    nav a { margin:0 8px; text-decoration:none; color:#555; font-weight:600; }
+    nav a { margin:0 10px; text-decoration:none; color:#555; font-weight:600; font-size: 14px; transition: 0.3s; }
     nav a:hover { color:#004aad; }
-    h1,h2,h3 { color:#004aad; }
-    .hero { background:linear-gradient(135deg,#004aad,#00b894); color:#fff; padding:60px 0; text-align:center; }
-    .hero img { max-width:80%; border-radius:12px; margin-top:20px; }
-    .btn { display:inline-block; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:600; margin:8px; }
-    .btn.primary { background:#004aad; color:#fff; }
-    .btn.secondary { background:#00b894; color:#fff; }
-    section { padding:50px 0; }
-    .grid2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
-    .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-    .card { background:#fff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,.1); padding:20px; }
-    .card img { width:100%; border-radius:12px; margin-bottom:12px; }
-    .footer { background:#004aad; color:#fff; text-align:center; padding:30px 0; }
+    
+    /* Typography */
+    h1, h2, h3 { color:#004aad; }
+    p { line-height: 1.6; color: #444; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg,#004aad,#00b894); color:#fff; padding:80px 0; text-align:center; }
+    .hero h1 { color: #fff; font-size: 2.5rem; margin-bottom: 20px; }
+    .hero p { color: #e0e0e0; font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; }
+    .hero img { max-width:100%; height: auto; border-radius:12px; margin-top:40px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    
+    /* Buttons */
+    .btn { display:inline-block; padding:14px 24px; border-radius:8px; text-decoration:none; font-weight:600; margin:8px; transition: transform 0.2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary { background:#004aad; color:#fff; border: 2px solid #004aad; }
+    .btn.secondary { background:#00b894; color:#fff; border: 2px solid #00b894; }
+    
+    /* Layout */
+    section { padding:80px 0; }
+    .grid2 { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:30px; }
+    .grid3 { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:30px; }
+    
+    /* Cards */
+    .card { background:#fff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,.05); padding:30px; text-align: center; border: 1px solid #eee; }
+    .card img { width:100%; height: 200px; object-fit: cover; border-radius:8px; margin-bottom:20px; }
+    .card h3 { margin-top: 0; }
+    .card ul { text-align: left; padding-left: 20px; margin: 20px 0; }
+    
+    /* Form Section */
+    #basvuru { background: #fff; }
+    .form-container { max-width: 600px; margin: 0 auto; background: #f4f7f6; padding: 40px; border-radius: 12px; }
+    input, select, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+    
+    /* Footer */
+    .footer { background:#004aad; color:#fff; text-align:center; padding:40px 0; margin-top: 40px; }
+    .footer a { color: #00b894; text-decoration: none; }
   </style>
 </head>
 <body>
@@ -33,8 +59,7 @@
 <div class="topbar">
   <div class="wrap inner">
     <div class="brand">
-      <!-- Senin logon -->
-      <img src="usta-finans-logo.png" alt="Usta Finans Logo">
+      <img src="https://via.placeholder.com/150x50?text=Usta+Finans" alt="Usta Finans Logo">
       <div>
         <strong>Usta Finans / Finans Uzmanı Akademisi</strong><br>
         <small>ustafinans.net/akademi</small>
@@ -43,100 +68,27 @@
     <nav>
       <a href="#akademi">Akademi Nedir?</a>
       <a href="#kimler">Kimler İçin?</a>
-      <a href="#uzman">Finans Uzmanı</a>
       <a href="#danismanlik">Danışmanlık</a>
       <a href="#basvuru">Başvuru</a>
     </nav>
   </div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="wrap">
     <h1>Finansı Ezberleme, Sahada Uygula.</h1>
     <p>Finans; ezber değil, karar alma becerisidir. Akademi, gerçek hayatta karşılığı olan finans bakış açısı kazandırır.</p>
-    <a class="btn primary" href="#kariyer">Kariyer Başvurusu Yap</a>
-    <a class="btn secondary" href="#sirketler">Şirket Talebi Gönder</a>
-    <img src="hero-finans.jpg" alt="Finans Eğitim Görseli">
+    <a class="btn primary" href="#basvuru">Kariyer Başvurusu Yap</a>
+    <a class="btn secondary" href="#basvuru">Şirket Talebi Gönder</a>
   </div>
 </section>
 
-<!-- AKADEMİ -->
 <section id="akademi">
   <div class="wrap">
-    <h2>Akademi Nedir?</h2>
-    <p>Bu bir kurs değil, bir finans bakış açısıdır. Amaç CV süslemek değil; sahada doğru karar verebilecek refleksi kazandırmaktır.</p>
+    <h2 style="text-align:center;">Akademi Nedir?</h2>
+    <p style="text-align:center; max-width: 800px; margin: 0 auto 40px;">Bu bir kurs değil, bir finans bakış açısıdır. Amaç CV süslemek değil; sahada doğru karar verebilecek refleksi kazandırmaktır.</p>
     <div class="grid3">
       <div class="card">
-        <img src="kurumsal-finans.jpg" alt="Kurumsal Finans">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400" alt="Kurumsal Finans">
         <h3>Gerçek Hayat Finansı</h3>
-        <p>Nakit akışı ve risk yönetimi odaklıdır.</p>
-      </div>
-      <div class="card">
-        <img src="bankacilik-finans.jpg" alt="Bankaların Gözüyle Şirket">
-        <h3>Bankaların Gözüyle Şirket</h3>
-        <p>Kredi, limit ve teminat dilini okursun.</p>
-      </div>
-      <div class="card">
-        <img src="erp-finans.jpg" alt="ERP ve Finans">
-        <h3>ERP–Muhasebe–Finans Ayrımı</h3>
-        <p>Veri üretmek ile yönetmek arasındaki farkı öğrenirsin.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- KİMLER -->
-<section id="kimler">
-  <div class="wrap">
-    <h2>Kimler İçin?</h2>
-    <div class="grid2">
-      <div class="card" id="kariyer">
-        <img src="ogrenciler-finans.jpg" alt="Öğrenciler Finans Eğitimi">
-        <h3>Öğrenciler & Yeni Mezunlar</h3>
-        <p>Bu program, sahada finans refleksi kazanmak isteyenlere uygundur.</p>
-        <ul>
-          <li>Nakit akışı okuma</li>
-          <li>Banka dili</li>
-          <li>Muhasebe verisini yönetim kararına çevirme</li>
-        </ul>
-        <a class="btn primary" href="#basvuru">Kariyer Başvurusu Yap</a>
-      </div>
-      <div class="card" id="sirketler">
-        <img src="sirket-finans.jpg" alt="Şirket Finans Yönetimi">
-        <h3>Şirket Sahipleri & Yöneticiler</h3>
-        <p>Kârınız var ama nakit akışı sorunluysa, teşhis hattı size gerçek nedenleri gösterir.</p>
-        <ul>
-          <li>Finansal kör noktaları görme</li>
-          <li>Nakit açığını teşhis etme</li>
-          <li>Kredi/limit ilişkisini doğru okuma</li>
-        </ul>
-        <a class="btn secondary" href="#basvuru">Şirket Talebi Gönder</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DANIŞMANLIK -->
-<section id="danismanlik">
-  <div class="wrap">
-    <h2>Akademi → Danışmanlık</h2>
-    <div class="grid2">
-      <div class="card">
-        <img src="egitim.jpg" alt="Eğitim Fark Ettirir">
-        <h3>Eğitim Fark Ettirir</h3>
-        <p>Kör noktalar görünür olur, doğru sorular ortaya çıkar.</p>
-      </div>
-      <div class="card">
-        <img src="danismanlik.jpg" alt="Danışmanlık Çözer">
-        <h3>Danışmanlık Çözer</h3>
-        <p>Sistem kurulumu, finansal yapılandırma ve uygulama adımları devreye girer.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<div class="footer">
-  <div class="wrap">
-    <strong>Usta Finans ve Yönetim Danış
+        <p>Nakit akışı ve
