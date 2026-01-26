@@ -11,21 +11,25 @@
     .topbar { background:#fff; border-bottom:1px solid #ddd; }
     .topbar .inner { display:flex; justify-content:space-between; align-items:center; padding:12px 0; }
     .brand { display:flex; align-items:center; gap:12px; }
-    .brand img { height:48px; }
+    .brand img { height:60px; border-radius:8px; }
     nav a { margin:0 8px; text-decoration:none; color:#555; font-weight:600; }
     nav a:hover { color:#004aad; }
     h1,h2,h3 { color:#004aad; }
     .hero { background:linear-gradient(135deg,#004aad,#00b894); color:#fff; padding:60px 0; text-align:center; }
     .hero img { max-width:80%; border-radius:12px; margin-top:20px; }
-    .btn { display:inline-block; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:600; margin:8px; }
+    .btn { display:inline-block; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:600; margin:8px; transition:background .3s ease, transform .2s ease; }
     .btn.primary { background:#004aad; color:#fff; }
     .btn.secondary { background:#00b894; color:#fff; }
+    .btn:hover { transform:scale(1.05); filter:brightness(1.1); }
     section { padding:50px 0; }
     .grid2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
     .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-    .card { background:#fff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,.1); padding:20px; }
+    .card { background:#fff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,.1); padding:20px; transition:transform .3s ease, box-shadow .3s ease; opacity:0; transform:translateY(20px); }
     .card img { width:100%; border-radius:12px; margin-bottom:12px; }
+    .card:hover { transform:translateY(-6px); box-shadow:0 12px 24px rgba(0,0,0,.15); }
+    .visible { opacity:1 !important; transform:translateY(0) !important; }
     .footer { background:#004aad; color:#fff; text-align:center; padding:30px 0; }
+    .stats h3 { font-size:32px; margin:0; color:#00b894; }
   </style>
 </head>
 <body>
@@ -33,7 +37,6 @@
 <div class="topbar">
   <div class="wrap inner">
     <div class="brand">
-      <!-- Senin logon -->
       <img src="usta-finans-logo.png" alt="Usta Finans Logo">
       <div>
         <strong>Usta Finans / Finans Uzmanı Akademisi</strong><br>
@@ -58,6 +61,24 @@
     <a class="btn primary" href="#kariyer">Kariyer Başvurusu Yap</a>
     <a class="btn secondary" href="#sirketler">Şirket Talebi Gönder</a>
     <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Finans Eğitim Görseli">
+  </div>
+</section>
+
+<!-- İSTATİSTİKLER -->
+<section class="stats wrap">
+  <div class="grid3">
+    <div class="card">
+      <h3>100+</h3>
+      <p>Öğrenci ve yeni mezun</p>
+    </div>
+    <div class="card">
+      <h3>20+</h3>
+      <p>Şirket danışmanlığı</p>
+    </div>
+    <div class="card">
+      <h3>10 yıl</h3>
+      <p>Finansal deneyim</p>
+    </div>
   </div>
 </section>
 
@@ -123,27 +144,4 @@
     <h2>Akademi → Danışmanlık</h2>
     <div class="grid2">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Eğitim Fark Ettirir">
-        <h3>Eğitim Fark Ettirir</h3>
-        <p>Kör noktalar görünür olur, doğru sorular ortaya çıkar.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df" alt="Danışmanlık Çözer">
-        <h3>Danışmanlık Çözer</h3>
-        <p>Sistem kurulumu, finansal yapılandırma ve uygulama adımları devreye girer.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<div class="footer">
-  <div class="wrap">
-    <strong>Usta Finans ve Yönetim Danışmanlığı A.Ş.</strong><br>
-    <span>Finans Uzmanı Akademisi • ustafinans.net/akademi</span><br>
-    <span>© 2026 Tüm hakları saklıdır.</span>
-  </div>
-</div>
-
-</body>
-</html>
+        <img src="https://images.unsplash.com/photo-1503676260728-
