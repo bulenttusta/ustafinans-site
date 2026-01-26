@@ -6,6 +6,16 @@
   <title>Finans Uzmanı Akademisi | Usta Finans</title>
   <meta name="description" content="Finans Uzmanı Akademisi: Sahada işe yarayan finans bakış açısı. Gerçek şirket senaryoları, CFO perspektifi, uygulanabilir çözümler." />
 
+  <!-- SEO / Social -->
+  <meta property="og:title" content="Finans Uzmanı Akademisi | Usta Finans" />
+  <meta property="og:description" content="Sahada işe yarayan finans uzmanlığı: Teşhis, nakit akışı, finansman, raporlama ve KPI ritmi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect rx='18' width='64' height='64' fill='%23ffffff'/%3E%3Cpath d='M14 46V18h9c7 0 11 3 11 9 0 6-4 9-11 9h-3v10h-6zm6-15h3c3 0 5-1 5-4s-2-4-5-4h-3v8z' fill='%23c1121f'/%3E%3Cpath d='M38 46V18h6v28h-6z' fill='%23b45309'/%3E%3C/svg%3E"/>
+
   <style>
     :root{
       --text:#0b1220;
@@ -17,7 +27,6 @@
       --shadow2: 0 10px 28px rgba(11,18,32,.08);
 
       --radius: 26px;
-      --radius2: 18px;
       --max: 1140px;
 
       /* pastel kırmızı / turuncu / sarı */
@@ -25,11 +34,11 @@
       --secOrange:#FFECD6;
       --secYellow:#FFF6DA;
 
-      --brand:#c1121f;         /* kırmızı ağırlık */
-      --brand2:#b45309;        /* turuncu/kehribar */
-      --brand3:#a16207;        /* sarı/kehribar */
+      --brand:#c1121f;         /* kırmızı */
+      --brand2:#b45309;        /* turuncu */
+      --brand3:#a16207;        /* sarı */
 
-      /* Font hiyerarşisi: H1 en büyük */
+      /* Font hiyerarşisi */
       --h1: 60px;
       --h2: 40px;
       --h3: 22px;
@@ -54,9 +63,7 @@
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
 
-    /* =========================
-       NAV (sticky + big menu)
-       ========================= */
+    /* NAV (sticky + big menu) */
     .nav{
       position: sticky;
       top:0;
@@ -112,8 +119,8 @@
     .menu a{
       padding: 10px 14px;
       border-radius: 14px;
-      font-size: 18px;         /* büyük */
-      font-weight: 950;        /* kalın */
+      font-size: 18px;
+      font-weight: 950;
       color: #1f2937;
       border: 1px solid transparent;
       transition: .16s ease;
@@ -161,11 +168,8 @@
       :root{ --h1: 46px; --h2: 32px; --lead: 17px; --body: 16px; }
     }
 
-    /* =========================
-       SECTIONS: framed + alternating colors
-       ========================= */
+    /* SECTIONS */
     section{ padding: 54px 0; }
-
     .sectionBox{
       border: 1px solid rgba(11,18,32,.14);
       border-radius: var(--radius);
@@ -225,9 +229,7 @@
       font-weight: 680;
     }
 
-    /* =========================
-       HERO: side-by-side on desktop
-       ========================= */
+    /* HERO: side-by-side */
     .heroGrid{
       display:grid;
       grid-template-columns: 1.1fr .9fr;
@@ -235,12 +237,8 @@
       align-items: stretch;
       margin-top: 10px;
     }
-    .heroCard{
-      background: rgba(255,255,255,.65);
-      border: 1px solid rgba(0,0,0,.10);
-      border-radius: 22px;
-      box-shadow: 0 14px 30px rgba(11,18,32,.08);
-      padding: 18px;
+    @media (max-width: 980px){
+      .heroGrid{ grid-template-columns: 1fr; }
     }
     .heroActions{
       display:flex;
@@ -248,7 +246,6 @@
       flex-wrap:wrap;
       margin-top: 16px;
     }
-
     .kpi{
       border-radius: 18px;
       border: 1px solid rgba(0,0,0,.10);
@@ -280,18 +277,15 @@
       box-shadow: 0 16px 34px rgba(11,18,32,.08);
     }
 
-    @media (max-width: 980px){
-      .heroGrid{ grid-template-columns: 1fr; }
-    }
-
-    /* =========================
-       FEATURES
-       ========================= */
+    /* FEATURES */
     .grid3{
       margin-top: 16px;
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
+    }
+    @media (max-width: 980px){
+      .grid3{ grid-template-columns: 1fr; }
     }
     .feat{
       background: rgba(255,255,255,.65);
@@ -310,19 +304,16 @@
     }
     .feat p{ margin-top: 6px; }
 
-    @media (max-width: 980px){
-      .grid3{ grid-template-columns: 1fr; }
-    }
-
-    /* =========================
-       PROGRAM blocks
-       ========================= */
+    /* PROGRAM */
     .twoCol{
       margin-top: 16px;
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
       align-items: start;
+    }
+    @media (max-width: 980px){
+      .twoCol{ grid-template-columns: 1fr; }
     }
     .block{
       background: rgba(255,255,255,.65);
@@ -341,44 +332,7 @@
     }
     li{ margin: 6px 0; }
 
-    @media (max-width: 980px){
-      .twoCol{ grid-template-columns: 1fr; }
-    }
-
-    /* =========================
-       AUDIENCE pills
-       ========================= */
-    .pills{
-      margin-top: 14px;
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 14px;
-    }
-    .pill{
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(0,0,0,.10);
-      border-radius: 999px;
-      padding: 12px 14px;
-      box-shadow: 0 12px 26px rgba(11,18,32,.06);
-      font-size: 16px;
-      font-weight: 850;
-      color: #374151;
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .pdot{
-      width:12px;height:12px;border-radius:999px;flex:none;
-      background: var(--brand2);
-      box-shadow: 0 0 0 7px rgba(180,83,9,.14);
-    }
-    @media (max-width: 980px){
-      .pills{ grid-template-columns: 1fr; }
-    }
-
-    /* =========================
-       CONTACT + FORMS (tabs)
-       ========================= */
+    /* CONTACT + FORMS */
     .foot{
       margin-top: 14px;
       display:grid;
@@ -527,6 +481,14 @@
     .status.ok{ border-color: rgba(22,163,74,.35); }
     .status.err{ border-color: rgba(193,18,31,.35); }
 
+    .afterSuccess{
+      margin-top: 12px;
+      display:none;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
     /* honeypot hidden */
     .hp{ display:none !important; }
   </style>
@@ -551,7 +513,6 @@
           <a href="#neden">Neden Farklı?</a>
           <a href="#program">Program</a>
           <a href="#kaynak">Kaynağı</a>
-          <a href="#kime">Kime Uygun?</a>
           <a href="#iletisim">Görüşme Talebi</a>
         </nav>
 
@@ -573,7 +534,7 @@
           <div>
             <h1>Sahada İşe Yarayan Finans Uzmanlığı</h1>
             <p class="lead">
-              Finans Uzmanı Akademisi; teoriyi anlatıp geçen bir eğitim platformu değildir.
+              Finans Uzmanı Akademisi; teoriyi anlatıp geçen bir eğitim değildir.
               Gerçek şirket senaryoları üzerinden <b>nakit akışı</b>, <b>finansal teşhis</b>,
               <b>finansman senaryoları</b> ve <b>raporlama disiplini</b> kazandırır.
             </p>
@@ -598,7 +559,7 @@
           </div>
 
           <div class="visual" role="img" aria-label="Türkçe görsel panel">
-            <!-- Inline SVG (dosya yok) -->
+            <!-- Inline SVG -->
             <svg viewBox="0 0 1200 820" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
@@ -734,7 +695,7 @@
           <div class="block">
             <h3>1) Finansal Teşhis</h3>
             <ul>
-              <li>İşletmenin fotoğrafını çekme: kârlılık, nakit, borç, stok, alacak döngüsü</li>
+              <li>İşletmenin fotoğrafı: kârlılık, nakit, borç, stok, alacak döngüsü</li>
               <li>Hızlı risk haritası: darboğaz ve önceliklendirme</li>
               <li>“Hangi sorunu önce çözeceğiz?” çerçevesi</li>
             </ul>
@@ -784,32 +745,9 @@
           sahada denenmiş bir metodolojiye dayanır.
         </p>
         <p style="margin-top:12px;">
-          Eğitim odağı korunur; anlatım biçimi “sahada çalışan finans refleksi” üretmeye yöneliktir.
-          Bu yaklaşım, katılımcıyı şirket ortamında hızlı değer üretir hale getirir.
+          Eğitim odağı korunur; anlatım “sahada çalışan finans refleksi” üretmeye yöneliktir.
+          Bu yaklaşım, katılımcıyı şirkette hızlı değer üretir hale getirir.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- AUDIENCE (ORANGE) -->
-  <section id="kime">
-    <div class="wrap">
-      <div class="sectionBox bg-orange">
-        <span class="eyebrow">Hedef Kitle</span>
-        <h2>Kime Uygun?</h2>
-        <p class="lead">
-          Kariyerini finans tarafında güçlendirmek isteyenlere ve şirket içinde finansal karar kalitesini yükseltmek isteyen yöneticilere uygundur.
-        </p>
-
-        <div class="pills">
-          <div class="pill"><span class="pdot"></span>Yeni mezunlar / kariyer başlangıcı</div>
-          <div class="pill"><span class="pdot" style="background:var(--brand); box-shadow:0 0 0 7px rgba(193,18,31,.14)"></span>KOBİ finansı içinde sorumluluk alanlar</div>
-          <div class="pill"><span class="pdot" style="background:var(--brand3); box-shadow:0 0 0 7px rgba(161,98,7,.14)"></span>Finansı “yönetim dili” olarak öğrenmek isteyenler</div>
-
-          <div class="pill"><span class="pdot"></span>Raporlama ve KPI düzeni kurmak isteyenler</div>
-          <div class="pill"><span class="pdot" style="background:var(--brand); box-shadow:0 0 0 7px rgba(193,18,31,.14)"></span>Nakit akışı / finansman kararlarında güçlenmek isteyenler</div>
-          <div class="pill"><span class="pdot" style="background:var(--brand3); box-shadow:0 0 0 7px rgba(161,98,7,.14)"></span>KOBİ’den kurumsal düzeye geçiş hedefleyenler</div>
-        </div>
       </div>
     </div>
   </section>
@@ -838,8 +776,9 @@
             <div class="line">Hizmet Bölgeleri: Bodrum • Ankara • İstanbul • İzmir • Muğla • Antalya • Aydın</div>
 
             <div class="legal">
-              Bu sayfa eğitim odağını korur. İçerik yaklaşımı; sahada çalışan finans aklının net, ölçülebilir ve uygulanabilir standardını temsil eder.
-              <br>© <span id="y"></span> Usta Finans ve Yönetim Danışmanlığı A.Ş.
+              © <span id="y"></span> Usta Finans ve Yönetim Danışmanlığı A.Ş.
+              <br>
+              Not: Google Sheets/CRM entegrasyonu için Web3Forms panelinde Webhook açılarak Zapier/Make/n8n gibi araçlara akıtılabilir.  [oai_citation:3‡docs.web3forms.com](https://docs.web3forms.com/getting-started/pro-features/webhooks?utm_source=chatgpt.com)
             </div>
           </div>
 
@@ -857,11 +796,11 @@
             <div id="panel-student" role="tabpanel" aria-labelledby="tab-student">
               <div class="formHead">
                 <b>Öğrenci Ön Görüşme Formu</b>
-                <span>Kısa bilgilerle başlayalım. Size uygun öğrenme hattını netleştirelim.</span>
+                <span>Talebiniz bize ulaştıktan sonra, e-posta ile bilgilendirme/teşekkür mesajı gönderilebilir (Autoreponder).</span>
               </div>
 
               <form id="studentForm">
-                <!-- Web3Forms required -->
+                <!-- Web3Forms -->
                 <input type="hidden" name="access_key" value="1e7c1cf7-ea36-4869-bbc0-283bdeb340ad">
                 <input type="hidden" name="subject" value="Öğrenci Ön Görüşme | Usta Finans Akademi">
                 <!-- Honeypot -->
@@ -881,7 +820,8 @@
                 <div class="row2">
                   <div>
                     <label>E-posta</label>
-                    <input name="E-posta" type="email" placeholder="ornek@eposta.com" required>
+                    <!-- Autoresponder için name=email şartı -->
+                    <input name="email" type="email" placeholder="ornek@eposta.com" required>
                   </div>
                   <div>
                     <label>Durum</label>
@@ -902,10 +842,15 @@
 
                 <div class="formActions">
                   <button class="btn primary" type="submit"><span class="dot"></span>Gönder</button>
-                  <span class="hint">Form gönderimi sonrası size e-posta düşer.</span>
+                  <span class="hint">Gönderim sonrası mesajınız e-posta olarak iletilir.</span>
                 </div>
 
                 <div id="studentStatus" class="status"></div>
+
+                <div id="studentAfter" class="afterSuccess">
+                  <a id="studentWA" class="btn primary" href="#" target="_blank" rel="noopener"><span class="dot"></span>WhatsApp’tan Devam Edelim</a>
+                  <a class="btn" href="#akademi">Sayfaya Dön</a>
+                </div>
               </form>
             </div>
 
@@ -913,11 +858,11 @@
             <div id="panel-company" role="tabpanel" aria-labelledby="tab-company" style="display:none;">
               <div class="formHead">
                 <b>Şirket Ön Görüşme Formu</b>
-                <span>İhtiyacı doğru tanımlayalım. Mevcut durum, hedef ve öncelikleri netleştirelim.</span>
+                <span>Finansal ihtiyaç başlığını netleştirelim. Nakit akışı / raporlama / KPI / süreç odağında hızlı ön değerlendirme.</span>
               </div>
 
               <form id="companyForm">
-                <!-- Web3Forms required -->
+                <!-- Web3Forms -->
                 <input type="hidden" name="access_key" value="1e7c1cf7-ea36-4869-bbc0-283bdeb340ad">
                 <input type="hidden" name="subject" value="Şirket Ön Görüşme | Usta Finans Akademi">
                 <!-- Honeypot -->
@@ -941,7 +886,8 @@
                   </div>
                   <div>
                     <label>E-posta</label>
-                    <input name="E-posta" type="email" placeholder="ornek@firma.com" required>
+                    <!-- Autoresponder için name=email şartı -->
+                    <input name="email" type="email" placeholder="ornek@firma.com" required>
                   </div>
                 </div>
 
@@ -970,10 +916,15 @@
 
                 <div class="formActions">
                   <button class="btn primary" type="submit"><span class="dot"></span>Gönder</button>
-                  <span class="hint">Form gönderimi sonrası size e-posta düşer.</span>
+                  <span class="hint">Gönderim sonrası mesajınız e-posta olarak iletilir.</span>
                 </div>
 
                 <div id="companyStatus" class="status"></div>
+
+                <div id="companyAfter" class="afterSuccess">
+                  <a id="companyWA" class="btn primary" href="#" target="_blank" rel="noopener"><span class="dot"></span>WhatsApp’tan Devam Edelim</a>
+                  <a class="btn" href="#akademi">Sayfaya Dön</a>
+                </div>
               </form>
             </div>
 
@@ -1006,30 +957,54 @@
     tabStudent.addEventListener("click", () => activate("student"));
     tabCompany.addEventListener("click", () => activate("company"));
 
+    // WhatsApp (pre-filled)
+    function buildWhatsAppLink(name, phone, email, type){
+      const wa = "https://wa.me/905334234855";
+      const msg =
+        `Merhaba Bülent Usta,\n` +
+        `${type} formu ile görüşme talebi oluşturdum.\n\n` +
+        `Ad Soyad: ${name || "-"}\n` +
+        `Telefon: ${phone || "-"}\n` +
+        `E-posta: ${email || "-"}\n\n` +
+        `Uygun olduğunuzda dönüş yapabilir misiniz?`;
+      return wa + "?text=" + encodeURIComponent(msg);
+    }
+
     // Web3Forms submit with fetch (stay on page)
-    // Endpoint: https://api.web3forms.com/submit  [oai_citation:3‡docs.web3forms.com](https://docs.web3forms.com/getting-started/api-reference?utm_source=chatgpt.com)
-    async function submitWeb3Forms(formEl, statusEl){
+    // Success message on same page is supported via JS method.  [oai_citation:4‡docs.web3forms.com](https://docs.web3forms.com/getting-started/customizations/success-thank-you-page?utm_source=chatgpt.com)
+    async function submitWeb3Forms(formEl, statusEl, afterEl, waBtnEl, typeLabel){
       statusEl.style.display = "block";
       statusEl.className = "status";
       statusEl.textContent = "Gönderiliyor...";
 
       const formData = new FormData(formEl);
 
+      // gather fields for WhatsApp
+      const name = formData.get("Ad Soyad") || formData.get("Yetkili Kişi") || "";
+      const phone = formData.get("Telefon") || "";
+      const email = formData.get("email") || "";
+
       try{
         const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           body: formData
         });
-
         const data = await res.json();
 
         if(data && data.success){
           statusEl.classList.add("ok");
           statusEl.textContent = "Başarıyla gönderildi. Mesaj e-posta olarak iletildi.";
+
+          // show WhatsApp continuation
+          const waLink = buildWhatsAppLink(name, phone, email, typeLabel);
+          waBtnEl.href = waLink;
+          afterEl.style.display = "flex";
+
+          // reset form after success (isteğe bağlı: açık kalsın istersen kaldırırız)
           formEl.reset();
         }else{
           statusEl.classList.add("err");
-          statusEl.textContent = "Gönderilemedi. Access Key kontrol edin veya tekrar deneyin.";
+          statusEl.textContent = "Gönderilemedi. Lütfen tekrar deneyin (Access Key / alanlar).";
         }
       }catch(e){
         statusEl.classList.add("err");
@@ -1037,13 +1012,30 @@
       }
     }
 
-    document.getElementById("studentForm").addEventListener("submit", (e) => {
+    // Bind forms
+    const studentForm = document.getElementById("studentForm");
+    const companyForm = document.getElementById("companyForm");
+
+    studentForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      submitWeb3Forms(e.target, document.getElementById("studentStatus"));
+      submitWeb3Forms(
+        e.target,
+        document.getElementById("studentStatus"),
+        document.getElementById("studentAfter"),
+        document.getElementById("studentWA"),
+        "Öğrenci"
+      );
     });
-    document.getElementById("companyForm").addEventListener("submit", (e) => {
+
+    companyForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      submitWeb3Forms(e.target, document.getElementById("companyStatus"));
+      submitWeb3Forms(
+        e.target,
+        document.getElementById("companyStatus"),
+        document.getElementById("companyAfter"),
+        document.getElementById("companyWA"),
+        "Şirket"
+      );
     });
   </script>
 
