@@ -3,61 +3,84 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Finans Uzmanı Akademisi | Usta Finans</title>
+  <title>Finans Uzmanı Akademisi | Usta Finans ve Yönetim Danışmanlığı A.Ş.</title>
   <meta name="description" content="Finans Uzmanı Akademisi: Sahada işe yarayan finans bakış açısı. Gerçek şirket senaryoları, CFO perspektifi ve uygulanabilir çözümler." />
+  <meta name="theme-color" content="#0b1220">
 
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0b1220;
+      --bg0:#070a12;
+      --bg1:#0b1220;
       --panel:#0f1a2e;
       --panel2:#0c1526;
       --text:#eaf0ff;
       --muted:#b7c3dd;
+      --muted2:#93a3c7;
       --brand:#6ea8ff;
+      --brand2:#7fffd1;
       --line: rgba(255,255,255,.10);
+      --line2: rgba(255,255,255,.14);
       --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --shadow2: 0 18px 60px rgba(0,0,0,.25);
       --radius: 18px;
       --max: 1120px;
     }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1000px 600px at 20% -10%, rgba(110,168,255,.22), transparent 60%),
-        radial-gradient(900px 500px at 90% 0%, rgba(120,255,203,.10), transparent 55%),
-        linear-gradient(180deg, #070b14 0%, var(--bg) 40%, #070b14 100%);
+        radial-gradient(1100px 650px at 18% -10%, rgba(110,168,255,.22), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(127,255,209,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 40%, var(--bg0) 100%);
     }
     a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .sr{position:absolute; left:-9999px}
+
+    /* NAV */
     .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(7,11,20,.55);
+      position:sticky; top:0; z-index:70;
+      backdrop-filter: blur(12px);
+      background: rgba(7,10,18,.60);
       border-bottom:1px solid var(--line);
     }
     .nav-inner{
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 0;
-      gap:16px;
+      gap:14px;
     }
     .brand{
-      display:flex; align-items:center; gap:12px; min-width:260px;
+      display:flex; align-items:center; gap:12px;
+      min-width: 320px;
     }
-    .brand img{
-      width:44px; height:44px; object-fit:contain;
-      border-radius:12px; background: rgba(255,255,255,.06);
-      padding:8px; border:1px solid var(--line);
+    .logoMark{
+      width:44px; height:44px;
+      border-radius:14px;
+      border:1px solid var(--line2);
+      background:
+        radial-gradient(70% 70% at 30% 25%, rgba(110,168,255,.55), rgba(110,168,255,.08)),
+        radial-gradient(70% 70% at 70% 70%, rgba(127,255,209,.25), transparent 55%),
+        rgba(255,255,255,.04);
+      box-shadow: 0 10px 26px rgba(0,0,0,.25);
+      display:grid; place-items:center;
+      font-weight:900;
+      letter-spacing:-.6px;
+      color: rgba(234,240,255,.95);
     }
-    .brand .t1{font-weight:800; letter-spacing:.2px; font-size:14px; line-height:1.15}
+    .brand .t1{font-weight:900; letter-spacing:-.2px; font-size:14px; line-height:1.15}
     .brand .t2{color:var(--muted); font-size:12px; margin-top:3px}
     .menu{
-      display:flex; gap:18px; align-items:center; justify-content:flex-end;
+      display:flex; gap:14px; align-items:center; justify-content:flex-end;
       flex-wrap:wrap;
     }
     .menu a{
@@ -66,9 +89,7 @@
       transition:.2s ease;
     }
     .menu a:hover{background:rgba(255,255,255,.06); color:var(--text)}
-    .cta{
-      display:flex; gap:10px; align-items:center;
-    }
+    .cta{display:flex; gap:10px; align-items:center}
     .btn{
       border:1px solid var(--line);
       background: rgba(255,255,255,.06);
@@ -76,9 +97,10 @@
       padding:10px 14px;
       border-radius:14px;
       font-size:13px;
-      font-weight:600;
+      font-weight:700;
       transition:.2s ease;
       box-shadow: 0 8px 24px rgba(0,0,0,.22);
+      display:inline-flex; gap:10px; align-items:center;
     }
     .btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.09)}
     .btn.primary{
@@ -86,88 +108,114 @@
       border-color: rgba(110,168,255,.45);
       color:#081226;
     }
+    .btn .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: currentColor;
+      opacity:.85;
+    }
 
     /* HERO */
+    header{padding:34px 0 14px}
     .hero{
-      padding:34px 0 18px;
-    }
-    .hero-grid{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
+      grid-template-columns: 1.15fr .85fr;
+      gap:16px;
       align-items:stretch;
     }
-    @media (max-width: 960px){
-      .hero-grid{grid-template-columns:1fr}
-      .brand{min-width:auto}
-    }
-    .hero-card{
+    @media (max-width: 980px){ .hero{grid-template-columns:1fr} .brand{min-width:auto} .cta{display:none} }
+    .heroCard{
       border:1px solid var(--line);
-      border-radius: calc(var(--radius) + 6px);
+      border-radius: calc(var(--radius) + 8px);
       overflow:hidden;
-      box-shadow: var(--shadow);
       background: rgba(255,255,255,.04);
-    }
-    .hero-media{
+      box-shadow: var(--shadow);
       position:relative;
-      min-height: 380px;
-      background: #0a1020;
+      min-height: 420px;
     }
-    .hero-media img{
+    .heroMedia{
       position:absolute; inset:0;
-      width:100%; height:100%; object-fit:cover;
-      filter: contrast(1.03) saturate(1.08);
-      transform: scale(1.02);
+      background: #060a12;
     }
-    .hero-media::after{
+    .heroMedia img{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      filter: contrast(1.06) saturate(1.08);
+      transform: scale(1.03);
+    }
+    .heroMedia::after{
       content:"";
       position:absolute; inset:0;
-      background: linear-gradient(90deg, rgba(7,11,20,.85) 0%, rgba(7,11,20,.55) 55%, rgba(7,11,20,.25) 100%);
+      background:
+        linear-gradient(90deg, rgba(7,10,18,.88) 0%, rgba(7,10,18,.60) 52%, rgba(7,10,18,.30) 100%),
+        radial-gradient(900px 550px at 20% 20%, rgba(110,168,255,.18), transparent 60%);
     }
-    .hero-copy{
+    .heroCopy{
       position:relative;
       padding:26px;
-      max-width: 640px;
+      max-width: 740px;
     }
     .kicker{
-      display:inline-flex; gap:8px; align-items:center;
+      display:inline-flex; gap:10px; align-items:center;
       font-size:12px; color:var(--muted);
       padding:8px 12px;
       background: rgba(255,255,255,.06);
       border:1px solid var(--line);
       border-radius:999px;
     }
-    .h1{
+    .kicker b{color:rgba(234,240,255,.92); font-weight:800}
+    h1{
       margin:14px 0 10px;
-      font-size:40px;
-      line-height:1.08;
-      letter-spacing:-.6px;
-      font-weight:900;
+      font-size:44px;
+      line-height:1.06;
+      letter-spacing:-.9px;
+      font-weight:950;
     }
     .sub{
       color:var(--muted);
       font-size:14px;
-      line-height:1.7;
-      max-width: 560px;
+      line-height:1.75;
+      max-width: 620px;
     }
-    .hero-actions{
+    .heroActions{
       margin-top:16px;
       display:flex; gap:10px; flex-wrap:wrap;
     }
+    .heroOverlayTitle{
+      position:absolute;
+      right:18px; bottom:18px;
+      text-align:right;
+      padding:12px 14px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(7,10,18,.35);
+      backdrop-filter: blur(10px);
+      max-width: 70%;
+    }
+    .heroOverlayTitle .t{
+      font-weight:900; letter-spacing:-.4px;
+    }
+    .heroOverlayTitle .s{
+      color: rgba(234,240,255,.82);
+      font-size:12px; line-height:1.5;
+      margin-top:4px;
+    }
+
+    /* SIDE PANEL */
     .side{
-      display:flex; flex-direction:column; gap:18px;
+      display:flex; flex-direction:column; gap:16px;
     }
     .panel{
       border:1px solid var(--line);
-      border-radius: calc(var(--radius) + 6px);
+      border-radius: calc(var(--radius) + 8px);
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow2);
       padding:18px;
     }
-    .panel h3{margin:0 0 8px; font-size:16px}
-    .panel p{margin:0; color:var(--muted); font-size:13px; line-height:1.7}
+    .panel h3{margin:0 0 8px; font-size:16px; letter-spacing:-.2px}
+    .panel p{margin:0; color:var(--muted); font-size:13px; line-height:1.75}
     .mini{
-      display:grid; gap:10px; margin-top:12px;
+      display:grid; gap:10px; margin-top:14px;
     }
     .mini .item{
       display:flex; gap:10px; align-items:flex-start;
@@ -176,86 +224,162 @@
       border:1px solid var(--line);
       background: rgba(255,255,255,.04);
     }
-    .dot{
+    .bullet{
       width:10px; height:10px; margin-top:5px;
       border-radius:999px;
-      background: rgba(110,168,255,.9);
-      box-shadow: 0 0 0 6px rgba(110,168,255,.15);
+      background: rgba(110,168,255,.92);
+      box-shadow: 0 0 0 6px rgba(110,168,255,.14);
       flex:none;
     }
     .mini b{display:block; font-size:13px}
     .mini span{display:block; color:var(--muted); font-size:12px; margin-top:3px; line-height:1.55}
 
-    /* SECTIONS */
-    section{padding:24px 0}
-    .section-title{
+    /* SECTION */
+    section{padding:22px 0}
+    .sectionTitle{
       display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;
-      margin: 6px 0 14px;
+      margin: 8px 0 14px;
     }
-    .section-title h2{
+    .sectionTitle h2{
       margin:0;
       font-size:22px;
       letter-spacing:-.3px;
     }
-    .section-title p{
+    .sectionTitle p{
       margin:0;
       color:var(--muted);
       font-size:13px;
-      max-width: 560px;
-      line-height:1.7;
+      max-width: 600px;
+      line-height:1.75;
     }
+
+    /* CARDS */
     .grid3{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap:16px;
     }
-    @media (max-width: 960px){
-      .grid3{grid-template-columns:1fr}
-    }
+    @media (max-width: 980px){ .grid3{grid-template-columns:1fr} }
+
     .card{
       border:1px solid var(--line);
-      border-radius: calc(var(--radius) + 6px);
+      border-radius: calc(var(--radius) + 8px);
       overflow:hidden;
       background: rgba(255,255,255,.04);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow2);
       transition:.2s ease;
+      position:relative;
     }
     .card:hover{transform: translateY(-2px)}
-    .card .media{
-      height: 180px;
+    .media{
+      height: 190px;
       position:relative;
       background: #0a1020;
     }
-    .card .media img{
+    .media img{
       width:100%; height:100%; object-fit:cover;
-      filter: contrast(1.04) saturate(1.08);
+      filter: contrast(1.05) saturate(1.08);
+      transform: scale(1.02);
     }
-    .card .content{
-      padding:16px;
+    .media::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.55) 100%);
     }
-    .card h4{margin:0 0 6px; font-size:15px}
-    .card p{margin:0; color:var(--muted); font-size:13px; line-height:1.7}
+    .tagOnImage{
+      position:absolute;
+      left:14px; bottom:14px;
+      padding:10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(7,10,18,.35);
+      backdrop-filter: blur(10px);
+      max-width: calc(100% - 28px);
+      z-index:2;
+    }
+    .tagOnImage .t{font-weight:900; letter-spacing:-.3px}
+    .tagOnImage .s{font-size:12px; color: rgba(234,240,255,.84); margin-top:4px; line-height:1.45}
 
-    /* FEATURE STRIP */
+    .content{padding:16px}
+    .content h4{margin:0 0 6px; font-size:15px; letter-spacing:-.2px}
+    .content p{margin:0; color:var(--muted); font-size:13px; line-height:1.75}
+    .pillRow{
+      margin-top:12px;
+      display:flex; flex-wrap:wrap; gap:8px;
+    }
+    .pill{
+      font-size:12px; color: rgba(234,240,255,.85);
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+
+    /* STRIP */
     .strip{
       border:1px solid var(--line);
-      border-radius: calc(var(--radius) + 10px);
+      border-radius: calc(var(--radius) + 12px);
       overflow:hidden;
       box-shadow: var(--shadow);
       background: rgba(255,255,255,.04);
     }
-    .strip .media{
-      height: 220px;
+    .stripTop{
       position:relative;
+      height: 260px;
+      background:#070a12;
     }
-    .strip .media img{width:100%; height:100%; object-fit:cover}
-    .strip .body{
+    .stripTop img{
+      width:100%; height:100%; object-fit:cover;
+      filter: contrast(1.06) saturate(1.08);
+      transform: scale(1.02);
+    }
+    .stripTop::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(7,10,18,.78) 0%, rgba(7,10,18,.50) 55%, rgba(7,10,18,.35) 100%),
+        radial-gradient(900px 600px at 15% 20%, rgba(110,168,255,.20), transparent 55%);
+    }
+    .stripOverlay{
+      position:absolute; inset:0;
+      display:flex; align-items:flex-end;
       padding:18px;
-      display:grid; grid-template-columns: 1.1fr .9fr; gap:16px; align-items:start;
+      z-index:2;
     }
-    @media (max-width: 960px){
-      .strip .body{grid-template-columns:1fr}
+    .stripOverlayBox{
+      max-width: 740px;
+      padding:14px 16px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(7,10,18,.35);
+      backdrop-filter: blur(10px);
     }
+    .stripOverlayBox .t{
+      font-weight:950; letter-spacing:-.4px;
+      font-size:18px;
+    }
+    .stripOverlayBox .s{
+      margin-top:6px;
+      color: rgba(234,240,255,.84);
+      font-size:13px;
+      line-height:1.7;
+    }
+    .stripBody{
+      padding:18px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:16px;
+      align-items:start;
+    }
+    @media (max-width: 980px){ .stripBody{grid-template-columns:1fr} }
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.9;
+    }
+    .list li{margin:4px 0}
     .note{
       padding:14px;
       border:1px dashed rgba(110,168,255,.45);
@@ -263,43 +387,152 @@
       border-radius: 18px;
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
-    .list{margin:0; padding-left:18px; color:var(--muted); font-size:13px; line-height:1.85}
-    .list li{margin:4px 0}
+    .note b{color: rgba(234,240,255,.95)}
+    .fine{
+      margin-top:10px;
+      font-size:12px;
+      color: rgba(234,240,255,.70);
+      line-height:1.6;
+    }
+
+    /* FAQ */
+    .faq{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+    }
+    @media (max-width: 980px){ .faq{grid-template-columns:1fr} }
+    details{
+      border:1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      background: rgba(255,255,255,.04);
+      box-shadow: var(--shadow2);
+      padding:14px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:850;
+      letter-spacing:-.2px;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.75;
+    }
+
+    /* CONTACT */
+    .contactGrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){ .contactGrid{grid-template-columns:1fr} }
+    .contactBox{
+      border:1px solid var(--line);
+      border-radius: calc(var(--radius) + 10px);
+      background: rgba(255,255,255,.04);
+      box-shadow: var(--shadow);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .contactBox::before{
+      content:"";
+      position:absolute;
+      width:520px; height:520px;
+      left:-260px; top:-260px;
+      background: radial-gradient(circle, rgba(110,168,255,.20), transparent 60%);
+      filter: blur(2px);
+      pointer-events:none;
+    }
+    .fieldRow{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:12px;
+    }
+    @media (max-width: 680px){ .fieldRow{grid-template-columns:1fr} }
+
+    input, textarea{
+      width:100%;
+      border:1px solid var(--line);
+      background: rgba(7,10,18,.35);
+      color: rgba(234,240,255,.92);
+      border-radius: 14px;
+      padding:12px 12px;
+      font: inherit;
+      font-size:13px;
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input::placeholder, textarea::placeholder{color: rgba(234,240,255,.55)}
+    .formActions{margin-top:10px; display:flex; gap:10px; flex-wrap:wrap}
+
+    .metaBox{
+      border:1px solid var(--line);
+      border-radius: calc(var(--radius) + 10px);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow2);
+      padding:18px;
+    }
+    .kv{
+      display:grid;
+      grid-template-columns: 120px 1fr;
+      gap:10px 12px;
+      margin-top:10px;
+      font-size:13px;
+      line-height:1.8;
+      color: var(--muted);
+    }
+    .kv b{color: rgba(234,240,255,.92)}
+    .badgeRow{
+      margin-top:12px;
+      display:flex; flex-wrap:wrap; gap:8px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size:12px;
+    }
+    .badge .miniDot{
+      width:8px; height:8px; border-radius:999px;
+      background: rgba(127,255,209,.75);
+      box-shadow: 0 0 0 6px rgba(127,255,209,.12);
+    }
 
     /* FOOTER */
     footer{
-      padding:26px 0 40px;
+      padding:24px 0 40px;
       border-top:1px solid var(--line);
-      background: rgba(0,0,0,.18);
+      background: rgba(0,0,0,.16);
       margin-top: 10px;
     }
     .foot{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:18px;
-      align-items:start;
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap:16px; flex-wrap:wrap;
     }
-    @media (max-width: 960px){
-      .foot{grid-template-columns:1fr}
+    .small{color:var(--muted); font-size:12px; line-height:1.7; max-width: 720px}
+    .toTop{color:var(--muted); font-size:12px; padding:10px 12px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04)}
+    .toTop:hover{background:rgba(255,255,255,.07); color:var(--text)}
+
+    /* Mobile nav button (optional) */
+    .mobileCta{
+      display:none;
     }
-    .foot small{color:var(--muted); line-height:1.7; display:block}
-    .contact{
-      border:1px solid var(--line);
-      border-radius: calc(var(--radius) + 6px);
-      padding:16px;
-      background: rgba(255,255,255,.04);
-    }
-    .contact div{color:var(--muted); font-size:13px; line-height:1.9}
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:10px 12px; border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color:var(--muted);
-      font-size:12px;
-      margin-top:10px;
+    @media (max-width: 980px){
+      .mobileCta{display:flex; gap:10px; padding:12px 0 0}
+      .mobileCta .btn{width:100%; justify-content:center}
     }
   </style>
 </head>
@@ -309,25 +542,24 @@
   <div class="nav">
     <div class="wrap">
       <div class="nav-inner">
-        <div class="brand">
-          <!-- Logo: assets/logo.png -->
-          <img src="assets/logo.png" alt="Usta Finans Logo">
+        <a class="brand" href="#top" aria-label="Ana sayfa">
+          <div class="logoMark" aria-hidden="true">UF</div>
           <div>
             <div class="t1">Usta Finans ve Yönetim Danışmanlığı A.Ş.</div>
             <div class="t2">Finans Uzmanı Akademisi</div>
           </div>
-        </div>
+        </a>
 
-        <nav class="menu">
+        <nav class="menu" aria-label="Menü">
           <a href="#akademi">Akademi</a>
           <a href="#fark">Neden Farklı?</a>
-          <a href="#icerik">Program</a>
-          <a href="#kaynak">Kaynağı</a>
+          <a href="#program">Program</a>
+          <a href="#sss">SSS</a>
           <a href="#iletisim">İletişim</a>
         </nav>
 
         <div class="cta">
-          <a class="btn" href="#icerik">Programı İncele</a>
+          <a class="btn" href="#program"><span class="dot"></span>Programı İncele</a>
           <a class="btn primary" href="#iletisim">Görüşme Talebi</a>
         </div>
       </div>
@@ -335,25 +567,47 @@
   </div>
 
   <!-- HERO -->
-  <header class="hero">
+  <header id="top">
     <div class="wrap">
-      <div class="hero-grid">
-        <div class="hero-card">
-          <div class="hero-media">
-            <!-- Hero görseli (Türkçe yazılı): assets/hero-tr.webp -->
-            <img src="assets/hero-tr.webp" alt="Sahada İşe Yarayan Finans">
-            <div class="hero-copy">
-              <span class="kicker">Saha Deneyimi • Uygulama • CFO Perspektifi</span>
-              <div class="h1">Finans Uzmanı Akademisi</div>
-              <div class="sub">
-                Gerçek şirket senaryoları üzerinden, nakit akışı ve finansal karar alma refleksini güçlendiren
-                uygulamalı bir öğrenme hattı. Hedef: “işe yarayan” finans.
-              </div>
-              <div class="hero-actions">
-                <a class="btn primary" href="#icerik">Programı İncele</a>
-                <a class="btn" href="#akademi">Akademi Nedir?</a>
-              </div>
+      <div class="hero">
+        <div class="heroCard">
+          <div class="heroMedia" aria-hidden="true">
+            <!-- Seçtiğim premium görsel (uzaktan çağrılır). -->
+            <img
+              src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=2200&q=80"
+              alt=""
+              loading="eager"
+              referrerpolicy="no-referrer"
+            />
+          </div>
+
+          <div class="heroCopy">
+            <span class="kicker">
+              <b>Sahada İşe Yarayan Finans</b> • CFO Perspektifi • Uygulanabilir Çözümler
+            </span>
+
+            <h1>Finans Uzmanı Akademisi</h1>
+
+            <div class="sub">
+              Bu sayfa eğitim odağını korur; ancak yaklaşımı “iş üstünde” finans refleksi kazandırır.
+              Katılımcılar, gerçek şirket senaryoları üzerinden nakit akışı, raporlama ve karar alma disiplinini öğrenir.
+              Kurumsal dil, net şablonlar ve ölçülebilir göstergelerle ilerler.
             </div>
+
+            <div class="heroActions">
+              <a class="btn primary" href="#program">Program Akışını Gör</a>
+              <a class="btn" href="#akademi">Akademi Nedir?</a>
+            </div>
+
+            <div class="mobileCta">
+              <a class="btn primary" href="#iletisim">Görüşme Talebi</a>
+              <a class="btn" href="#program">Program</a>
+            </div>
+          </div>
+
+          <div class="heroOverlayTitle" aria-hidden="true">
+            <div class="t">“Finans”ı Öğrenmek Değil, Uygulamak</div>
+            <div class="s">Türkçe içerik • Premium sunum • Sahaya yakın yöntem</div>
           </div>
         </div>
 
@@ -361,30 +615,30 @@
           <div class="panel" id="akademi">
             <h3>Akademi Nedir?</h3>
             <p>
-              Bu platform, teoriyi anlatıp geçmez. Katılımcılar; finansal teşhis, nakit akışı okuma,
-              finansman senaryoları ve raporlama disiplinini sahaya yakın şekilde öğrenir.
+              Teorik anlatımın ötesinde; karar aldıran rapor dili, nakit akış mantığı ve finansman senaryolarını
+              uygulanabilir çerçevelerle öğreten bir öğrenme hattıdır.
             </p>
 
             <div class="mini">
               <div class="item">
-                <span class="dot"></span>
+                <span class="bullet"></span>
                 <div>
-                  <b>Pratik Çerçeve</b>
-                  <span>Kısa, net, uygulanabilir yöntemler</span>
+                  <b>Net Şablonlar</b>
+                  <span>Rapor, dashboard ve takip ritmi</span>
                 </div>
               </div>
               <div class="item">
-                <span class="dot"></span>
+                <span class="bullet"></span>
                 <div>
-                  <b>Senaryo Bazlı Öğrenme</b>
+                  <b>Senaryo Bazlı İlerleme</b>
                   <span>Gerçek dünyaya benzer vaka akışı</span>
                 </div>
               </div>
               <div class="item">
-                <span class="dot"></span>
+                <span class="bullet"></span>
                 <div>
-                  <b>Disiplin ve Raporlama</b>
-                  <span>Rutin, gösterge ve karar dili</span>
+                  <b>Yönetim Dili</b>
+                  <span>Kısa, ölçülebilir, karar odaklı</span>
                 </div>
               </div>
             </div>
@@ -393,10 +647,19 @@
           <div class="panel">
             <h3>Kimler İçin?</h3>
             <p>
-              Yeni mezunlar, kariyerini finans tarafına almak isteyenler ve şirket içinde finansı daha iyi
-              okumak isteyen yöneticiler.
+              Yeni mezunlar, kariyerini finans tarafına taşımak isteyenler ve şirket içinde finansı daha iyi
+              okumak isteyen yönetici/profesyoneller.
             </p>
-            <span class="badge">Odak: KOBİ’den kurumsala geçiş refleksi</span>
+            <div class="pillRow" aria-label="Etiketler">
+              <span class="pill">KOBİ Finans</span>
+              <span class="pill">Kurumsal Raporlama</span>
+              <span class="pill">Nakit Akışı</span>
+              <span class="pill">Finansman</span>
+            </div>
+
+            <div class="fine">
+              Not: Akademi dili “eğitim”dir; içerik disiplini ise sahadan beslenen pratik bir yaklaşıma dayanır.
+            </div>
           </div>
         </aside>
       </div>
@@ -406,111 +669,268 @@
   <!-- WHY DIFFERENT -->
   <section id="fark">
     <div class="wrap">
-      <div class="section-title">
+      <div class="sectionTitle">
         <div>
           <h2>Neden Farklı?</h2>
-          <p>Görünürde eğitim, özünde sahada çalışan bir finans aklı. Sadelik değil; “premium netlik”.</p>
+          <p>
+            Sade ama boş değil; premium ve net. Görsel sunum, gerçek dünyadaki finans masası hissini verir.
+            Metin tonu eğitim odaklıdır; ama altyapı “saha refleksi” üretir.
+          </p>
         </div>
       </div>
 
       <div class="grid3">
         <article class="card">
           <div class="media">
-            <img src="assets/card-1-tr.webp" alt="Gerçek Şirket Senaryoları">
+            <img
+              src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=2000&q=80"
+              alt="Finans toplantısı görseli"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            />
+            <div class="tagOnImage">
+              <div class="t">Gerçek Şirket Senaryoları</div>
+              <div class="s">Nakit akışı • Kârlılık • Bütçe • Finansman</div>
+            </div>
           </div>
           <div class="content">
-            <h4>Gerçek Şirket Senaryoları</h4>
-            <p>Nakit akışı, finansman, kârlılık ve bütçe disiplinini vaka akışıyla öğrenme.</p>
+            <h4>Senaryoyu Okuma ve Çözüm Üretme</h4>
+            <p>
+              Katılımcı, veri karmaşasını sadeleştirip finansal fotoğrafı çekmeyi öğrenir.
+              Hedef; hızlı teşhis, net takip ve doğru aksiyon.
+            </p>
           </div>
         </article>
 
         <article class="card">
           <div class="media">
-            <img src="assets/card-2-tr.webp" alt="CFO Bakış Açısı">
+            <img
+              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2000&q=80"
+              alt="Kurumsal ekip çalışması görseli"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            />
+            <div class="tagOnImage">
+              <div class="t">CFO Bakış Açısı</div>
+              <div class="s">Karar dili • Risk • Kontrol • Rapor</div>
+            </div>
           </div>
           <div class="content">
-            <h4>CFO Bakış Açısı</h4>
-            <p>Karar alma dili, risk okuma, raporlama ritmi ve kontrol mekanizması.</p>
+            <h4>Karar Alınan Dili Öğrenme</h4>
+            <p>
+              Raporlamanın amacı “göstermek” değil “karar aldırmak”tır.
+              Bu yaklaşım, içerik omurgasının merkezindedir.
+            </p>
           </div>
         </article>
 
         <article class="card">
           <div class="media">
-            <img src="assets/card-3-tr.webp" alt="KOBİ’den Kurumsala">
+            <img
+              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=2000&q=80"
+              alt="Finansal analiz görseli"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            />
+            <div class="tagOnImage">
+              <div class="t">KOBİ’den Kurumsala</div>
+              <div class="s">Sistem kurma • KPI • Disiplin • Süreç</div>
+            </div>
           </div>
           <div class="content">
-            <h4>KOBİ’den Kurumsala</h4>
-            <p>Dağınık finansı sisteme oturtma; göstergelerle yönetim refleksi kazanma.</p>
+            <h4>Dağınık Finansı Sisteme Oturtma</h4>
+            <p>
+              Finans yönetimi; rutin, gösterge ve süreç işidir.
+              Akademi yaklaşımı, bu omurgayı adım adım kurdurur.
+            </p>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- PROGRAM -->
-  <section id="icerik">
+  <!-- PROGRAM STRIP -->
+  <section id="program">
     <div class="wrap">
-      <div class="section-title">
+      <div class="sectionTitle">
         <div>
           <h2>Program Akışı</h2>
-          <p>Amacımız akademik yoğunluk değil; iş hayatında hızlı karşılık veren bir finans omurgası kurmak.</p>
+          <p>
+            Akademik yoğunluk yerine; iş hayatında hızlı karşılık veren bir finans omurgası.
+            Kısa, net ve uygulanabilir ilerleme.
+          </p>
         </div>
       </div>
 
       <div class="strip">
-        <div class="media">
-          <img src="assets/section-tr.webp" alt="Bu Bilgi Nereden Geliyor?">
-        </div>
-        <div class="body">
-          <div>
-            <h3 style="margin:0 0 10px; font-size:16px;">Öğrenme Hattı</h3>
-            <ul class="list">
-              <li>Finansal teşhis: işletmenin fotoğrafını çekme</li>
-              <li>Nakit akışı: giriş-çıkış, darboğaz ve senaryo</li>
-              <li>Finansman dili: yapılandırma, maliyet, vade</li>
-              <li>Raporlama: yönetim için net ve kısa rapor formatı</li>
-              <li>Göstergeler: karar aldıran KPI seti</li>
-            </ul>
+        <div class="stripTop" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=2200&q=80"
+            alt=""
+            loading="lazy"
+            referrerpolicy="no-referrer"
+          />
+          <div class="stripOverlay">
+            <div class="stripOverlayBox">
+              <div class="t">Bu Bilgi Nereden Geliyor?</div>
+              <div class="s">
+                İçerik; sahada uygulanan finansal teşhis, nakit akışı ve raporlama disiplininden beslenir.
+                Eğitim dili ön plandadır; pratik yaklaşım doğal olarak hissedilir.
+              </div>
+            </div>
           </div>
-          <div class="note" id="kaynak">
-            <b style="color:var(--text);">Bu Bilgi Nereden Geliyor?</b><br><br>
-            İçerikler; yıllar içinde farklı sektörlerde yürütülen finansal teşhis, nakit akışı yönetimi,
-            finansman senaryoları ve yönetim kararları süreçlerinde edinilen saha deneyimlerinden beslenir.<br><br>
-            <span style="color:rgba(234,240,255,.92);">Akademi, aktif pratikten beslenen bir içerik disiplinine sahiptir.</span>
+        </div>
+
+        <div class="stripBody">
+          <div>
+            <h3 style="margin:0 0 10px; font-size:16px; letter-spacing:-.2px;">Öğrenme Hattı</h3>
+            <ul class="list">
+              <li><b style="color:rgba(234,240,255,.92)">Finansal Teşhis:</b> İşletmenin fotoğrafını çekme, problem haritası</li>
+              <li><b style="color:rgba(234,240,255,.92)">Nakit Akışı:</b> Giriş-çıkış, darboğaz, senaryo ve önlem seti</li>
+              <li><b style="color:rgba(234,240,255,.92)">Finansman Dili:</b> Maliyet, vade, yapılandırma ve opsiyon analizi</li>
+              <li><b style="color:rgba(234,240,255,.92)">Raporlama:</b> Yönetim için net, kısa ve karar odaklı rapor formatı</li>
+              <li><b style="color:rgba(234,240,255,.92)">KPI Seti:</b> Ölçülebilir göstergeler ve takip ritmi</li>
+            </ul>
+
+            <div class="pillRow" style="margin-top:14px">
+              <span class="pill">Türkçe içerik</span>
+              <span class="pill">Premium sunum</span>
+              <span class="pill">Uygulanabilir şablonlar</span>
+              <span class="pill">Karar odaklı rapor</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <b>İnce Ayar (İş Getiren Ama Belli Etmeyen Çizgi)</b><br><br>
+            Akademi, “danışmanlık” satmak için değil; finans refleksi kazandırmak için kurgulanır.
+            Ancak içerikteki disiplin; gerçek hayatta kullanılan yaklaşım, şablon ve yönetim diliyle uyumludur.<br><br>
+            <span style="color:rgba(234,240,255,.92)">
+              Bu yaklaşım, doğru profil için doğal bir güven üretir.
+            </span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer id="iletisim">
+  <!-- SSS -->
+  <section id="sss">
     <div class="wrap">
-      <div class="foot">
+      <div class="sectionTitle">
         <div>
-          <div class="brand" style="padding:0; margin-bottom:10px;">
-            <img src="assets/logo.png" alt="Usta Finans Logo">
-            <div>
-              <div class="t1">Usta Finans ve Yönetim Danışmanlığı A.Ş.</div>
-              <div class="t2">Finans Uzmanı Akademisi</div>
-            </div>
+          <h2>Sık Sorulan Sorular</h2>
+          <p>Sayfanın eğitim odağı korunur; profesyonel görünüm ve güven veren anlatım ise güçlü şekilde önde durur.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Eğitim içeriği çok teknik mi?</summary>
+          <p>
+            Hayır. Teknik konular “uygulanabilir çerçeve” ile verilir. Amaç; kavram ezberi değil,
+            işin içinde karşılaşılan problemi çözebilmektir.
+          </p>
+        </details>
+
+        <details>
+          <summary>Programın çıktısı ne olur?</summary>
+          <p>
+            Katılımcı; nakit akışı okuma, finansal teşhis ve raporlama dilinde ilerler.
+            KPI seti ve takip ritmini kurmayı öğrenir.
+          </p>
+        </details>
+
+        <details>
+          <summary>Kurumsal görünüm neden bu kadar önemli?</summary>
+          <p>
+            Çünkü hedef kitle; güven ve ciddiyet arar. Bu sayfada tasarım dili,
+            “finans masası” hissini ilk saniyede vermek için kurgulanmıştır.
+          </p>
+        </details>
+
+        <details>
+          <summary>İş getirmesi nasıl olacak (çok belirgin olmasın)?</summary>
+          <p>
+            Bu sayfada doğrudan “danışmanlık satışı” yok. Ancak içerik tonu, şablonlar ve anlatım disiplini,
+            doğru profilde doğal güven üretir. Bu, iş getiren ama rahatsız etmeyen çizgidir.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="iletisim">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h2>İletişim</h2>
+          <p>
+            Kısa bir not bırak. İstersen “Akademi” odağında konuşuruz, istersen sadece yol haritası sorarsın.
+            Her iki senaryoda da sayfa tonu kurumsal ve net kalır.
+          </p>
+        </div>
+      </div>
+
+      <div class="contactGrid">
+        <div class="contactBox">
+          <h3 style="margin:0; font-size:16px; letter-spacing:-.2px;">Görüşme Talebi</h3>
+          <p style="margin:8px 0 0; color:var(--muted); font-size:13px; line-height:1.75;">
+            Form “gönder” butonu e-posta göndermez; sadece tasarım amaçlıdır. İstersen WhatsApp / e-posta ile ilerleyebiliriz.
+          </p>
+
+          <div class="fieldRow">
+            <input type="text" placeholder="Ad Soyad" aria-label="Ad Soyad">
+            <input type="text" placeholder="Telefon / E-posta" aria-label="Telefon veya E-posta">
           </div>
-          <small>
-            Bu sayfa eğitim odağını korurken, içerik yaklaşımı sahada uygulanan finans aklını temsil eder.
-            www.ustafinans.net
-          </small>
-          <span class="badge">Premium • Sade • Kurumsal</span>
+          <div style="margin-top:10px">
+            <textarea placeholder="Kısaca: Program mı, genel yol haritası mı? Hangi sektörde çalışıyorsunuz?" aria-label="Mesaj"></textarea>
+          </div>
+
+          <div class="formActions">
+            <a class="btn primary" href="mailto:bulentusta@ustafinans.net?subject=Finans%20Uzman%C4%B1%20Akademisi%20-%20G%C3%B6r%C3%BC%C5%9Fme%20Talebi">
+              E-posta ile Gönder
+            </a>
+            <a class="btn" href="tel:+905334234855">Telefonla Ara</a>
+          </div>
         </div>
 
-        <div class="contact">
-          <div><b style="color:var(--text)">İletişim</b></div>
-          <div>Telefon: <a href="tel:+905334234855">0 533 423 48 55</a></div>
-          <div>E-posta: <a href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a></div>
-          <div>Hizmet Bölgeleri: Bodrum • Ankara • İstanbul • İzmir • Muğla • Antalya • Aydın</div>
-          <div style="margin-top:10px; color:var(--muted); font-size:12px;">
-            © <span id="y"></span> Usta Finans ve Yönetim Danışmanlığı A.Ş. Tüm hakları saklıdır.
+        <div class="metaBox">
+          <h3 style="margin:0; font-size:16px; letter-spacing:-.2px;">Kurumsal Bilgiler</h3>
+
+          <div class="kv" style="margin-top:12px">
+            <b>Unvan</b><div>Usta Finans ve Yönetim Danışmanlığı A.Ş.</div>
+            <b>Web</b><div>www.ustafinans.net</div>
+            <b>Telefon</b><div><a href="tel:+905334234855">0 533 423 48 55</a></div>
+            <b>E-posta</b><div><a href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a></div>
+            <b>Bölgeler</b><div>Bodrum • Ankara • İstanbul • İzmir • Muğla • Antalya • Aydın</div>
+          </div>
+
+          <div class="badgeRow">
+            <span class="badge"><span class="miniDot"></span>Premium Sunum</span>
+            <span class="badge"><span class="miniDot"></span>Türkçe İçerik</span>
+            <span class="badge"><span class="miniDot"></span>Sahaya Yakın Yaklaşım</span>
+            <span class="badge"><span class="miniDot"></span>Karar Odaklı Raporlama</span>
+          </div>
+
+          <div class="fine">
+            İstersen buraya daha sonra “Program modülleri”, “kısa referans yaklaşımı” veya “mini vaka örneği”
+            ekleyebiliriz; ama ana sayfa algısını bozmadan.
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div class="small">
+          © <span id="y"></span> Usta Finans ve Yönetim Danışmanlığı A.Ş. — Finans Uzmanı Akademisi.
+          <br>
+          Bu sayfa eğitim odağını korurken, içerik disiplini sahada kullanılan pratik finans yaklaşımına dayanır.
+        </div>
+        <a class="toTop" href="#top">Yukarı Çık</a>
       </div>
     </div>
   </footer>
