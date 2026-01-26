@@ -16,20 +16,32 @@
       --text:#0b1220;
       --muted:#4b5565;
       --muted2:#6b7280;
+
       --card:#ffffff;
       --line: rgba(11,18,32,.12);
+
       --shadow: 0 18px 45px rgba(11,18,32,.10);
       --shadow2: 0 10px 28px rgba(11,18,32,.08);
+
       --radius: 18px;
       --radius2: 24px;
       --max: 1120px;
 
       --brand:#1b5cff;      /* premium blue */
-      --brand2:#16a34a;     /* subtle green accent */
-      --brand3:#9333ea;     /* subtle purple */
+      --brand2:#16a34a;     /* green accent */
+      --brand3:#9333ea;     /* purple accent */
+
       --softBlue: rgba(27,92,255,.10);
       --softGreen: rgba(22,163,74,.10);
       --softPurple: rgba(147,51,234,.10);
+
+      /* Typography scale (requested hierarchy) */
+      --h1: 56px;          /* TOP BIGGEST */
+      --h2: 36px;          /* section title */
+      --h3: 22px;          /* card title */
+      --lead: 18px;        /* hero subtitle / section lead */
+      --body: 16px;        /* body text */
+      --small: 14px;
     }
 
     * { box-sizing: border-box; }
@@ -56,7 +68,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255,255,255,.70);
+      background: rgba(255,255,255,.75);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
@@ -80,13 +92,14 @@
       border: 1px solid rgba(27,92,255,.18);
       display:grid; place-items:center;
       box-shadow: var(--shadow2);
-      font-weight: 900;
+      font-weight: 950;
       letter-spacing: .5px;
       color: #0b1220;
+      flex:none;
     }
     .brand .t1{
       font-size: 14px;
-      font-weight: 900;
+      font-weight: 950;
       letter-spacing: .2px;
       line-height: 1.15;
     }
@@ -94,7 +107,7 @@
       margin-top: 4px;
       font-size: 12.5px;
       color: var(--muted2);
-      font-weight: 650;
+      font-weight: 700;
     }
 
     .menu{
@@ -111,7 +124,7 @@
       color: var(--muted);
       border: 1px solid transparent;
       transition: .18s ease;
-      font-weight: 650;
+      font-weight: 750;
     }
     .menu a:hover{
       background: rgba(27,92,255,.06);
@@ -131,13 +144,14 @@
       padding: 11px 14px;
       border-radius: 16px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.85);
+      background: rgba(255,255,255,.9);
       box-shadow: var(--shadow2);
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 900;
       color: #0b1220;
       transition: .18s ease;
       white-space: nowrap;
+      cursor: pointer;
     }
     .btn:hover{ transform: translateY(-1px); }
     .btn.primary{
@@ -148,15 +162,14 @@
       width:10px; height:10px; border-radius:999px;
       background: var(--brand);
       box-shadow: 0 0 0 6px rgba(27,92,255,.14);
+      flex:none;
     }
 
     /* =========================
        SECTION BASE
        ========================= */
-    section{ padding: 58px 0; }
-    .section-head{
-      margin-bottom: 18px;
-    }
+    section{ padding: 62px 0; }
+    .section-head{ margin-bottom: 18px; }
     .eyebrow{
       display:inline-flex;
       align-items:center;
@@ -167,22 +180,22 @@
       border: 1px solid rgba(27,92,255,.18);
       color: var(--muted);
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 900;
     }
     .h2{
       margin: 14px 0 10px;
-      font-size: 34px;          /* bigger per request */
+      font-size: var(--h2);
       line-height: 1.08;
-      letter-spacing: -0.8px;
-      font-weight: 950;
+      letter-spacing: -0.9px;
+      font-weight: 980;
     }
     .lead{
       margin:0;
       color: var(--muted);
-      font-size: 18px;          /* bigger per request */
+      font-size: var(--lead);
       line-height: 1.75;
-      max-width: 860px;
-      font-weight: 550;
+      max-width: 880px;
+      font-weight: 620;
     }
 
     .card{
@@ -194,41 +207,32 @@
     }
 
     /* =========================
-       HERO (STACKED)
+       HERO (SIDE-BY-SIDE TOP)
        ========================= */
-    .hero{
-      padding: 36px 0 10px;
+    .hero{ padding: 38px 0 10px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      align-items: stretch;
     }
-    .hero .card{
-      border-radius: 28px;
-    }
-    .hero-inner{
-      padding: 26px;
-    }
-    .hero-top{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
+    .hero-left, .hero-right{ padding: 22px; }
+    .hero-left{ border-right: 1px solid rgba(11,18,32,.08); }
     .hero-title{
       margin: 14px 0 10px;
-      font-size: 46px;     /* bigger */
+      font-size: var(--h1);
       line-height: 1.02;
-      letter-spacing: -1.2px;
-      font-weight: 980;
-      max-width: 880px;
+      letter-spacing: -1.4px;
+      font-weight: 990;
     }
     .hero-sub{
       margin: 0;
-      font-size: 19px;     /* bigger */
+      font-size: var(--lead);
       line-height: 1.75;
       color: var(--muted);
-      max-width: 920px;
-      font-weight: 560;
+      max-width: 860px;
+      font-weight: 620;
     }
-
     .hero-actions{
       margin-top: 18px;
       display:flex;
@@ -239,40 +243,32 @@
     .hero-kpis{
       margin-top: 18px;
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
       gap: 12px;
-    }
-    @media (max-width: 980px){
-      .cta{ display:none; } /* nav sadeleşsin */
-      .hero-kpis{ grid-template-columns: 1fr; }
-      .hero-title{ font-size: 40px; }
-      .h2{ font-size: 30px; }
     }
     .kpi{
       border-radius: 20px;
       border: 1px solid rgba(11,18,32,.10);
-      background: linear-gradient(180deg, rgba(27,92,255,.07), rgba(255,255,255,.85));
+      background: linear-gradient(180deg, rgba(27,92,255,.07), rgba(255,255,255,.92));
       padding: 14px 14px 12px;
       box-shadow: 0 10px 24px rgba(11,18,32,.06);
     }
     .kpi b{
       display:block;
       font-size: 14px;
-      font-weight: 950;
+      font-weight: 980;
       letter-spacing: .2px;
     }
     .kpi span{
       display:block;
       margin-top: 6px;
       color: var(--muted);
-      font-size: 14.5px;
-      line-height: 1.6;
-      font-weight: 560;
+      font-size: var(--body);
+      line-height: 1.65;
+      font-weight: 620;
     }
 
-    /* Inline SVG “hero image” area */
     .hero-visual{
-      margin-top: 18px;
       border-radius: 22px;
       border: 1px solid rgba(11,18,32,.10);
       overflow:hidden;
@@ -280,8 +276,15 @@
       box-shadow: 0 16px 34px rgba(11,18,32,.08);
     }
 
+    @media (max-width: 1020px){
+      :root{ --h1: 44px; --h2: 30px; --lead: 17px; --body: 16px; }
+      .cta{ display:none; }
+      .hero-grid{ grid-template-columns: 1fr; }
+      .hero-left{ border-right: none; border-bottom: 1px solid rgba(11,18,32,.08); }
+    }
+
     /* =========================
-       FEATURE GRID (STACKED SECTIONS)
+       FEATURE GRID
        ========================= */
     .grid3{
       margin-top: 18px;
@@ -289,12 +292,10 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
     }
-    @media (max-width: 980px){
+    @media (max-width: 1020px){
       .grid3{ grid-template-columns: 1fr; }
     }
-    .feature{
-      padding: 16px;
-    }
+    .feature{ padding: 16px; }
     .feature .ico{
       width: 52px; height: 52px;
       border-radius: 18px;
@@ -306,59 +307,57 @@
     }
     .feature h3{
       margin: 10px 0 8px;
-      font-size: 20px;       /* bigger */
-      font-weight: 950;
+      font-size: var(--h3);
+      font-weight: 980;
       letter-spacing: -0.3px;
     }
     .feature p{
       margin: 0;
       color: var(--muted);
-      font-size: 17px;       /* bigger */
-      line-height: 1.75;
-      font-weight: 560;
+      font-size: var(--body);
+      line-height: 1.8;
+      font-weight: 620;
     }
 
     /* =========================
-       PROGRAM STRIP (STACKED)
+       PROGRAM STRIP
        ========================= */
-    .strip{
-      padding: 18px;
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
+    .strip{ padding: 18px; display:grid; grid-template-columns: 1fr; gap: 14px; }
     .strip .cols{
       display:grid;
       grid-template-columns: 1.05fr .95fr;
       gap: 14px;
       align-items:start;
     }
-    @media (max-width: 980px){
+    @media (max-width: 1020px){
       .strip .cols{ grid-template-columns: 1fr; }
     }
     .box{
       border-radius: 22px;
       border: 1px solid rgba(11,18,32,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(27,92,255,.04));
+      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(27,92,255,.04));
       box-shadow: 0 14px 30px rgba(11,18,32,.06);
       padding: 16px;
     }
     .box h4{
       margin: 0 0 10px;
       font-size: 20px;
-      font-weight: 950;
+      font-weight: 980;
       letter-spacing: -0.2px;
     }
     .list{
       margin:0;
       padding-left: 18px;
       color: var(--muted);
-      font-size: 17px;       /* bigger */
-      line-height: 1.85;
-      font-weight: 560;
+      font-size: var(--body);
+      line-height: 1.9;
+      font-weight: 620;
     }
     .list li{ margin: 6px 0; }
 
+    /* =========================
+       SOURCE NOTE
+       ========================= */
     .note{
       border-radius: 22px;
       border: 1px solid rgba(27,92,255,.20);
@@ -369,50 +368,45 @@
     .note b{
       display:block;
       font-size: 18px;
-      font-weight: 950;
+      font-weight: 980;
       letter-spacing: -0.2px;
       margin-bottom: 8px;
     }
     .note p{
       margin:0;
       color: #1f2937;
-      font-size: 17px;
-      line-height: 1.8;
-      font-weight: 580;
+      font-size: var(--body);
+      line-height: 1.9;
+      font-weight: 640;
     }
     .note .small{
       margin-top: 10px;
       color: var(--muted);
-      font-size: 15.5px;
-      font-weight: 600;
+      font-size: var(--small);
+      font-weight: 700;
     }
 
     /* =========================
        AUDIENCE
        ========================= */
-    .aud{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
+    .aud{ display:grid; grid-template-columns: 1fr; gap: 14px; }
     .aud .row{
       display:grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 14px;
     }
-    @media (max-width: 980px){
+    @media (max-width: 1020px){
       .aud .row{ grid-template-columns: 1fr; }
     }
-
     .pill{
       border-radius: 999px;
       border: 1px solid rgba(11,18,32,.10);
-      background: rgba(255,255,255,.85);
+      background: rgba(255,255,255,.92);
       padding: 12px 14px;
       box-shadow: 0 10px 22px rgba(11,18,32,.05);
-      font-size: 17px;     /* bigger */
+      font-size: 16px;
       color: var(--muted);
-      font-weight: 700;
+      font-weight: 780;
       display:flex;
       gap:10px;
       align-items:center;
@@ -425,51 +419,162 @@
     }
 
     /* =========================
-       CONTACT / FOOTER
+       CONTACT + FORMS (TABS)
        ========================= */
     footer{
       padding: 34px 0 52px;
       border-top: 1px solid var(--line);
-      background: rgba(255,255,255,.70);
+      background: rgba(255,255,255,.72);
     }
     .foot{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1fr 1fr;
       gap: 14px;
       align-items:start;
     }
-    @media (max-width: 980px){
+    @media (max-width: 1020px){
       .foot{ grid-template-columns: 1fr; }
     }
-    .contact{
-      padding: 16px;
+
+    .contactCard{
+      padding: 18px;
       border-radius: 24px;
       border: 1px solid rgba(11,18,32,.10);
       background: #fff;
       box-shadow: var(--shadow);
     }
-    .contact h3{
+    .contactCard h3{
       margin:0 0 10px;
       font-size: 22px;
-      font-weight: 980;
+      font-weight: 990;
       letter-spacing: -0.3px;
     }
-    .contact .line{
-      font-size: 18px;
-      line-height: 1.85;
+    .line{
+      font-size: 16px;
+      line-height: 1.9;
       color: var(--muted);
-      font-weight: 600;
+      font-weight: 650;
     }
-    .contact .line a{
+    .line a{
       color: #0b1220;
-      font-weight: 900;
+      font-weight: 950;
       border-bottom: 1px dashed rgba(11,18,32,.25);
     }
     .legal{
       color: var(--muted2);
       font-size: 14px;
+      font-weight: 700;
+      line-height: 1.9;
+      margin: 10px 0 0;
+    }
+
+    .formCard{
+      padding: 18px;
+      border-radius: 24px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .tabs{
+      display:flex;
+      gap:10px;
+      padding: 8px;
+      border-radius: 18px;
+      background: rgba(11,18,32,.04);
+      border: 1px solid rgba(11,18,32,.08);
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .tab{
+      border: 1px solid transparent;
+      background: transparent;
+      padding: 10px 12px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 950;
+      color: var(--muted);
+      cursor: pointer;
+      transition: .16s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+    .tab .tdot{
+      width:10px; height:10px; border-radius:999px;
+      background: rgba(11,18,32,.18);
+      box-shadow: 0 0 0 6px rgba(11,18,32,.08);
+    }
+    .tab.active{
+      background: linear-gradient(135deg, rgba(27,92,255,.10), rgba(147,51,234,.08));
+      border-color: rgba(27,92,255,.18);
+      color: #0b1220;
+    }
+    .tab.active .tdot{
+      background: var(--brand);
+      box-shadow: 0 0 0 6px rgba(27,92,255,.14);
+    }
+
+    .formHead{
+      margin: 8px 0 12px;
+    }
+    .formHead b{
+      display:block;
+      font-size: 18px;
+      font-weight: 990;
+      letter-spacing: -0.2px;
+    }
+    .formHead span{
+      display:block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
       font-weight: 650;
-      line-height: 1.8;
+    }
+
+    form{ display:grid; gap: 10px; margin-top: 10px; }
+    .row2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 720px){
+      .row2{ grid-template-columns: 1fr; }
+    }
+
+    label{
+      font-size: 13px;
+      color: var(--muted2);
+      font-weight: 850;
+      display:block;
+      margin-bottom: 6px;
+    }
+    input, select, textarea{
+      width:100%;
+      border-radius: 16px;
+      border: 1px solid rgba(11,18,32,.14);
+      background: rgba(255,255,255,.95);
+      padding: 12px 12px;
+      font-size: 15px;
+      font-weight: 650;
+      color: #0b1220;
+      outline: none;
+      box-shadow: 0 10px 22px rgba(11,18,32,.04);
+    }
+    textarea{ min-height: 110px; resize: vertical; }
+
+    .formActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top: 6px;
+    }
+    .hint{
+      font-size: 13px;
+      color: var(--muted2);
+      font-weight: 700;
+      line-height: 1.6;
     }
 
     /* =========================
@@ -488,7 +593,6 @@
     <div class="wrap">
       <div class="nav-inner">
         <div class="brand">
-          <!-- Dosya istemeyen “logo/mark” -->
           <div class="mark" aria-label="UF">UF</div>
           <div>
             <div class="t1">Usta Finans ve Yönetim Danışmanlığı A.Ş.</div>
@@ -502,7 +606,7 @@
           <a href="#program">Program</a>
           <a href="#kaynak">Kaynağı</a>
           <a href="#kime">Kime Uygun?</a>
-          <a href="#iletisim">İletişim</a>
+          <a href="#iletisim">Görüşme Talebi</a>
         </nav>
 
         <div class="cta">
@@ -513,116 +617,127 @@
     </div>
   </div>
 
-  <!-- HERO (STACKED) -->
+  <!-- HERO (SIDE-BY-SIDE) -->
   <header class="hero" id="akademi">
     <div class="wrap">
       <div class="card">
-        <div class="hero-inner">
-          <div class="hero-top">
-            <div>
-              <span class="eyebrow">Saha Deneyimi • CFO Perspektifi • Uygulanabilir Finans</span>
-              <h1 class="hero-title">Sahada İşe Yarayan Finans Uzmanlığı</h1>
-              <p class="hero-sub">
-                Finans Uzmanı Akademisi; teoriyi anlatıp geçen bir eğitim platformu değildir.
-                Katılımcılar, gerçek şirket senaryoları üzerinden <b>nakit akışı okuma</b>, <b>finansal teşhis</b>,
-                <b>finansman senaryoları</b> ve <b>raporlama disiplini</b> geliştirir.
-              </p>
+        <div class="hero-grid">
+          <!-- LEFT: COPY -->
+          <div class="hero-left">
+            <span class="eyebrow">Saha Deneyimi • CFO Perspektifi • Uygulanabilir Finans</span>
+            <h1 class="hero-title">Sahada İşe Yarayan Finans Uzmanlığı</h1>
+            <p class="hero-sub">
+              Finans Uzmanı Akademisi; teoriyi anlatıp geçen bir eğitim platformu değildir.
+              Katılımcılar, gerçek şirket senaryoları üzerinden <b>nakit akışı okuma</b>, <b>finansal teşhis</b>,
+              <b>finansman senaryoları</b> ve <b>raporlama disiplini</b> geliştirir.
+            </p>
 
-              <div class="hero-actions">
-                <a class="btn primary" href="#program"><span class="dot"></span>Program Akışı</a>
-                <a class="btn" href="#iletisim">İletişime Geç</a>
+            <div class="hero-actions">
+              <a class="btn primary" href="#program"><span class="dot"></span>Program Akışı</a>
+              <a class="btn" href="#iletisim">Görüşme Talebi</a>
+            </div>
+
+            <div class="hero-kpis">
+              <div class="kpi lift">
+                <b>Gerçek Şirket Senaryoları</b>
+                <span>Nakit akışı, kârlılık, bütçe ve finansman kararlarını vaka akışıyla öğrenme.</span>
+              </div>
+              <div class="kpi lift" style="background: linear-gradient(180deg, rgba(22,163,74,.07), rgba(255,255,255,.92));">
+                <b>CFO Perspektifi</b>
+                <span>Risk, kontrol, raporlama ritmi ve “karar aldıran” gösterge seti.</span>
+              </div>
+              <div class="kpi lift" style="background: linear-gradient(180deg, rgba(147,51,234,.06), rgba(255,255,255,.92));">
+                <b>KOBİ’den Kurumsala</b>
+                <span>Dağınık finansı sistemleştirme ve yönetim refleksi kazandırma odağı.</span>
               </div>
             </div>
           </div>
 
-          <!-- “Görsel” harici dosya değil: Inline SVG -->
-          <div class="hero-visual" role="img" aria-label="Türkçe görsel banner">
-            <svg viewBox="0 0 1400 420" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="rgba(27,92,255,.22)"/>
-                  <stop offset="0.55" stop-color="rgba(147,51,234,.14)"/>
-                  <stop offset="1" stop-color="rgba(22,163,74,.10)"/>
-                </linearGradient>
-                <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="0" stop-color="#ffffff"/>
-                  <stop offset="1" stop-color="#f3f6ff"/>
-                </linearGradient>
-                <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="rgba(11,18,32,.14)"/>
-                </filter>
-              </defs>
+          <!-- RIGHT: INLINE VISUAL (NO FILES) -->
+          <div class="hero-right">
+            <div class="hero-visual" role="img" aria-label="Türkçe görsel banner">
+              <svg viewBox="0 0 1200 720" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="rgba(27,92,255,.22)"/>
+                    <stop offset="0.55" stop-color="rgba(147,51,234,.14)"/>
+                    <stop offset="1" stop-color="rgba(22,163,74,.10)"/>
+                  </linearGradient>
+                  <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+                    <stop offset="0" stop-color="#ffffff"/>
+                    <stop offset="1" stop-color="#f3f6ff"/>
+                  </linearGradient>
+                  <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="rgba(11,18,32,.14)"/>
+                  </filter>
+                </defs>
 
-              <rect x="0" y="0" width="1400" height="420" fill="url(#g2)"/>
-              <circle cx="230" cy="70" r="180" fill="url(#g1)"/>
-              <circle cx="1210" cy="90" r="210" fill="url(#g1)"/>
-              <circle cx="1160" cy="360" r="220" fill="url(#g1)"/>
+                <rect x="0" y="0" width="1200" height="720" fill="url(#g2)"/>
+                <circle cx="210" cy="120" r="210" fill="url(#g1)"/>
+                <circle cx="1040" cy="140" r="250" fill="url(#g1)"/>
+                <circle cx="1020" cy="640" r="260" fill="url(#g1)"/>
 
-              <!-- Dashboard panels -->
-              <g filter="url(#s)">
-                <rect x="80" y="130" width="620" height="230" rx="26" fill="#ffffff" stroke="rgba(11,18,32,.12)"/>
-                <rect x="730" y="130" width="590" height="230" rx="26" fill="#ffffff" stroke="rgba(11,18,32,.12)"/>
-              </g>
-
-              <!-- Left chart -->
-              <g>
-                <text x="120" y="175" font-size="26" font-weight="900" fill="#0b1220">Nakit Akışı Disiplini</text>
-                <text x="120" y="205" font-size="16" font-weight="650" fill="#4b5565">Giriş–çıkış ritmi • Senaryo • Darboğaz analizi</text>
-
-                <rect x="120" y="235" width="520" height="14" rx="7" fill="rgba(27,92,255,.12)"/>
-                <rect x="120" y="235" width="380" height="14" rx="7" fill="rgba(27,92,255,.70)"/>
-
-                <rect x="120" y="265" width="520" height="14" rx="7" fill="rgba(22,163,74,.12)"/>
-                <rect x="120" y="265" width="300" height="14" rx="7" fill="rgba(22,163,74,.65)"/>
-
-                <rect x="120" y="295" width="520" height="14" rx="7" fill="rgba(147,51,234,.12)"/>
-                <rect x="120" y="295" width="430" height="14" rx="7" fill="rgba(147,51,234,.55)"/>
-
-                <text x="120" y="340" font-size="15" font-weight="700" fill="#6b7280">Hedef: finansı yönetilebilir hale getiren refleks</text>
-              </g>
-
-              <!-- Right blocks -->
-              <g>
-                <text x="770" y="175" font-size="26" font-weight="900" fill="#0b1220">CFO Bakış Açısı</text>
-                <text x="770" y="205" font-size="16" font-weight="650" fill="#4b5565">Karar dili • Risk • Raporlama • Kontrol</text>
+                <text x="70" y="80" font-size="22" font-weight="900" fill="#0b1220">Finans Uzmanı Akademisi</text>
+                <text x="70" y="112" font-size="15" font-weight="700" fill="#6b7280">Usta Finans ve Yönetim Danışmanlığı A.Ş.</text>
 
                 <g filter="url(#s)">
-                  <rect x="770" y="235" width="250" height="105" rx="18" fill="rgba(27,92,255,.08)" stroke="rgba(27,92,255,.20)"/>
-                  <rect x="1040" y="235" width="250" height="105" rx="18" fill="rgba(22,163,74,.08)" stroke="rgba(22,163,74,.20)"/>
+                  <rect x="70" y="170" width="520" height="220" rx="26" fill="#ffffff" stroke="rgba(11,18,32,.12)"/>
+                  <rect x="610" y="170" width="520" height="220" rx="26" fill="#ffffff" stroke="rgba(11,18,32,.12)"/>
                 </g>
-                <text x="795" y="275" font-size="18" font-weight="900" fill="#0b1220">Gerçek Vaka Akışı</text>
-                <text x="795" y="305" font-size="14" font-weight="650" fill="#4b5565">Teori değil, uygulama</text>
 
-                <text x="1065" y="275" font-size="18" font-weight="900" fill="#0b1220">Net Rapor Formatı</text>
-                <text x="1065" y="305" font-size="14" font-weight="650" fill="#4b5565">Kısa, ölçülebilir, karar aldıran</text>
-              </g>
+                <!-- Left -->
+                <text x="110" y="215" font-size="22" font-weight="900" fill="#0b1220">Nakit Akışı Disiplini</text>
+                <text x="110" y="245" font-size="14" font-weight="700" fill="#4b5565">Giriş–çıkış ritmi • Senaryo • Darboğaz analizi</text>
 
-              <text x="80" y="70" font-size="18" font-weight="800" fill="#0b1220">Finans Uzmanı Akademisi</text>
-              <text x="80" y="96" font-size="14" font-weight="650" fill="#6b7280">Usta Finans ve Yönetim Danışmanlığı A.Ş.</text>
-            </svg>
+                <rect x="110" y="270" width="440" height="14" rx="7" fill="rgba(27,92,255,.12)"/>
+                <rect x="110" y="270" width="320" height="14" rx="7" fill="rgba(27,92,255,.70)"/>
+                <rect x="110" y="298" width="440" height="14" rx="7" fill="rgba(22,163,74,.12)"/>
+                <rect x="110" y="298" width="255" height="14" rx="7" fill="rgba(22,163,74,.65)"/>
+                <rect x="110" y="326" width="440" height="14" rx="7" fill="rgba(147,51,234,.12)"/>
+                <rect x="110" y="326" width="365" height="14" rx="7" fill="rgba(147,51,234,.55)"/>
+
+                <text x="110" y="370" font-size="13" font-weight="800" fill="#6b7280">Hedef: finansı yönetilebilir hale getiren refleks</text>
+
+                <!-- Right -->
+                <text x="650" y="215" font-size="22" font-weight="900" fill="#0b1220">CFO Bakış Açısı</text>
+                <text x="650" y="245" font-size="14" font-weight="700" fill="#4b5565">Karar dili • Risk • Raporlama • Kontrol</text>
+
+                <g filter="url(#s)">
+                  <rect x="650" y="270" width="220" height="110" rx="18" fill="rgba(27,92,255,.08)" stroke="rgba(27,92,255,.20)"/>
+                  <rect x="890" y="270" width="220" height="110" rx="18" fill="rgba(22,163,74,.08)" stroke="rgba(22,163,74,.20)"/>
+                </g>
+                <text x="670" y="310" font-size="16" font-weight="900" fill="#0b1220">Gerçek Vaka Akışı</text>
+                <text x="670" y="338" font-size="13" font-weight="700" fill="#4b5565">Teori değil, uygulama</text>
+
+                <text x="910" y="310" font-size="16" font-weight="900" fill="#0b1220">Net Rapor Formatı</text>
+                <text x="910" y="338" font-size="13" font-weight="700" fill="#4b5565">Kısa, ölçülebilir çıktı</text>
+
+                <!-- Bottom strip -->
+                <g filter="url(#s)">
+                  <rect x="70" y="420" width="1060" height="210" rx="26" fill="#ffffff" stroke="rgba(11,18,32,.12)"/>
+                </g>
+                <text x="110" y="470" font-size="22" font-weight="900" fill="#0b1220">Uygulanabilir Finans Omurgası</text>
+                <text x="110" y="502" font-size="14" font-weight="700" fill="#4b5565">
+                  Teşhis → Nakit Akışı → Finansman → Raporlama & KPI → Rutin
+                </text>
+
+                <g>
+                  <rect x="110" y="536" width="980" height="14" rx="7" fill="rgba(11,18,32,.06)"/>
+                  <rect x="110" y="536" width="720" height="14" rx="7" fill="rgba(27,92,255,.45)"/>
+                </g>
+
+                <text x="110" y="590" font-size="13" font-weight="800" fill="#6b7280">
+                  Eğitim odağı korunur; anlatım biçimi sahadaki gerçek ihtiyaçlara göre şekillenir.
+                </text>
+              </svg>
+            </div>
           </div>
-
-          <div class="hero-kpis">
-            <div class="kpi lift">
-              <b>Gerçek Şirket Senaryoları</b>
-              <span>Nakit akışı, kârlılık, bütçe ve finansman kararlarını vaka akışıyla öğrenme.</span>
-            </div>
-            <div class="kpi lift" style="background: linear-gradient(180deg, rgba(22,163,74,.07), rgba(255,255,255,.85));">
-              <b>CFO Perspektifi</b>
-              <span>Risk, kontrol, raporlama ritmi ve “karar aldıran” gösterge seti.</span>
-            </div>
-            <div class="kpi lift" style="background: linear-gradient(180deg, rgba(147,51,234,.06), rgba(255,255,255,.85));">
-              <b>KOBİ’den Kurumsala</b>
-              <span>Dağınık finansı sistemleştirme ve yönetim refleksi kazandırma odağı.</span>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
   </header>
 
-  <!-- WHY DIFFERENT (STACKED) -->
+  <!-- WHY DIFFERENT -->
   <section id="neden">
     <div class="wrap">
       <div class="section-head">
@@ -673,7 +788,7 @@
     </div>
   </section>
 
-  <!-- PROGRAM (STACKED) -->
+  <!-- PROGRAM -->
   <section id="program">
     <div class="wrap">
       <div class="section-head">
@@ -696,7 +811,7 @@
             </ul>
           </div>
 
-          <div class="box lift" style="background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(22,163,74,.04));">
+          <div class="box lift" style="background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(22,163,74,.04));">
             <h4>2) Nakit Akışı ve Senaryo</h4>
             <ul class="list">
               <li>Giriş–çıkış ritmi: vade, tahsilat, ödeme planı</li>
@@ -707,7 +822,7 @@
         </div>
 
         <div class="cols">
-          <div class="box lift" style="background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(147,51,234,.04));">
+          <div class="box lift" style="background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(147,51,234,.04));">
             <h4>3) Finansman Dili</h4>
             <ul class="list">
               <li>Maliyet, vade, teminat mantığı</li>
@@ -729,7 +844,7 @@
     </div>
   </section>
 
-  <!-- SOURCE (STACKED + subtle “iş getirir ama belli etmez”) -->
+  <!-- SOURCE -->
   <section id="kaynak">
     <div class="wrap">
       <div class="section-head">
@@ -745,17 +860,15 @@
         <b>Akademi, pratikten beslenen bir içerik disiplinine sahiptir.</b>
         <p>
           Eğitim dili; nakit akışı, finansal teşhis, finansman senaryoları ve raporlama standartları gibi
-          başlıklarda “uygulanabilir” çıktılar üretmeye odaklanır.
-          Böylece katılımcı, şirket ortamında hızlı şekilde değer üreten bir finans refleksi kazanır.
+          başlıklarda “uygulanabilir” çıktılar üretmeye odaklanır. Böylece katılımcı, şirket ortamında hızlı şekilde
+          değer üreten bir finans refleksi kazanır.
         </p>
-        <div class="small">
-          Not: Odak eğitimdir; anlatım biçimi sahadaki gerçek ihtiyaçlara göre şekillenir.
-        </div>
+        <div class="small">Not: Odak eğitimdir; anlatım biçimi sahadaki gerçek ihtiyaçlara göre şekillenir.</div>
       </div>
     </div>
   </section>
 
-  <!-- AUDIENCE (STACKED) -->
+  <!-- AUDIENCE -->
   <section id="kime">
     <div class="wrap">
       <div class="section-head">
@@ -782,39 +895,241 @@
     </div>
   </section>
 
-  <!-- FOOTER / CONTACT -->
+  <!-- FOOTER + FORMS (TABS) -->
   <footer id="iletisim">
     <div class="wrap">
       <div class="foot">
-        <div class="card" style="padding:18px; border-radius:24px;">
-          <div class="brand" style="min-width:auto;">
+
+        <!-- LEFT: COMPANY INFO -->
+        <div class="contactCard lift">
+          <div class="brand" style="min-width:auto; margin-bottom: 8px;">
             <div class="mark">UF</div>
             <div>
               <div class="t1" style="font-size:16px;">Usta Finans ve Yönetim Danışmanlığı A.Ş.</div>
               <div class="t2" style="font-size:13.5px;">Finans Uzmanı Akademisi • www.ustafinans.net</div>
             </div>
           </div>
-          <p class="legal" style="margin:12px 0 0;">
-            Bu sayfa eğitim odağını korur. İçerik yaklaşımı; sahada çalışan finans aklının net, ölçülebilir ve uygulanabilir standardını temsil eder.
-          </p>
-          <p class="legal" style="margin:10px 0 0;">
-            © <span id="y"></span> Usta Finans ve Yönetim Danışmanlığı A.Ş. Tüm hakları saklıdır.
-          </p>
-        </div>
 
-        <div class="contact lift">
-          <h3>İletişim</h3>
           <div class="line">Web: <a href="https://www.ustafinans.net" target="_blank" rel="noopener">www.ustafinans.net</a></div>
           <div class="line">Telefon: <a href="tel:+905334234855">0 533 423 48 55</a></div>
           <div class="line">E-posta: <a href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a></div>
           <div class="line">Hizmet Bölgeleri: Bodrum • Ankara • İstanbul • İzmir • Muğla • Antalya • Aydın</div>
+
+          <p class="legal">
+            Bu sayfa eğitim odağını korur. İçerik yaklaşımı; sahada çalışan finans aklının net, ölçülebilir ve uygulanabilir standardını temsil eder.
+          </p>
+          <p class="legal">© <span id="y"></span> Usta Finans ve Yönetim Danışmanlığı A.Ş. Tüm hakları saklıdır.</p>
+        </div>
+
+        <!-- RIGHT: REQUEST FORM (Students vs Companies) -->
+        <div class="formCard lift">
+          <div class="tabs" role="tablist" aria-label="Görüşme talebi türü">
+            <button class="tab active" id="tab-student" role="tab" aria-selected="true" aria-controls="panel-student" type="button">
+              <span class="tdot"></span> Öğrenciler İçin
+            </button>
+            <button class="tab" id="tab-company" role="tab" aria-selected="false" aria-controls="panel-company" type="button">
+              <span class="tdot"></span> Şirketler İçin
+            </button>
+          </div>
+
+          <!-- Student panel -->
+          <div id="panel-student" role="tabpanel" aria-labelledby="tab-student">
+            <div class="formHead">
+              <b>Öğrenci Ön Görüşme Formu</b>
+              <span>Kısa bilgilerle başlayalım. Size uygun öğrenme hattını netleştirelim.</span>
+            </div>
+
+            <form id="studentForm">
+              <div class="row2">
+                <div>
+                  <label>Ad Soyad</label>
+                  <input name="name" type="text" placeholder="Ad Soyad" required>
+                </div>
+                <div>
+                  <label>Telefon</label>
+                  <input name="phone" type="tel" placeholder="05xx xxx xx xx" required>
+                </div>
+              </div>
+
+              <div class="row2">
+                <div>
+                  <label>E-posta</label>
+                  <input name="email" type="email" placeholder="ornek@eposta.com" required>
+                </div>
+                <div>
+                  <label>Durum</label>
+                  <select name="status" required>
+                    <option value="" selected disabled>Seçiniz</option>
+                    <option>Üniversite öğrencisi</option>
+                    <option>Yeni mezun</option>
+                    <option>Kariyer değişikliği</option>
+                    <option>Çalışan (finans alanına geçiş)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label>Hedefiniz</label>
+                <textarea name="goal" placeholder="Örn: Nakit akışı ve raporlama disiplinini öğrenip KOBİ finans tarafında iş bulmak istiyorum." required></textarea>
+              </div>
+
+              <div class="formActions">
+                <button class="btn primary" type="submit"><span class="dot"></span>Talebi Gönder</button>
+                <span class="hint">Gönderim, bu sayfada e-posta göndermez. Mesajı kopyalayıp iletebilirsiniz.</span>
+              </div>
+
+              <div id="studentOut" class="hint" style="display:none;"></div>
+            </form>
+          </div>
+
+          <!-- Company panel -->
+          <div id="panel-company" role="tabpanel" aria-labelledby="tab-company" style="display:none;">
+            <div class="formHead">
+              <b>Şirket Ön Görüşme Formu</b>
+              <span>İhtiyacı doğru tanımlayalım. Mevcut durum, hedef ve öncelikleri netleştirelim.</span>
+            </div>
+
+            <form id="companyForm">
+              <div class="row2">
+                <div>
+                  <label>Şirket Ünvanı</label>
+                  <input name="company" type="text" placeholder="Şirket ünvanı" required>
+                </div>
+                <div>
+                  <label>Yetkili Kişi</label>
+                  <input name="person" type="text" placeholder="Ad Soyad" required>
+                </div>
+              </div>
+
+              <div class="row2">
+                <div>
+                  <label>Telefon</label>
+                  <input name="phone" type="tel" placeholder="05xx xxx xx xx" required>
+                </div>
+                <div>
+                  <label>E-posta</label>
+                  <input name="email" type="email" placeholder="ornek@firma.com" required>
+                </div>
+              </div>
+
+              <div class="row2">
+                <div>
+                  <label>Sektör</label>
+                  <input name="sector" type="text" placeholder="Örn: Üretim, Perakende, İnşaat, Hizmet" required>
+                </div>
+                <div>
+                  <label>Öncelik</label>
+                  <select name="priority" required>
+                    <option value="" selected disabled>Seçiniz</option>
+                    <option>Nakit akışı / finansman</option>
+                    <option>Raporlama / KPI</option>
+                    <option>Bütçe / kârlılık</option>
+                    <option>Yapılandırma / risk</option>
+                    <option>ERP / süreç</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label>Kısa Problem Tanımı</label>
+                <textarea name="need" placeholder="Örn: Tahsilat vadeleri uzadı, ödeme planı bozuluyor. Haftalık nakit akışı ve finansman senaryosu kurgulamak istiyoruz." required></textarea>
+              </div>
+
+              <div class="formActions">
+                <button class="btn primary" type="submit"><span class="dot"></span>Talebi Gönder</button>
+                <span class="hint">Gönderim, bu sayfada e-posta göndermez. Mesajı kopyalayıp iletebilirsiniz.</span>
+              </div>
+
+              <div id="companyOut" class="hint" style="display:none;"></div>
+            </form>
+          </div>
+
         </div>
       </div>
     </div>
   </footer>
 
   <script>
+    // Year
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Tabs logic
+    const tabStudent = document.getElementById("tab-student");
+    const tabCompany = document.getElementById("tab-company");
+    const panelStudent = document.getElementById("panel-student");
+    const panelCompany = document.getElementById("panel-company");
+
+    function activate(which){
+      const isStudent = which === "student";
+      tabStudent.classList.toggle("active", isStudent);
+      tabCompany.classList.toggle("active", !isStudent);
+
+      tabStudent.setAttribute("aria-selected", isStudent ? "true" : "false");
+      tabCompany.setAttribute("aria-selected", !isStudent ? "true" : "false");
+
+      panelStudent.style.display = isStudent ? "block" : "none";
+      panelCompany.style.display = !isStudent ? "block" : "none";
+    }
+
+    tabStudent.addEventListener("click", () => activate("student"));
+    tabCompany.addEventListener("click", () => activate("company"));
+
+    // Form submit -> show copyable message (no backend required)
+    function toLines(obj){
+      return Object.entries(obj).map(([k,v]) => `${k}: ${v}`).join("\n");
+    }
+
+    document.getElementById("studentForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const data = {
+        "Tür": "Öğrenci Ön Görüşme",
+        "Ad Soyad": fd.get("name"),
+        "Telefon": fd.get("phone"),
+        "E-posta": fd.get("email"),
+        "Durum": fd.get("status"),
+        "Hedef": fd.get("goal")
+      };
+      const out = document.getElementById("studentOut");
+      out.style.display = "block";
+      out.innerHTML = `
+        <div style="margin-top:10px; padding:12px; border:1px dashed rgba(11,18,32,.18); border-radius:16px; background:rgba(11,18,32,.03);">
+          <div style="font-weight:900; color:#0b1220; margin-bottom:6px;">Kopyalanabilir mesaj</div>
+          <textarea style="width:100%; border-radius:14px; border:1px solid rgba(11,18,32,.14); padding:10px; font-size:14px; font-weight:650; min-height:140px;">${toLines(data)}</textarea>
+          <div style="margin-top:8px; font-size:13px; color:#6b7280; font-weight:700;">
+            Bu metni kopyalayıp e-posta/WhatsApp ile iletebilirsiniz.
+          </div>
+        </div>
+      `;
+      e.target.reset();
+    });
+
+    document.getElementById("companyForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const data = {
+        "Tür": "Şirket Ön Görüşme",
+        "Şirket Ünvanı": fd.get("company"),
+        "Yetkili Kişi": fd.get("person"),
+        "Telefon": fd.get("phone"),
+        "E-posta": fd.get("email"),
+        "Sektör": fd.get("sector"),
+        "Öncelik": fd.get("priority"),
+        "Problem Tanımı": fd.get("need")
+      };
+      const out = document.getElementById("companyOut");
+      out.style.display = "block";
+      out.innerHTML = `
+        <div style="margin-top:10px; padding:12px; border:1px dashed rgba(11,18,32,.18); border-radius:16px; background:rgba(11,18,32,.03);">
+          <div style="font-weight:900; color:#0b1220; margin-bottom:6px;">Kopyalanabilir mesaj</div>
+          <textarea style="width:100%; border-radius:14px; border:1px solid rgba(11,18,32,.14); padding:10px; font-size:14px; font-weight:650; min-height:160px;">${toLines(data)}</textarea>
+          <div style="margin-top:8px; font-size:13px; color:#6b7280; font-weight:700;">
+            Bu metni kopyalayıp e-posta/WhatsApp ile iletebilirsiniz.
+          </div>
+        </div>
+      `;
+      e.target.reset();
+    });
   </script>
 
 </body>
