@@ -1,37 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('.tab');
-  const panels = {
-    student: document.getElementById('student-panel'),
-    company: document.getElementById('company-panel')
-  };
+<!-- Tabs bölümü -->
+<div class="tabs" role="tablist" aria-label="Başvuru türü seçimi">
+  <button 
+    class="tab active" 
+    data-tab="student" 
+    role="tab" 
+    aria-selected="true" 
+    aria-controls="student-panel"
+    id="tab-student"
+  >
+    Öğrenciler İçin
+  </button>
+  
+  <button 
+    class="tab" 
+    data-tab="company" 
+    role="tab" 
+    aria-selected="false" 
+    aria-controls="company-panel"
+    id="tab-company"
+  >
+    Şirketler İçin
+  </button>
+</div>
 
-  function switchTab(targetTab) {
-    tabs.forEach(tab => {
-      const isActive = tab.dataset.tab === targetTab;
-      tab.classList.toggle('active', isActive);
-      tab.setAttribute('aria-selected', isActive);
-    });
+<!-- Paneller -->
+<div id="student-panel" role="tabpanel" aria-labelledby="tab-student">
+  <!-- Öğrenci formu buraya -->
+</div>
 
-    Object.keys(panels).forEach(key => {
-      const panel = panels[key];
-      const shouldShow = key === targetTab;
-      panel.style.display = shouldShow ? 'block' : 'none';
-      // Opsiyonel: geçiş animasyonu için class ekleyebilirsin
-      // panel.classList.toggle('fade-in', shouldShow);
-    });
-  }
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      switchTab(tab.dataset.tab);
-    });
-    
-    // Klavye erişilebilirliği için Enter/Space desteği
-    tab.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        switchTab(tab.dataset.tab);
-      }
-    });
-  });
-});
+<div id="company-panel" role="tabpanel" aria-labelledby="tab-company" style="display:none;">
+  <!-- Şirket formu buraya -->
+</div>
