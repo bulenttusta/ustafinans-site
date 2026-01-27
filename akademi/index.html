@@ -3,137 +3,132 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Finans Uzmanı Akademisi | Usta Finans</title>
-  <meta name="description" content="Finans Uzmanı Akademisi: Sahada işe yarayan finans bakış açısı. Gerçek şirket senaryoları, CFO perspektifi, uygulanabilir çözümler." />
-  <!-- ... orijinal meta'lar aynı ... -->
-
+  <title>Usta Finans / Finans Uzmanı Akademisi | ustafinans.net</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --text: #0b1220;
-      --muted: #4b5565;
-      --muted2: #6b7280;
-      --line: rgba(11,18,32,.14);
-      --shadow: 0 18px 45px rgba(11,18,32,.10);
-      --shadow2: 0 10px 28px rgba(11,18,32,.08);
-      --radius: 16px; /* okul sitesi gibi daha yumuşak köşeler */
-      --max: 1200px; /* biraz daha geniş */
-      --brand: #2563eb; /* mavi ton – okul sitesi gibi güven verici */
-      --brand2: #3b82f6;
-      --brand3: #60a5fa;
-      --secBlue: #eff6ff;
-      --secLight: #f8fafc;
-    }
-    body {
-      background: var(--secLight);
-      font-family: 'Segoe UI', system-ui, sans-serif;
-    }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
-    .sectionBox {
-      background: white;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow2);
-      padding: 3rem 2rem;
-      margin-bottom: 3rem;
-    }
-    h1, h2, h3 { line-height: 1.2; }
-    h1 { font-size: 3.2rem; }
-    h2 { font-size: 2.5rem; }
-    .btn {
-      border-radius: 999px; /* okul sitesi gibi pill buton */
-      padding: 1rem 2rem;
-      font-weight: 600;
-    }
-    .btn.primary {
-      background: var(--brand);
-      color: white;
-      border: none;
-    }
-    .grid3, .twoCol { gap: 2rem; } /* daha ferah spacing */
-    .kpi, .feat, .block {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      background: rgba(255,255,255,0.8);
-    }
-    /* Hero'yu okul sitesi gibi büyük ve merkezli yap */
-    .heroGrid {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    @media (min-width: 980px) {
-      .heroGrid { flex-direction: row; text-align: left; }
-    }
-    /* Görseller için ek stil */
-    .section-img {
-      width: 100%;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: var(--radius);
-      margin: 2rem 0;
-      box-shadow: var(--shadow);
-    }
+    body { font-family: Inter, sans-serif; margin:0; background:#f9fafc; color:#1a1a1a; }
+    .wrap { max-width:1200px; margin:0 auto; padding:0 20px; }
+    .topbar { background:#fff; border-bottom:1px solid #ddd; }
+    .topbar .inner { display:flex; justify-content:space-between; align-items:center; padding:12px 0; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand img { height:60px; border-radius:8px; }
+    nav a { margin:0 8px; text-decoration:none; color:#555; font-weight:600; }
+    nav a:hover { color:#004aad; }
+    h1,h2,h3 { color:#004aad; }
+    .hero { background:linear-gradient(135deg,#004aad,#00b894); color:#fff; padding:60px 0; text-align:center; }
+    .hero img { max-width:80%; border-radius:12px; margin-top:20px; }
+    .btn { display:inline-block; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:600; margin:8px; transition:background .3s ease, transform .2s ease; }
+    .btn.primary { background:#004aad; color:#fff; }
+    .btn.secondary { background:#00b894; color:#fff; }
+    .btn:hover { transform:scale(1.05); filter:brightness(1.1); }
+    section { padding:50px 0; }
+    .grid2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .card { background:#fff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,.1); padding:20px; transition:transform .3s ease, box-shadow .3s ease; opacity:0; transform:translateY(20px); }
+    .card img { width:100%; border-radius:12px; margin-bottom:12px; }
+    .card:hover { transform:translateY(-6px); box-shadow:0 12px 24px rgba(0,0,0,.15); }
+    .visible { opacity:1 !important; transform:translateY(0) !important; }
+    .footer { background:#004aad; color:#fff; text-align:center; padding:30px 0; }
+    .stats h3 { font-size:32px; margin:0; color:#00b894; }
   </style>
 </head>
 <body>
 
-  <!-- NAV aynı kalıyor -->
-
-  <!-- HERO -->
-  <section id="akademi">
-    <div class="wrap">
-      <div class="sectionBox bg-red"> <!-- bg-red'i mavi yapabilirsin -->
-        <span class="eyebrow">Saha Deneyimi • CFO Perspektifi • Uygulanabilir Finans</span>
-        <div class="heroGrid">
-          <!-- İçerik aynı -->
-        </div>
-        <img class="section-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff5e9b" alt="Finans ekibi stratejik toplantı">
+<div class="topbar">
+  <div class="wrap inner">
+    <div class="brand">
+      <img src="logo-usta-finans.png" alt="Usta Finans Logo">
+      <div>
+        <strong>Usta Finans / Finans Uzmanı Akademisi</strong><br>
+        <small>ustafinans.net/akademi</small>
       </div>
     </div>
-  </section>
+    <nav>
+      <a href="#akademi">Akademi Nedir?</a>
+      <a href="#kimler">Kimler İçin?</a>
+      <a href="#danismanlik">Danışmanlık</a>
+      <a href="#basvuru">Başvuru</a>
+    </nav>
+  </div>
+</div>
 
-  <!-- NEDEN -->
-  <section id="neden">
-    <div class="wrap">
-      <div class="sectionBox bg-orange">
-        <!-- İçerik aynı -->
-        <img class="section-img" src="https://images.unsplash.com/photo-1556155092-490a1ba16284" alt="Profesyonel finans danışmanlığı ortamı">
+<section class="hero">
+  <div class="wrap">
+    <h1>Finansı Ezberleme, Sahada Uygula.</h1>
+    <p>Finans; ezber değil, karar alma becerisidir. Akademi, gerçek hayatta karşılığı olan finans bakış açısı kazandırır.</p>
+    <a class="btn primary" href="#kariyer">Kariyer Başvurusu Yap</a>
+    <a class="btn secondary" href="#sirketler">Şirket Talebi Gönder</a>
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Finans Eğitim Görseli">
+  </div>
+</section>
+
+<section class="stats wrap">
+  <div class="grid3">
+    <div class="card"><h3>100+</h3><p>Öğrenci ve yeni mezun</p></div>
+    <div class="card"><h3>20+</h3><p>Şirket danışmanlığı</p></div>
+    <div class="card"><h3>10 yıl</h3><p>Finansal deneyim</p></div>
+  </div>
+</section>
+
+<section id="akademi">
+  <div class="wrap">
+    <h2>Akademi Nedir?</h2>
+    <p>Bu bir kurs değil, bir finans bakış açısıdır. Amaç CV süslemek değil; sahada doğru karar verebilecek refleksi kazandırmaktır.</p>
+    <div class="grid3">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1556741533-f6acd6476f16" alt="Gerçek Hayat Finansı">
+        <h3>Gerçek Hayat Finansı</h3>
+        <p>Nakit akışı ve risk yönetimi odaklıdır.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581090700227-4c4f7a3f3f3d" alt="Bankaların Gözüyle Şirket">
+        <h3>Bankaların Gözüyle Şirket</h3>
+        <p>Kredi, limit ve teminat dilini okursun.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581093588401-9f9c6f3f3f3d" alt="ERP ve Finans">
+        <h3>ERP–Muhasebe–Finans Ayrımı</h3>
+        <p>Veri üretmek ile yönetmek arasındaki farkı öğrenirsin.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PROGRAM -->
-  <section id="program">
-    <div class="wrap">
-      <div class="sectionBox bg-yellow">
-        <!-- İçerik aynı -->
-        <img class="section-img" src="https://images.unsplash.com/photo-1554224154-26032ffc0d07" alt="Finansal akış şeması ve raporlama dashboard">
+<section id="kimler">
+  <div class="wrap">
+    <h2>Kimler İçin?</h2>
+    <div class="grid2">
+      <div class="card" id="kariyer">
+        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df" alt="Öğrenciler Finans Eğitimi">
+        <h3>Öğrenciler & Yeni Mezunlar</h3>
+        <p>Bu program, sahada finans refleksi kazanmak isteyenlere uygundur.</p>
+        <ul>
+          <li>Nakit akışı okuma</li>
+          <li>Banka dili</li>
+          <li>Muhasebe verisini yönetim kararına çevirme</li>
+        </ul>
+        <a class="btn primary" href="#basvuru">Kariyer Başvurusu Yap</a>
+      </div>
+      <div class="card" id="sirketler">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216" alt="Şirket Finans Yönetimi">
+        <h3>Şirket Sahipleri & Yöneticiler</h3>
+        <p>Kârınız var ama nakit akışı sorunluysa, teşhis hattı size gerçek nedenleri gösterir.</p>
+        <ul>
+          <li>Finansal kör noktaları görme</li>
+          <li>Nakit açığını teşhis etme</li>
+          <li>Kredi/limit ilişkisini doğru okuma</li>
+        </ul>
+        <a class="btn secondary" href="#basvuru">Şirket Talebi Gönder</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- KAYNAK -->
-  <section id="kaynak">
-    <div class="wrap">
-      <div class="sectionBox bg-red">
-        <!-- İçerik aynı -->
-        <img class="section-img" src="https://images.unsplash.com/photo-1556155092-441f6a20aefa" alt="Deneyimli finans ekibi saha çalışması">
-      </div>
-    </div>
-  </section>
-
-  <!-- İLETİŞİM -->
-  <section id="iletisim">
-    <div class="wrap">
-      <div class="sectionBox bg-yellow">
-        <!-- Formlar ve tab'lar tamamen aynı -->
-        <img class="section-img" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df" alt="Kurumsal görüşme ve başvuru masası">
-      </div>
-    </div>
-  </section>
-
-  <!-- Script aynı kalıyor -->
-
-</body>
-</html>
+<section id="danismanlik">
+  <div class="wrap">
+    <h2>Akademi → Danışmanlık</h2>
+    <div class="grid2">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Eğitim Fark Ettirir">
+        <h3>Eğitim Fark Ettirir</h3>
+        <p
