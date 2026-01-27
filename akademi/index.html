@@ -1,911 +1,126 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Merkeziyetsiz Finans Okulu | KOBİ’ler İçin Yeni Nesil Finans Yönetimi</title>
-  <meta name="description" content="Merkeziyetsiz Finans Okulu: Türkiye geneli, Muğla pilot. Ücretsiz, sahaya dayalı ve gerçek verilerle KOBİ finans yönetimi. Öğrencilerle birlikte inşa edilen uygulamalı ağ." />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usta Finans Akademi</title>
   <style>
-    :root{
-      /* Brand: kırmızı / turuncu / sarı */
-      --red:#ff3b30;
-      --orange:#ff7a18;
-      --yellow:#ffb703;
-
-      --ink:#0b1220;
-      --muted: rgba(11,18,32,.72);
-      --line: rgba(11,18,32,.12);
-
-      --blue-soft:#e9f2ff;
-      --yellow-soft:#fff6da;
-
-      --radius: 16px;
-      --shadow: 0 18px 50px rgba(0,0,0,.18);
-      --shadow-soft: 0 12px 30px rgba(0,0,0,.10);
-      --container: 1120px;
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
     }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color: var(--ink);
-      background:#fff;
-      line-height:1.6;
+    header {
+      background: #0a3d62;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
     }
-    a{color:inherit}
-    .container{max-width:var(--container); margin:0 auto; padding:0 18px}
-
-    /* Sticky Topbar */
-    .topbar{
-      position: sticky;
-      top: 0;
-      z-index: 60;
-      backdrop-filter: blur(10px);
-      background: rgba(255,255,255,.86);
-      border-bottom: 1px solid rgba(0,0,0,.08);
+    header img {
+      height: 60px;
+      margin-bottom: 10px;
     }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding: 12px 0;
-      gap: 14px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:900; letter-spacing:.2px;
-    }
-    .brand-badge{
-      width:36px; height:36px; border-radius:12px;
-      background: linear-gradient(135deg, var(--red), var(--orange), var(--yellow));
-      box-shadow: var(--shadow-soft);
-    }
-    .brand small{display:block; font-weight:700; opacity:.75; margin-top:-2px}
-
-    .navlinks{
-      display:flex; flex-wrap:wrap; gap: 10px 14px;
-      font-size: 14px;
-      color: rgba(0,0,0,.72);
-      font-weight: 700;
-    }
-    .navlinks a{
-      padding:10px 12px;
-      border-radius:12px;
-      text-decoration:none;
-    }
-    .navlinks a:hover{background: rgba(0,0,0,.06)}
-
-    .cta{display:flex; gap:10px; align-items:center}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding: 11px 14px;
-      border-radius: 14px;
-      font-weight: 900;
-      font-size: 14px;
-      border: 1px solid rgba(0,0,0,.12);
-      background:#fff;
-      cursor:pointer;
-      transition: transform .12s ease, box-shadow .12s ease, background .12s ease, opacity .12s ease;
-      text-decoration:none;
-      user-select:none;
-    }
-    .btn:hover{transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,.10)}
-    .btn.primary{
-      border: 0;
-      color:#1b1208;
-      background: linear-gradient(135deg, var(--red), var(--orange), var(--yellow));
-    }
-    .btn.primary:hover{box-shadow: 0 12px 26px rgba(255,122,24,.25)}
-    .btn:disabled{opacity:.6; cursor:not-allowed; transform:none; box-shadow:none}
-
-    /* Hero */
-    .hero{
-      color: rgba(255,255,255,.92);
-      background:
-        radial-gradient(1200px 520px at 20% 0%, rgba(255,59,48,.20), transparent 60%),
-        radial-gradient(900px 420px at 75% 15%, rgba(255,122,24,.22), transparent 60%),
-        radial-gradient(900px 420px at 45% 20%, rgba(255,183,3,.18), transparent 60%),
-        linear-gradient(180deg, #0b1220 0%, #101a30 60%, #0b1220 100%);
-      padding: 60px 0 38px;
-      position: relative;
-      overflow:hidden;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-    .hero h1{
-      margin:0 0 10px;
-      font-size: clamp(28px, 4vw, 46px);
-      line-height:1.08;
-      letter-spacing:-.6px;
-    }
-    .hero .sub{
-      color: rgba(255,255,255,.76);
-      font-size: 16px;
-      max-width: 760px;
-      margin: 0 0 18px;
-    }
-    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 22px}
-    .pill{
-      font-size: 13px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.90);
-      display:inline-flex; gap:8px; align-items:center;
-      font-weight: 800;
-    }
-    .pill .dot{
-      width:8px; height:8px; border-radius:99px;
-      background: linear-gradient(135deg, var(--red), var(--orange), var(--yellow));
-    }
-
-    .hero-card{
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-    .hero-card h3{margin:0 0 10px; font-size:16px}
-    .hero-card ul{margin:0; padding-left: 18px; color: rgba(255,255,255,.86); font-size:14px}
-    .hero-card li{margin:8px 0}
-
-    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top: 16px}
-    .hero-actions .btn{border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.06); color: rgba(255,255,255,.92)}
-    .hero-actions .btn:hover{background: rgba(255,255,255,.10)}
-    .hero-actions .btn.primary{color:#1b1208; background: linear-gradient(135deg, var(--red), var(--orange), var(--yellow))}
-
-    /* Sections */
-    section{padding: 44px 0}
-    .section-title{
-      margin:0 0 10px;
+    header h1 {
+      margin: 0;
       font-size: 28px;
-      letter-spacing:-.2px;
     }
-    .section-lead{margin:0 0 18px; color: rgba(0,0,0,.72); max-width: 900px}
-
-    /* Frames + alternating backgrounds */
-    .frame{
-      border: 1px solid rgba(0,0,0,.10);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 10px 26px rgba(0,0,0,.06);
-      background: #fff;
+    header p {
+      font-size: 16px;
+      margin: 5px 0 0;
     }
-    .soft-blue{background: var(--blue-soft)}
-    .soft-yellow{background: var(--yellow-soft)}
-
-    .grid-3{display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px}
-    .grid-2{display:grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items:start}
-
-    .card{
-      border: 1px solid rgba(0,0,0,.10);
-      border-radius: var(--radius);
-      padding: 16px;
-      background: #fff;
-      box-shadow: 0 10px 26px rgba(0,0,0,.06);
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
     }
-    .card h3{margin:0 0 8px; font-size:16px}
-    .card p{margin:0; color: rgba(0,0,0,.72)}
-    .muted{color: rgba(0,0,0,.66)}
-
-    /* Steps */
-    .steps{counter-reset: step}
-    .step{position: relative; padding-left: 44px}
-    .step:before{
-      counter-increment: step;
-      content: counter(step);
-      position:absolute;
-      left:0; top:2px;
-      width:32px; height:32px;
-      border-radius: 12px;
-      display:flex; align-items:center; justify-content:center;
-      font-weight: 1000;
-      background: linear-gradient(135deg, var(--red), var(--orange), var(--yellow));
-      color:#1b1208;
-      box-shadow: 0 10px 20px rgba(255,122,24,.18);
+    section h2 {
+      color: #0a3d62;
+      border-bottom: 2px solid #0a3d62;
+      padding-bottom: 5px;
     }
-
-    .list{margin:0; padding-left: 18px; color: rgba(0,0,0,.74)}
-    .list li{margin: 8px 0}
-
-    /* Toolkit downloads */
-    .downloads{display:grid; gap:10px}
-    .dl{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:10px;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(0,0,0,.12);
-      background: rgba(255,255,255,.65);
+    ul {
+      list-style: none;
+      padding: 0;
     }
-    .dl b{display:block}
-    .dl small{display:block; color: rgba(0,0,0,.62)}
-    .tag{
-      font-size: 12px;
-      font-weight: 900;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(255,122,24,.12);
-      border: 1px solid rgba(255,122,24,.22);
-      white-space:nowrap;
+    ul li::before {
+      content: "• ";
+      color: #0a3d62;
+      font-weight: bold;
     }
-
-    /* Form */
-    .form{display:grid; gap: 10px}
-    label{font-weight:900; font-size:13px; color: rgba(0,0,0,.74)}
-    input, select, textarea{
-      width:100%;
-      padding: 12px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(0,0,0,.14);
-      outline: none;
+    .cta {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .cta a {
+      background: #0a3d62;
+      color: #fff;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .cta a:hover {
+      background: #3c6382;
+    }
+    footer {
+      background: #0a3d62;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
       font-size: 14px;
-      background:#fff;
-    }
-    input:focus, select:focus, textarea:focus{
-      border-color: rgba(255,122,24,.55);
-      box-shadow: 0 0 0 4px rgba(255,122,24,.14);
-    }
-    textarea{min-height: 110px; resize: vertical}
-
-    .form-actions{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top: 6px}
-    .hint{font-size: 12px; color: rgba(0,0,0,.58)}
-    .notice{
-      border: 1px dashed rgba(0,0,0,.18);
-      background: rgba(255,255,255,.75);
-      padding: 12px;
-      border-radius: 14px;
-      color: rgba(0,0,0,.74);
-    }
-
-    .status{
-      display:none;
-      padding: 12px;
-      border-radius: 14px;
-      margin-top: 10px;
-      font-size: 14px;
-      border: 1px solid rgba(0,0,0,.10);
-      background: rgba(255,255,255,.8);
-    }
-    .status.ok{
-      border-color: rgba(34,197,94,.35);
-      background: rgba(34,197,94,.12);
-    }
-    .status.bad{
-      border-color: rgba(255,59,48,.35);
-      background: rgba(255,59,48,.10);
-    }
-
-    /* Modal */
-    .modal-backdrop{
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.55);
-      display:none;
-      z-index: 100;
-      padding: 18px;
-      overflow:auto;
-    }
-    .modal{
-      max-width: 860px;
-      margin: 40px auto;
-      background:#fff;
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0,0,0,.12);
-      overflow:hidden;
-    }
-    .modal-head{
-      display:flex; align-items:center; justify-content:space-between;
-      padding: 14px 16px;
-      border-bottom: 1px solid rgba(0,0,0,.10);
-      background: rgba(255,255,255,.9);
-    }
-    .modal-head b{font-size: 16px}
-    .modal-body{
-      padding: 16px;
-      color: rgba(0,0,0,.78);
-    }
-    .modal-body h4{margin: 14px 0 8px}
-    .modal-body p{margin: 0 0 10px}
-    .xbtn{
-      border: 1px solid rgba(0,0,0,.12);
-      background:#fff;
-      border-radius: 12px;
-      padding: 8px 10px;
-      font-weight: 900;
-      cursor:pointer;
-    }
-
-    /* Footer */
-    footer{
-      background: #0b1220;
-      color: rgba(255,255,255,.84);
-      padding: 26px 0;
-    }
-    footer .foot{
-      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
-      align-items:flex-start;
-    }
-    footer a{color: rgba(255,255,255,.92); text-decoration: underline}
-    footer small{color: rgba(255,255,255,.66)}
-
-    /* Responsive */
-    @media (max-width: 900px){
-      .hero-grid{grid-template-columns: 1fr}
-      .grid-3{grid-template-columns: 1fr}
-      .grid-2{grid-template-columns: 1fr}
-      .navlinks{display:none}
     }
   </style>
 </head>
-
 <body>
-  <!-- NAV -->
-  <div class="topbar">
-    <div class="container">
-      <div class="nav">
-        <div class="brand">
-          <div class="brand-badge" aria-hidden="true"></div>
-          <div>
-            Merkeziyetsiz Finans Okulu
-            <small>KOBİ’ler için yeni nesil finans yönetimi</small>
-          </div>
-        </div>
 
-        <div class="navlinks" aria-label="Sayfa menüsü">
-          <a href="#nedir">Nedir?</a>
-          <a href="#program">Program</a>
-          <a href="#protokol">Protokol</a>
-          <a href="#pilot">Muğla Pilot</a>
-          <a href="#aracseti">Açık Araç Seti</a>
-          <a href="#basvuru">Başvuru</a>
-          <a href="#kvkk">KVKK</a>
-        </div>
-
-        <div class="cta">
-          <a class="btn" href="#basvuru">Başvuru</a>
-          <a class="btn primary" href="#basvuru">Hemen Katıl</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <header class="hero" id="top">
-    <div class="container">
-      <div class="hero-grid">
-        <div>
-          <div class="pillrow">
-            <div class="pill"><span class="dot"></span> Ücretsiz</div>
-            <div class="pill"><span class="dot"></span> Türkiye geneli</div>
-            <div class="pill"><span class="dot"></span> Muğla pilot</div>
-            <div class="pill"><span class="dot"></span> Gerçek saha verisi</div>
-            <div class="pill"><span class="dot"></span> Öğrenciyle birlikte inşa</div>
-          </div>
-
-          <h1>KOBİ’ler için yeni nesil finans yönetimi<br/>merkeziyetsiz bir ağ olarak kuruluyor.</h1>
-          <p class="sub">
-            Bu bir kurs değil. Bu bir sertifika satışı değil. Bu; öğrencilerle birlikte, sahada gerçek KOBİ verileriyle
-            öğrenen ve üreten, bağımsız bir uygulama ağı.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="#basvuru">Başvuruyu Aç</a>
-            <a class="btn" href="#protokol">Operasyon Protokolü</a>
-            <a class="btn" href="#pilot">Muğla Pilot Planı</a>
-            <a class="btn" href="#aracseti">Açık Araç Seti</a>
-          </div>
-        </div>
-
-        <aside class="hero-card">
-          <h3>Bu projede “Finans Yöneticisi” ne yapar?</h3>
-          <ul>
-            <li><b>İşletme sermayesini</b> tespit eder (nakit–alacak–stok–borç).</li>
-            <li><b>Hedef</b> koyar ve <b>bütçe</b> yapar (aylık takip).</li>
-            <li>Basit ama düzenli <b>kayıt & raporlama</b> sistemini kurar.</li>
-            <li>İşletme sahibine anlaşılır <b>karar destek</b> bilgisi üretir.</li>
-          </ul>
-          <div style="margin-top:12px; padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.05);">
-            <b>Model:</b> Türkiye geneli ölçeklenebilir<br/>
-            <b>Pilot:</b> Muğla’da 90 günlük başlangıç
-          </div>
-        </aside>
-      </div>
-    </div>
+  <header>
+    <img src="logo.png" alt="Usta Finans Akademi Logo">
+    <h1>Usta Finans Akademi</h1>
+    <p>Şirketlerin İhtiyaç Duyduğu Finans Uzmanlarını Yetiştirir</p>
   </header>
 
-  <!-- NEDIR -->
-  <section class="soft-blue" id="nedir">
-    <div class="container">
-      <div class="frame">
-        <h2 class="section-title">Bu proje nedir?</h2>
-        <p class="section-lead">
-          Merkeziyetsiz Finans Okulu; KOBİ’lerin finansal yönetimini güçlendirirken, öğrencileri ve genç profesyonelleri
-          sahada “iş yapan” Finans Yöneticileri olarak yetiştiren, ücretsiz ve bağımsız bir ağdır.
-        </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Neden var?</h3>
-            <p>KOBİ’lerde kayıtlar eksik, planlama zayıf; finans muhasebeyle karıştırılıyor. Kalifiye eleman pahalı görülüyor.</p>
-          </div>
-          <div class="card">
-            <h3>Ne üretir?</h3>
-            <p>İşletme sermayesi analizi, bütçe, aylık takip, basit kayıt & raporlama sistemi ve KOBİ’ye sade finansal özet.</p>
-          </div>
-          <div class="card">
-            <h3>Nasıl öğrenir?</h3>
-            <p>Teori + uygulama eş zamanlıdır. Katılımcı gerçek KOBİ verisiyle çalışır, somut çıktı üretir.</p>
-          </div>
-        </div>
-
-        <div class="notice" style="margin-top:14px;">
-          <b>Önemli:</b> Bu proje ücretsizdir ve bağımsızdır. Oda/belediye/üniversite iş birlikleri “destekleyici” olabilir; yönetim ve içerik kararı platformdadır.
-        </div>
-      </div>
-    </div>
+  <section>
+    <h2>Akademi Hakkında</h2>
+    <p>Usta Finans Akademi, şirketlerin gerçekten ihtiyaç duyduğu Finans Uzmanlarını kısa sürede işe hazır hale getiren, uygulama odaklı bir eğitim akademisidir. Burada ders yok, iş var.</p>
   </section>
 
-  <!-- PROGRAM -->
-  <section class="soft-yellow" id="program">
-    <div class="container">
-      <div class="frame">
-        <h2 class="section-title">Program özeti</h2>
-        <p class="section-lead">
-          Eğitim, sahaya çıkıp gerçek iş yapacak şekilde tasarlanır. Katılımcı “öğrenci” değil; aynı zamanda üretici bir uygulayıcıdır.
-        </p>
-
-        <div class="grid-2">
-          <div class="card steps">
-            <h3>Akış (kısa)</h3>
-            <div class="step"><p><b>Başvuru</b> → ücretsiz katılım (öğrenci / yeni mezun / genç profesyonel).</p></div>
-            <div class="step"><p><b>Eğitim + Uygulama</b> → işletme sermayesi, nakit akışı, bütçe, raporlama.</p></div>
-            <div class="step"><p><b>KOBİ eşleştirmesi</b> → mentor gözetiminde saha çalışması.</p></div>
-            <div class="step"><p><b>Çıktı üretimi</b> → KOBİ’ye rapor + şablonlar + aylık takip düzeni.</p></div>
-          </div>
-
-          <div class="card">
-            <h3>Modüller (özet)</h3>
-            <ul class="list">
-              <li><b>İşletme Sermayesi</b>: CCC, DSO/DPO, stok devir, riskli alanlar.</li>
-              <li><b>Nakit Akışı</b>: 3 aylık nakit tahmini, dar boğaz tespiti, aksiyon.</li>
-              <li><b>Bütçe & Hedef</b>: gelir-gider bütçesi, sapma takibi, basit KPI seti.</li>
-              <li><b>Kayıt & Raporlama</b>: Excel tabanlı sade sistem (gerekirse ERP’ye köprü).</li>
-              <li><b>Yönetim Özeti</b>: işletme sahibine anlaşılır 1 sayfa “finansal durum”.</li>
-            </ul>
-            <p class="hint" style="margin-top:10px;">
-              Not: Bu proje “vergi/muhasebe hizmeti” değil; KOBİ’nin finansal yönetim disiplinini kurma odaklıdır.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section>
+    <h2>Kimler İçin?</h2>
+    <ul>
+      <li>Üniversite öğrencileri</li>
+      <li>Yeni mezunlar</li>
+      <li>Genç profesyoneller</li>
+      <li>Genç KOBİ yöneticileri</li>
+    </ul>
   </section>
 
-  <!-- PROTOKOL -->
-  <section class="soft-blue" id="protokol">
-    <div class="container">
-      <div class="frame">
-        <h2 class="section-title">Operasyon protokolü</h2>
-        <p class="section-lead">
-          Bağımsızlık ve güven, modelin temelidir. İş birlikleri “destekleyici” olabilir; yönetim ve içerik kararı platformdadır.
-        </p>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>Bağımsızlık ilkeleri</h3>
-            <ul class="list">
-              <li>İçerik, yöntem, kalite standardı ve eşleştirme kurgusu bağımsızdır.</li>
-              <li>Kurumlar (oda/belediye/üniversite) yalnızca <b>destek</b> sağlar; karar verici değildir.</li>
-              <li>Katılım ücretsizdir; ölçüm ve çıktı standardı zorunludur.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Gizlilik & veri yaklaşımı</h3>
-            <ul class="list">
-              <li>KOBİ verileri izinsiz paylaşılmaz; raporlar <b>anonimleştirilir</b>.</li>
-              <li>Katılımcılar gizlilik çerçevesiyle çalışır (etik ve sorumluluk).</li>
-              <li>Paylaşılan öğrenme vakaları kimliksizleştirilir; amaç eğitimdir.</li>
-            </ul>
-            <p class="hint" style="margin-top:10px;">
-              KVKK metnini aşağıdaki “KVKK” bölümünde ve başvuru ekranında onay kutusu olarak ekledik.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section>
+    <h2>Ne Öğrenirsin?</h2>
+    <ul>
+      <li>Şirketin parasının nereden geldiğini ve nereye gittiğini görmek</li>
+      <li>Alacak–tahsilat dengesini analiz etmek</li>
+      <li>Ödemeleri öncelik sırasına göre planlamak</li>
+      <li>Nakit planı ve bütçe düzeni kurmak</li>
+      <li>Banka ile aynı dili konuşmak</li>
+    </ul>
   </section>
 
-  <!-- PILOT -->
-  <section class="soft-yellow" id="pilot">
-    <div class="container">
-      <div class="frame">
-        <h2 class="section-title">Muğla pilot yol haritası</h2>
-        <p class="section-lead">
-          Model Türkiye geneline tasarlanır; ilk uygulama pilotu Muğla’da başlar. Pilotun amacı: süreçleri test etmek, araç setini güçlendirmek, ölçülebilir sonuç üretmek.
-        </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>0–30 Gün</h3>
-            <p class="muted">Başvuru, seçim, ekipleşme</p>
-            <ul class="list">
-              <li>Katılımcı başvurularının toplanması</li>
-              <li>Mentor havuzunun kurulması</li>
-              <li>KOBİ aday havuzunun oluşturulması</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>30–60 Gün</h3>
-            <p class="muted">Saha başlangıcı</p>
-            <ul class="list">
-              <li>Öğrenci/KOBİ eşleştirmeleri</li>
-              <li>İlk işletme sermayesi tespitleri</li>
-              <li>Nakit akışı ve bütçe kurulumu</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>60–90 Gün</h3>
-            <p class="muted">Çıktı ve iyileştirme</p>
-            <ul class="list">
-              <li>1 sayfalık yönetim özetleri</li>
-              <li>Aylık takip düzeni</li>
-              <li>Geri bildirim + model revizyonu</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section>
+    <h2>Kariyer Hedefi</h2>
+    <p>Katılımcıyı işe hazır Finans Uzmanı seviyesine getirmek. Bu sayede iş görüşmelerinde güçlü bir profil, şirkette hızlı değer üretme ve daha iyi ücretlerle iş bulma imkânı.</p>
   </section>
 
-  <!-- TOOLKIT -->
-  <section class="soft-blue" id="aracseti">
-    <div class="container">
-      <div class="frame">
-        <h2 class="section-title">Açık araç seti (ücretsiz)</h2>
-        <p class="section-lead">
-          Katılımcılar için sahada kullanılacak temel şablonlar ve pratik araçlar. Aşağıdaki linkler “indirilebilir dosyalar” alanıdır.
-          Şu an demo linkler var; dosyaları yükleyince buraya gerçek linkleri koyacağız.
-        </p>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>İndirilebilirler</h3>
-            <div class="downloads">
-              <div class="dl">
-                <div>
-                  <b>İşletme Sermayesi Hesaplama (Excel)</b>
-                  <small>CCC, DSO/DPO, stok devir + aksiyon</small>
-                </div>
-                <span class="tag">Yakında</span>
-              </div>
-              <div class="dl">
-                <div>
-                  <b>3 Aylık Nakit Akışı (Excel)</b>
-                  <small>Haftalık kontrol + erken uyarı</small>
-                </div>
-                <span class="tag">Yakında</span>
-              </div>
-              <div class="dl">
-                <div>
-                  <b>Basit Bütçe & KPI Seti (Excel)</b>
-                  <small>Aylık bütçe + sapma + 6 KPI</small>
-                </div>
-                <span class="tag">Yakında</span>
-              </div>
-              <div class="dl">
-                <div>
-                  <b>1 Sayfa Yönetim Özeti (PDF)</b>
-                  <small>KOBİ sahibine sade rapor şablonu</small>
-                </div>
-                <span class="tag">Yakında</span>
-              </div>
-            </div>
-            <p class="hint" style="margin-top:12px;">
-              İstersen dosyaları bir “/assets/downloads/” klasöründe tutup buraya doğrudan linkleyebiliriz.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Vaka & Ödev yaklaşımı</h3>
-            <ul class="list">
-              <li>Her saha çalışması “anonimleştirilmiş vaka” olarak sisteme döner.</li>
-              <li>Katılımcı, aynı hafta kendi KOBİ’si için çıktı üretir (rapor, bütçe, takip).</li>
-              <li>Mentor kontrolüyle kalite standardı korunur.</li>
-            </ul>
-            <div class="notice" style="margin-top:12px;">
-              <b>Merkeziyetsiz mantık:</b> Öğrenme sahada, veri gerçek, üretim kolektif; yönetim ve standart tek merkezde korunur.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- APPLY -->
-  <section class="soft-yellow" id="basvuru">
-    <div class="container">
-      <div class="frame">
-        <h2 class="section-title">Başvuru al</h2>
-        <p class="section-lead">
-          Katılım ücretsiz. Aşağıdaki form ile başvurunu alıyoruz. Başvurular e-posta olarak <b>bulentusta@ustafinans.net</b> adresine düşecek şekilde kurgulanmıştır.
-        </p>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>Başvuru Formu</h3>
-
-            <!--
-              ✅ E-POSTA GÖNDERİMİ (ÖNERİLEN): FORMSPREE
-              1) formspree.io üzerinde yeni form oluştur
-              2) hedef e-posta: bulentusta@ustafinans.net
-              3) sana verilen endpoint’i aşağıdaki data-endpoint alanına yapıştır
-                 örn: https://formspree.io/f/abcdwxyz
-            -->
-            <form class="form" id="applyForm" data-endpoint="https://formspree.io/f/XXXXXXX">
-              <div>
-                <label for="name">Ad Soyad</label>
-                <input id="name" name="ad_soyad" required placeholder="Ad Soyad" />
-              </div>
-
-              <div>
-                <label for="email">E-posta</label>
-                <input id="email" name="email" type="email" required placeholder="ornek@eposta.com" />
-              </div>
-
-              <div>
-                <label for="phone">Telefon</label>
-                <input id="phone" name="telefon" required placeholder="05xx xxx xx xx" />
-              </div>
-
-              <div>
-                <label for="role">Profil</label>
-                <select id="role" name="profil" required>
-                  <option value="" selected disabled>Seçiniz</option>
-                  <option>Üniversite Öğrencisi</option>
-                  <option>Yeni Mezun</option>
-                  <option>Genç Profesyonel</option>
-                  <option>KOBİ Sahibi / Yönetici (Pilot’a aday)</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="city">Şehir</label>
-                <input id="city" name="sehir" placeholder="Örn: Muğla / İzmir / İstanbul" />
-              </div>
-
-              <div>
-                <label for="note">Neden katılmak istiyorsun?</label>
-                <textarea id="note" name="not" placeholder="Kısa bir şekilde yaz (2-5 cümle)."></textarea>
-              </div>
-
-              <input type="hidden" name="_subject" value="Merkeziyetsiz Finans Okulu | Yeni Başvuru" />
-
-              <div class="notice">
-                <b>KVKK / Gizlilik:</b> Başvuruyu göndermeden önce KVKK bilgilendirmesini okuyup onaylamanız gerekir.
-                <div style="margin-top:10px; display:flex; gap:10px; align-items:flex-start;">
-                  <input id="kvkkCheck" type="checkbox" required style="width:18px; height:18px; margin-top:2px;" />
-                  <label for="kvkkCheck" style="font-weight:800; font-size:13px; margin:0;">
-                    KVKK bilgilendirmesini okudum ve onaylıyorum.
-                    (<a href="#kvkk" id="openKvkkLink">Metni görüntüle</a>)
-                  </label>
-                </div>
-              </div>
-
-              <div class="form-actions">
-                <button class="btn primary" id="submitBtn" type="submit">Başvuruyu Gönder</button>
-                <span class="hint">Gönderim sonrası aynı sayfada “Başvurun alındı” mesajı göreceksin.</span>
-              </div>
-
-              <div class="status ok" id="okMsg">✅ Başvurun alındı. Teşekkürler. En kısa sürede dönüş yapılacak.</div>
-              <div class="status bad" id="badMsg">❌ Gönderim sırasında bir sorun oluştu. Lütfen tekrar deneyin veya e-posta ile ulaşın: bulentusta@ustafinans.net</div>
-
-              <p class="hint" style="margin-top:12px;">
-                Not: data-endpoint alanındaki “XXXXXXX” kısmını Formspree endpoint’inle değiştirmeyi unutma.
-              </p>
-            </form>
-          </div>
-
-          <div class="card">
-            <h3>Kimler için uygun?</h3>
-            <ul class="list">
-              <li>Finansı sahada öğrenmek isteyen öğrenciler</li>
-              <li>KOBİ’ye gerçek katkı sunmak isteyen genç profesyoneller</li>
-              <li>Ölçülebilir çıktı üretmeyi sevenler (rapor, şablon, takip)</li>
-              <li>Muğla pilotunda yer almak isteyenler</li>
-            </ul>
-
-            <h3 style="margin-top:16px;">İletişim</h3>
-            <p class="muted" style="margin:0;">
-              <b>Bülent Usta</b> — Finans Uzmanı<br/>
-              Telefon: <a href="tel:+905334234855">+90 533 423 48 55</a><br/>
-              E-posta: <a href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a>
-            </p>
-
-            <div class="notice" style="margin-top:14px;">
-              <b>Bağımsızlık notu:</b> İş birlikleri (oda/belediye/üniversite) yalnızca destekleyici rol üstlenir; içerik ve operasyon standardı platforma aittir.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- KVKK (anchor section + modal trigger) -->
-  <section class="soft-blue" id="kvkk">
-    <div class="container">
-      <div class="frame">
-        <h2 class="section-title">KVKK Bilgilendirme</h2>
-        <p class="section-lead">
-          Aşağıdaki metin web sayfanız için “kısa bilgilendirme” formatındadır. Ayrıntılı metin modal pencerede yer alır.
-        </p>
-
-        <div class="card">
-          <h3>Kısa Özet</h3>
-          <ul class="list">
-            <li>Başvuruda paylaştığınız veriler; başvuruyu değerlendirmek ve sizinle iletişime geçmek amacıyla işlenir.</li>
-            <li>Veriler izinsiz üçüncü kişilerle paylaşılmaz; sadece proje operasyonu ve iletişim için kullanılır.</li>
-            <li>Dilediğiniz zaman verilerinizin silinmesini talep edebilirsiniz.</li>
-          </ul>
-          <div class="form-actions" style="margin-top:10px;">
-            <button class="btn primary" id="openKvkkBtn" type="button">KVKK Metnini Aç</button>
-            <span class="hint">Metni sayfadan ayrılmadan okuyabilirsiniz.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="foot">
-        <div>
-          <div style="font-weight:1000; margin-bottom:6px;">Merkeziyetsiz Finans Okulu</div>
-          <small>Türkiye Geneli · Muğla Pilot · Ücretsiz saha temelli finans ağı</small>
-        </div>
-        <div>
-          <small>
-            İletişim: <a href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a> ·
-            <a href="tel:+905334234855">+90 533 423 48 55</a>
-          </small>
-          <div style="margin-top:6px;"><small>© <span id="y"></span> Bülent Usta</small></div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- KVKK MODAL -->
-  <div class="modal-backdrop" id="kvkkBackdrop" role="dialog" aria-modal="true" aria-labelledby="kvkkTitle">
-    <div class="modal">
-      <div class="modal-head">
-        <b id="kvkkTitle">KVKK Aydınlatma Metni (Özet + Uygulama)</b>
-        <button class="xbtn" id="closeKvkkBtn" type="button">Kapat</button>
-      </div>
-      <div class="modal-body">
-        <p><b>Veri Sorumlusu:</b> Bülent Usta (Finans Uzmanı) — Merkeziyetsiz Finans Okulu organizasyonu.</p>
-
-        <h4>1) İşlenen Kişisel Veriler</h4>
-        <p>Ad-soyad, e-posta, telefon, profil (öğrenci/mezun/profesyonel/KOBİ), şehir ve başvuru notu.</p>
-
-        <h4>2) İşleme Amaçları</h4>
-        <p>
-          Başvurunuzu değerlendirmek, sizinle iletişime geçmek, proje eşleştirme/planlama süreçlerini yürütmek,
-          eğitim ve saha operasyonu kapsamındaki bilgilendirmeleri yapmak.
-        </p>
-
-        <h4>3) Hukuki Sebep</h4>
-        <p>İlgili kişinin açık rızası (başvuru formundaki onay) ve sözleşme/iletişim süreçlerinin yürütülmesi.</p>
-
-        <h4>4) Aktarım</h4>
-        <p>
-          Verileriniz izinsiz üçüncü kişilerle paylaşılmaz. Teknik olarak başvuru formu altyapısı (ör. Formspree) üzerinden e-posta ile iletim yapılabilir.
-          Kurumsal iş birlikleri (oda/belediye/üniversite) “destekleyici” olup başvuru verilerinize otomatik erişim verilmez.
-        </p>
-
-        <h4>5) Saklama Süresi</h4>
-        <p>Başvurunun değerlendirilmesi ve operasyon süreci için gerekli süre boyunca; ardından talebiniz halinde silinir/anonim hale getirilir.</p>
-
-        <h4>6) Haklarınız</h4>
-        <p>KVKK kapsamındaki erişim, düzeltme, silme ve itiraz haklarınızı kullanmak için <b>bulentusta@ustafinans.net</b> adresine e-posta atabilirsiniz.</p>
-
-        <div class="notice" style="margin-top:12px;">
-          <b>Not:</b> Bu metin web sitesinde başlangıç için “pratik” bir çerçevedir. İstersen bir sonraki adımda bunu daha resmi/kurumsal bir versiyona genişletelim.
-        </div>
-      </div>
-    </div>
+  <div class="cta">
+    <a href="#basvuru">Hemen Başvur</a>
   </div>
 
-  <script>
-    // Yıl
-    document.getElementById("y").textContent = new Date().getFullYear();
+  <footer>
+    © 2026 Usta Finans Akademi · Tüm Hakları Saklıdır
+  </footer>
 
-    // KVKK Modal
-    const kvkkBackdrop = document.getElementById("kvkkBackdrop");
-    const openKvkkBtn = document.getElementById("openKvkkBtn");
-    const closeKvkkBtn = document.getElementById("closeKvkkBtn");
-    const openKvkkLink = document.getElementById("openKvkkLink");
-
-    function openModal(){
-      kvkkBackdrop.style.display = "block";
-      document.body.style.overflow = "hidden";
-    }
-    function closeModal(){
-      kvkkBackdrop.style.display = "none";
-      document.body.style.overflow = "";
-    }
-
-    openKvkkBtn.addEventListener("click", openModal);
-    closeKvkkBtn.addEventListener("click", closeModal);
-    openKvkkLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      openModal();
-    });
-    kvkkBackdrop.addEventListener("click", (e) => {
-      if(e.target === kvkkBackdrop) closeModal();
-    });
-    document.addEventListener("keydown", (e) => {
-      if(e.key === "Escape" && kvkkBackdrop.style.display === "block") closeModal();
-    });
-
-    // AJAX form submit (Formspree)
-    const form = document.getElementById("applyForm");
-    const submitBtn = document.getElementById("submitBtn");
-    const okMsg = document.getElementById("okMsg");
-    const badMsg = document.getElementById("badMsg");
-
-    function show(el){
-      el.style.display = "block";
-    }
-    function hide(el){
-      el.style.display = "none";
-    }
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      hide(okMsg); hide(badMsg);
-
-      const endpoint = form.getAttribute("data-endpoint");
-      if(!endpoint || endpoint.includes("XXXXXXX")){
-        show(badMsg);
-        badMsg.textContent = "❌ Form endpoint tanımlı değil. Lütfen Formspree endpoint’ini data-endpoint alanına girin (https://formspree.io/f/...).";
-        return;
-      }
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Gönderiliyor...";
-
-      try{
-        const data = new FormData(form);
-
-        const res = await fetch(endpoint, {
-          method: "POST",
-          body: data,
-          headers: { "Accept": "application/json" }
-        });
-
-        if(res.ok){
-          show(okMsg);
-          form.reset();
-          // KVKK checkbox reset sonrası işaretli olmayacağı için doğal.
-        }else{
-          show(badMsg);
-        }
-      }catch(err){
-        show(badMsg);
-      }finally{
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Başvuruyu Gönder";
-      }
-    });
-  </script>
 </body>
 </html>
