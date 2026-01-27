@@ -4,385 +4,275 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usta Finans Akademi | Finans Uzmanı Yetiştirir</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #0A1C3C; /* Koyu lacivert */
-            --secondary-gold: #B8924A; /* Altın rengi */
-            --light-bg: #F8F9FA; /* Açık gri zemin */
-            --text-dark: #343A40; /* Koyu gri metin */
-            --accent-red: #DC3545; /* Vurgu kırmızısı */
+            --primary-navy: #051630;
+            --accent-gold: #b8924a;
+            --text-gray: #4a4a4a;
+            --bg-light: #f4f7f9;
+            --white: #ffffff;
         }
+
+        * { box-sizing: border-box; }
 
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Lora', serif; /* Akademik metin fontu */
             margin: 0;
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.7;
-            text-transform: none; /* İçerik için küçük harfe dönüldü */
-        }
-
-        /* SABİT SOL MENÜ (SIDEBAR) */
-        .sidebar {
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 30px 20px;
-            box-shadow: 4px 0 15px rgba(0,0,0,0.3);
-            overflow-y: auto;
+            background-color: var(--bg-light);
+            color: var(--text-gray);
             display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        .sidebar .logo-area {
-            margin-bottom: 30px;
-            border: 2px solid var(--secondary-gold);
-            padding: 5px;
-            background-color: white;
+        /* SOL SABİT MENÜ */
+        aside {
+            width: 280px;
+            background-color: var(--primary-navy);
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 40px 20px;
+            color: var(--white);
+            border-right: 4px solid var(--accent-gold);
+            overflow-y: auto;
+            z-index: 1000;
         }
-        .sidebar .logo-area img { max-width: 180px; height: auto; display: block; }
 
-        .sidebar h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
+        .sidebar-logo {
             text-align: center;
             margin-bottom: 30px;
-            color: var(--secondary-gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid var(--secondary-gold);
-            padding-bottom: 10px;
-            width: 100%;
+            background: var(--white);
+            padding: 10px;
+            border-radius: 4px;
         }
 
-        .sidebar nav ul {
+        .sidebar-logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        nav ul {
             list-style: none;
             padding: 0;
-            width: 100%;
+            margin: 0;
         }
-        .sidebar nav ul li { margin-bottom: 15px; }
-        .sidebar nav ul li a {
-            color: white;
+
+        nav ul li {
+            margin-bottom: 10px;
+        }
+
+        nav ul li a {
+            color: var(--white);
             text-decoration: none;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            display: block;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .sidebar nav ul li a:hover,
-        .sidebar nav ul li a.active {
-            background-color: var(--secondary-gold);
-            color: var(--primary-blue);
-        }
-
-        /* İÇERİK ALANI */
-        .content-area {
-            margin-left: 250px; /* Sidebar genişliği kadar boşluk */
-            padding: 40px;
-        }
-
-        /* BÖLÜMLERİN GENEL STİLİ */
-        section {
-            background-color: white;
-            border: 1px solid #E0E0E0;
-            padding: 40px;
-            margin-bottom: 60px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            position: relative;
-        }
-
-        section h1, section h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            border-bottom: 4px solid var(--secondary-gold);
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-            text-transform: uppercase; /* Başlıklar büyük harf kalır */
-            letter-spacing: 1px;
-        }
-
-        section h3 {
-            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
             font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--primary-blue);
-            margin-top: 35px;
-            margin-bottom: 20px;
-            text-transform: uppercase; /* Alt başlıklar büyük harf kalır */
-        }
-
-        p {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 20px;
-        }
-        ul li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 10px;
-            font-size: 1.05rem;
-        }
-        ul li::before {
-            content: "\f00c"; /* Checkmark icon */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            color: var(--secondary-gold);
-            position: absolute;
-            left: 0;
-            top: 2px;
-        }
-
-        /* GÖRSELLERİN STİLİ */
-        .section-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            border: 1px solid #ddd;
-        }
-
-        /* KARTLAR */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        .info-card {
-            background-color: var(--light-bg);
-            border-left: 5px solid var(--secondary-gold);
-            padding: 25px;
-            border-radius: 5px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            font-weight: 600;
-            text-align: center;
-        }
-
-        /* ÖZEL VURGU KUTULARI */
-        .highlight-box {
-            background-color: #FFF3F4;
-            border-left: 8px solid var(--accent-red);
-            padding: 30px;
-            margin: 30px 0;
-            font-style: italic;
-            font-weight: 600;
-            color: var(--text-dark);
-            border-radius: 5px;
-        }
-
-        .dark-box {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 50px;
-            border: 3px double var(--secondary-gold);
-            margin-top: 60px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .dark-box h2 {
-            color: var(--secondary-gold);
-            border-bottom-color: white;
-            display: inline-block;
-        }
-        .dark-box p { color: #E0E0E0; }
-
-        /* FORM STİLİ */
-        .form-section {
-            background-color: var(--light-bg);
-            border: 2px solid var(--primary-blue);
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            margin-top: 60px;
-        }
-        .form-section h2 { text-align: center; width: 100%; border: none; margin-bottom: 40px; color: var(--primary-blue); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--primary-blue);
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #CED4DA;
-            border-radius: 5px;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 1rem;
-            color: var(--text-dark);
-            box-sizing: border-box;
-        }
-        .btn-submit {
-            background-color: var(--primary-blue);
-            color: white;
-            border: 2px solid var(--secondary-gold);
-            padding: 15px 30px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            border-radius: 5px;
-            width: 100%;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            padding: 12px 15px;
+            border-left: 3px solid transparent;
+            transition: 0.3s;
             text-transform: uppercase;
         }
-        .btn-submit:hover {
-            background-color: var(--secondary-gold);
-            color: var(--primary-blue);
+
+        nav ul li a:hover, nav ul li a.active {
+            background: rgba(184, 146, 74, 0.2);
+            border-left: 3px solid var(--accent-gold);
+            color: var(--accent-gold);
         }
 
-        /* FOOTER */
-        footer {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 40px 20px;
+        /* ANA İÇERİK ALANI */
+        main {
+            margin-left: 280px;
+            width: calc(100% - 280px);
+            padding: 60px;
+        }
+
+        section {
+            background: var(--white);
+            margin-bottom: 80px;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #e0e6ed;
+            max-width: 900px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            color: var(--primary-navy);
+            margin-top: 0;
+        }
+
+        h1 { font-size: 2.5rem; border-bottom: 3px solid var(--accent-gold); padding-bottom: 10px; }
+        h2 { font-size: 1.8rem; margin-top: 40px; color: var(--accent-gold); }
+        h3 { font-size: 1.4rem; color: #b21f1f; }
+
+        p { font-size: 1.15rem; line-height: 1.8; margin-bottom: 20px; }
+        
+        .image-container {
+            width: 100%;
+            height: 350px;
+            background-color: #ddd;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .image-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        .highlight-card {
+            background: var(--primary-navy);
+            color: var(--white);
+            padding: 30px;
+            border-left: 8px solid var(--accent-gold);
+            margin: 30px 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .info-item {
+            padding: 20px;
+            border: 1px solid var(--accent-gold);
+            background: #fffdf9;
+            font-weight: bold;
             text-align: center;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 0.9rem;
-            border-top: 4px solid var(--secondary-gold);
         }
-        footer p { margin: 5px 0; line-height: 1.5; }
-        footer a { color: var(--secondary-gold); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
 
-        /* RESPONSIVE AYARLAR */
-        @media (max-width: 992px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                box-shadow: none;
-                padding: 20px;
-            }
-            .content-area {
-                margin-left: 0;
-                padding: 20px;
-            }
-            .sidebar h2 { display: none; } /* Küçük ekranlarda sidebar başlığını gizle */
-            .sidebar nav ul { display: flex; flex-wrap: wrap; justify-content: center; }
-            .sidebar nav ul li { margin: 5px; }
-            .sidebar nav ul li a { padding: 8px 12px; font-size: 0.9rem; }
-            section h1, section h2 { font-size: 2rem; }
-            section h3 { font-size: 1.5rem; }
+        /* FORM STİLİ */
+        .form-box {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 4px;
+            border-top: 5px solid var(--primary-navy);
         }
-        @media (max-width: 576px) {
-            .sidebar .logo-area img { max-width: 150px; }
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1.2rem; padding: 8px 20px; }
-            section { padding: 25px; }
-            section h1, section h2 { font-size: 1.8rem; }
-            section h3 { font-size: 1.3rem; }
-            .info-card { padding: 15px; }
-            .highlight-box { padding: 20px; }
-            .dark-box { padding: 30px; }
-            .form-section { padding: 30px; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--primary-navy); }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+        }
+
+        .submit-btn {
+            background: var(--primary-navy);
+            color: var(--white);
+            border: none;
+            padding: 15px 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover { background: var(--accent-gold); }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        @media (max-width: 992px) {
+            aside { width: 100%; height: auto; position: relative; }
+            main { margin-left: 0; width: 100%; padding: 20px; }
+            body { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-    <div class="sidebar">
-        <div class="logo-area">
+    <aside>
+        <div class="sidebar-logo">
             <img src="akademi/logo.png" alt="Usta Finans Logo">
         </div>
-        <h2>USTA FİNANS AKADEMİ</h2>
         <nav>
             <ul>
-                <li><a href="#giris">GİRİŞ</a></li>
-                <li><a href="#finans-uzmani">FİNANS UZMANI OL</a></li>
-                <li><a href="#nedir">AKADEMİ NEDİR?</a></li>
+                <li><a href="#giris">USTA FİNANS AKADEMİ</a></li>
+                <li><a href="#finans-uzmani">FİNANS UZMANI OLMAK</a></li>
+                <li><a href="#akademi-nedir">AKADEMİ NEDİR?</a></li>
                 <li><a href="#kimler-icin">KİMLER İÇİN?</a></li>
                 <li><a href="#ne-ogrenirsin">NE ÖĞRENİRSİN?</a></li>
                 <li><a href="#kobi-sorunu">KOBİ SORUNU</a></li>
-                <li><a href="#banka-yonetimi">BANKA YÖNETİMİ</a></li>
+                <li><a href="#banka-kredi">BANKA & KREDİ YÖNETİMİ</a></li>
                 <li><a href="#program-isleyis">PROGRAM İŞLEYİŞİ</a></li>
-                <li><a href="#ders-yok-is-var">DERS YOK, İŞ VAR</a></li>
                 <li><a href="#kariyer-hedefi">KARİYER HEDEFİ</a></li>
-                <li><a href="#kullanilan-araclar">KULLANILAN ARAÇLAR</a></li>
-                <li><a href="#basvur">BAŞVUR</a></li>
+                <li><a href="#basvur">BAŞVURU</a></li>
             </ul>
         </nav>
-    </div>
+    </aside>
 
-    <div class="content-area">
-
+    <main>
         <section id="giris">
-            <img src="https://images.unsplash.com/photo-1579621970795-87facc2f935d?auto=format&fit=crop&w=1200&q=80" alt="Finans Başlangıç Görseli" class="section-image">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=1200&q=80" alt="Finans Uzmanlığı">
+            </div>
             <h1>USTA FİNANS AKADEMİ</h1>
-            <p>Şirketlerin ihtiyaç duyduğu finans uzmanlarını yetiştirir.</p>
+            <p>Şirketlerin İhtiyaç Duyduğu Finans Uzmanlarını Yetiştirir</p>
             <p>Üniversite öğrencileri · Yeni mezunlar · Genç profesyoneller · Genç KOBİ yöneticileri</p>
-            <div class="card-grid">
-                <div class="info-card">DERS YOK. İŞ VAR.</div>
-                <div class="info-card">TEORİ + PRATİK AYNI ANDA.</div>
-                <div class="info-card">GERÇEK ŞİRKETLERDE, GERÇEK FİNANS İŞLERİ.</div>
+            <div class="info-grid">
+                <div class="info-item">DERS YOK. İŞ VAR.</div>
+                <div class="info-item">TEORİ + PRATİK AYNI ANDA.</div>
+                <div class="info-item">GERÇEK ŞİRKETLERDE, GERÇEK FİNANS İŞLERİ.</div>
             </div>
         </section>
 
         <section id="finans-uzmani">
-            <img src="https://images.unsplash.com/photo-1543286386-713bdd5ba17b?auto=format&fit=crop&w=1200&q=80" alt="Nakit Yönetimi Görseli" class="section-image">
             <h2>FİNANS UZMANI OLMAK İSTİYORSAN</h2>
-            <h3>Kârı değil, nakdi yönetmeyi öğrenmelisin</h3>
+            <h3>Kârı Değil, NAKDİ Yönetmeyi Öğrenmelisin</h3>
             <p>Türkiye’de şirketler finans deyince şunu söyler:</p>
-            <div class="highlight-box">
+            <blockquote style="background: #fff5f5; border-left: 5px solid #b21f1f; padding: 20px; font-style: italic;">
                 “Kâr var ama nakit yok.”<br>
                 “Alacaklarımı tahsil edemiyorum.”<br>
                 “Ödemeler hep sıkışıyor.”<br>
                 “Bankadan kredi bulmadan dönemiyorum.”
-            </div>
-            <p>Sorun şurada başlar: <strong>Şirketlerde finansı yöneten insan yoktur.</strong></p>
+            </blockquote>
+            <p>Sorun şurada başlar: Şirketlerde finansı yöneten insan yoktur.</p>
             <p>Muhasebe vardır. Satış vardır. Ama paranın ne zaman girip ne zaman çıkacağını bilen, nakit dengesini kuran, bankayla finans dili konuşan Finans Uzmanı yoktur.</p>
             <p>Usta Finans Akademi bu boşluk için kurulmuştur.</p>
         </section>
 
-        <section id="nedir">
-            <img src="https://images.unsplash.com/photo-1549923746-c50f1d43a18a?auto=format&fit=crop&w=1200&q=80" alt="Akademi Nedir Görseli" class="section-image">
-            <h2>USTA FİNANS AKADEMİ NEDİR?</h2>
+        <section id="akademi-nedir">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1454165833767-027ffea7028c?auto=format&fit=crop&w=1200&q=80" alt="Finans Eğitimi">
+            </div>
+            <h2>Usta Finans Akademi Nedir?</h2>
             <p>Usta Finans Akademi, şirketlerin gerçekten ihtiyaç duyduğu Finans Uzmanlarını, kısa sürede işe hazır hale getiren, uygulama odaklı bir eğitim akademisidir.</p>
-            <p>Bu bir kurs değildir. Bu bir sertifika programı değildir.</p>
-            <p>Burada ders anlatılmaz. Finans Uzmanının şirkette yaptığı işler öğretilir.</p>
+            <p>Bu bir kurs değildir. Bu bir sertifika programı değildir. Burada ders anlatılmaz. Finans Uzmanının şirkette yaptığı işler öğretilir.</p>
         </section>
 
         <section id="kimler-icin">
-            <img src="https://images.unsplash.com/photo-1522204523234-8729aa67e2e6?auto=format&fit=crop&w=1200&q=80" alt="Hedef Kitle Görseli" class="section-image">
-            <h2>KİMLER İÇİN?</h2>
+            <h2>Kimler İçin?</h2>
             <p>Usta Finans Akademi şu profiller için tasarlanmıştır:</p>
             <ul>
-                <li>Üniversite öğrencileri (mezun olmadan önce finans mesleğine hazırlanmak isteyenler)</li>
-                <li>Yeni mezunlar (teoriyi pratiğe dönüştürmek isteyenler)</li>
-                <li>Genç profesyoneller (finans alanında uzmanlaşmak isteyenler)</li>
-                <li>Genç KOBİ yöneticileri (kendi şirketinde finansı doğru yönetmek isteyenler)</li>
+                <li><strong>Üniversite öğrencileri:</strong> (mezun olmadan önce finans mesleğine hazırlanmak isteyenler)</li>
+                <li><strong>Yeni mezunlar:</strong> (teoriyi pratiğe dönüştürmek isteyenler)</li>
+                <li><strong>Genç profesyoneller:</strong> (finans alanında uzmanlaşmak isteyenler)</li>
+                <li><strong>Genç KOBİ yöneticileri:</strong> (kendi şirketinde finansı doğru yönetmek isteyenler)</li>
             </ul>
             <p>Finans öğrenmek isteyenler değil, Finansı meslek olarak yapmak isteyenler için.</p>
         </section>
 
         <section id="ne-ogrenirsin">
-            <img src="https://images.unsplash.com/photo-1551288259-cd91219c6f28?auto=format&fit=crop&w=1200&q=80" alt="Ne Öğrenirsin Görseli" class="section-image">
-            <h2>BU AKADEMİDE NE ÖĞRENİRSİN?</h2>
+            <h2>Bu Akademide Ne Öğrenirsin?</h2>
             <p>Bu akademiyi tamamlayan biri, bir şirkete girdiğinde şunları tek başına yapabilir:</p>
-            <h3>BİR FİNANS UZMANI OLARAK:</h3>
+            <p><strong>Bir Finans Uzmanı Olarak:</strong></p>
             <ul>
                 <li>Şirketin parasının nereden geldiğini, nereye gittiğini görür</li>
                 <li>“Kâr var ama neden kasada para yok?” sorusuna net cevap verir</li>
@@ -391,204 +281,92 @@
                 <li>Ay boyunca para yetip yetmeyeceğini önceden bilir</li>
                 <li>Yönetim için sade, anlaşılır finansal özetler hazırlar</li>
             </ul>
-            <p><strong>Ve en önemlisi: Kasada para kalmasını sağlayacak sistemi kurar.</strong></p>
-            <p>Kâr yazmak muhasebenin işidir. Nakdi yönetmek Finans Uzmanının işidir.</p>
+            <div class="highlight-card">
+                VE EN ÖNEMLİSİ: Kasada para kalmasını sağlayacak sistemi kurar.<br>
+                Kâr yazmak muhasebenin işidir. Nakdi yönetmek Finans Uzmanının işidir.
+            </div>
         </section>
 
         <section id="kobi-sorunu">
-            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80" alt="KOBİ Sorunu Görseli" class="section-image">
-            <h2>KOBİ’LERİN EN BÜYÜK SORUNU</h2>
+            <h2>KOBİ’lerin En Büyük Sorunu</h2>
             <h3>“Kâr Var Ama Nakit Yok”</h3>
-            <p>Birçok KOBİ satış yapar, kâr yazar ama zorlanır. Çünkü:</p>
-            <ul>
-                <li>Tahsilat ne zaman yapılacak bilinmez</li>
-                <li>Ödemeler plansızdır</li>
-                <li>Para giriş–çıkışı takip edilmez</li>
-                <li>Nakit dengesi kurulmamıştır</li>
-            </ul>
-            <p>Bu sorun sürekli kredi alarak çözülmez.</p>
-            <p>Kredi ancak doğru nakit planı varsa işe yarar. Aksi halde şirket krediye bağımlı hale gelir.</p>
-            <p>Usta Finans Akademi’de bu problem merkezde ele alınır.</p>
+            <p>Birçok KOBİ satış yapar, kâr yazar ama zorlanır. Çünkü: Tahsilat ne zaman yapılacak bilinmez, ödemeler plansızdır, para giriş–çıkışı takip edilmez, nakit dengesi kurulmamıştır.</p>
+            <p>Bu sorun sürekli kredi alarak çözülmez. Kredi ancak doğru nakit planı varsa işe yarar. Aksi halde şirket krediye bağımlı hale gelir. Usta Finans Akademi’de bu problem merkezde ele alınır.</p>
         </section>
 
-        <div class="dark-box" id="banka-yonetimi">
-            <h2>BANKA, FİNANSMAN VE KREDİ YÖNETİMİ</h2>
-            <h3>FİNANS UZMANININ EN KRİTİK YETKİNLİĞİ</h3>
+        <section id="banka-kredi" style="background: var(--primary-navy); color: white;">
+            <h2 style="color: var(--accent-gold); border-bottom-color: var(--accent-gold);">Banka, Finansman ve Kredi Yönetimi</h2>
+            <p><strong>Finans Uzmanının En Kritik Yetkinliği</strong></p>
             <p>Türkiye’de şirketler yalnızca özkaynakla çalışmaz. Banka, finansman ve kredi, işin doğal parçasıdır.</p>
-            <p>Ama çoğu şirkette:</p>
-            <ul>
-                <li>Kredi plansız alınır</li>
-                <li>Banka ne derse o olur</li>
-                <li>Limit neden düşer, neden artar bilinmez</li>
-                <li>Teminat, vade, faiz doğru okunmaz</li>
-            </ul>
+            <p>Ama çoğu şirkette: Kredi plansız alınır, banka ne derse o olur, limit neden düşer/artar bilinmez, teminat/vade/faiz doğru okunmaz.</p>
             <p>Usta Finans Akademi’de şunu öğrenirsin:</p>
-            <ul>
+            <ul style="color: #ccc;">
                 <li>Bankalar kredi verirken şirkete nasıl bakar?</li>
                 <li>Finansal tablolar kredi kararını nasıl etkiler?</li>
                 <li>Kredi başvuru dosyası nasıl hazırlanır?</li>
                 <li>Kredi limit tesisi süreci nasıl yönetilir?</li>
                 <li>Nakit dengesine uygun kredi yapısı nasıl kurulur?</li>
-                <li>Birden fazla banka ile sağlıklı ilişki nasıl yürütülür?</li>
-                <li>Kredi bağımlılığı nasıl kontrol altına alınır?</li>
             </ul>
             <p>Bu eğitimi alan biri, bankaya evrak taşıyan değil, bankayla aynı dili konuşan Finans Uzmanı olur.</p>
-        </div>
-
-        <section id="program-isleyis">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Program İşleyişi Görseli" class="section-image">
-            <h2>PROGRAM NASIL İŞLER?</h2>
-            <h3>EĞİTİM MODELİ</h3>
-            <ul>
-                <li><strong>1️⃣ Gerekli teori (kısa ve net):</strong> Sadece işte kullanacağın finans bilgisi.</li>
-                <li><strong>2️⃣ Anında uygulama:</strong> Her konu gerçek şirket senaryosu üzerinden çalışılır.</li>
-                <li><strong>3️⃣ Gerçek iş çıktıları:</strong> Ödev değil; rapor, plan, sistem üretirsin.</li>
-                <li><strong>4️⃣ Mentorluk & kontrol:</strong> Yaptığın işler kontrol edilir, standart kazanırsın.</li>
-            </ul>
-            <p>Amaç: “Eğitim bitti” değil, “İşe hazırsın” demek.</p>
         </section>
 
-        <section id="ders-yok-is-var">
-            <img src="https://images.unsplash.com/photo-1556761175-5973dd3474f8?auto=format&fit=crop&w=1200&q=80" alt="Ders Yok İş Var Görseli" class="section-image">
-            <h2>BU AKADEMİDE DERS YOK, İŞ VAR</h2>
-            <p>Burada şunları yaparsın:</p>
-            <ul>
-                <li>Bir şirkete girip finansal fotoğraf çıkarmak</li>
-                <li>Alacak–tahsilat–ödeme dengesini analiz etmek</li>
-                <li>Nakit planı oluşturmak</li>
-                <li>Bütçe ve takip düzeni kurmak</li>
-                <li>Kredi ve finansman yapısını değerlendirmek</li>
-                <li>Yönetim için 1 sayfalık finansal özet hazırlamak</li>
-                <li>Banka görüşmesine finans tarafı olarak hazırlanmak</li>
-            </ul>
-            <p>Bunlar CV’ye yazılan değil, iş görüşmesinde anlatılan işlerdir.</p>
+        <section id="program-isleyis">
+            <h2>Program Nasıl İşler?</h2>
+            <p><strong>Eğitim Modeli:</strong></p>
+            <p>1️⃣ Gerekli teori (kısa ve net): Sadece işte kullanacağın finans bilgisi.<br>
+            2️⃣ Anında uygulama: Her konu gerçek şirket senaryosu üzerinden çalışılır.<br>
+            3️⃣ Gerçek iş çıktıları: Ödev değil; rapor, plan, sistem üretirsin.<br>
+            4️⃣ Mentorluk & kontrol: Yaptığın işler kontrol edilir, standart kazanırsın.</p>
+            <p><strong>Bu Akademide Ders Yok, İş Var.</strong> Burada şunları yaparsın: Finansal fotoğraf çıkarmak, nakit planı oluşturmak, bütçe düzeni kurmak, kredi yapısını değerlendirmek, banka görüşmesine hazırlanmak.</p>
         </section>
 
         <section id="kariyer-hedefi">
-            <img src="https://images.unsplash.com/photo-1534676571597-285223ca86e9?auto=format&fit=crop&w=1200&q=80" alt="Kariyer Hedefi Görseli" class="section-image">
-            <h2>KARİYER HEDEFİ</h2>
-            <p>Usta Finans Akademi’nin hedefi nettir: Katılımcıyı işe hazır Finans Uzmanı seviyesine getirmek.</p>
-            <p>Bu sayede:</p>
-            <ul>
-                <li>İş görüşmesine güçlü girersin</li>
-                <li>Ne yaptığını net anlatırsın</li>
-                <li>Şirkette kısa sürede değer üretirsin</li>
-                <li>Maaş pazarlığında elin güçlenir</li>
-            </ul>
-            <p>Bu profil, piyasada daha iyi ücretlerle iş bulur.</p>
+            <h2>Kariyer Hedefi & Kullanılan Araçlar</h2>
+            <p>Hedef katılımcıyı işe hazır Finans Uzmanı seviyesine getirmektir. Bu sayede iş görüşmesine güçlü girersin ve maaş pazarlığında elin güçlenir.</p>
+            <p><strong>Kullanılan Araçlar:</strong> Nakit planlama şablonları, işletme sermayesi analizleri, bütçe sistemleri, yönetim özet raporları, banka & kredi analiz şablonları.</p>
         </section>
 
-        <section id="kullanilan-araclar">
-            <img src="https://images.unsplash.com/photo-1550547660-f4639943280c?auto=format&fit=crop&w=1200&q=80" alt="Kullanılan Araçlar Görseli" class="section-image">
-            <h2>KULLANILAN ARAÇLAR</h2>
-            <p>Akademide kullanılan tüm pratik araçlar:</p>
-            <ul>
-                <li>Nakit & tahsilat planlama şablonları</li>
-                <li>İşletme sermayesi analizleri</li>
-                <li>Bütçe ve takip sistemleri</li>
-                <li>Yönetim özet raporları</li>
-                <li>Banka & kredi analiz şablonları</li>
-            </ul>
-            <p>Amaç araç öğretmek değil, iş öğretmektir.</p>
-        </section>
-
-        <section id="basvur" class="form-section">
-            <h2>BAŞVUR</h2>
-            <p style="text-align: center; margin-bottom: 30px;">Eğer:</p>
-            <ul>
-                <li>Finans Uzmanı olmak istiyorsan</li>
-                <li>Sahada çalışmaya hazırsan</li>
-                <li>“Kâr var ama nakit yok” sorununu çözmek istiyorsan</li>
-            </ul>
-            <p style="text-align: center; font-weight: 700; font-size: 1.2rem; margin-bottom: 40px;">Usta Finans Akademi’ye başvur.</p>
-
-            <form action="https://formspree.io/f/bulentusta@ustafinans.net" method="POST">
+        <section id="basvur" class="form-box">
+            <h2>Başvur</h2>
+            <p>Finans Uzmanı olmak istiyorsan, sahada çalışmaya hazırsan ve “Kâr var ama nakit yok” sorununu çözmek istiyorsan Usta Finans Akademi’ye başvur.</p>
+            <form action="https://formspree.io/f/mvzalpdj" method="POST">
                 <div class="form-group">
-                    <label for="name">Ad Soyad</label>
-                    <input type="text" id="name" name="name" required>
+                    <label>AD SOYAD</label>
+                    <input type="text" name="ad_soyad" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">E-posta</label>
-                    <input type="email" id="email" name="email" required>
+                    <label>E-POSTA</label>
+                    <input type="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Telefon</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                <div class="form-group">
-                    <label for="profile">Profiliniz</label>
-                    <select id="profile" name="profile">
-                        <option value="">Lütfen seçiniz</option>
-                        <option value="student">Üniversite Öğrencisi</option>
-                        <option value="graduate">Yeni Mezun</option>
-                        <option value="professional">Genç Profesyonel</option>
-                        <option value="kobi_manager">Genç KOBİ Yöneticisi</option>
+                    <label>PROFİLİNİZ</label>
+                    <select name="profil">
+                        <option value="öğrenci">Üniversite Öğrencisi</option>
+                        <option value="mezun">Yeni Mezun</option>
+                        <option value="profesyonel">Genç Profesyonel</option>
+                        <option value="kobi">KOBİ Yöneticisi</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-submit">BAŞVURUMU GÖNDER</button>
+                <button type="submit" class="submit-btn">BAŞVURUYU GÖNDER</button>
             </form>
         </section>
 
         <footer>
-            <p>USTA FİNANS AKADEMİ</p>
-            <p>Finans öğrenmek isteyen çok. Ama Finans Uzmanı olmak başka bir şey.</p>
-            <p>Burada ders yok. İş var.</p>
-            <p>www.ustafinans.net | Bodrum, Muğla</p>
-            <p>&copy; 2026 Usta Finans ve Yönetim Danışmanlığı A.Ş.</p>
+            <p>Usta Finans ve Yönetim Danışmanlığı A.Ş. | www.ustafinans.net | Bodrum, Muğla</p>
+            <p>&copy; 2026 Usta Finans Akademi. Tüm Hakları Saklıdır.</p>
         </footer>
-
-    </div>
+    </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sidebarLinks = document.querySelectorAll('.sidebar nav ul li a');
-
-            sidebarLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-
-                    if (targetElement) {
-                        // Tüm linklerden 'active' sınıfını kaldır
-                        sidebarLinks.forEach(l => l.classList.remove('active'));
-                        // Tıklanan linke 'active' sınıfını ekle
-                        link.classList.add('active');
-
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 20, // Biraz boşluk bırak
-                            behavior: 'smooth'
-                        });
-                    }
+        // Smooth scroll and active link highlight
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
-
-            // Sayfa yüklendiğinde ve scroll edildiğinde active linki belirle
-            const sections = document.querySelectorAll('section, .dark-box');
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop - 100 && pageYOffset < sectionTop + sectionHeight - 100) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                sidebarLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').includes(current)) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-
-            // İlk yüklemede ilk linki aktif yap
-            if (sidebarLinks.length > 0) {
-                sidebarLinks[0].classList.add('active');
-            }
         });
     </script>
-
 </body>
 </html>
