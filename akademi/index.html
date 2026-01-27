@@ -26,12 +26,12 @@
 
         /* SOL SABİT MENÜ */
         aside {
-            width: 260px;
+            width: 280px;
             background-color: var(--navy);
             height: 100vh;
             position: fixed;
             left: 0; top: 0;
-            padding: 40px 15px;
+            padding: 40px 10px;
             color: var(--white);
             border-right: 4px solid var(--gold);
             overflow-y: auto;
@@ -40,68 +40,73 @@
 
         .logo-box { text-align: center; margin-bottom: 50px; position: relative; }
         .logo-box .cap-icon {
-            position: absolute; top: -25px; left: 50%; transform: translateX(-50%);
-            font-size: 2.8rem; color: var(--gold); z-index: 5;
+            position: absolute; top: -30px; left: 50%; transform: translateX(-50%);
+            font-size: 2.5rem; color: var(--gold); z-index: 5;
         }
-        .logo-box img { width: 150px; background: #fff; padding: 10px; border-radius: 4px; border: 1px solid var(--gold); }
+        .logo-box img { width: 160px; background: #fff; padding: 10px; border-radius: 4px; border: 1px solid var(--gold); }
 
         nav ul { list-style: none; padding: 0; margin: 0; }
+        nav ul li { border-bottom: 1px solid rgba(184, 146, 74, 0.3); } /* BAŞLIKLAR ARASI ÇİZGİ */
+        nav ul li:last-child { border-bottom: none; }
+        
         nav ul li a {
             color: rgba(255,255,255,0.9);
             text-decoration: none;
             font-family: var(--academic-font);
             font-size: 0.85rem;
             display: block;
-            padding: 10px 15px;
+            padding: 15px 10px;
             transition: 0.3s;
-            border-left: 2px solid transparent;
         }
-        nav ul li a:hover { color: var(--gold); background: rgba(184, 146, 74, 0.1); border-left: 2px solid var(--gold); }
+        nav ul li a:hover { color: var(--gold); background: rgba(184, 146, 74, 0.1); }
 
         /* ANA İÇERİK */
-        main { margin-left: 260px; width: calc(100% - 260px); padding: 50px 80px; }
+        main { margin-left: 280px; width: calc(100% - 280px); padding: 50px 80px; }
 
         section {
             background: var(--white);
-            margin-bottom: 70px;
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            max-width: 950px;
+            margin-bottom: 80px;
+            padding: 60px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 1000px;
         }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; text-transform: uppercase; color: var(--navy); }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; text-transform: uppercase; color: var(--navy); margin-top: 0; }
         h1 { font-size: 2.8rem; border-bottom: 3px solid var(--gold); padding-bottom: 20px; margin-bottom: 40px; }
-        h2 { font-size: 2rem; border-left: 6px solid var(--gold); padding-left: 20px; margin-bottom: 25px; }
-        h3 { font-size: 1.5rem; color: #b21f1f; margin-top: 30px; }
+        h2 { font-size: 2.1rem; border-left: 8px solid var(--gold); padding-left: 20px; margin-bottom: 30px; }
+        h3 { font-size: 1.6rem; color: #b21f1f; margin-bottom: 20px; }
 
-        p { font-size: 1.15rem; line-height: 1.8; margin-bottom: 20px; }
+        p { font-size: 1.2rem; line-height: 1.9; margin-bottom: 25px; }
+        ul { margin-bottom: 30px; }
+        li { font-size: 1.15rem; margin-bottom: 12px; line-height: 1.7; }
 
-        /* GÖRSELLER - MODERN & İÇ AÇICI */
+        /* GÖRSELLER - MODERN & AKADEMİK */
         .section-img {
             width: 100%;
-            height: 380px;
+            height: 450px;
             object-fit: cover;
             border-radius: 4px;
-            margin-bottom: 30px;
-            border: 1px solid var(--gold);
+            margin-bottom: 40px;
+            border: 2px solid var(--gold);
         }
 
-        .highlight-box {
+        .highlight-quote {
             background: #fff9f0; border-left: 10px solid var(--navy);
-            padding: 30px; margin: 25px 0; font-style: italic; font-size: 1.25rem;
+            padding: 40px; margin: 30px 0; font-style: italic; font-size: 1.4rem;
         }
 
-        .apply-card { background: var(--navy); color: white; padding: 50px; border-radius: 8px; }
-        .apply-card h2 { color: var(--gold); border: none; padding: 0; }
-        .form-group { margin-bottom: 20px; }
-        input, select { width: 100%; padding: 15px; border-radius: 4px; border: 1px solid #ddd; font-family: var(--academic-font); }
-        .submit-btn { background: var(--gold); color: var(--navy); padding: 18px; width: 100%; font-weight: 700; border: none; cursor: pointer; text-transform: uppercase; font-size: 1.2rem; }
+        .apply-card { background: var(--navy); color: white; padding: 60px; border-radius: 4px; }
+        .apply-card h2 { color: var(--gold); border: none; padding: 0; margin-bottom: 30px; }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 10px; font-weight: bold; font-size: 0.9rem; }
+        input, select { width: 100%; padding: 15px; border-radius: 4px; border: 1px solid #ddd; font-family: var(--academic-font); font-size: 1.1rem; }
+        .submit-btn { background: var(--gold); color: var(--navy); padding: 20px; width: 100%; font-weight: 700; border: none; cursor: pointer; text-transform: uppercase; font-size: 1.3rem; transition: 0.3s; }
 
-        footer { text-align: center; padding: 60px; color: var(--navy); font-weight: bold; }
+        footer { text-align: center; padding: 60px; color: var(--navy); font-weight: bold; font-family: 'Montserrat', sans-serif; }
 
         @media (max-width: 1100px) {
-            aside { width: 100%; height: auto; position: relative; }
+            aside { width: 100%; height: auto; position: relative; border-right: none; }
             main { margin-left: 0; width: 100%; padding: 30px; }
             body { flex-direction: column; }
         }
@@ -132,7 +137,7 @@
 
     <main>
         <section id="giris">
-            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=80" class="section-img" alt="Üniversite Bahçesi">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=1200&q=80" class="section-img" alt="Üniversite Kampüsü ve Gençler">
             <h1>USTA FİNANS AKADEMİ</h1>
             <p><strong>Şirketlerin İhtiyaç Duyduğu Finans Uzmanlarını Yetiştirir</strong></p>
             <p>Üniversite öğrencileri · Yeni mezunlar · Genç profesyoneller · Genç KOBİ yöneticileri</p>
@@ -140,25 +145,28 @@
         </section>
 
         <section id="uzmanlik">
-            <img src="https://images.unsplash.com/photo-1573161158521-8034a818636a?auto=format&fit=crop&w=1200&q=80" class="section-img" alt="Modern Ofis Çalışması">
-            <h2>FİNANS UZMANI OLMAK İSTİYORSAN</h2>
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" class="section-img" alt="Modern Ofiste Finans Çalışması">
+            <h2>Finans Uzmanı Olmak İstiyorsan</h2>
             <h3>Kârı Değil, NAKDİ Yönetmeyi Öğrenmelisin</h3>
-            <p>Türkiye’de şirketler finans deyince şunu söyler: “Kâr var ama nakit yok.” “Alacaklarımı tahsil edemiyorum.” “Ödemeler hep sıkışıyor.” “Bankadan kredi bulmadan dönemiyorum.”</p>
-            <div class="highlight-box">
-                Sorun şurada başlar: Şirketlerde finansı yöneten insan yoktur. Muhasebe vardır. Satış vardır. Ama paranın ne zaman girip ne zaman çıkacağını bilen, nakit dengesini kuran, bankayla finans dili konuşan Finans Uzmanı yoktur.
+            <p>Türkiye’de şirketler finans deyince şunu söyler:</p>
+            <div class="highlight-quote">
+                “Kâr var ama nakit yok.”<br>
+                “Alacaklarımı tahsil edemiyorum.”<br>
+                “Ödemeler hep sıkışıyor.”<br>
+                “Bankadan kredi bulmadan dönemiyorum.”
             </div>
-            <p>Usta Finans Akademi bu boşluk için kurulmuştur.</p>
+            <p>Sorun şurada başlar: Şirketlerde finansı yöneten insan yoktur. Muhasebe vardır. Satış vardır. Ama paranın ne zaman girip ne zaman çıkacağını bilen, nakit dengesini kuran, bankayla finans dili konuşan Finans Uzmanı yoktur. Usta Finans Akademi bu boşluk için kurulmuştur.</p>
         </section>
 
         <section id="nedir">
-            <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1200&q=80" class="section-img" alt="Modern Kütüphane">
+            <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=1200&q=80" class="section-img" alt="Akademik Eğitim Ortamı">
             <h2>USTA FİNANS AKADEMİ NEDİR?</h2>
             <p>Usta Finans Akademi, şirketlerin gerçekten ihtiyaç duyduğu Finans Uzmanlarını, kısa sürede işe hazır hale getiren, uygulama odaklı bir eğitim akademisidir. Bu bir kurs değildir. Bu bir sertifika programı değildir. Burada ders anlatılmaz. Finans Uzmanının şirkette yaptığı işler öğretilir.</p>
         </section>
 
         <section id="kimler">
-            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" class="section-img" alt="Genç Profesyoneller Toplantı">
-            <h2>KİMLER İÇİN?</h2>
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" class="section-img" alt="Üniversite Bahçesinde Çalışan Gençler">
+            <h2>Kimler İçin?</h2>
             <p>Usta Finans Akademi şu profiller için tasarlanmıştır:</p>
             <ul>
                 <li><strong>Üniversite öğrencileri:</strong> (mezun olmadan önce finans mesleğine hazırlanmak isteyenler)</li>
@@ -170,7 +178,7 @@
         </section>
 
         <section id="ogrenim">
-            <h2>BU AKADEMİDE NE ÖĞRENİRSİN?</h2>
+            <h2>Bu Akademide Ne Öğrenirsin?</h2>
             <p>Bu akademiyi tamamlayan biri, bir şirkete girdiğinde şunları tek başına yapabilir:</p>
             <p><strong>Bir Finans Uzmanı Olarak:</strong></p>
             <ul>
@@ -186,14 +194,13 @@
         </section>
 
         <section id="kobi">
-            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80" class="section-img" alt="Modern Yönetici Odası">
-            <h2>KOBİ’LERİN EN BÜYÜK SORUNU: “KÂR VAR AMA NAKİT YOK”</h2>
-            <p>Birçok KOBİ satış yapar, kâr yazar ama zorlanır. Çünkü: Tahsilat ne zaman yapılacak bilinmez, ödemeler plansızdır, para giriş–çıkışı takip edilmez, nakit dengesi kurulmamıştır. Bu sorun sürekli kredi alarak çözülmez. Kredi ancak doğru nakit planı varsa işe yarar. Aksi halde şirket krediye bağımlı hale gelir.</p>
+            <h2>KOBİ’lerin En Büyük Sorunu: “Kâr Var Ama Nakit Yok”</h2>
+            <p>Birçok KOBİ satış yapar, kâr yazar ama zorlanır. Çünkü: Tahsilat ne zaman yapılacak bilinmez, ödemeler plansızdır, para giriş–çıkışı takip edilmez, nakit dengesi kurulmamıştır. Bu sorun sürekli kredi alarak çözülmez. Kredi ancak doğru nakit planı varsa işe yarar. Aksi halde şirket krediye bağımlı hale gelir. Usta Finans Akademi’de bu problem merkezde ele alınır.</p>
         </section>
 
         <section id="banka">
-            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80" class="section-img" alt="Banka Finans Görüşmesi">
-            <h2>BANKA, FİNANSMAN VE KREDİ YÖNETİMİ</h2>
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80" class="section-img" alt="Banka ve Kredi Yönetimi Genç Profesyoneller">
+            <h2>Banka, Finansman ve Kredi Yönetimi</h2>
             <h3>Finans Uzmanının En Kritik Yetkinliği</h3>
             <p>Türkiye’de şirketler yalnızca özkaynakla çalışmaz. Banka, finansman ve kredi, işin doğal parçasıdır. Ama çoğu şirkette: Kredi plansız alınır, banka ne derse o olur, limit neden düşer/artar bilinmez, teminat/vade/faiz doğru okunmaz.</p>
             <p><strong>Usta Finans Akademi’de şunu öğrenirsin:</strong></p>
@@ -210,7 +217,7 @@
         </section>
 
         <section id="isleyis">
-            <h2>PROGRAM NASIL İŞLER? (EĞİTİM MODELİ)</h2>
+            <h2>Program Nasıl İşler? (Eğitim Modeli)</h2>
             <p>1️⃣ Gerekli teori (kısa ve net): Sadece işte kullanacağın finans bilgisi.<br>
             2️⃣ Anında uygulama: Her konu gerçek şirket senaryosu üzerinden çalışılır.<br>
             3️⃣ Gerçek iş çıktıları: Ödev değil; rapor, plan, sistem üretirsin.<br>
@@ -220,17 +227,16 @@
         </section>
 
         <section id="kariyer">
-            <h2>KARİYER HEDEFİ & KULLANILAN ARAÇLAR</h2>
+            <h2>Kariyer Hedefi & Kullanılan Araçlar</h2>
             <p><strong>Hedef:</strong> Katılımcıyı işe hazır Finans Uzmanı seviyesine getirmek. Bu sayede: İş görüşmesine güçlü girersin, ne yaptığını net anlatırsın, şirketlerde kısa sürede değer üretirsin, maaş pazarlığında elin güçlenir. Bu profil, piyasada daha iyi ücretlerle iş bulur.</p>
-            <p><strong>Araçlar:</strong> Nakit planlama şablonları, işletme sermayesi analizleri, bütçe ve takip sistemleri, yönetim özet raporları, banka & kredi analiz şablonları. Amaç araç öğretmek değil, iş öğretmektir.</p>
+            <p><strong>Araçlar:</strong> Nakit planlama şablonları, işletme sermayesi analizleri, bütçe takip sistemleri, yönetim özet raporları, banka & kredi analiz şablonları. Amaç araç öğretmek değil, iş öğretmektir.</p>
         </section>
 
         <section id="basvur" class="apply-card">
-            <h2>BAŞVUR</h2>
-            <p>Finans Uzmanı olmak istiyorsan, sahada çalışmaya hazırsan ve “Kâr var ama nakit yok” sorununu çözmek istiyorsan başvurunu yap.</p>
+            <h2>Usta Finans Akademi’ye Başvur</h2>
             <form action="https://formspree.io/f/mvzalpdj" method="POST">
-                <div class="form-group"><input type="text" name="name" placeholder="AD SOYAD" required></div>
-                <div class="form-group"><input type="email" name="email" placeholder="E-POSTA" required></div>
+                <div class="form-group"><label>AD SOYAD</label><input type="text" name="name" required></div>
+                <div class="form-group"><label>E-POSTA</label><input type="email" name="email" required></div>
                 <div class="form-group">
                     <select name="profile">
                         <option value="student">Üniversite Öğrencisi</option>
