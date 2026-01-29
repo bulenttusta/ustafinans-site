@@ -4,936 +4,769 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Usta Finans Akademi | Finans Uzmanı Yetiştirir</title>
-  <meta name="description" content="Usta Finans Akademi; şirketlerin ihtiyaç duyduğu finans uzmanlarını uygulama odaklı modelle kısa sürede işe hazır hale getirir." />
 
-  <!-- (Opsiyonel) Google Fonts: ViemSoft benzeri temiz kurumsal tipografi -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
   <style>
     :root{
-      /* ViemSoft hissi: koyu header + açık arkaplan + güçlü vurgu */
-      --bg:#f6f7fb;
-      --surface:#ffffff;
-      --text:#0b1220;
-      --muted:#475569;
-      --line:rgba(15,23,42,.12);
-
       --navy:#051630;
-      --accent:#c1121f;        /* kırmızı */
-      --accent2:#b45309;       /* turuncu */
-      --accent3:#a16207;       /* sarı */
+      --gold:#b8924a;
 
-      --radius:18px;
-      --shadow: 0 18px 50px rgba(2,8,23,.10);
-      --shadow2: 0 10px 28px rgba(2,8,23,.08);
+      --bg:#eef3f9;
+      --card:#ffffff;
+      --ink:#1f2a3a;
+      --muted:#516074;
+      --line:rgba(5,22,48,.14);
 
-      --max: 1120px;
+      --radius:8px;           /* hafif yuvarlak */
+      --shadow:0 14px 34px rgba(0,0,0,.07);
 
-      --h1: 54px;
-      --h2: 34px;
-      --h3: 20px;
-      --p: 18px;
-      --small: 14px;
+      --academic:'Lora', serif;
+      --display:'Playfair Display', serif;
+      --ui:'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial;
     }
 
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
     body{
       margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      background: radial-gradient(900px 520px at 10% -10%, rgba(193,18,31,.10), transparent 60%),
-                  radial-gradient(900px 520px at 90% -10%, rgba(180,83,9,.10), transparent 60%),
-                  radial-gradient(900px 520px at 90% 110%, rgba(161,98,7,.10), transparent 60%),
-                  var(--bg);
-      color: var(--text);
-    }
-
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width: var(--max); margin:0 auto; padding:0 18px; }
-
-    /* NAV (ViemSoft benzeri) */
-    .nav{
-      position: sticky;
-      top:0;
-      z-index: 1000;
-      background: rgba(5,22,48,.86);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,.10);
-    }
-    .nav-inner{
+      background:linear-gradient(180deg, #f7faff 0%, var(--bg) 100%);
+      color:var(--ink);
+      font-family:var(--academic);
       display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding: 14px 0;
+      min-height:100vh;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px; min-width: 260px;
-    }
-    .logoMark{
-      width:44px; height:44px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(193,18,31,.95), rgba(180,83,9,.85));
-      display:grid; place-items:center;
-      color:#fff; font-weight: 900;
-      box-shadow: 0 10px 24px rgba(0,0,0,.25);
-      letter-spacing:.6px;
-      position: relative;
-    }
-    .logoMark:after{
-      content:"";
-      position:absolute;
-      top:-8px; right:-8px;
-      width:20px;height:20px;border-radius:999px;
-      background: rgba(161,98,7,.95);
-      box-shadow: 0 0 0 6px rgba(161,98,7,.20);
-    }
-    .brandTitle{
+
+    /* SOL SABİT MENÜ */
+    aside{
+      width:280px;
+      background:var(--navy);
+      height:100vh;
+      position:fixed;
+      left:0; top:0;
+      padding:36px 14px;
       color:#fff;
-      line-height:1.1;
+      border-right:4px solid var(--gold);
+      overflow-y:auto;
+      z-index:1000;
     }
-    .brandTitle b{
+
+    .logo-box{
+      text-align:center;
+      margin-bottom:26px;
+      position:relative;
+      padding-bottom:14px;
+      border-bottom:1px solid rgba(255,255,255,.14);
+    }
+    .logo-box .cap-icon{
+      display:inline-block;
+      font-size:2.2rem;
+      color:var(--gold);
+      margin-bottom:10px;
+    }
+    .logo-box img{
+      width:160px;
+      background:#fff;
+      padding:10px;
+      border-radius:6px;
+      border:1px solid var(--gold);
       display:block;
-      font-size: 14px;
-      letter-spacing:.2px;
-      font-weight: 900;
+      margin:0 auto 10px;
     }
-    .brandTitle span{
+    .logo-sub{
+      font-family:var(--ui);
+      font-weight:700;
+      font-size:12px;
+      letter-spacing:.2px;
+      color:rgba(255,255,255,.86);
+      line-height:1.5;
+      margin-top:6px;
+    }
+
+    nav ul{ list-style:none; padding:0; margin:18px 0 0; }
+    nav ul li{ border-bottom:1px solid rgba(184,146,74,.22); }
+    nav ul li:last-child{ border-bottom:none; }
+    nav ul li a{
+      color:rgba(255,255,255,.92);
+      text-decoration:none;
+      font-family:var(--academic);
+      font-size:.88rem;
       display:block;
-      margin-top:4px;
-      font-size: 12px;
-      color: rgba(255,255,255,.75);
-      font-weight: 650;
+      padding:13px 10px;
+      transition:.22s ease;
+    }
+    nav ul li a:hover{
+      color:var(--gold);
+      background:rgba(184,146,74,.12);
+      border-radius:6px;
     }
 
-    .menu{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-      align-items:center;
-    }
-    .menu a{
-      color: rgba(255,255,255,.86);
-      font-weight: 800;
-      font-size: 14px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid transparent;
-      transition: .15s ease;
-      white-space: nowrap;
-    }
-    .menu a:hover{
-      background: rgba(255,255,255,.08);
-      border-color: rgba(255,255,255,.12);
+    /* ANA İÇERİK */
+    main{
+      margin-left:280px;
+      width:calc(100% - 280px);
+      padding:56px 64px;
     }
 
-    .navCta{
-      display:flex; gap:10px; align-items:center;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      color:#fff;
-      font-weight: 900;
-      font-size: 14px;
-      cursor:pointer;
-      transition: .15s ease;
-      white-space: nowrap;
-    }
-    .btn:hover{ transform: translateY(-1px); }
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(193,18,31,.95), rgba(180,83,9,.85));
-      border-color: rgba(255,255,255,.10);
+    /* SECTION OUTER */
+    section{
+      background:var(--card);
+      margin-bottom:70px;
+      padding:54px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+      max-width:1080px;
     }
 
-    @media (max-width: 980px){
-      :root{ --h1: 40px; --h2: 28px; --p: 17px; }
-      .navCta{ display:none; }
-    }
-
-    /* HERO */
-    .hero{
-      padding: 46px 0 26px;
-    }
-    .heroCard{
-      border-radius: 26px;
-      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 0;
-      align-items: stretch;
-    }
-    @media (max-width: 980px){
-      .heroGrid{ grid-template-columns: 1fr; }
-    }
-    .heroText{
-      padding: 42px 36px;
-    }
-    .badge{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(193,18,31,.10);
-      border: 1px solid rgba(193,18,31,.18);
-      color: #7f1d1d;
-      font-weight: 900;
-      font-size: 12px;
-      letter-spacing:.2px;
+    /* Başlık hiyerarşisi */
+    h1,h2,h3{
+      font-family:var(--display);
+      text-transform:uppercase;
+      color:var(--navy);
+      margin-top:0;
     }
     h1{
-      font-size: var(--h1);
-      line-height: 1.02;
-      letter-spacing: -1.2px;
-      margin: 14px 0 12px;
-      font-weight: 950;
+      font-size:2.7rem;
+      border-bottom:3px solid var(--gold);
+      padding-bottom:18px;
+      margin-bottom:26px;
+      letter-spacing:.4px;
     }
-    .sub{
-      font-size: var(--p);
-      line-height: 1.75;
-      color: var(--muted);
-      margin: 0;
-      font-weight: 650;
+    h2{
+      font-size:2.05rem;
+      border-left:7px solid var(--gold);
+      padding-left:18px;
+      margin-bottom:22px;
+      letter-spacing:.3px;
     }
-    .heroPoints{
-      margin-top: 16px;
+    h3{
+      font-size:1.55rem;
+      color:#b21f1f;
+      margin-bottom:14px;
+      letter-spacing:.2px;
+    }
+    p{
+      font-size:1.16rem;
+      line-height:1.95;
+      margin:0 0 18px;
+      color:var(--muted);
+    }
+    strong{ color:var(--ink); }
+
+    /* GÖRSELLER */
+    .section-img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      border-radius:var(--radius);
+      margin-bottom:28px;
+      border:2px solid rgba(184,146,74,.55);
+      box-shadow:0 10px 24px rgba(0,0,0,.06);
+    }
+
+    /* Viemsoft benzeri BLOK / KART */
+    .grid-2{
       display:grid;
-      gap:10px;
+      grid-template-columns:1.1fr .9fr;
+      gap:26px;
+      align-items:start;
+      margin-top:18px;
     }
-    .point{
-      display:flex; gap:10px; align-items:flex-start;
-      padding: 12px 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.70);
-      box-shadow: var(--shadow2);
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:14px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid rgba(5,22,48,.12);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 10px 22px rgba(0,0,0,.04);
+    }
+    .card .kicker{
+      font-family:var(--ui);
+      font-weight:800;
+      font-size:.84rem;
+      letter-spacing:.25px;
+      color:rgba(5,22,48,.72);
+      text-transform:uppercase;
+      margin-bottom:10px;
+      display:flex;
+      align-items:center;
+      gap:10px;
     }
     .dot{
       width:10px;height:10px;border-radius:999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(193,18,31,.14);
-      margin-top: 6px;
+      background:var(--gold);
+      box-shadow:0 0 0 6px rgba(184,146,74,.18);
       flex:none;
     }
-    .point b{ font-weight: 900; }
-    .point span{ color: var(--muted); font-weight: 650; }
-
-    .heroActions{
-      margin-top: 18px;
-      display:flex; gap:10px; flex-wrap:wrap;
-    }
-    .btn2{
-      display:inline-flex; align-items:center; gap:10px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(15,23,42,.12);
-      background: rgba(255,255,255,.92);
-      font-weight: 900;
-      cursor:pointer;
-      transition:.15s ease;
-    }
-    .btn2:hover{ transform: translateY(-1px); }
-    .btn2.primary{
-      background: linear-gradient(135deg, rgba(193,18,31,.12), rgba(180,83,9,.10));
-      border-color: rgba(193,18,31,.18);
+    ul{ margin:0 0 14px 18px; }
+    li{
+      font-size:1.12rem;
+      margin-bottom:10px;
+      line-height:1.75;
+      color:var(--muted);
     }
 
-    /* HERO VISUAL */
-    .heroMedia{
-      min-height: 420px;
-      position: relative;
-      background:
-        linear-gradient(135deg, rgba(5,22,48,.92), rgba(5,22,48,.78)),
-        url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80');
-      background-size: cover;
-      background-position: center;
-      border-left: 1px solid rgba(255,255,255,.12);
-      padding: 26px;
-      display:flex;
-      align-items:flex-end;
+    /* Alıntı */
+    .highlight-quote{
+      background:#fff9f0;
+      border-left:10px solid var(--navy);
+      padding:30px;
+      margin:18px 0 22px;
+      font-style:italic;
+      font-size:1.28rem;
+      color:#2b3646;
+      border-radius:var(--radius);
     }
-    .heroMediaCard{
-      width:100%;
-      border-radius: 18px;
-      padding: 18px;
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.16);
-      color: rgba(255,255,255,.92);
-      box-shadow: 0 18px 40px rgba(0,0,0,.25);
-    }
-    .heroMediaCard b{ display:block; font-size: 16px; font-weight: 950; }
-    .heroMediaCard span{ display:block; margin-top: 6px; color: rgba(255,255,255,.76); font-weight: 650; line-height:1.6; }
 
-    /* SECTIONS (ViemSoft gibi: split bloklar) */
-    section{ padding: 28px 0; }
-    .panel{
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.88);
-      box-shadow: var(--shadow);
-      overflow:hidden;
+    /* BAŞVURU KARTI */
+    .apply-card{
+      background:var(--navy);
+      color:#fff;
+      border-radius:var(--radius);
+      padding:54px;
+      border:1px solid rgba(184,146,74,.42);
+      box-shadow:0 18px 40px rgba(0,0,0,.16);
     }
-    .panelGrid{
+    .apply-card h2{
+      color:var(--gold);
+      border:none;
+      padding:0;
+      margin-bottom:18px;
+    }
+    .apply-card p{ color:rgba(255,255,255,.86); }
+
+    .form-grid{
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:16px;
     }
-    .panelGrid.reverse{ grid-template-columns: 1fr 1fr; direction: rtl; }
-    .panelGrid.reverse > *{ direction:ltr; }
-
-    @media (max-width: 980px){
-      .panelGrid, .panelGrid.reverse{ grid-template-columns: 1fr; }
-    }
-
-    .panelText{ padding: 34px 32px; }
-    h2{
-      font-size: var(--h2);
-      line-height: 1.08;
-      letter-spacing: -0.6px;
-      margin: 0 0 12px;
-      font-weight: 950;
-    }
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(180,83,9,.10);
-      border: 1px solid rgba(180,83,9,.16);
-      color: #7c2d12;
-      font-weight: 900;
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
-    h3{
-      font-size: var(--h3);
-      margin: 14px 0 10px;
-      font-weight: 950;
-      color: #7f1d1d;
-    }
-    p{
-      margin: 0 0 14px;
-      font-size: var(--p);
-      line-height: 1.85;
-      color: var(--muted);
-      font-weight: 650;
-    }
-    ul{ margin: 10px 0 0; padding-left: 18px; }
-    li{ margin: 8px 0; font-size: 17px; color: var(--muted); font-weight: 650; line-height:1.75; }
-
-    .panelMedia{
-      min-height: 360px;
-      background-size: cover;
-      background-position: center;
-      position:relative;
-      border-left: 1px solid rgba(15,23,42,.10);
-    }
-    .panelGrid.reverse .panelMedia{ border-left:none; border-right: 1px solid rgba(15,23,42,.10); }
-    .mediaOverlay{
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.28));
-    }
-    .mediaTag{
-      position:absolute;
-      left:18px; bottom:18px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.88);
-      border: 1px solid rgba(15,23,42,.10);
-      font-weight: 900;
-      font-size: 13px;
-      box-shadow: var(--shadow2);
-    }
-
-    /* STEPS (ViemSoft adım blokları gibi) */
-    .steps{
-      margin-top: 20px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    @media (max-width: 980px){ .steps{ grid-template-columns:1fr; } }
-    .step{
-      border-radius: 18px;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.92);
-      box-shadow: var(--shadow2);
-      padding: 18px;
-    }
-    .stepTop{
-      display:flex; align-items:center; gap:12px;
-      margin-bottom: 10px;
-    }
-    .num{
-      width:38px;height:38px;border-radius: 14px;
-      background: linear-gradient(135deg, rgba(193,18,31,.14), rgba(180,83,9,.12));
-      border: 1px solid rgba(193,18,31,.18);
-      display:grid;place-items:center;
-      font-weight: 950;
-      color:#7f1d1d;
-    }
-    .step b{ font-weight: 950; }
-    .step p{ margin: 0; font-size: 16px; }
-
-    /* QUOTE */
-    .quote{
-      margin-top: 14px;
-      border-radius: 18px;
-      padding: 18px;
-      background: rgba(5,22,48,.04);
-      border: 1px solid rgba(5,22,48,.10);
-      color: #0f172a;
-      font-weight: 750;
-    }
-    .quote span{ display:block; margin-top: 8px; color: var(--muted); font-weight: 650; }
-
-    /* CTA */
-    .cta{
-      margin: 28px 0 10px;
-      border-radius: 24px;
-      background:
-        linear-gradient(135deg, rgba(5,22,48,.96), rgba(5,22,48,.84)),
-        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80');
-      background-size: cover;
-      background-position: center;
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .ctaInner{
-      padding: 34px 28px;
-      display:grid;
-      grid-template-columns: 1fr .95fr;
-      gap: 18px;
-      align-items: start;
-    }
-    @media (max-width: 980px){ .ctaInner{ grid-template-columns:1fr; } }
-    .ctaText h2{ color:#fff; margin-bottom: 10px; }
-    .ctaText p{ color: rgba(255,255,255,.78); }
-
-    /* FORM (Web3Forms) */
-    form{ display:grid; gap: 10px; }
-    .row2{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    @media (max-width: 720px){ .row2{ grid-template-columns:1fr; } }
-
-    label{
-      font-size: 12px;
-      font-weight: 900;
-      color: rgba(255,255,255,.74);
+    .form-group{ margin-bottom:16px; }
+    .form-group label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:800;
+      font-size:.92rem;
+      font-family:var(--ui);
       letter-spacing:.2px;
+      color:rgba(255,255,255,.88);
+      text-transform:uppercase;
     }
     input, select, textarea{
       width:100%;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.08);
-      color:#fff;
-      padding: 12px 12px;
-      font-size: 15px;
-      font-weight: 650;
+      padding:14px 14px;
+      border-radius:6px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.96);
+      font-family:var(--academic);
+      font-size:1.05rem;
       outline:none;
     }
-    input::placeholder, textarea::placeholder{ color: rgba(255,255,255,.55); }
-    textarea{ min-height: 120px; resize: vertical; }
-
-    .submit{
-      padding: 14px 16px;
-      border-radius: 16px;
-      border: none;
-      background: linear-gradient(135deg, rgba(193,18,31,.95), rgba(180,83,9,.90));
-      color:#fff;
-      font-weight: 950;
-      font-size: 15px;
-      cursor:pointer;
-      transition:.15s ease;
+    textarea{
+      min-height:120px;
+      resize:vertical;
     }
-    .submit:hover{ transform: translateY(-1px); }
 
-    .hp{ display:none !important; }
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:10px;
+      align-items:center;
+    }
+    .submit-btn{
+      background:var(--gold);
+      color:var(--navy);
+      padding:18px 18px;
+      width:100%;
+      font-weight:900;
+      border:none;
+      cursor:pointer;
+      text-transform:uppercase;
+      font-size:1.2rem;
+      transition:.2s ease;
+      border-radius:6px;
+      font-family:var(--ui);
+      letter-spacing:.4px;
+    }
+    .submit-btn:hover{ filter:brightness(.98); transform:translateY(-1px); }
 
     .status{
       display:none;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.08);
-      color: rgba(255,255,255,.90);
-      font-weight: 800;
-      font-size: 14px;
-      line-height:1.6;
+      margin-top:14px;
+      border-radius:6px;
+      padding:12px 12px;
+      font-family:var(--ui);
+      font-weight:800;
+      font-size:.95rem;
+      line-height:1.5;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.22);
+      color:#fff;
     }
+    .status.ok{ border-color: rgba(34,197,94,.55); }
+    .status.err{ border-color: rgba(239,68,68,.55); }
 
-    /* FAQ */
-    .faqWrap{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
+    .afterSuccess{
+      display:none;
+      margin-top:14px;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
     }
-    details{
-      border-radius: 16px;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.92);
-      box-shadow: var(--shadow2);
-      padding: 14px 16px;
-    }
-    summary{
+    .btn{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:12px 14px;
+      border-radius:6px;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      font-family:var(--ui);
+      font-weight:900;
+      text-transform:uppercase;
+      font-size:.92rem;
+      letter-spacing:.3px;
       cursor:pointer;
-      font-weight: 950;
-      font-size: 16px;
-      color: #0f172a;
-      list-style:none;
+      text-decoration:none;
     }
-    summary::-webkit-details-marker{ display:none; }
-    details p{ margin: 10px 0 0; font-size: 16px; }
+    .btn.primary{
+      background:rgba(184,146,74,.18);
+      border-color:rgba(184,146,74,.5);
+    }
 
-    /* FOOTER */
+    /* Honeypot */
+    .hp{ display:none !important; }
+
+    /* Footer */
     footer{
-      padding: 26px 0 50px;
-      color: rgba(15,23,42,.70);
-      font-weight: 750;
       text-align:center;
-      font-size: 14px;
+      padding:46px 10px;
+      color:var(--navy);
+      font-weight:800;
+      font-family:var(--ui);
+      letter-spacing:.2px;
+    }
+
+    /* MOBİL UYUM */
+    @media (max-width: 1100px){
+      body{ flex-direction:column; }
+      aside{
+        width:100%;
+        height:auto;
+        position:relative;
+        border-right:none;
+        border-bottom:4px solid var(--gold);
+      }
+      main{
+        margin-left:0;
+        width:100%;
+        padding:28px 18px;
+      }
+      section{
+        padding:28px 18px;
+        margin-bottom:26px;
+      }
+      .section-img{ height:240px; }
+      h1{ font-size:1.9rem; }
+      h2{ font-size:1.45rem; }
+      h3{ font-size:1.2rem; }
+      p{ font-size:1.06rem; }
+      li{ font-size:1.04rem; }
+      .grid-2{ grid-template-columns:1fr; }
+      .grid-3{ grid-template-columns:1fr; }
+      .apply-card{ padding:28px 18px; }
+      .form-grid{ grid-template-columns:1fr; }
     }
   </style>
 </head>
 
 <body>
+  <aside>
+    <div class="logo-box">
+      <i class="fas fa-graduation-cap cap-icon"></i>
+      <img src="akademi/logo.png" alt="Usta Finans Akademi Logo">
+      <div class="logo-sub">USTA FİNANS AKADEMİ<br>Finans Uzmanı Yetiştirme Programı</div>
+    </div>
 
-  <!-- NAV -->
-  <div class="nav">
-    <div class="wrap">
-      <div class="nav-inner">
-        <div class="brand">
-          <div class="logoMark" aria-label="Usta Finans">UF</div>
-          <div class="brandTitle">
-            <b>Usta Finans Akademi</b>
-            <span>Finans Uzmanı Yetiştirir • UstaFinans.net</span>
-          </div>
+    <nav>
+      <ul>
+        <li><a href="#giris">USTA FİNANS AKADEMİ</a></li>
+        <li><a href="#uzmanlik">FİNANS UZMANI OLMAK</a></li>
+        <li><a href="#nedir">AKADEMİ NEDİR?</a></li>
+        <li><a href="#kimler">KİMLER İÇİN?</a></li>
+        <li><a href="#ogrenim">NE ÖĞRENİRSİN?</a></li>
+        <li><a href="#kobi">KOBİ’LERİN SORUNU</a></li>
+        <li><a href="#banka">BANKA & KREDİ YÖNETİMİ</a></li>
+        <li><a href="#isleyis">PROGRAM İŞLEYİŞİ</a></li>
+        <li><a href="#kariyer">KARİYER & ARAÇLAR</a></li>
+        <li><a href="#basvur">HEMEN BAŞVUR</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main>
+    <!-- GIRIS -->
+    <section id="giris">
+      <!-- Finans / raporlama tonunda görsel -->
+      <img
+        src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1600&q=80"
+        class="section-img"
+        alt="Finans, raporlama ve analiz"
+      >
+      <h1>USTA FİNANS AKADEMİ</h1>
+      <p><strong>Şirketlerin İhtiyaç Duyduğu Finans Uzmanlarını Yetiştirir</strong></p>
+      <p>Üniversite öğrencileri · Yeni mezunlar · Genç profesyoneller · Genç KOBİ yöneticileri</p>
+      <p>Ders yok. İş var. Teori + pratik aynı anda. Gerçek şirketlerde, gerçek finans işleri.</p>
+
+      <!-- Viemsoft benzeri kısa kartlar -->
+      <div class="grid-3">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>NAKİT AKIŞI</div>
+          <p>Paranın ne zaman girip ne zaman çıkacağını yönetmeyi öğrenirsin.</p>
         </div>
-
-        <nav class="menu" aria-label="Sayfa menüsü">
-          <a href="#giris">Giriş</a>
-          <a href="#uzmanlik">Finans Uzmanı</a>
-          <a href="#nedir">Akademi Nedir?</a>
-          <a href="#kimler">Kimler İçin?</a>
-          <a href="#ogrenim">Ne Öğrenirsin?</a>
-          <a href="#banka">Banka & Kredi</a>
-          <a href="#isleyis">Program İşleyişi</a>
-          <a href="#basvur">Başvur</a>
-        </nav>
-
-        <div class="navCta">
-          <a class="btn" href="tel:+905334234855">0 533 423 48 55</a>
-          <a class="btn primary" href="#basvur">Hemen Başvur</a>
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>RAPORLAMA</div>
+          <p>Yönetim için sade ve anlaşılır finans özetleri üretirsin.</p>
+        </div>
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>BANKA DİLİ</div>
+          <p>Bankayla aynı dili konuşan, kredi yapısını yöneten profile evrilirsin.</p>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- HERO -->
-  <div class="hero" id="giris">
-    <div class="wrap">
-      <div class="heroCard">
-        <div class="heroGrid">
-          <div class="heroText">
-            <span class="badge">Uygulama Odaklı • Teori + Pratik • Gerçek Şirket Finans İşleri</span>
-            <h1>Şirketlerin İhtiyaç Duyduğu Finans Uzmanlarını Yetiştirir</h1>
-            <p class="sub">
-              Üniversite öğrencileri · Yeni mezunlar · Genç profesyoneller · Genç KOBİ yöneticileri.
-              <br><b>Ders yok. İş var.</b> Teori + pratik aynı anda. Gerçek şirketlerde, gerçek finans işleri.
-            </p>
+    <!-- UZMANLIK -->
+    <section id="uzmanlik">
+      <img
+        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80"
+        class="section-img"
+        alt="Finans uzmanlığı, analiz ve raporlama"
+      >
+      <h2>Finans Uzmanı Olmak İstiyorsan</h2>
+      <h3>Kârı Değil, NAKDİ Yönetmeyi Öğrenmelisin</h3>
+      <p>Türkiye’de şirketler finans deyince şunu söyler:</p>
 
-            <div class="heroPoints">
-              <div class="point">
-                <span class="dot"></span>
-                <div><b>NAKİT odağı</b><br><span>“Kâr var ama nakit yok” problemini çözen finans refleksi.</span></div>
-              </div>
-              <div class="point">
-                <span class="dot"></span>
-                <div><b>Banka & finansman dili</b><br><span>Bankayla aynı dili konuşan, kredi yapısını okuyan uzman.</span></div>
-              </div>
-              <div class="point">
-                <span class="dot"></span>
-                <div><b>İşe hazır çıktı</b><br><span>Ödev değil; rapor, plan, sistem üretirsin.</span></div>
-              </div>
-            </div>
+      <div class="highlight-quote">
+        “Kâr var ama nakit yok.”<br>
+        “Alacaklarımı tahsil edemiyorum.”<br>
+        “Ödemeler hep sıkışıyor.”<br>
+        “Bankadan kredi bulmadan dönemiyorum.”
+      </div>
 
-            <div class="heroActions">
-              <a class="btn2 primary" href="#basvur">Başvuruyu Başlat</a>
-              <a class="btn2" href="#isleyis">Eğitim Modeli</a>
-            </div>
-          </div>
+      <p>
+        Sorun şurada başlar: Şirketlerde finansı yöneten insan yoktur. Muhasebe vardır. Satış vardır.
+        Ama paranın ne zaman girip ne zaman çıkacağını bilen, nakit dengesini kuran, bankayla finans dili konuşan
+        Finans Uzmanı yoktur. Usta Finans Akademi bu boşluk için kurulmuştur.
+      </p>
+    </section>
 
-          <div class="heroMedia" role="img" aria-label="Finans uzmanlığı görseli">
-            <div class="heroMediaCard">
-              <b>USTA FİNANS AKADEMİ</b>
-              <span>
-                Finansın “ezber” tarafı değil; şirkette <b>para giriş-çıkışını</b> yöneten,
-                <b>nakit dengesini</b> kuran ve bankayla <b>finans dili</b> konuşan uzman profili.
-              </span>
-            </div>
-          </div>
+    <!-- NEDIR -->
+    <section id="nedir">
+      <img
+        src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80"
+        class="section-img"
+        alt="Profesyonel eğitim ve iş ortamı"
+      >
+      <h2>USTA FİNANS AKADEMİ NEDİR?</h2>
+      <p>
+        Usta Finans Akademi, şirketlerin gerçekten ihtiyaç duyduğu Finans Uzmanlarını, kısa sürede işe hazır hale getiren,
+        uygulama odaklı bir eğitim akademisidir. Bu bir kurs değildir. Bu bir sertifika programı değildir.
+        Burada ders anlatılmaz. Finans Uzmanının şirkette yaptığı işler öğretilir.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>KURS DEĞİL</div>
+          <p>Ezber ve slayt değil; şirkette karşılığı olan iş akışları.</p>
+        </div>
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>SERTİFİKA PAZARI DEĞİL</div>
+          <p>Kağıt değil; işe hazır yetkinlik ve refleks kazandırır.</p>
+        </div>
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>UYGULAMA ODAKLI</div>
+          <p>Finans Uzmanının şirkette yaptığı işler adım adım öğrenilir.</p>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- SECTION: Finans Uzmanı Olmak -->
-  <section id="uzmanlik">
-    <div class="wrap">
-      <div class="panel">
-        <div class="panelGrid">
-          <div class="panelText">
-            <span class="kicker">Finans Uzmanı Olmak</span>
-            <h2>“Kârı” Değil, <span style="color:#7f1d1d;">NAKDİ</span> Yönetmeyi Öğrenmelisin</h2>
-            <h3>Türkiye’de şirketler finans deyince şunu söyler:</h3>
-            <div class="quote">
-              “Kâr var ama nakit yok.”
-              <br>“Alacaklarımı tahsil edemiyorum.”
-              <br>“Ödemeler hep sıkışıyor.”
-              <br>“Bankadan kredi bulmadan dönemiyorum.”
-              <span>
-                Sorun şurada başlar: Şirketlerde finansı yöneten insan yoktur. Muhasebe vardır.
-                Ama paranın ne zaman girip ne zaman çıkacağını bilen, nakit dengesini kuran,
-                bankayla finans dili konuşan Finans Uzmanı yoktur.
-              </span>
-            </div>
-            <p>
-              Usta Finans Akademi bu boşluk için kurulmuştur.
-            </p>
-          </div>
-          <div class="panelMedia" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80');">
-            <div class="mediaOverlay"></div>
-            <div class="mediaTag">Modern Ofiste Finans Çalışması</div>
-          </div>
+    <!-- KIMLER -->
+    <section id="kimler">
+      <img
+        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
+        class="section-img"
+        alt="Ekip çalışması ve kariyer"
+      >
+      <h2>Kimler İçin?</h2>
+      <p>Usta Finans Akademi şu profiller için tasarlanmıştır:</p>
+      <ul>
+        <li><strong>Üniversite öğrencileri:</strong> (mezun olmadan önce finans mesleğine hazırlanmak isteyenler)</li>
+        <li><strong>Yeni mezunlar:</strong> (teoriyi pratiğe dönüştürmek isteyenler)</li>
+        <li><strong>Genç profesyoneller:</strong> (finans alanında uzmanlaşmak isteyenler)</li>
+        <li><strong>Genç KOBİ yöneticileri:</strong> (kendi şirketinde finansı doğru yönetmek isteyenler)</li>
+      </ul>
+      <p>Finans öğrenmek isteyenler değil, Finansı meslek olarak yapmak isteyenler için.</p>
+    </section>
+
+    <!-- OGRENIM -->
+    <section id="ogrenim">
+      <img
+        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80"
+        class="section-img"
+        alt="Dashboard, KPI ve finansal raporlama"
+      >
+      <h2>Bu Akademide Ne Öğrenirsin?</h2>
+      <p>Bu akademiyi tamamlayan biri, bir şirkete girdiğinde şunları tek başına yapabilir:</p>
+      <p><strong>Bir Finans Uzmanı Olarak:</strong></p>
+      <ul>
+        <li>Şirketin parasının nereden geldiğini, nereye gittiğini görür</li>
+        <li>“Kâr var ama neden kasada para yok?” sorusuna net cevap verir</li>
+        <li>Alacak–tahsilat dengesini analiz eder</li>
+        <li>Ödemeleri gelişigüzel değil, öncelik sırasına göre planlar</li>
+        <li>Ay boyunca para yetip yetmeyeceğini önceden bilir</li>
+        <li>Yönetim için sade, anlaşılır finansal özetler hazırlar</li>
+      </ul>
+      <p><strong>Ve en önemlisi: Kasada para kalmasını sağlayacak sistemi kurar.</strong></p>
+      <p>Kâr yazmak muhasebenin işidir. Nakdi yönetmek Finans Uzmanının işidir.</p>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>ÇEKİRDEK ÇIKTI</div>
+          <p>Şirkette “nakit yönetim sistemi” kurabilecek seviyeye gelirsin.</p>
+        </div>
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>YÖNETİM DİLİ</div>
+          <p>1 sayfada net finans özeti ve aksiyon üretecek rapor dili kazanırsın.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SECTION: Akademi Nedir -->
-  <section id="nedir">
-    <div class="wrap">
-      <div class="panel">
-        <div class="panelGrid reverse">
-          <div class="panelText">
-            <span class="kicker">Akademi Nedir?</span>
-            <h2>Bu bir kurs değil. Bu bir sertifika programı değil.</h2>
-            <p>
-              Usta Finans Akademi, şirketlerin gerçekten ihtiyaç duyduğu Finans Uzmanlarını,
-              kısa sürede işe hazır hale getiren, uygulama odaklı bir eğitim akademisidir.
-              Burada ders anlatılmaz. Finans Uzmanının şirkette yaptığı işler öğretilir.
-            </p>
-            <p>
-              Amaç, katılımcıyı “ne yaptığını bilen” ve bunu iş görüşmesinde net anlatan seviyeye getirmektir.
-            </p>
-          </div>
-          <div class="panelMedia" style="background-image:url('https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=1400&q=80');">
-            <div class="mediaOverlay"></div>
-            <div class="mediaTag">Akademik & Uygulama Ortamı</div>
-          </div>
+    <!-- KOBI -->
+    <section id="kobi">
+      <img
+        src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1600&q=80"
+        class="section-img"
+        alt="Nakit akışı ve finansal planlama"
+      >
+      <h2>KOBİ’lerin En Büyük Sorunu: “Kâr Var Ama Nakit Yok”</h2>
+      <p>
+        Birçok KOBİ satış yapar, kâr yazar ama zorlanır. Çünkü: Tahsilat ne zaman yapılacak bilinmez, ödemeler plansızdır,
+        para giriş–çıkışı takip edilmez, nakit dengesi kurulmamıştır. Bu sorun sürekli kredi alarak çözülmez.
+        Kredi ancak doğru nakit planı varsa işe yarar. Aksi halde şirket krediye bağımlı hale gelir.
+        Usta Finans Akademi’de bu problem merkezde ele alınır.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>TAHSİLAT</div>
+          <p>Alacakların ritmini okur, tahsilat riskini erken görürsün.</p>
+        </div>
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>ÖDEME PLANI</div>
+          <p>Ödemeleri önceliklendirir, sıkışmayı kontrol altına alırsın.</p>
+        </div>
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>KREDİ BAĞIMLILIĞI</div>
+          <p>Kredi “çözüm” değil; plan varsa araçtır. Plan yoksa bağımlılıktır.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SECTION: Kimler İçin -->
-  <section id="kimler">
-    <div class="wrap">
-      <div class="panel">
-        <div class="panelGrid">
-          <div class="panelText">
-            <span class="kicker">Kimler İçin?</span>
-            <h2>Finans öğrenmek isteyenler değil, finansı <span style="color:#7f1d1d;">meslek</span> olarak yapmak isteyenler için</h2>
-            <ul>
-              <li><b>Üniversite öğrencileri:</b> Mezun olmadan önce finans mesleğine hazırlanmak isteyenler</li>
-              <li><b>Yeni mezunlar:</b> Teoriyi pratiğe dönüştürmek isteyenler</li>
-              <li><b>Genç profesyoneller:</b> Finans alanında uzmanlaşmak isteyenler</li>
-              <li><b>Genç KOBİ yöneticileri:</b> Kendi şirketinde finansı doğru yönetmek isteyenler</li>
-            </ul>
-          </div>
-          <div class="panelMedia" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80');">
-            <div class="mediaOverlay"></div>
-            <div class="mediaTag">Takım Çalışması & Gelişim</div>
-          </div>
+    <!-- BANKA -->
+    <section id="banka">
+      <img
+        src="https://images.unsplash.com/photo-1560472355-109703aa3edc?auto=format&fit=crop&w=1600&q=80"
+        class="section-img"
+        alt="Banka, kredi ve finansman yönetimi"
+      >
+      <h2>Banka, Finansman ve Kredi Yönetimi</h2>
+      <h3>Finans Uzmanının En Kritik Yetkinliği</h3>
+      <p>
+        Türkiye’de şirketler yalnızca özkaynakla çalışmaz. Banka, finansman ve kredi, işin doğal parçasıdır.
+        Ama çoğu şirkette: Kredi plansız alınır, banka ne derse o olur, limit neden düşer/artar bilinmez,
+        teminat/vade/faiz doğru okunmaz.
+      </p>
+      <p><strong>Usta Finans Akademi’de şunu öğrenirsin:</strong></p>
+      <ul>
+        <li>Bankalar kredi verirken şirkete nasıl bakar?</li>
+        <li>Finansal tablolar kredi kararını nasıl etkiler?</li>
+        <li>Kredi başvuru dosyası nasıl hazırlanır?</li>
+        <li>Kredi limit tesisi süreci nasıl yönetilir?</li>
+        <li>Nakit dengesine uygun kredi yapısı nasıl kurulur?</li>
+        <li>Birden fazla banka ile sağlıklı ilişki nasıl yürütülür?</li>
+        <li>Kredi bağımlılığı nasıl kontrol altına alınır?</li>
+      </ul>
+      <p>Bu eğitimi alan biri, bankaya evrak taşıyan değil, bankayla aynı dili konuşan Finans Uzmanı olur.</p>
+    </section>
+
+    <!-- ISLEYIS -->
+    <section id="isleyis">
+      <img
+        src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80"
+        class="section-img"
+        alt="Süreç, planlama ve çalışma modeli"
+      >
+      <h2>Program Nasıl İşler? (Eğitim Modeli)</h2>
+      <p>
+        1️⃣ Gerekli teori (kısa ve net): Sadece işte kullanacağın finans bilgisi.<br>
+        2️⃣ Anında uygulama: Her konu gerçek şirket senaryosu üzerinden çalışılır.<br>
+        3️⃣ Gerçek iş çıktıları: Ödev değil; rapor, plan, sistem üretirsin.<br>
+        4️⃣ Mentorluk & kontrol: Yaptığın işler kontrol edilir, standart kazanırsın.
+      </p>
+      <h3>Bu Akademide Ders Yok, İş Var</h3>
+      <p>
+        Burada şunları yaparsın: Bir şirkete girip finansal fotoğraf çıkarmak, alacak–tahsilat–ödeme dengesini analiz etmek,
+        nakit planı oluşturmak, bütçe ve takip düzeni kurmak, kredi ve finansman yapısını değerlendirmek,
+        yönetim için 1 sayfalık finansal özet hazırlamak, banka görüşmesine hazırlanmak.
+        Bunlar iş görüşmesinde anlatılan işlerdir.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>TEŞHİS</div>
+          <p>Finansal fotoğraf + risk haritası + önceliklendirme.</p>
+        </div>
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>PLAN</div>
+          <p>Nakit planı + tahsilat-ödeme ritmi + senaryo yönetimi.</p>
+        </div>
+        <div class="card">
+          <div class="kicker"><span class="dot"></span>RAPOR</div>
+          <p>Yönetim dili: kısa, anlaşılır, aksiyon üreten rapor.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SECTION: Ne Öğrenirsin -->
-  <section id="ogrenim">
-    <div class="wrap">
-      <div class="panel">
-        <div class="panelGrid reverse">
-          <div class="panelText">
-            <span class="kicker">Ne Öğrenirsin?</span>
-            <h2>Şirkete girdiğinde <span style="color:#7f1d1d;">tek başına</span> yapabileceğin işler</h2>
-            <p>Bu akademiyi tamamlayan biri, bir şirkete girdiğinde şunları tek başına yapabilir:</p>
-            <ul>
-              <li>Şirketin parasının nereden geldiğini, nereye gittiğini görür</li>
-              <li>“Kâr var ama neden kasada para yok?” sorusuna net cevap verir</li>
-              <li>Alacak–tahsilat dengesini analiz eder</li>
-              <li>Ödemeleri gelişigüzel değil, öncelik sırasına göre planlar</li>
-              <li>Ay boyunca para yetip yetmeyeceğini önceden bilir</li>
-              <li>Yönetim için sade, anlaşılır finansal özetler hazırlar</li>
-            </ul>
-            <p><b>Ve en önemlisi: Kasada para kalmasını sağlayacak sistemi kurar.</b></p>
-            <p>Kâr yazmak muhasebenin işidir. Nakdi yönetmek Finans Uzmanının işidir.</p>
-          </div>
-          <div class="panelMedia" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80');">
-            <div class="mediaOverlay"></div>
-            <div class="mediaTag">Nakit Akışı • Raporlama • Kontrol</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- KARIYER -->
+    <section id="kariyer">
+      <img
+        src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=80"
+        class="section-img"
+        alt="Kariyer ve profesyonel gelişim"
+      >
+      <h2>Kariyer Hedefi & Kullanılan Araçlar</h2>
+      <p>
+        <strong>Hedef:</strong> Katılımcıyı işe hazır Finans Uzmanı seviyesine getirmek. Bu sayede:
+        İş görüşmesine güçlü girersin, ne yaptığını net anlatırsın, şirketlerde kısa sürede değer üretirsin,
+        maaş pazarlığında elin güçlenir. Bu profil, piyasada daha iyi ücretlerle iş bulur.
+      </p>
+      <p>
+        <strong>Araçlar:</strong> Nakit planlama şablonları, işletme sermayesi analizleri, bütçe takip sistemleri,
+        yönetim özet raporları, banka & kredi analiz şablonları. Amaç araç öğretmek değil, iş öğretmektir.
+      </p>
+    </section>
 
-  <!-- SECTION: KOBİ sorunu -->
-  <section id="kobi">
-    <div class="wrap">
-      <div class="panel">
-        <div class="panelGrid">
-          <div class="panelText">
-            <span class="kicker">KOBİ’lerin Sorunu</span>
-            <h2>“Kâr Var Ama Nakit Yok”</h2>
-            <p>
-              Birçok KOBİ satış yapar, kâr yazar ama zorlanır. Çünkü: Tahsilat ne zaman yapılacak bilinmez,
-              ödemeler plansızdır, para giriş–çıkışı takip edilmez, nakit dengesi kurulmamıştır.
-            </p>
-            <p>
-              Bu sorun sürekli kredi alarak çözülmez. Kredi ancak doğru nakit planı varsa işe yarar.
-              Aksi halde şirket krediye bağımlı hale gelir. Usta Finans Akademi’de bu problem merkezde ele alınır.
-            </p>
-          </div>
-          <div class="panelMedia" style="background-image:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80');">
-            <div class="mediaOverlay"></div>
-            <div class="mediaTag">KOBİ Finans Gerçeği</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- BASVUR -->
+    <section id="basvur" class="apply-card">
+      <h2>Usta Finans Akademi’ye Başvur</h2>
+      <p>Formu doldurduğunda mesajın <strong>bulentusta@ustafinans.net</strong> adresine gelir. Gönderim sonrası WhatsApp’tan da devam edebilirsin.</p>
 
-  <!-- SECTION: Banka & Kredi -->
-  <section id="banka">
-    <div class="wrap">
-      <div class="panel">
-        <div class="panelGrid reverse">
-          <div class="panelText">
-            <span class="kicker">Banka & Kredi</span>
-            <h2>Banka, Finansman ve Kredi Yönetimi</h2>
-            <h3>Finans Uzmanının En Kritik Yetkinliği</h3>
-            <p>
-              Türkiye’de şirketler yalnızca özkaynakla çalışmaz. Banka, finansman ve kredi işin doğal parçasıdır.
-              Ama çoğu şirkette: Kredi plansız alınır, banka ne derse o olur; teminat/vade/faiz doğru okunmaz.
-            </p>
-            <p><b>Usta Finans Akademi’de şunu öğrenirsin:</b></p>
-            <ul>
-              <li>Bankalar kredi verirken şirkete nasıl bakar?</li>
-              <li>Finansal tablolar kredi kararını nasıl etkiler?</li>
-              <li>Kredi başvuru dosyası nasıl hazırlanır?</li>
-              <li>Kredi limit tesisi süreci nasıl yönetilir?</li>
-              <li>Nakit dengesine uygun kredi yapısı nasıl kurulur?</li>
-              <li>Birden fazla banka ile sağlıklı ilişki nasıl yürütülür?</li>
-              <li>Kredi bağımlılığı nasıl kontrol altına alınır?</li>
-            </ul>
-            <p>Bu eğitimi alan biri, bankaya evrak taşıyan değil; bankayla aynı dili konuşan Finans Uzmanı olur.</p>
+      <!-- Web3Forms formu: JS ile sayfada kalır, status + WhatsApp verir -->
+      <form id="applyForm">
+        <input type="hidden" name="access_key" value="1e7c1cf7-ea36-4869-bbc0-283bdeb340ad">
+        <input type="hidden" name="subject" value="Usta Finans Akademi | Başvuru">
+        <input type="hidden" name="from_name" value="Usta Finans Akademi Web Formu">
+        <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>AD SOYAD</label>
+            <input type="text" name="Ad Soyad" required>
           </div>
-          <div class="panelMedia" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=80');">
-            <div class="mediaOverlay"></div>
-            <div class="mediaTag">Banka & Finansman Dili</div>
+
+          <div class="form-group">
+            <label>E-POSTA</label>
+            <!-- Autoresponder / doğrulama için email alanı name="email" -->
+            <input type="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label>TELEFON</label>
+            <input type="tel" name="Telefon" placeholder="05xx xxx xx xx" required>
+          </div>
+
+          <div class="form-group">
+            <label>PROFİL</label>
+            <select name="Profil" required>
+              <option value="Üniversite Öğrencisi">Üniversite Öğrencisi</option>
+              <option value="Yeni Mezun">Yeni Mezun</option>
+              <option value="Genç Profesyonel">Genç Profesyonel</option>
+              <option value="Genç KOBİ Yöneticisi">Genç KOBİ Yöneticisi</option>
+            </select>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SECTION: Program İşleyişi (ViemSoft adımlara benzer) -->
-  <section id="isleyis">
-    <div class="wrap">
-      <div class="panel">
-        <div class="panelText">
-          <span class="kicker">Eğitim Modeli</span>
-          <h2>Program Nasıl İşler?</h2>
-          <p>
-            Bu akademide ders yok, iş var. Kısa teori + anında uygulama + gerçek iş çıktısı + mentorluk.
-          </p>
-
-          <div class="steps">
-            <div class="step">
-              <div class="stepTop">
-                <div class="num">1</div>
-                <div><b>Gerekli teori (kısa ve net)</b></div>
-              </div>
-              <p>Sadece işte kullanacağın finans bilgisi.</p>
-            </div>
-
-            <div class="step">
-              <div class="stepTop">
-                <div class="num">2</div>
-                <div><b>Anında uygulama</b></div>
-              </div>
-              <p>Her konu gerçek şirket senaryosu üzerinden çalışılır.</p>
-            </div>
-
-            <div class="step">
-              <div class="stepTop">
-                <div class="num">3</div>
-                <div><b>Gerçek iş çıktıları + mentorluk</b></div>
-              </div>
-              <p>Ödev değil; rapor, plan, sistem üretirsin. Kontrol edilerek standart kazanırsın.</p>
-            </div>
-          </div>
-
-          <h3 style="margin-top:18px;">Bu Akademide Ders Yok, İş Var</h3>
-          <p>
-            Burada şunları yaparsın: Bir şirkete girip finansal fotoğraf çıkarmak, alacak–tahsilat–ödeme dengesini analiz etmek,
-            nakit planı oluşturmak, bütçe ve takip düzeni kurmak, kredi ve finansman yapısını değerlendirmek, yönetim için 1 sayfalık
-            finansal özet hazırlamak, banka görüşmesine hazırlanmak.
-          </p>
+        <div class="form-group">
+          <label>KISA NOT (İSTEĞE BAĞLI)</label>
+          <textarea name="Not" placeholder="Hedefini / beklentini 1-2 cümleyle yazabilirsin."></textarea>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SECTION: Kariyer -->
-  <section id="kariyer">
-    <div class="wrap">
-      <div class="panel">
-        <div class="panelGrid">
-          <div class="panelText">
-            <span class="kicker">Kariyer & Araçlar</span>
-            <h2>Kariyer Hedefi & Kullanılan Araçlar</h2>
-            <p>
-              <b>Hedef:</b> Katılımcıyı işe hazır Finans Uzmanı seviyesine getirmek. Bu sayede:
-              İş görüşmesine güçlü girersin, ne yaptığını net anlatırsın, şirketlerde kısa sürede değer üretirsin,
-              maaş pazarlığında elin güçlenir.
-            </p>
-            <p>
-              <b>Araçlar:</b> Nakit planlama şablonları, işletme sermayesi analizleri, bütçe takip sistemleri,
-              yönetim özet raporları, banka & kredi analiz şablonları. Amaç araç öğretmek değil, iş öğretmektir.
-            </p>
-          </div>
-          <div class="panelMedia" style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1400&q=80');">
-            <div class="mediaOverlay"></div>
-            <div class="mediaTag">İşe Hazır Profil</div>
-          </div>
+        <button type="submit" class="submit-btn">BAŞVURUYU GÖNDER</button>
+
+        <div id="formStatus" class="status"></div>
+
+        <div id="afterSuccess" class="afterSuccess">
+          <a id="waBtn" class="btn primary" href="#" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> WHATSAPP’TAN DEVAM EDELİM
+          </a>
+          <a class="btn" href="#giris">
+            <i class="fa-solid fa-arrow-up"></i> SAYFANIN BAŞINA DÖN
+          </a>
         </div>
-      </div>
-    </div>
-  </section>
+      </form>
+    </section>
 
-  <!-- CTA + FORM (Web3Forms) -->
-  <section id="basvur">
-    <div class="wrap">
-      <div class="cta">
-        <div class="ctaInner">
-          <div class="ctaText">
-            <h2>Usta Finans Akademi’ye Başvur</h2>
-            <p>
-              Başvurunu gönder. Uygun eşleşme ve program akışı için kısa bir dönüş yapalım.
-              (Form mesajı mail olarak gelir.)
-            </p>
-            <p style="margin-top:10px; color:rgba(255,255,255,.70); font-size:14px;">
-              İletişim: <b>0 533 423 48 55</b> • <b>bulentusta@ustafinans.net</b> • Bodrum, Muğla
-            </p>
-
-            <div class="faqWrap" style="margin-top:14px;">
-              <details>
-                <summary>Bu programın farkı ne?</summary>
-                <p>Teori ezberi yerine, Finans Uzmanının şirkette yaptığı gerçek işleri öğretir: nakit akışı, planlama, raporlama, banka dili.</p>
-              </details>
-              <details>
-                <summary>Kimler için daha uygun?</summary>
-                <p>Üniversite öğrencisi, yeni mezun, genç profesyonel ve genç KOBİ yöneticileri için tasarlanmıştır.</p>
-              </details>
-              <details>
-                <summary>Başvuru sonrası ne oluyor?</summary>
-                <p>Form mesajın e-posta olarak gelir. Uygun program akışı için kısa dönüş yapılır.</p>
-              </details>
-            </div>
-          </div>
-
-          <div>
-            <form id="applyForm">
-              <!-- Web3Forms -->
-              <input type="hidden" name="access_key" value="1e7c1cf7-ea36-4869-bbc0-283bdeb340ad">
-              <input type="hidden" name="subject" value="Usta Finans Akademi | Başvuru Formu">
-              <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
-
-              <div class="row2">
-                <div>
-                  <label>AD SOYAD</label>
-                  <input type="text" name="Ad Soyad" placeholder="Ad Soyad" required>
-                </div>
-                <div>
-                  <label>TELEFON</label>
-                  <input type="tel" name="Telefon" placeholder="05xx xxx xx xx" required>
-                </div>
-              </div>
-
-              <div class="row2">
-                <div>
-                  <label>E-POSTA</label>
-                  <input type="email" name="email" placeholder="ornek@eposta.com" required>
-                </div>
-                <div>
-                  <label>PROFİL</label>
-                  <select name="Profil" required>
-                    <option value="Üniversite Öğrencisi">Üniversite Öğrencisi</option>
-                    <option value="Yeni Mezun">Yeni Mezun</option>
-                    <option value="Genç Profesyonel">Genç Profesyonel</option>
-                    <option value="Genç KOBİ Yöneticisi">Genç KOBİ Yöneticisi</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label>NOT (Kısa)</label>
-                <textarea name="Not" placeholder="Hedefin nedir? Finans alanında neyi başarmak istiyorsun?" required></textarea>
-              </div>
-
-              <button class="submit" type="submit">BAŞVURUYU GÖNDER</button>
-              <div id="status" class="status"></div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    USTA FİNANS AKADEMİ • WWW.USTAFINANS.NET • BODRUM, MUĞLA
-  </footer>
+    <footer>
+      USTA FİNANS AKADEMİ | WWW.USTAFINANS.NET | BODRUM, MUĞLA
+    </footer>
+  </main>
 
   <script>
-    // Web3Forms AJAX submit (sayfada kalsın)
-    const form = document.getElementById("applyForm");
-    const statusEl = document.getElementById("status");
+    // Sol menü smooth scroll (senin koddaki gibi)
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
 
-    async function submitWeb3Forms(formEl){
+    // Web3Forms: sayfada kal, başarı mesajı + WhatsApp
+    const form = document.getElementById('applyForm');
+    const statusEl = document.getElementById('formStatus');
+    const afterEl = document.getElementById('afterSuccess');
+    const waBtn = document.getElementById('waBtn');
+
+    function buildWhatsAppLink(data){
+      const wa = "https://wa.me/905334234855";
+      const msg =
+        `Merhaba Bülent Usta,\n` +
+        `Usta Finans Akademi başvuru formu ile başvuru yaptım.\n\n` +
+        `Ad Soyad: ${data.get("Ad Soyad") || "-"}\n` +
+        `Telefon: ${data.get("Telefon") || "-"}\n` +
+        `E-posta: ${data.get("email") || "-"}\n` +
+        `Profil: ${data.get("Profil") || "-"}\n` +
+        `Not: ${data.get("Not") || "-"}\n\n` +
+        `Uygun olduğunuzda dönüş yapabilir misiniz?`;
+      return wa + "?text=" + encodeURIComponent(msg);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
       statusEl.style.display = "block";
+      statusEl.className = "status";
       statusEl.textContent = "Gönderiliyor...";
 
-      const formData = new FormData(formEl);
+      const formData = new FormData(form);
 
       try{
         const res = await fetch("https://api.web3forms.com/submit", {
@@ -942,22 +775,21 @@
         });
         const data = await res.json();
 
-        if (data && data.success) {
+        if (data && data.success){
+          statusEl.classList.add("ok");
           statusEl.textContent = "Başarıyla gönderildi. Başvurunuz e-posta olarak iletildi.";
-          formEl.reset();
+          waBtn.href = buildWhatsAppLink(formData);
+          afterEl.style.display = "flex";
+          form.reset();
         } else {
+          statusEl.classList.add("err");
           statusEl.textContent = "Gönderilemedi. Lütfen tekrar deneyin.";
         }
-      } catch(e){
+      } catch(err){
+        statusEl.classList.add("err");
         statusEl.textContent = "Bağlantı hatası. Lütfen tekrar deneyin.";
       }
-    }
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      submitWeb3Forms(form);
     });
   </script>
-
 </body>
 </html>
