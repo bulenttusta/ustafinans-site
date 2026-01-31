@@ -15,11 +15,25 @@
   <meta property="og:image" content="/kobi/logo.png" />
 
   <link rel="icon" href="/kobi/logo.png" />
-  <link rel="stylesheet" href="/kobi/style.css?v=9" />
+  <link rel="stylesheet" href="/kobi/style.css?v=11" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Usta Finans ve Yönetim Danışmanlığı A.Ş.",
+    "areaServed": "TR",
+    "description": "KOBİ’ler için Finans Danışmanı: nakit akışı, finansal kontrol ve banka ilişkileri odağında danışmanlık.",
+    "url": "https://www.ustafinans.net/kobi",
+    "email": "bulentusta@ustafinans.net",
+    "telephone": "+90 533 423 48 55",
+    "logo": "https://www.ustafinans.net/kobi/logo.png"
+  }
+  </script>
 </head>
 
 <body>
@@ -33,7 +47,7 @@
       <div class="topbar__right">
         <a class="topbar__link" href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a>
         <span class="dot">•</span>
-        <a class="topbar__link" href="https://www.ustafinans.net/" target="_blank" rel="noopener">ustafinans.net</a>
+        <a class="topbar__link" href="https://www.ustafinans.net/" target="_blank" rel="noopener">www.ustafinans.net</a>
       </div>
     </div>
   </div>
@@ -91,7 +105,7 @@
         </div>
 
         <div class="hero__actions">
-          <a class="btn btn--primary" href="#iletisim">Finansal Durumu Değerlendirelim</a>
+          <a class="btn btn--primary" href="#iletisim">Ön Görüşme Talep Et</a>
           <a class="btn btn--ghost" href="#hizmet-alanlari">Hangi Konularda Destek?</a>
         </div>
 
@@ -280,8 +294,8 @@
 
       <div class="ctaBand">
         <div class="ctaBand__text">
-          <h3>Finans Danışmanı ile ilk adımı atalım</h3>
-          <p>Kısa bir ön görüşme ile mevcut durumu doğru çerçevede konuşalım.</p>
+          <h3>Ön Görüşme ile başlayalım</h3>
+          <p>Mevcut tabloyu konuşalım; ihtiyacı netleştirelim; doğru adımları sıralayalım.</p>
         </div>
         <a class="btn btn--primary" href="#iletisim">Ön Görüşme Talep Et</a>
       </div>
@@ -294,50 +308,47 @@
       <div class="section__head">
         <h2>Ön Görüşme Talebi</h2>
         <p class="muted">
-          Bu görüşme; şirketinizin mevcut durumunu doğru anlamaya, ihtiyaçları netleştirmeye yöneliktir.
-          Formu doldurun, size geri dönüş yapalım.
+          Formu doldurun; en kısa sürede size dönüş yapalım.
         </p>
       </div>
 
       <div class="contactGrid">
         <div class="contactCard">
           <h3>Hızlı İletişim</h3>
+
           <div class="contactLinks">
+            <a class="linkRow" href="https://www.ustafinans.net/" target="_blank" rel="noopener">
+              <span class="linkRow__k">Web</span>
+              <span class="linkRow__v">www.ustafinans.net</span>
+            </a>
             <a class="linkRow" href="mailto:bulentusta@ustafinans.net">
               <span class="linkRow__k">E-posta</span>
               <span class="linkRow__v">bulentusta@ustafinans.net</span>
             </a>
-            <a class="linkRow" href="https://www.ustafinans.net/" target="_blank" rel="noopener">
-              <span class="linkRow__k">Web</span>
-              <span class="linkRow__v">ustafinans.net</span>
-            </a>
-            <a class="linkRow" href="https://wa.me/REPLACE_WHATSAPP_NUMBER" target="_blank" rel="noopener">
+            <a class="linkRow" href="https://wa.me/905334234855" target="_blank" rel="noopener">
               <span class="linkRow__k">WhatsApp</span>
-              <span class="linkRow__v">Hızlı mesaj</span>
+              <span class="linkRow__v">+90 533 423 48 55</span>
             </a>
-          </div>
-
-          <div class="note">
-            <strong>Not:</strong> WhatsApp linkinde <code>REPLACE_WHATSAPP_NUMBER</code> alanına ülke kodu ile yaz
-            (ör. <code>905XXXXXXXXX</code>).
           </div>
 
           <div class="miniFAQ">
             <div class="miniFAQ__q">Kime uygun?</div>
             <div class="miniFAQ__a">Finansal sorun yaşayan veya kurumsallaşarak büyümek isteyen KOBİ’lere.</div>
 
-            <div class="miniFAQ__q">Bu form ne için?</div>
-            <div class="miniFAQ__a">İlk temas ve ön değerlendirme randevusu oluşturmak için.</div>
+            <div class="miniFAQ__q">Ön görüşme ne sağlar?</div>
+            <div class="miniFAQ__a">Mevcut durumu doğru çerçeveye oturtur, ihtiyaçları ve öncelikleri netleştirir.</div>
           </div>
         </div>
 
         <div class="formCard">
           <h3>Form</h3>
 
+          <!-- Web3Forms: access_key alanını kendi key'in ile doldurmalısın -->
           <form class="form" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="REPLACE_WEB3FORMS_ACCESS_KEY" />
             <input type="hidden" name="subject" value="KOBİ Finans Danışmanı | Ön Görüşme Talebi" />
-            <input type="hidden" name="from_name" value="Usta Finans - KOBİ Sayfası" />
+            <input type="hidden" name="from_name" value="Usta Finans - KOBİ" />
+            <input type="hidden" name="redirect" value="https://www.ustafinans.net/kobi/#tesekkurler" />
             <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
 
             <div class="row">
@@ -386,14 +397,27 @@
             </div>
 
             <div class="form__actions">
-              <button class="btn btn--primary" type="submit">Ön Görüşme Talep Et</button>
+              <button class="btn btn--primary" type="submit">Gönder</button>
               <a class="btn btn--ghost" href="mailto:bulentusta@ustafinans.net?subject=KOB%C4%B0%20Finans%20Dan%C4%B1%C5%9Fman%C4%B1%20-%20%C3%96n%20G%C3%B6r%C3%BC%C5%9Fme">E-posta ile yaz</a>
+              <a class="btn btn--ghost" href="https://wa.me/905334234855" target="_blank" rel="noopener">WhatsApp</a>
             </div>
 
-            <p class="form__fine">Gönderim sonrası otomatik e-posta alırsınız. En kısa sürede dönüş yapılır.</p>
+            <p class="form__fine">Gönderim sonrası en kısa sürede dönüş yapılır.</p>
           </form>
         </div>
       </div>
+
+      <div class="thanks" id="tesekkurler">
+        <div class="thanks__card">
+          <div class="thanks__title">Teşekkürler!</div>
+          <div class="thanks__text">Talebiniz alındı. En kısa sürede sizinle iletişime geçeceğiz.</div>
+          <div class="thanks__actions">
+            <a class="btn btn--primary" href="https://wa.me/905334234855" target="_blank" rel="noopener">WhatsApp’tan Yaz</a>
+            <a class="btn btn--ghost" href="#top">Sayfanın başına dön</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
