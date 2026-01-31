@@ -612,3 +612,141 @@ a { color: inherit; }
     font-size: 16px;
   }
 }
+/* =========================
+   HEADER - LIGHT BLUE THEME
+========================= */
+
+/* Header tam genişlik hissi */
+.main-header.header-light{
+  background: linear-gradient(180deg, #eaf3ff 0%, #d9eaff 100%);
+  border-bottom: 1px solid rgba(11, 21, 34, 0.14);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Container yerine geniş şerit */
+.header-inner{
+  width: min(1500px, 96%);
+  margin: 0 auto;
+  padding: 14px 0 12px;
+}
+
+.brand-row{
+  display: flex;
+  align-items: center;
+}
+
+/* Logo büyük + unvan tüm satırı doldursun */
+.brand{
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 16px;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.brand-logo{
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  /* açık zeminde şık görünüm */
+  filter: drop-shadow(0 10px 18px rgba(11, 21, 34, 0.18));
+}
+
+/* Unvan daha büyük ve satırın tamamına yayılsın */
+.brand-name{
+  font-family: 'Cinzel', serif;
+  font-weight: 800;
+  color: #0b1522; /* koyu lacivert */
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-size: clamp(22px, 2.6vw, 34px);
+  line-height: 1.1;
+  width: 100%;
+}
+
+/* Menü unvanın altında */
+.main-nav.nav-under{
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(11, 21, 34, 0.12);
+}
+
+.main-nav.nav-under ul{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* Menü yazıları koyu lacivert */
+.main-nav.nav-under a{
+  text-decoration: none;
+  color: rgba(11, 21, 34, 0.88);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 12.8px;
+  letter-spacing: 0.9px;
+  padding: 10px 2px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.18s ease;
+}
+
+.main-nav.nav-under a:hover{
+  color: #0b1522;
+  border-bottom-color: rgba(11, 21, 34, 0.35);
+}
+
+/* Akademi: gold detay */
+.main-nav.nav-under a.nav-cta{
+  background: linear-gradient(180deg, #d6b36a, #c5a059);
+  color: #0b1522;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 21, 34, 0.10);
+  box-shadow: 0 10px 22px rgba(197, 160, 89, 0.22);
+  border-bottom: none;
+}
+
+.main-nav.nav-under a.nav-cta:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(197, 160, 89, 0.30);
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  .brand{
+    grid-template-columns: 74px 1fr;
+  }
+  .brand-logo{
+    width: 74px;
+    height: 74px;
+  }
+  .brand-name{
+    font-size: 18px;
+    letter-spacing: 0.8px;
+  }
+  .main-nav.nav-under ul{
+    justify-content: center;
+  }
+}
+
+@media (max-width: 520px){
+  .header-inner{
+    width: 94%;
+  }
+  .brand{
+    grid-template-columns: 62px 1fr;
+  }
+  .brand-logo{
+    width: 62px;
+    height: 62px;
+  }
+  .brand-name{
+    font-size: 16px;
+  }
+}
