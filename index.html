@@ -1,124 +1,191 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USTA FİNANS VE YÖNETİM DANIŞMANLIĞI A.Ş. | Kurumsal Çözüm Ortağınız</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USTA FİNANS VE YÖNETİM DANIŞMANLIĞI A.Ş. | Kurumsal Çözüm Ortağınız</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container">
-            <div class="logo-area">
-                <h1>USTA FİNANS VE YÖNETİM DANIŞMANLIĞI A.Ş.</h1>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#about">Kurumsal</a></li>
-                    <li><a href="#services">Uzmanlık Alanları</a></li>
-                    <li><a href="#contact">İletişim</a></li>
-                </ul>
-            </nav>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="container header-flex">
+
+      <!-- Logo (left) -->
+      <a class="logo-area" href="/" aria-label="Usta Finans Ana Sayfa">
+        <img src="logo.png" alt="Usta Finans ve Yönetim Danışmanlığı A.Ş. Logo" />
+        <span class="logo-text">USTA FİNANS VE YÖNETİM DANIŞMANLIĞI A.Ş.</span>
+      </a>
+
+      <!-- Nav (right) -->
+      <nav class="main-nav" aria-label="Ana menü">
+        <ul>
+          <li><a href="#about">Kurumsal</a></li>
+          <li><a href="#services">Uzmanlık Alanları</a></li>
+          <li><a href="https://www.ustafinans.net/akademi">Akademi</a></li>
+          <li><a href="#contact">İletişim</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Tanıtım">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <span class="badge">30 Yıllık Sektörel Güvence</span>
+      <h2>Stratejik Finansal Mimari ve Kurumsal Yönetim</h2>
+      <p>İşletmelerin ivedi finansman ihtiyaçlarından, sürdürülebilir mali yapılandırmaya kadar tüm süreçler kurumumuzun profesyonel disiplini ile yönetilmektedir.</p>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">Görüşme Talebi</a>
+        <a class="btn btn-ghost" href="#services">Hizmetleri İncele</a>
+      </div>
+
+      <div class="hero-metrics" aria-label="Öne çıkan göstergeler">
+        <div class="metric">
+          <div class="metric-value">30+</div>
+          <div class="metric-label">Yıl Tecrübe</div>
         </div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content container">
-            <span class="badge">30 Yıllık Sektörel Güvence</span>
-            <h2>Stratejik Finansal Mimari ve Kurumsal Yönetim</h2>
-            <p>İşletmelerin ivedi finansman ihtiyaçlarından, sürdürülebilir mali yapılandırmaya kadar tüm süreçler kurumumuzun profesyonel disiplini ile yönetilmektedir.</p>
+        <div class="metric">
+          <div class="metric-value">KOBİ+</div>
+          <div class="metric-label">Finansal Çözüm</div>
         </div>
-    </section>
-
-    <section id="about" class="about-corporate">
-        <div class="container flex-box">
-            <div class="about-text">
-                <h3 class="gold-subtitle">Kurumsal Profil</h3>
-                <h2>Finansal Çözümlerde 30 Yıllık Tecrübe</h2>
-                <p><strong>USTA FİNANS VE YÖNETİM DANIŞMANLIĞI A.Ş.</strong>, finansal yönetim disiplinlerinde 30 yılı aşan birikimiyle KOBİ ve kurumsal ölçekli şirketlerin stratejik çözüm ortağıdır.</p>
-                <p>Banka ilişkileri yönetimi, kredi limit koordinasyonu ve mali raporlama süreçleri, yönetim kurulumuzun bizzat denetiminde ve yüksek hassasiyetle yürütülmektedir.</p>
-            </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071" alt="Kurumsal Finansal Analiz">
-            </div>
+        <div class="metric">
+          <div class="metric-value">360°</div>
+          <div class="metric-label">Yönetim Yaklaşımı</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="services" class="services-area">
-        <div class="container">
-            <h2 class="section-title text-center">Hizmet Kapasitemiz</h2>
-            <div class="service-grid">
-                
-                <div class="service-card dark-bg">
-                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=600" alt="Finansal Danışmanlık">
-                    <div class="card-info">
-                        <h3>Finansal Danışmanlık</h3>
-                        <p>KOBİ’lerin acil finansman ihtiyaçlarını analiz ederek en hızlı kaynaklara erişim sağlanmaktadır. Finansal yapının sürekliliği için sağlıklı mali modeller kurgulanmaktadır.</p>
-                    </div>
-                </div>
+  <!-- ABOUT -->
+  <section id="about" class="about-corporate">
+    <div class="container flex-box">
 
-                <div class="service-card grey-bg">
-                    <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=600" alt="Kredi Danışmanlığı">
-                    <div class="card-info">
-                        <h3>Kredi Danışmanlığı</h3>
-                        <p>Bankalar ile yürütülen tüm müzakere süreçleri kurumumuzun 30 yıllık tecrübesiyle yönetilmekte; doğru finansman enstrümanlarının kullanımı bizzat koordine edilmektedir.</p>
-                    </div>
-                </div>
+      <div class="about-text">
+        <h3 class="gold-subtitle">Kurumsal Profil</h3>
+        <h2>Finansal Çözümlerde 30 Yıllık Tecrübe</h2>
 
-                <div class="service-card dark-bg">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600" alt="Yönetim Stratejisi">
-                    <div class="card-info">
-                        <h3>Yönetim Danışmanlığı</h3>
-                        <p>Şirketlerin kurumsallaşma süreçleri, organizasyonel yapılandırma ve stratejik büyüme hedefleri profesyonel yönetim modelleriyle tasarlanmaktadır.</p>
-                    </div>
-                </div>
+        <p><strong>USTA FİNANS VE YÖNETİM DANIŞMANLIĞI A.Ş.</strong>, finansal yönetim disiplinlerinde 30 yılı aşan birikimiyle KOBİ ve kurumsal ölçekli şirketlerin stratejik çözüm ortağıdır.</p>
+        <p>Banka ilişkileri yönetimi, kredi limit koordinasyonu ve mali raporlama süreçleri; yönetim kurulumuzun bizzat denetiminde, yüksek hassasiyet ve gizlilikle yürütülmektedir.</p>
 
-                <div class="service-card grey-bg">
-                    <img src="https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?q=80&w=600" alt="Muhasebe ve Vergi">
-                    <div class="card-info">
-                        <h3>Muhasebe ve Vergi</h3>
-                        <p>Mevzuata uyum ve stratejik vergi planlaması süreçlerinde profesyonel risk yönetimi sunulmakta, yasal yükümlülükler titizlikle denetlenmektedir.</p>
-                    </div>
-                </div>
-
-                <div class="service-card dark-bg">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600" alt="ERP Danışmanlığı">
-                    <div class="card-info">
-                        <h3>ERP Danışmanlığı</h3>
-                        <p>Mali verilerin doğruluğu için dijital altyapının seçimi ve finansal raporlama süreçlerine entegrasyonu kurumsal bir disiplinle koordine edilmektedir.</p>
-                    </div>
-                </div>
-
-                <div class="service-card grey-bg">
-                    <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=600" alt="Yeniden Yapılandırma">
-                    <div class="card-info">
-                        <h3>Yeniden Yapılandırma</h3>
-                        <p>Finansal dengesi bozulan işletmeler için borç yapılandırma ve stratejik nakit yönetimi planları hazırlanarak kalıcı iyileşme sağlanmaktadır.</p>
-                    </div>
-                </div>
-
-            </div>
+        <div class="about-points">
+          <div class="point"><i class="fa-solid fa-shield-halved"></i><span>Gizlilik, uyum ve risk yönetimi odaklı çalışma</span></div>
+          <div class="point"><i class="fa-solid fa-chart-line"></i><span>Nakit akış, borçluluk ve kârlılık ekseninde karar desteği</span></div>
+          <div class="point"><i class="fa-solid fa-handshake"></i><span>Banka & finans kuruluşlarıyla profesyonel müzakere yönetimi</span></div>
         </div>
-    </section>
+      </div>
 
-    <footer class="bottom-area">
-        <div class="container flex-box">
-            <div class="regions-list">
-                <h4>Hizmet Coğrafyamız</h4>
-                <p>Bodrum • Ankara • İstanbul • İzmir • Muğla • Antalya • Aydın</p>
-            </div>
-            <div id="contact" class="contact-footer">
-                <h4>Kurumsal İletişim</h4>
-                <p><i class="fas fa-envelope"></i> bulentusta@ustafinans.net</p>
-                <p><i class="fas fa-phone"></i> 0533 423 48 55</p>
-                <p><i class="fas fa-link"></i> www.ustafinans.net</p>
-            </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071" alt="Kurumsal Finansal Analiz" loading="lazy">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services-area">
+    <div class="container">
+
+      <h2 class="section-title text-center">Hizmet Kapasitemiz</h2>
+
+      <div class="service-grid">
+
+        <article class="service-card dark-bg">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200" alt="Finansal Danışmanlık" loading="lazy">
+          <div class="card-info">
+            <h3>Finansal Danışmanlık</h3>
+            <p>KOBİ’lerin acil finansman ihtiyaçlarını analiz ederek en hızlı kaynaklara erişim sağlanır. Sürdürülebilir mali yapı için finansal modelleme ve karar setleri kurgulanır.</p>
+          </div>
+        </article>
+
+        <article class="service-card grey-bg">
+          <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200" alt="Kredi Danışmanlığı" loading="lazy">
+          <div class="card-info">
+            <h3>Kredi Danışmanlığı</h3>
+            <p>Bankalarla yürütülen müzakere ve yapılandırma süreçleri, doğru finansman enstrümanlarıyla ve limit yönetimi disipliniyle bizzat koordine edilir.</p>
+          </div>
+        </article>
+
+        <article class="service-card dark-bg">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200" alt="Yönetim Danışmanlığı" loading="lazy">
+          <div class="card-info">
+            <h3>Yönetim Danışmanlığı</h3>
+            <p>Kurumsallaşma, organizasyonel yapılandırma ve stratejik büyüme hedefleri; ölçülebilir KPI’lar ve yönetim modelleriyle tasarlanır.</p>
+          </div>
+        </article>
+
+        <article class="service-card grey-bg">
+          <img src="https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?q=80&w=1200" alt="Muhasebe ve Vergi" loading="lazy">
+          <div class="card-info">
+            <h3>Muhasebe ve Vergi</h3>
+            <p>Mevzuata uyum, vergi planlama ve raporlama süreçlerinde profesyonel risk yönetimi uygulanır; yasal yükümlülükler titizlikle izlenir.</p>
+          </div>
+        </article>
+
+        <article class="service-card dark-bg">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200" alt="ERP Danışmanlığı" loading="lazy">
+          <div class="card-info">
+            <h3>ERP Danışmanlığı</h3>
+            <p>Dijital finans altyapısı seçimi, ERP raporlama tasarımı ve süreç entegrasyonu; doğru veri, doğru rapor ve doğru karar hedefiyle yönetilir.</p>
+          </div>
+        </article>
+
+        <article class="service-card grey-bg">
+          <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1200" alt="Yeniden Yapılandırma" loading="lazy">
+          <div class="card-info">
+            <h3>Yeniden Yapılandırma</h3>
+            <p>Finansal dengesi bozulan işletmeler için borç yapılandırma, nakit dönüşüm döngüsü iyileştirme ve kalıcı mali iyileşme planları hazırlanır.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bottom-area" id="contact">
+    <div class="container footer-flex">
+
+      <div class="regions-list">
+        <h4>Hizmet Coğrafyamız</h4>
+        <p>Bodrum • Ankara • İstanbul • İzmir • Muğla • Antalya • Aydın</p>
+      </div>
+
+      <div class="contact-footer">
+        <h4>Kurumsal İletişim</h4>
+        <p><i class="fas fa-envelope"></i> bulentusta@ustafinans.net</p>
+        <p><i class="fas fa-phone"></i> 0533 423 48 55</p>
+        <p><i class="fas fa-link"></i> www.ustafinans.net</p>
+
+        <div class="footer-actions">
+          <a class="btn btn-footer" href="mailto:bulentusta@ustafinans.net">E-posta Gönder</a>
+          <a class="btn btn-footer-outline" href="https://wa.me/905334234855" target="_blank" rel="noopener">WhatsApp</a>
         </div>
-    </footer>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <small>© <span id="yil"></span> Usta Finans ve Yönetim Danışmanlığı A.Ş. Tüm hakları saklıdır.</small>
+    </div>
+  </footer>
+
+  <script>
+    // footer yıl
+    document.getElementById("yil").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
