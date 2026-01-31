@@ -5,39 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>KOBİ’ler İçin Finans Danışmanı | Usta Finans</title>
-  <meta name="description" content="KOBİ’ler için Finans Danışmanı: finansal sorunları yönetmek, nakit akışı ve banka ilişkilerini güçlendirmek, kurumsallaşarak sürdürülebilir büyüme sağlamak." />
-  <meta name="keywords" content="Finans Danışmanı, KOBİ finans danışmanlığı, KOBİ nakit akışı, banka kredisi yönetimi, kurumsallaşma, finansal yönetim" />
+  <meta name="description" content="KOBİ’ler için Finans Danışmanı: nakit akışı disiplini, banka ilişkileri, finansal kontrol ve kurumsallaşma ile sürdürülebilir büyüme." />
+  <meta name="keywords" content="Finans Danışmanı, KOBİ finans danışmanlığı, nakit akışı yönetimi, banka kredisi yönetimi, kurumsallaşma, finansal yönetim" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="KOBİ’ler İçin Finans Danışmanı | Usta Finans" />
-  <meta property="og:description" content="Finansal sorun yaşayan veya kurumsallaşarak sağlıklı büyümek isteyen KOBİ’ler için bütüncül finansal yönetim yaklaşımı." />
+  <meta property="og:description" content="Finansal sorun yaşayan veya kurumsallaşarak sağlıklı büyümek isteyen KOBİ’lere bütüncül finansal yönetim yaklaşımı." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="logo.png" />
+  <meta property="og:image" content="/kobi/logo.png" />
 
-  <link rel="icon" href="logo.png" />
-  <link rel="stylesheet" href="/kobi/style.css?v=3">
+  <link rel="icon" href="/kobi/logo.png" />
+  <link rel="stylesheet" href="/kobi/style.css?v=9" />
 
-  <!-- Optional: Google Fonts (system font da olur, istersen kapatırız) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Usta Finans ve Yönetim Danışmanlığı A.Ş.",
-    "areaServed": "TR",
-    "description": "KOBİ’ler için Finans Danışmanı: finansal yönetim, nakit akışı ve banka ilişkileri odağında danışmanlık.",
-    "url": "https://www.ustafinans.net/",
-    "logo": "https://www.ustafinans.net/logo.png"
-  }
-  </script>
 </head>
 
 <body>
-  <!-- Top bar -->
+  <!-- Topbar -->
   <div class="topbar">
     <div class="container topbar__inner">
       <div class="topbar__left">
@@ -53,9 +39,9 @@
   </div>
 
   <!-- Header -->
-  <header class="header">
+  <header class="header" id="top">
     <div class="container header__inner">
-      <a class="brand" href="#">
+      <a class="brand" href="#top" aria-label="Usta Finans">
         <img class="brand__logo" src="/kobi/logo.png" alt="Usta Finans Logo">
         <div class="brand__text">
           <div class="brand__name">Usta Finans</div>
@@ -63,7 +49,7 @@
         </div>
       </a>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Site menüsü">
         <a href="#hizmet-alanlari">Uzmanlık Alanları</a>
         <a href="#yaklasim">Yaklaşım</a>
         <a href="#kurumsallasma">Kurumsallaşma</a>
@@ -88,6 +74,8 @@
 
   <!-- Hero -->
   <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+
     <div class="container hero__grid">
       <div class="hero__copy">
         <h1>KOBİ’ler İçin <span class="accent">Finans Danışmanı</span></h1>
@@ -140,7 +128,7 @@
     </div>
   </section>
 
-  <!-- Problems -->
+  <!-- Services -->
   <section class="section" id="hizmet-alanlari">
     <div class="container">
       <div class="section__head">
@@ -222,7 +210,7 @@
       <div class="section__head">
         <h2>Yaklaşım</h2>
         <p class="muted">
-          Her şirketin ihtiyacı farklıdır. Bu nedenle hazır kalıplar yerine, doğru fotoğraf + doğru adım sıralaması ile ilerleriz.
+          Her şirketin ihtiyacı farklıdır. Hazır kalıplar yerine, doğru fotoğraf + doğru adım sıralaması ile ilerleriz.
         </p>
       </div>
 
@@ -252,7 +240,7 @@
           <div class="step__n">4</div>
           <div class="step__c">
             <h3>İzleme ve İyileştirme</h3>
-            <p>İşler değişir; finansal yönetim yaşayan bir sistemdir. Düzenli izleme ile kalıcı denge sağlanır.</p>
+            <p>Finansal yönetim yaşayan bir sistemdir. Düzenli izleme ile kalıcı denge sağlanır.</p>
           </div>
         </div>
       </div>
@@ -323,20 +311,21 @@
               <span class="linkRow__k">Web</span>
               <span class="linkRow__v">ustafinans.net</span>
             </a>
-            <a class="linkRow" href="https://wa.me/905334234855" target="_blank" rel="noopener">
+            <a class="linkRow" href="https://wa.me/REPLACE_WHATSAPP_NUMBER" target="_blank" rel="noopener">
               <span class="linkRow__k">WhatsApp</span>
               <span class="linkRow__v">Hızlı mesaj</span>
             </a>
           </div>
 
           <div class="note">
-            <strong>Not:</strong> WhatsApp linkindeki <code>REPLACE_WHATSAPP_NUMBER</code> alanını
-            ülke kodu ile yaz (ör. <code>905XXXXXXXXX</code>).
+            <strong>Not:</strong> WhatsApp linkinde <code>REPLACE_WHATSAPP_NUMBER</code> alanına ülke kodu ile yaz
+            (ör. <code>905XXXXXXXXX</code>).
           </div>
 
           <div class="miniFAQ">
             <div class="miniFAQ__q">Kime uygun?</div>
             <div class="miniFAQ__a">Finansal sorun yaşayan veya kurumsallaşarak büyümek isteyen KOBİ’lere.</div>
+
             <div class="miniFAQ__q">Bu form ne için?</div>
             <div class="miniFAQ__a">İlk temas ve ön değerlendirme randevusu oluşturmak için.</div>
           </div>
@@ -345,9 +334,6 @@
         <div class="formCard">
           <h3>Form</h3>
 
-          <!-- Web3Forms: https://web3forms.com -->
-          <!-- 1) access_key'i kendi anahtarınla değiştir -->
-          <!-- 2) istersen subject/from_name gibi alanlar ekleyebilirsin -->
           <form class="form" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="REPLACE_WEB3FORMS_ACCESS_KEY" />
             <input type="hidden" name="subject" value="KOBİ Finans Danışmanı | Ön Görüşme Talebi" />
@@ -404,15 +390,8 @@
               <a class="btn btn--ghost" href="mailto:bulentusta@ustafinans.net?subject=KOB%C4%B0%20Finans%20Dan%C4%B1%C5%9Fman%C4%B1%20-%20%C3%96n%20G%C3%B6r%C3%BC%C5%9Fme">E-posta ile yaz</a>
             </div>
 
-            <p class="form__fine">
-              Gönderim sonrası otomatik e-posta alırsınız. En kısa sürede dönüş yapılır.
-            </p>
+            <p class="form__fine">Gönderim sonrası otomatik e-posta alırsınız. En kısa sürede dönüş yapılır.</p>
           </form>
-
-          <div class="formNote">
-            <strong>Kurulum:</strong> Web3Forms için <code>access_key</code> alanını kendi anahtarınla değiştir.
-            İstersen mail yönlendirme ayarlarını Web3Forms panelinden yaparsın.
-          </div>
         </div>
       </div>
     </div>
@@ -433,7 +412,6 @@
   </footer>
 
   <script>
-    // Mobile nav toggle
     const btn = document.querySelector('.navtoggle');
     const mobileNav = document.querySelector('.mobileNav');
     const links = document.querySelectorAll('.mobileNav a');
@@ -453,7 +431,6 @@
 
     links.forEach(a => a.addEventListener('click', closeNav));
 
-    // Smooth scroll (native-ish)
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
         const id = a.getAttribute('href');
