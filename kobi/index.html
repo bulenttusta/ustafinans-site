@@ -3,42 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Finans Danışmanı | Kurumsal Finans Yapısını KOBİ Ölçeğine Uyarlayan Sistem – Usta Finans</title>
 
-  <meta name="description" content="Finans Danışmanı olarak kurumsal firmalarda başarıyla çalışan finans ve yönetim yapılarını KOBİ ölçeğine uyarlar; nakit akışı, raporlama, banka ve karar mekanizmasını kurulabilir hale getiririz." />
-  <meta name="keywords" content="Finans Danışmanı, KOBİ finans danışmanı, nakit akışı, banka kredisi, finansal kontrol, raporlama, kurumsallaşma" />
+  <title>Finans Danışmanı | Kurumsal Finans Disiplinini KOBİ Ölçeğine Uyarlayan Sistem – Usta Finans</title>
+  <meta name="description" content="Finans Danışmanı olarak kurumsal firmalarda başarıyla çalışan finans ve yönetim sistemlerini KOBİ’lerin bütçe ve ölçeğine uyarlıyoruz: nakit akışı, raporlama, banka ilişkileri, kârlılık ve kurumsallaşma." />
+  <meta name="keywords" content="Finans Danışmanı, KOBİ finans danışmanı, nakit akışı, banka kredisi, finansal kontrol, raporlama, kârlılık, kurumsallaşma" />
   <meta name="robots" content="index, follow" />
 
-  <!-- ÖNEMLİ: RELATIVE PATH -->
   <link rel="icon" href="./logo.png" />
-  <link rel="stylesheet" href="./style.css?v=60" />
+  <link rel="stylesheet" href="./style.css?v=90" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <meta property="og:title" content="KOBİ’ler için Finans Danışmanı | Usta Finans" />
+  <meta property="og:description" content="Kurumsal firma tecrübesiyle; KOBİ ölçeğinde nakit akışı, raporlama, banka dili ve kontrol sistemi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.ustafinans.net/kobi/logo.png" />
 </head>
 
 <body>
-  <div class="topbar">
-    <div class="container topbar__inner">
-      <div class="topbar__left">
-        <span class="pill">KOBİ Odaklı</span>
-        <span class="topbar__text">Kurumsal finans disiplinini KOBİ ölçeğine uyarlarız</span>
+  <!-- TOP STRIP -->
+  <div class="topstrip">
+    <div class="container topstrip__inner">
+      <div class="topstrip__left">
+        <span class="chip">KOBİ Odaklı</span>
+        <span class="topstrip__text">Kurumsal finans disiplinini KOBİ ölçeğine uyarlarız</span>
       </div>
-      <div class="topbar__right">
+      <div class="topstrip__right">
         <a href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a>
-        <span class="dot">•</span>
+        <span class="sep">•</span>
         <a href="https://www.ustafinans.net" target="_blank" rel="noopener">www.ustafinans.net</a>
       </div>
     </div>
   </div>
 
+  <!-- HEADER -->
   <header class="header" id="top">
     <div class="container header__inner">
       <a class="brand" href="#top" aria-label="Usta Finans">
-        <!-- ÖNEMLİ: RELATIVE PATH -->
         <img class="brand__logo" src="./logo.png" alt="Usta Finans Logo">
-        <div class="brand__text">
+        <div class="brand__txt">
           <div class="brand__name">Usta Finans</div>
           <div class="brand__sub">Usta Finans ve Yönetim Danışmanlığı A.Ş.</div>
         </div>
@@ -46,252 +51,411 @@
 
       <nav class="nav" aria-label="Menü">
         <a href="#fark">Farkımız</a>
-        <a href="#hizmet">Hizmetler</a>
-        <a href="#yaklasim">Yaklaşım</a>
-        <a href="#iletisim" class="nav__cta">Ön Görüşme</a>
+        <a href="#cozum">Çözüm Alanları</a>
+        <a href="#model">Çalışma Modeli</a>
+        <a href="#kimler">Kime Uygun</a>
+        <a href="#sss">SSS</a>
+        <a class="nav__cta" href="#iletisim">Ön Görüşme</a>
       </nav>
 
-      <button class="navtoggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+      <button class="navbtn" aria-label="Menü" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
 
-    <div class="mobileNav" hidden>
-      <div class="container mobileNav__inner">
+    <div class="mnav" hidden>
+      <div class="container mnav__inner">
         <a href="#fark">Farkımız</a>
-        <a href="#hizmet">Hizmetler</a>
-        <a href="#yaklasim">Yaklaşım</a>
-        <a href="#iletisim" class="mobileNav__cta">Ön Görüşme</a>
+        <a href="#cozum">Çözüm Alanları</a>
+        <a href="#model">Çalışma Modeli</a>
+        <a href="#kimler">Kime Uygun</a>
+        <a href="#sss">SSS</a>
+        <a class="mnav__cta" href="#iletisim">Ön Görüşme</a>
       </div>
     </div>
   </header>
 
-  <!-- HERO (AÇIK ZEMİN + NAVY YAZI) -->
+  <!-- HERO -->
   <section class="hero">
     <div class="container hero__grid">
-      <div class="hero__copy">
-        <h1>KOBİ’ler için <span class="accent">Finans Danışmanı</span></h1>
+      <div class="hero__left">
+        <div class="hero__badge">
+          <span class="dot"></span>
+          Finans Danışmanı yaklaşımıyla kalıcı finansal kontrol
+        </div>
 
-        <p class="lead">
+        <h1>KOBİ’ler için <span class="hl">Finans Danışmanı</span></h1>
+
+        <p class="hero__lead">
           Kurumsal firmalarda başarıyla çalışan <strong>finans ve yönetim sistemlerini</strong>,
-          KOBİ’lerin <strong>bütçesi ve ölçeğine</strong> uyarlıyoruz.
-          Böylece KOBİ’ler; “kurumsal yapı”yı sadece hayal etmiyor, <strong>gerçekten sahip oluyor</strong>.
+          KOBİ’lerin <strong>bütçe ve ölçeğine</strong> uyarlıyoruz.
+          Böylece “kurumsal yapı” bir vitrin değil; <strong>nakit akışı, raporlama ve karar kalitesi</strong> olarak işletmeye yerleşiyor.
         </p>
 
-        <div class="hero__box">
-          <div class="hero__boxTitle">Ne demek “kurumsal yapıyı KOBİ ölçeğine uyarlamak”?</div>
-          <ul class="ticks">
-            <li><span>✓</span> Nakit akışı ve finansal kontrol ritmi</li>
-            <li><span>✓</span> Basit ama doğru raporlama (bilanço–gelir–nakit)</li>
-            <li><span>✓</span> Banka ilişkileri için doğru dil, doğru dosya</li>
-            <li><span>✓</span> Ölçülebilirlik: kârlılık, verimlilik, fiyatlama</li>
-          </ul>
+        <div class="hero__cards">
+          <div class="mini">
+            <div class="mini__t">Odak</div>
+            <div class="mini__d">Nakit akışı + finansal kontrol + banka dili</div>
+          </div>
+          <div class="mini">
+            <div class="mini__t">Yöntem</div>
+            <div class="mini__d">Kurumsal sistemi sadeleştirerek KOBİ’ye uyarlamak</div>
+          </div>
+          <div class="mini">
+            <div class="mini__t">Hedef</div>
+            <div class="mini__d">Öngörülebilir finans + sürdürülebilir büyüme</div>
+          </div>
         </div>
 
         <div class="hero__actions">
           <a class="btn btn--primary" href="#iletisim">Ön Görüşme Talep Et</a>
-          <a class="btn btn--ghost" href="#fark">Neden Usta Finans?</a>
+          <a class="btn btn--ghost" href="#cozum">Çözüm Alanlarını Gör</a>
         </div>
 
-        <div class="meta">
-          <span class="meta__item">Nakit Akışı</span>
-          <span class="meta__item">Banka & Finansman</span>
-          <span class="meta__item">Raporlama</span>
-          <span class="meta__item">Kurumsallaşma</span>
+        <div class="hero__meta">
+          <span>• Nakit Akışı</span>
+          <span>• Banka & Finansman</span>
+          <span>• Raporlama</span>
+          <span>• Kârlılık</span>
+          <span>• Kurumsallaşma</span>
         </div>
       </div>
 
-      <aside class="hero__side">
-        <div class="sideCard">
-          <div class="sideCard__title">KOBİ’lerde en sık tablo</div>
-          <p class="sideCard__p">
-            “Büyüdükçe kontrol kaybolur.” Kurumsal yapılarda bu kontrol sistemle sağlanır.
-            Biz aynı mantığı KOBİ’nin imkanlarıyla kurulabilir hale getiririz.
-          </p>
-
-          <div class="stats">
-            <div class="stat">
-              <div class="stat__k">Hedef</div>
-              <div class="stat__v">Kalıcı finansal kontrol</div>
-            </div>
-            <div class="stat">
-              <div class="stat__k">Yöntem</div>
-              <div class="stat__v">Kurumsal yapıyı sadeleştirerek kurmak</div>
-            </div>
-            <div class="stat">
-              <div class="stat__k">Sonuç</div>
-              <div class="stat__v">Öngörülebilir nakit + güçlü banka dili</div>
+      <div class="hero__right">
+        <div class="collage">
+          <div class="collage__a" aria-hidden="true"></div>
+          <div class="collage__b" aria-hidden="true"></div>
+          <div class="collage__c" aria-hidden="true"></div>
+          <div class="collage__overlay">
+            <div class="overlay__t">Kurumsal tecrübe → KOBİ ölçeği</div>
+            <div class="overlay__d">
+              Aynı prensipler. Daha sade, daha uygulanabilir, daha hızlı kontrol.
             </div>
           </div>
         </div>
 
-        <div class="imageCard">
-          <div class="imageCard__label">Finans / banka / raporlama tonu</div>
-          <img
-            src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1800&q=80"
-            alt="Finansal analiz"
-            loading="lazy"
-          />
+        <div class="trust">
+          <div class="trust__row">
+            <div class="trust__k">Kurumsal model</div>
+            <div class="trust__v">Ritim + raporlama + kontrol</div>
+          </div>
+          <div class="trust__row">
+            <div class="trust__k">KOBİ’ye uyarlama</div>
+            <div class="trust__v">Minimum kadro / maksimum netlik</div>
+          </div>
+          <div class="trust__row">
+            <div class="trust__k">Sonuç</div>
+            <div class="trust__v">Nakit görünürlüğü + güçlü banka dili</div>
+          </div>
         </div>
-      </aside>
+      </div>
     </div>
   </section>
 
+  <!-- FARKIMIZ -->
   <section class="section" id="fark">
     <div class="container">
-      <div class="section__head">
+      <div class="head">
         <h2>Farkımız</h2>
-        <p class="muted">
+        <p>
           Kurumsal firmalarda “işleyen” yapı; raporlama, kontrol, banka ilişkileri ve karar mekanizmasını birlikte yönetir.
-          KOBİ’lerde ihtiyaç aynı, imkan farklıdır. Bizim işimiz:
-          <strong>kurumsal tecrübeyi KOBİ ölçeğine indirgemek</strong> — sade, kurulabilir, sürdürülebilir hale getirmek.
+          KOBİ’lerde ihtiyaç aynı, imkan farklıdır. Bizim uzmanlığımız:
+          <strong>başarılı kurumsal yapıların mantığını, KOBİ’nin bütçesi ve ölçeğine göre yeniden tasarlamak</strong>.
         </p>
       </div>
 
-      <div class="grid3">
-        <div class="card">
+      <div class="grid grid--3">
+        <div class="card card--tint">
           <h3>Kurumsal Disiplin</h3>
-          <p>Kurallı finans yönetimi, raporlama ritmi ve kontrol kültürü.</p>
+          <p>Ölçülebilirlik, sorumluluk netliği ve finansal ritim: “anlık refleks” yerine “yönetim sistemi”.</p>
+          <div class="tagrow">
+            <span class="tag">Raporlama</span>
+            <span class="tag">Kontrol</span>
+            <span class="tag">Karar Kalitesi</span>
+          </div>
         </div>
-        <div class="card">
+
+        <div class="card card--tint">
           <h3>KOBİ’ye Uyum</h3>
-          <p>Aynı yapıyı KOBİ’nin bütçesine ve kadrosuna uygun şekilde tasarlamak.</p>
-        </div>
-        <div class="card">
-          <h3>Sonuç Odaklı</h3>
-          <p>“Gösterişli sunum” değil; sahada işe yarayan uygulama ve takip.</p>
-        </div>
-      </div>
-
-      <div class="callout">
-        <div class="callout__t">Kısa cümleyle:</div>
-        <div class="callout__d">
-          Kurumsal şirketlerin “sistemle” yaptığı finans yönetimini, KOBİ’nin gerçekliğiyle <strong>kurarız</strong>.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--alt" id="hizmet">
-    <div class="container">
-      <div class="section__head">
-        <h2>Hizmetler</h2>
-        <p class="muted">
-          Hangi aşamada olursa olsun finansal sorun yaşayan KOBİ’lere ve kurumsallaşmak isteyen KOBİ’lere hitap ederiz.
-          “Finans Danışmanı” rolü, finansmanı bulmaktan önce <strong>finansı yönetecek sistemi kurmaktır</strong>.
-        </p>
-      </div>
-
-      <div class="grid2">
-        <div class="service">
-          <h3>Nakit Akışı & Finansal Kontrol</h3>
-          <ul>
-            <li>Haftalık/aylık nakit akışı görünürlüğü</li>
-            <li>Borç–alacak dengesi, ödeme planı</li>
-            <li>Çalışma sermayesi ihtiyacının netleştirilmesi</li>
-            <li>Basit ama doğru raporlama düzeni</li>
-          </ul>
+          <p>Aynı sistemi ağırlaştırmadan; sade, hızlı uygulanabilir ve sürdürülebilir bir modele çeviririz.</p>
+          <div class="tagrow">
+            <span class="tag">Sadelik</span>
+            <span class="tag">Uygulanabilirlik</span>
+            <span class="tag">Süreklilik</span>
+          </div>
         </div>
 
-        <div class="service">
-          <h3>Banka & Finansman Yönetimi</h3>
-          <ul>
-            <li>Banka ilişkilerinin profesyonel yönetimi</li>
-            <li>Doğru vade/teminat/yapı kurgusu</li>
-            <li>Kredi sürecine uygun dokümantasyon</li>
-            <li>Kredinin işletme içinde verimli kullanımı</li>
-          </ul>
-        </div>
-
-        <div class="service">
-          <h3>Kârlılık & Fiyatlama</h3>
-          <ul>
-            <li>Ürün/süreç/kanal bazlı kârlılık görünürlüğü</li>
-            <li>Doğru fiyatlama altyapısı</li>
-            <li>Verimlilik ölçümü ve takip</li>
-            <li>Karar mekanizmasını güçlendirme</li>
-          </ul>
-        </div>
-
-        <div class="service">
-          <h3>Kurumsallaşma (KOBİ Ölçeğinde)</h3>
-          <ul>
-            <li>Organizasyon ve sorumluluk netliği</li>
-            <li>Minimum dokümantasyonla süreç disiplinini kurma</li>
-            <li>Patron bağımlılığını azaltan sistem</li>
-            <li>Ölçülebilir KPI ve yönetim ritmi</li>
-          </ul>
+        <div class="card card--tint">
+          <h3>Finans Danışmanı Rolü</h3>
+          <p>Finansmanı “bulmak” değil; finansmanı doğru kullanacak yapıyı kurmak ve disiplinle yürütmek.</p>
+          <div class="tagrow">
+            <span class="tag">Nakit Akışı</span>
+            <span class="tag">Banka Dili</span>
+            <span class="tag">Kontrol</span>
+          </div>
         </div>
       </div>
 
-      <div class="ctaBand">
-        <div>
-          <div class="ctaBand__t">İlk adım: Ön değerlendirme</div>
-          <div class="ctaBand__d">Amaç tabloyu doğru çerçevede anlamak ve uygun yol haritasını konuşmak.</div>
+      <div class="banner">
+        <div class="banner__left">
+          <div class="banner__t">Kısa cümleyle</div>
+          <div class="banner__d">
+            Kurumsal şirketlerin “sistemle” yaptığı finans yönetimini, KOBİ’nin gerçekliğiyle <strong>kurarız</strong>.
+          </div>
         </div>
         <a class="btn btn--primary" href="#iletisim">Ön Görüşme</a>
       </div>
     </div>
   </section>
 
-  <section class="section" id="yaklasim">
+  <!-- ÇÖZÜM ALANLARI -->
+  <section class="section section--alt" id="cozum">
     <div class="container">
-      <div class="section__head">
-        <h2>Yaklaşım</h2>
-        <p class="muted">Kurumsal mantık aynı: önce fotoğraf, sonra doğru öncelik, sonra uygulama ve takip.</p>
+      <div class="head">
+        <h2>Çözüm Alanları</h2>
+        <p>
+          Finansal sorun yaşayan KOBİ’lere de, kurumsallaşarak sağlıklı büyümek isteyen KOBİ’lere de hitap ederiz.
+          Amaç: işletmede <strong>kontrolü</strong> kurmak ve sürdürülebilir hale getirmek.
+        </p>
       </div>
 
-      <div class="steps">
-        <div class="step">
-          <div class="step__n">1</div>
+      <div class="grid grid--2">
+        <div class="card card--icon">
+          <div class="icon">▣</div>
           <div>
-            <h3>Fotoğraf</h3>
-            <p>Finansal yapı, nakit akışı, banka ilişkileri ve karar dinamikleri netleşir.</p>
+            <h3>Nakit Akışı & Finansal Kontrol</h3>
+            <ul>
+              <li>Haftalık/aylık nakit ritmi ve görünürlük</li>
+              <li>Borç–alacak dengesi, ödeme planı ve risk sinyalleri</li>
+              <li>Çalışma sermayesi ihtiyacının netleştirilmesi</li>
+              <li>Basit ama doğru raporlama (yönetim diliyle)</li>
+            </ul>
           </div>
         </div>
-        <div class="step">
-          <div class="step__n">2</div>
+
+        <div class="card card--icon">
+          <div class="icon">▣</div>
           <div>
-            <h3>Yol Haritası</h3>
-            <p>Kısa vadeli stabilizasyon + orta vadeli kontrol + uzun vadeli kurumsallaşma.</p>
+            <h3>Banka & Finansman Yönetimi</h3>
+            <ul>
+              <li>Bankayla doğru iletişim: doğru dosya, doğru anlatım</li>
+              <li>Vade/teminat/yapı kurgusu: işletmenin gerçekliğine uygun</li>
+              <li>Kredi sürecinde verimlilik ve takip disiplini</li>
+              <li>Kredinin verimli kullanımı: nakit akışı ile uyum</li>
+            </ul>
           </div>
         </div>
-        <div class="step">
-          <div class="step__n">3</div>
+
+        <div class="card card--icon">
+          <div class="icon">▣</div>
           <div>
-            <h3>Uygulama & Takip</h3>
-            <p>Sistem kurulur, ritim oturtulur, ölçülür, iyileştirilir.</p>
+            <h3>Kârlılık & Fiyatlama</h3>
+            <ul>
+              <li>Ürün/süreç/kanal bazlı kârlılığı görünür kılma</li>
+              <li>Verimlilik ölçümü: nereden kazanıyorum/nereden kaybediyorum?</li>
+              <li>Fiyatlama kararlarını veriye bağlama</li>
+              <li>Karar mekanizmasını güçlendiren rapor seti</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card--icon">
+          <div class="icon">▣</div>
+          <div>
+            <h3>Kurumsallaşma (KOBİ Ölçeğinde)</h3>
+            <ul>
+              <li>Organizasyon ve sorumluluk netliği</li>
+              <li>Minimum dokümantasyonla süreç disiplini</li>
+              <li>Patron bağımlılığını azaltan sistem</li>
+              <li>Ölçülebilir KPI ve yönetim ritmi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="mediaCard">
+          <div class="mediaCard__img img1" aria-hidden="true"></div>
+          <div class="mediaCard__body">
+            <div class="mediaCard__t">Raporlama</div>
+            <div class="mediaCard__d">Karar için doğru ve sade rapor seti</div>
+          </div>
+        </div>
+        <div class="mediaCard">
+          <div class="mediaCard__img img2" aria-hidden="true"></div>
+          <div class="mediaCard__body">
+            <div class="mediaCard__t">Banka Dili</div>
+            <div class="mediaCard__d">Doğru dosya + doğru yapı kurgusu</div>
+          </div>
+        </div>
+        <div class="mediaCard">
+          <div class="mediaCard__img img3" aria-hidden="true"></div>
+          <div class="mediaCard__body">
+            <div class="mediaCard__t">Nakit Kontrol</div>
+            <div class="mediaCard__d">Öngörülebilir ödeme–tahsilat ritmi</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--alt" id="iletisim">
+  <!-- MODEL -->
+  <section class="section" id="model">
     <div class="container">
-      <div class="section__head">
-        <h2>Ön Görüşme Talebi</h2>
-        <p class="muted">Formu doldurun, en kısa sürede dönüş yapalım.</p>
+      <div class="head">
+        <h2>Çalışma Modeli</h2>
+        <p>
+          Kurumsal mantık aynı: önce doğru fotoğraf, sonra doğru öncelik, sonra uygulama ve takip.
+          Bu sayfada süreci “şeffaf” anlatıyoruz; ancak sizi ilk aşamada ürkütecek detaylara girmiyoruz.
+        </p>
       </div>
 
-      <div class="contactGrid">
-        <div class="contactCard">
-          <h3>İletişim</h3>
-          <div class="contactLinks">
-            <a class="linkRow" href="https://www.ustafinans.net/" target="_blank" rel="noopener">
-              <span>Web</span><b>www.ustafinans.net</b>
-            </a>
-            <a class="linkRow" href="mailto:bulentusta@ustafinans.net">
-              <span>E-posta</span><b>bulentusta@ustafinans.net</b>
-            </a>
-            <a class="linkRow" href="https://wa.me/905334234855" target="_blank" rel="noopener">
-              <span>WhatsApp</span><b>+90 533 423 48 55</b>
-            </a>
+      <div class="timeline">
+        <div class="titem">
+          <div class="titem__n">1</div>
+          <div class="titem__c">
+            <div class="titem__t">Fotoğraf</div>
+            <div class="titem__d">Nakit akışı, finansal yapı, banka ilişkileri ve karar dinamikleri netleşir.</div>
           </div>
-          <div class="smallNote">Bu bir satış görüşmesi değildir. Amaç doğru çerçevede değerlendirmedir.</div>
         </div>
 
-        <div class="formCard">
+        <div class="titem">
+          <div class="titem__n">2</div>
+          <div class="titem__c">
+            <div class="titem__t">Öncelik & Yol Haritası</div>
+            <div class="titem__d">Kısa vadeli stabilizasyon + orta vadeli kontrol + uzun vadeli kurumsallaşma adımları sıralanır.</div>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="titem__n">3</div>
+          <div class="titem__c">
+            <div class="titem__t">Uygulama & Takip</div>
+            <div class="titem__d">Sistem kurulur, ritim oturtulur, ölçülür ve iyileştirilir. Amaç kalıcı dengedir.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote">
+        <div class="quote__mark">“</div>
+        <div class="quote__text">
+          KOBİ’lerde finansal sorunların önemli kısmı “para”dan önce <strong>yönetim ve kontrol</strong> problemidir.
+          Doğru sistem kurulmadan kredi tek başına çözüm değildir.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KİMLER -->
+  <section class="section section--alt" id="kimler">
+    <div class="container">
+      <div class="head">
+        <h2>Kime Uygun?</h2>
+        <p>İki ana gruba net hitap ediyoruz. Hangisisiniz?</p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card card--accent">
+          <h3>Finansal Sorun Yaşayan KOBİ’ler</h3>
+          <p class="muted">
+            Nakit sıkışıklığı, bozulan denge, bankada tıkanan süreçler, fiyatlama ve kârlılığın net olmaması…
+            Önce doğru teşhis, sonra doğru sıra.
+          </p>
+          <ul class="bullets">
+            <li>Nakit akışı bozuldu</li>
+            <li>Borç–alacak dengesi kontrolden çıktı</li>
+            <li>Banka süreçlerinde verimsizlik var</li>
+            <li>Karar mekanizması zayıfladı</li>
+          </ul>
+        </div>
+
+        <div class="card card--accent">
+          <h3>Kurumsallaşmak İsteyen KOBİ’ler</h3>
+          <p class="muted">
+            Büyüme var ama sistem yoksa risk büyür. Kurumsal yapıyı KOBİ ölçeğine uyarlayıp sürdürülebilir hale getiririz.
+          </p>
+          <ul class="bullets">
+            <li>Ölçülebilir KPI ve raporlama</li>
+            <li>Rol/sorumluluk netliği</li>
+            <li>Süreç disiplini (minimum doküman)</li>
+            <li>Patron bağımlılığını azaltan sistem</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section class="section" id="sss">
+    <div class="container">
+      <div class="head">
+        <h2>SSS</h2>
+        <p>İlk temasta en çok sorulan sorular.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <details class="faq" open>
+          <summary>“Kurumsal yapı” demek sadece prosedür mü?</summary>
+          <div class="faq__a">
+            Hayır. Bizim için kurumsallaşma; <strong>ölçülebilirlik</strong>, <strong>sorumluluk netliği</strong> ve
+            <strong>finansal disiplin</strong> demektir. Gösteriş değil, kontrol ve sürdürülebilirlik.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Bankadan kredi almak temel hedef mi?</summary>
+          <div class="faq__a">
+            Kredi bir araçtır. Asıl hedef; kredi olsa da olmasa da işletmenin <strong>nakit akışını ve kontrolünü</strong> yönetecek sistemi kurmaktır.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Bu süreç KOBİ’yi yorar mı?</summary>
+          <div class="faq__a">
+            Amaç yormak değil, sadeleştirmek. Kurumsal yöntemleri KOBİ’ye uygun hale getirirken “minimum yük / maksimum netlik” prensibiyle ilerleriz.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>İlk görüşmede ne olacak?</summary>
+          <div class="faq__a">
+            Ön değerlendirme yapılır: hedefler, mevcut durum ve ihtiyaç alanı netleştirilir. Sonrasında bir yol haritası çerçevesi oluşur.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section class="section section--alt" id="iletisim">
+    <div class="container">
+      <div class="head">
+        <h2>Ön Görüşme Talebi</h2>
+        <p>Formu doldurun. En kısa sürede dönüş yapalım.</p>
+      </div>
+
+      <div class="contact">
+        <div class="card">
+          <h3>Hızlı İletişim</h3>
+
+          <div class="contact__rows">
+            <a class="rowlink" href="https://www.ustafinans.net/" target="_blank" rel="noopener">
+              <span class="rowlink__k">Web</span><span class="rowlink__v">www.ustafinans.net</span>
+            </a>
+            <a class="rowlink" href="mailto:bulentusta@ustafinans.net">
+              <span class="rowlink__k">E-posta</span><span class="rowlink__v">bulentusta@ustafinans.net</span>
+            </a>
+            <a class="rowlink" href="https://wa.me/905334234855" target="_blank" rel="noopener">
+              <span class="rowlink__k">WhatsApp</span><span class="rowlink__v">+90 533 423 48 55</span>
+            </a>
+          </div>
+
+          <div class="note">
+            Bu bir satış görüşmesi değildir. Amaç; doğru çerçevede ön değerlendirmedir.
+          </div>
+        </div>
+
+        <div class="card">
           <h3>Form</h3>
           <form class="form" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="1e7c1cf7-ea36-4869-bbc0-283bdeb340ad" />
@@ -300,29 +464,25 @@
             <input type="hidden" name="redirect" value="https://www.ustafinans.net/kobi/#tesekkurler" />
             <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
 
-            <div class="row">
+            <div class="fgrid">
               <div class="field">
                 <label>Şirket Ünvanı</label>
-                <input name="company" required>
+                <input name="company" placeholder="Örn: ABC Makina Sanayi" required>
               </div>
               <div class="field">
                 <label>Ad Soyad</label>
-                <input name="name" required>
+                <input name="name" placeholder="Örn: Ahmet Yılmaz" required>
               </div>
-            </div>
 
-            <div class="row">
               <div class="field">
                 <label>E-posta</label>
-                <input name="email" type="email" required>
+                <input name="email" type="email" placeholder="ornek@firma.com" required>
               </div>
               <div class="field">
                 <label>Telefon</label>
-                <input name="phone" type="tel">
+                <input name="phone" type="tel" placeholder="0(5xx) xxx xx xx">
               </div>
-            </div>
 
-            <div class="row">
               <div class="field">
                 <label>İhtiyaç Alanı</label>
                 <select name="topic" required>
@@ -336,13 +496,13 @@
               </div>
               <div class="field">
                 <label>İl/İlçe</label>
-                <input name="city">
+                <input name="city" placeholder="Örn: Bodrum / Muğla">
               </div>
-            </div>
 
-            <div class="field">
-              <label>Kısaca Durum</label>
-              <textarea name="message" rows="5" required></textarea>
+              <div class="field field--full">
+                <label>Kısaca Durum</label>
+                <textarea name="message" rows="5" placeholder="Örn: Nakit akışı bozuldu / banka süreçleri tıkandı / kurumsallaşmak istiyoruz…" required></textarea>
+              </div>
             </div>
 
             <div class="actions">
@@ -353,13 +513,11 @@
 
             <div class="fine">Talebiniz alınır. En kısa sürede dönüş yapılır.</div>
           </form>
-        </div>
-      </div>
 
-      <div class="thanks" id="tesekkurler">
-        <div class="thanks__card">
-          <div class="thanks__t">Teşekkürler!</div>
-          <div class="thanks__d">Talebiniz alındı. En kısa sürede dönüş yapacağız.</div>
+          <div class="thanks" id="tesekkurler">
+            <div class="thanks__t">Teşekkürler!</div>
+            <div class="thanks__d">Talebiniz alındı. En kısa sürede dönüş yapacağız.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -367,35 +525,33 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <div>
+      <div class="footer__left">
         <div class="footer__brand">Usta Finans</div>
         <div class="footer__sub">Finans Danışmanı | Kurumsal yapıların KOBİ ölçeğine uyarlanması</div>
       </div>
-      <div class="footer__links">
+      <div class="footer__right">
         <a href="#top">Başa dön</a>
-        <span class="dot">•</span>
+        <span class="sep">•</span>
         <a href="https://www.ustafinans.net" target="_blank" rel="noopener">Kurumsal Site</a>
       </div>
     </div>
   </footer>
 
   <script>
-    const btn = document.querySelector('.navtoggle');
-    const mobileNav = document.querySelector('.mobileNav');
-    const links = document.querySelectorAll('.mobileNav a');
+    const btn = document.querySelector('.navbtn');
+    const mnav = document.querySelector('.mnav');
+    const links = document.querySelectorAll('.mnav a');
 
-    function closeNav(){
-      mobileNav.hidden = true;
-      btn.setAttribute('aria-expanded', 'false');
-    }
+    function closeNav(){ mnav.hidden = true; btn.setAttribute('aria-expanded','false'); }
 
     btn?.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      mobileNav.hidden = expanded;
+      const exp = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!exp));
+      mnav.hidden = exp;
     });
 
     links.forEach(a => a.addEventListener('click', closeNav));
+
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
         const id = a.getAttribute('href');
