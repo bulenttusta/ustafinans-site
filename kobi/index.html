@@ -1,168 +1,1263 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Finans Danışmanı | Kurumsal Finans Disiplinini KOBİ Ölçeğine Uyarlıyoruz</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Finans Danışmanı | KOBİ Finans ve Yönetim Sistemi – Usta Finans</title>
+  <meta name="description" content="Kurumsal firmalarda çalışan finansal kontrol, raporlama ve banka yönetimi disiplinini KOBİ ölçeğine uyarlayan Finans Danışmanı yaklaşımı. Nakit akışı, finansman yönetimi, kârlılık, fiyatlama, kurumsallaşma." />
+  <meta name="keywords" content="Finans Danışmanı, KOBİ finans danışmanı, nakit akışı yönetimi, banka kredisi, finansal kontrol, raporlama, kârlılık, fiyatlama, kurumsallaşma" />
+  <meta name="robots" content="index, follow" />
 
-  <meta name="description" content="Kurumsal firmalarda çalışan finansal kontrol ve banka yönetimi disiplinini KOBİ ölçeğine uyarlayan Finans Danışmanı yaklaşımı." />
+  <link rel="icon" href="./logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
 
-  <link rel="icon" href="logo.png">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --bg0:#070A12;         /* page background (never white) */
+      --bg1:#0B1020;         /* section background */
+      --bg2:#0F172A;         /* elevated */
+      --card:#0B1226;        /* card */
+      --card2:#0A1B2E;       /* card alt */
+      --line:rgba(255,255,255,.10);
+      --soft:rgba(255,255,255,.06);
+      --soft2:rgba(255,255,255,.08);
+      --text:#EAF0FF;
+      --muted:rgba(234,240,255,.74);
+      --muted2:rgba(234,240,255,.62);
+      --navy:#0b1f3b;
+      --gold:#C9A227;
+      --gold2:#F4D06F;
+      --accent:#60A5FA;      /* subtle blue */
+      --danger:#F87171;
+      --ok:#34D399;
+      --r14:14px;
+      --r18:18px;
+      --r22:22px;
+      --shadow: 0 22px 70px rgba(0,0,0,.55);
+      --shadow2: 0 14px 40px rgba(0,0,0,.45);
+      --max: 1180px;
+    }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; }
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1100px 700px at 18% 10%, rgba(96,165,250,.18), rgba(96,165,250,0) 58%),
+                  radial-gradient(900px 600px at 82% 18%, rgba(201,162,39,.18), rgba(201,162,39,0) 60%),
+                  radial-gradient(1200px 700px at 50% 95%, rgba(52,211,153,.10), rgba(52,211,153,0) 55%),
+                  linear-gradient(180deg, var(--bg0), var(--bg1) 52%, var(--bg0));
+      color: var(--text);
+      line-height: 1.7;
+      letter-spacing: .1px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    .container{ width:min(var(--max), calc(100% - 44px)); margin:0 auto; }
+
+    /* Subtle grid texture (no white) */
+    .texture{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(transparent 0 0),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: radial-gradient(600px 420px at 30% 15%, rgba(0,0,0,.9), transparent 65%);
+      opacity:.55;
+      pointer-events:none;
+    }
+
+    /* Topbar */
+    .topbar{
+      background: rgba(255,255,255,.03);
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+    .topbar .container{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:10px 0;
+      flex-wrap:wrap;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius: 999px;
+      background: rgba(201,162,39,.12);
+      border: 1px solid rgba(201,162,39,.28);
+      color: rgba(234,240,255,.92);
+      font-weight: 800;
+    }
+    .dot{ opacity:.55; }
+
+    /* Header */
+    .header{
+      position: sticky; top:0; z-index: 50;
+      background: rgba(7,10,18,.72);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.09);
+    }
+    .header__inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding: 14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:14px;
+      min-width: 280px;
+    }
+    .brand__logo{
+      width:72px; height:72px; object-fit:contain;
+      padding:10px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow2);
+    }
+    .brand__name{
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing:.2px;
+    }
+    .brand__sub{
+      margin-top: 2px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    .nav{
+      display:flex; align-items:center; gap: 8px;
+      flex-wrap:wrap;
+    }
+    .nav a{
+      padding: 10px 10px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 13px;
+      color: rgba(234,240,255,.92);
+      border: 1px solid transparent;
+    }
+    .nav a:hover{ background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.08); }
+    .nav .cta{
+      background: rgba(201,162,39,.14);
+      border: 1px solid rgba(201,162,39,.30);
+    }
+    .nav .cta:hover{ background: rgba(201,162,39,.18); }
+
+    .navtoggle{
+      display:none;
+      width:44px; height:44px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      cursor:pointer;
+    }
+    .navtoggle span{
+      display:block;
+      width:18px; height:2px;
+      background: rgba(234,240,255,.92);
+      margin: 5px auto;
+      border-radius: 2px;
+    }
+
+    .mobileNav{
+      border-top: 1px solid rgba(255,255,255,.09);
+      background: rgba(7,10,18,.82);
+    }
+    .mobileNav__inner{
+      display:flex; flex-direction:column; gap: 6px;
+      padding: 12px 0 16px;
+    }
+    .mobileNav__inner a{
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      font-weight: 900;
+    }
+    .mobileNav__inner a.cta{
+      border-color: rgba(201,162,39,.30);
+      background: rgba(201,162,39,.14);
+    }
+
+    /* Hero */
+    .hero{
+      position: relative;
+      padding: 44px 0 30px;
+    }
+    .hero .container{ position: relative; }
+
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .heroCard{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--r22);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      position: relative;
+      overflow:hidden;
+    }
+    .heroCard::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(700px 280px at 18% 0%, rgba(201,162,39,.18), transparent 60%),
+                  radial-gradient(700px 260px at 82% 8%, rgba(96,165,250,.16), transparent 60%);
+      opacity:.85;
+      pointer-events:none;
+    }
+    .heroCard > *{ position: relative; }
+
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(234,240,255,.88);
+      font-size: 12.5px;
+      font-weight: 900;
+      letter-spacing:.25px;
+      width: fit-content;
+    }
+    .eyebrow .spark{
+      width:10px; height:10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, var(--gold2), var(--gold));
+      box-shadow: 0 0 0 3px rgba(201,162,39,.16);
+    }
+
+    h1{
+      margin: 12px 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      line-height: 1.12;
+      letter-spacing:.2px;
+    }
+    .hl{
+      background: linear-gradient(90deg, rgba(201,162,39,.25), rgba(201,162,39,.12));
+      border-radius: 10px;
+      padding: 0 8px;
+    }
+    .lead{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.8px;
+      max-width: 90ch;
+    }
+
+    .kpiRow{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .kpi{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      padding: 12px;
+    }
+    .kpi .k{ color: var(--muted2); font-weight: 900; font-size: 12px; }
+    .kpi .v{ margin-top:4px; font-weight: 900; }
+
+    .actions{
+      display:flex; gap: 10px; flex-wrap:wrap;
+      margin-top: 16px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color: rgba(234,240,255,.92);
+      font-weight: 950;
+      font-size: 14px;
+      cursor:pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.14); }
+    .btnPrimary{
+      background: rgba(201,162,39,.18);
+      border-color: rgba(201,162,39,.34);
+    }
+    .btnPrimary:hover{ background: rgba(201,162,39,.22); border-color: rgba(201,162,39,.42); }
+
+    .heroSide{
+      display:grid; gap: 12px;
+    }
+
+    /* Card system */
+    .section{
+      padding: 28px 0;
+    }
+    .sectionAlt{
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .sectionHead{
+      margin-bottom: 12px;
+    }
+    .sectionHead h2{
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      letter-spacing:.2px;
+    }
+    .sectionHead p{ margin: 6px 0 0; color: var(--muted); max-width: 98ch; }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--r22);
+      box-shadow: var(--shadow2);
+      padding: 18px;
+      position: relative;
+      overflow:hidden;
+    }
+    .card::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(700px 260px at 18% 0%, rgba(96,165,250,.10), transparent 55%),
+                  radial-gradient(700px 260px at 82% 10%, rgba(201,162,39,.10), transparent 55%);
+      opacity:.85;
+      pointer-events:none;
+    }
+    .card > *{ position: relative; }
+
+    /* Tiny image (icon tile) above each card */
+    .cardTop{
+      display:flex; align-items:center; gap: 12px;
+      margin-bottom: 10px;
+    }
+    .thumb{
+      width: 46px; height: 46px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+      flex: 0 0 auto;
+    }
+    .thumb svg{ width: 22px; height: 22px; }
+    .thumb .g{ fill: url(#gradGold); }
+    .thumb .b{ fill: rgba(96,165,250,.95); }
+
+    .card h3{ margin:0; font-size: 16.5px; letter-spacing:.15px; }
+    .card p{ margin:10px 0 0; color: var(--muted); }
+
+    .grid3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .grid2{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+    .bullets{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid; gap: 8px;
+      color: var(--muted);
+    }
+    .bullets li{
+      display:flex; gap: 10px;
+      align-items:flex-start;
+    }
+    .bullets li i{
+      width: 18px; height: 18px;
+      margin-top: 3px;
+      border-radius: 999px;
+      background: rgba(201,162,39,.22);
+      border: 1px solid rgba(201,162,39,.32);
+      flex: 0 0 auto;
+    }
+
+    .callout{
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(201,162,39,.28);
+      background: rgba(201,162,39,.10);
+      color: rgba(234,240,255,.86);
+      font-weight: 700;
+    }
+
+    /* Steps */
+    .steps{
+      display:grid; gap: 10px;
+      margin-top: 12px;
+    }
+    .step{
+      display:grid; grid-template-columns: 44px 1fr;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .step .n{
+      width: 40px; height: 40px;
+      border-radius: 16px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 950;
+      background: rgba(96,165,250,.14);
+      border: 1px solid rgba(96,165,250,.22);
+    }
+    .step .t{ font-weight: 950; }
+    .step .d{ color: var(--muted); margin-top: 4px; }
+
+    blockquote{
+      margin: 14px 0 0;
+      padding: 14px 14px 14px 52px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color: rgba(234,240,255,.86);
+      position: relative;
+    }
+    blockquote:before{
+      content: "“";
+      position:absolute;
+      left: 14px; top: 6px;
+      font-family: "Playfair Display", serif;
+      font-size: 44px;
+      color: rgba(201,162,39,.70);
+      line-height: 1;
+    }
+
+    /* FAQ */
+    .faqGrid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    details{
+      border-radius: var(--r22);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      padding: 14px 16px;
+    }
+    summary{
+      cursor: pointer;
+      font-weight: 950;
+      letter-spacing:.1px;
+      list-style: none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{ margin: 10px 0 0; color: var(--muted); }
+
+    /* Contact + Form */
+    .contactGrid{ display:grid; grid-template-columns: .95fr 1.05fr; gap: 14px; }
+
+    .links{ display:grid; gap: 10px; margin-top: 10px; }
+    .link{
+      display:flex; justify-content:space-between; gap: 10px;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color: rgba(234,240,255,.90);
+    }
+    .link span{ color: var(--muted2); font-weight: 900; }
+    .link b{ font-weight: 950; }
+
+    form{ margin-top: 12px; display:flex; flex-direction:column; gap: 12px; }
+    .row{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .field{ display:flex; flex-direction:column; gap: 6px; }
+    label{ font-weight: 900; color: rgba(234,240,255,.88); font-size: 13px; }
+
+    input, select, textarea{
+      background: rgba(7,10,18,.55);
+      border: 1px solid rgba(255,255,255,.12);
+      color: rgba(234,240,255,.94);
+      border-radius: 16px;
+      padding: 12px 12px;
+      outline: none;
+      font: inherit;
+    }
+    input::placeholder, textarea::placeholder{ color: rgba(234,240,255,.40); }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(201,162,39,.45);
+      box-shadow: 0 0 0 4px rgba(201,162,39,.16);
+    }
+    textarea{ resize: vertical; }
+
+    .actionsRow{ display:flex; gap: 10px; flex-wrap:wrap; }
+    .fine{ color: var(--muted2); font-size: 13px; }
+
+    .thanks{
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(52,211,153,.22);
+      background: rgba(52,211,153,.10);
+      color: rgba(234,240,255,.92);
+    }
+
+    /* Footer */
+    .footer{
+      margin-top: 24px;
+      border-top: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.02);
+      padding: 22px 0;
+      color: var(--muted2);
+    }
+    .footer__inner{
+      display:flex; justify-content:space-between; align-items:center;
+      gap: 12px; flex-wrap:wrap;
+    }
+    .footer b{ color: rgba(234,240,255,.90); }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      .kpiRow{ grid-template-columns: 1fr; }
+      .grid3{ grid-template-columns: 1fr; }
+      .grid2{ grid-template-columns: 1fr; }
+      .faqGrid{ grid-template-columns: 1fr; }
+      .contactGrid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 860px){
+      .nav{ display:none; }
+      .navtoggle{ display:block; }
+      h1{ font-size: 36px; }
+      .row{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px){
+      .container{ width:min(var(--max), calc(100% - 28px)); }
+      .brand__logo{ width:64px; height:64px; }
+      h1{ font-size: 32px; }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- SVG gradients for icons -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="gradGold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#F4D06F" />
+        <stop offset="1" stop-color="#C9A227" />
+      </linearGradient>
+    </defs>
+  </svg>
 
-<header class="header">
-  <div class="container header-inner">
-    <div class="brand">
-      <img src="logo.png" alt="Usta Finans">
+  <div class="topbar">
+    <div class="container">
+      <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+        <span class="pill"><span class="spark" aria-hidden="true"></span> KOBİ Odaklı</span>
+        <span>Kurumsal finans disiplininin KOBİ ölçeğine uyarlanması</span>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+        <a href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a>
+        <span class="dot">•</span>
+        <a href="https://www.ustafinans.net" target="_blank" rel="noopener">www.ustafinans.net</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Usta Finans">
+        <img class="brand__logo" src="./logo.png" alt="Usta Finans Logo" />
+        <div>
+          <div class="brand__name">Usta Finans</div>
+          <div class="brand__sub">Finans Danışmanı • Usta Finans ve Yönetim Danışmanlığı A.Ş.</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Menü">
+        <a href="#neden">Neden</a>
+        <a href="#fark">Farkımız</a>
+        <a href="#hizmet">Odak Alanları</a>
+        <a href="#model">Model</a>
+        <a href="#cikti">Çıktılar</a>
+        <a href="#sss">SSS</a>
+        <a class="cta" href="#iletisim">Ön Görüşme</a>
+      </nav>
+
+      <button class="navtoggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobileNav" hidden>
+      <div class="container mobileNav__inner">
+        <a href="#neden">Neden</a>
+        <a href="#fark">Farkımız</a>
+        <a href="#hizmet">Odak Alanları</a>
+        <a href="#model">Model</a>
+        <a href="#cikti">Çıktılar</a>
+        <a href="#sss">SSS</a>
+        <a class="cta" href="#iletisim">Ön Görüşme</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="texture" aria-hidden="true"></div>
+    <div class="container heroGrid">
+      <div class="heroCard">
+        <div class="eyebrow"><span class="spark" aria-hidden="true"></span> Finans Danışmanı • KOBİ Dönüşümü</div>
+        <h1>Kurumsal finans yapısını <span class="hl">KOBİ ölçeğine</span> indirger, kurar ve işletiriz.</h1>
+        <p class="lead">
+          KOBİ’lerde sorun çoğu zaman “para yok”tan önce <b>kontrol yok</b> problemidir.
+          Büyüme; nakit akışını, banka ilişkilerini, fiyatlamayı ve karar mekanizmasını zorlar.
+          Kurumsal firmalarda bu baskı, <b>raporlama–kontrol–ritim</b> ile yönetilir.
+          Biz aynı sonucu üreten mekanizmayı KOBİ’nin bütçesi, kadrosu ve hızı için sadeleştiririz.
+        </p>
+
+        <div class="kpiRow">
+          <div class="kpi"><div class="k">Odak</div><div class="v">Nakit Akışı Disiplini</div></div>
+          <div class="kpi"><div class="k">Kritik</div><div class="v">Banka & Finansman Yönetimi</div></div>
+          <div class="kpi"><div class="k">Sonuç</div><div class="v">Öngörülebilir Finans</div></div>
+        </div>
+
+        <div class="actions">
+          <a class="btn btnPrimary" href="#iletisim">Ön Görüşme Talep Et</a>
+          <a class="btn" href="#hizmet">Odak Alanlarını Gör</a>
+        </div>
+      </div>
+
+      <div class="heroSide">
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="g" d="M12 2l2.2 6.6H21l-5.4 3.9 2.1 6.6L12 15.2 6.3 19.1l2.1-6.6L3 8.6h6.8L12 2z"/></svg>
+            </div>
+            <div>
+              <h3>KOBİ’lerde gördüğümüz tablo</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Büyüme → karmaşıklık → kontrol kaybı</div>
+            </div>
+          </div>
+
+          <ul class="bullets">
+            <li><i></i> Büyüdükçe profesyonel kadro ve sistem ihtiyacı artar; yapı aynı kalır.</li>
+            <li><i></i> Öz kaynaklar büyümeye yetmez; banka finansmanı kritik hale gelir.</li>
+            <li><i></i> Banka süreçleri doğru yönetilmediğinde limitler tıkanır, maliyet yükselir.</li>
+            <li><i></i> Finans profesyonelce yönetilmediğinde nakit akışı kırılır: “kâr var, nakit yok”.</li>
+            <li><i></i> Kârlılık/verimlilik ölçülemediğinde fiyatlama kararları zayıflar, rekabet gücü düşer.</li>
+            <li><i></i> Patronun psikolojisi ve sağlığı etkilenir; bu kısır döngü maddi/manevi kayıp üretir.</li>
+          </ul>
+
+          <div class="callout">Bizim iddiamız: Kurumsal disiplinin özünü alıp, KOBİ ölçeğinde uygulanabilir hale getirerek bu döngüyü kırmak.</div>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="cardTop">
+              <div class="thumb" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path class="b" d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5v6l5 3-.9 1.5L11 14V7h2z"/></svg>
+              </div>
+              <div>
+                <h3>“Hemen” etkisi olan alanlar</h3>
+                <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Kısa vadeli stabilizasyon</div>
+              </div>
+            </div>
+            <ul class="bullets">
+              <li><i></i> Haftalık nakit ritmi ve ödeme/tahsilat disiplini</li>
+              <li><i></i> Riskli borç–alacak ve vade uyumsuzluklarının görünür olması</li>
+              <li><i></i> Bankaya “doğru fotoğraf” ile doğru yapı</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="cardTop">
+              <div class="thumb" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path class="g" d="M4 4h16v4H4V4zm0 6h10v10H4V10zm12 0h4v10h-4V10z"/></svg>
+              </div>
+              <div>
+                <h3>Kalıcı yapı kurulan alanlar</h3>
+                <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Orta–uzun vadeli sistem</div>
+              </div>
+            </div>
+            <ul class="bullets">
+              <li><i></i> Aylık yönetim raporu: bilanço–gelir–nakit</li>
+              <li><i></i> KPI seti: stok, tahsilat, borçluluk, marj</li>
+              <li><i></i> Organizasyon/rol/yetki netliği ve süreç disiplini</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="neden">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Neden “Finans Danışmanı” yaklaşımı?</h2>
+        <p>Çünkü KOBİ patronlarının en değer verdiği şey finans (para, banka, kredi). Ama kredi tek başına çözüm değildir; doğru sistem yoksa riski büyütür.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="b" d="M3 3h18v2H3V3zm2 4h14v14H5V7zm2 2v10h10V9H7z"/></svg>
+            </div>
+            <div>
+              <h3>Finans = Yönetim sistemi</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Muhasebe değil, karar altyapısı</div>
+            </div>
+          </div>
+          <p>
+            Muhasebe geçmişin kaydıdır. Finans Danışmanı yaklaşımı; nakit akışını görünür kılar,
+            raporlama ritmi kurar ve karar mekanizmasını veriyle besler.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="g" d="M12 1l3 7h7l-5.7 4.1L18 20l-6-4.2L6 20l1.7-7.9L2 8h7l3-7z"/></svg>
+            </div>
+            <div>
+              <h3>Kredi = Araç</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Sistem yoksa geçici rahatlama</div>
+            </div>
+          </div>
+          <p>
+            Banka finansmanı doğru kurgulanırsa büyümeyi hızlandırır.
+            Ancak nakit ritmi, kârlılık ve kontrol yoksa borçluluk şirketi kilitleyebilir.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="b" d="M12 2l4 4-4 4-4-4 4-4zm0 12l4 4-4 4-4-4 4-4z"/></svg>
+            </div>
+            <div>
+              <h3>Kurumsal deneyim → KOBİ uyarlaması</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Kopya değil, yeniden tasarım</div>
+            </div>
+          </div>
+          <p>
+            Başarılı kurumsal yapıların “özünü” alırız: raporlama, kontrol, banka dili ve ritim.
+            Ağır prosedürü değil; aynı sonucu üreten mekanizmayı KOBİ’nin ölçeğine göre sadeleştiririz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sectionAlt" id="fark">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Farkımız</h2>
+        <p>Bu sayfada süreçleri ifşa etmiyoruz. Ama şunu net söylüyoruz: problem–kök neden–uygulanabilir sistem–takip çizgisinde yürürüz.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="g" d="M4 6h16v2H4V6zm0 5h10v2H4v-2zm0 5h16v2H4v-2z"/></svg>
+            </div>
+            <div>
+              <h3>KOBİ’nin gerçek sorunu: ölçü ve ritim</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Ölçmediğini yönetemezsin</div>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li><i></i> Süreçler ölçülmediği için verimlilik/kârlılık görünmez</li>
+            <li><i></i> Fiyatlama sezgiyle yapılır; marjlar erir</li>
+            <li><i></i> Karar mekanizması bozulur; operasyon patrona yığılır</li>
+            <li><i></i> Nakit akışı kırılır; stres büyür</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="b" d="M12 3l9 6-9 6-9-6 9-6zm0 10l9 6-9 5-9-5 9-6z"/></svg>
+            </div>
+            <div>
+              <h3>Bizim çözümümüz: sade ama güçlü sistem</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Kur, işlet, ölç, düzelt</div>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li><i></i> Haftalık nakit akışı ve ödeme/tahsilat ritmi</li>
+            <li><i></i> Aylık yönetim raporu ve KPI panosu</li>
+            <li><i></i> Banka dosyası: doğru fotoğraf + doğru yapı</li>
+            <li><i></i> Organizasyon/rol/yetki netliği</li>
+          </ul>
+          <div class="callout">Amaç: patronun omzundaki finans yükünü, sisteme taşımak.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="hizmet">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Odak Alanları</h2>
+        <p>“Her şeyi aynı anda” değil; doğru sırayla. Aşağıdaki başlıkların her biri, ayrı bir kart seti ve ölçülebilir çıktı ile ele alınır.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="b" d="M4 19h16v2H4v-2zm2-3h3V7H6v9zm5 0h3V3h-3v13zm5 0h3V10h-3v6z"/></svg>
+            </div>
+            <div>
+              <h3>Nakit Akışı & Kontrol</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Kâr değil, nakit yönetimi</div>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li><i></i> Haftalık nakit görünürlüğü ve disiplin</li>
+            <li><i></i> Tahsilat–ödeme ritmi, vade uyumu</li>
+            <li><i></i> Çalışma sermayesi ihtiyacının netleşmesi</li>
+            <li><i></i> Erken uyarı göstergeleri (risk radar)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="g" d="M3 10h18v2H3v-2zm2 4h14v7H5v-7zm1-9h12v3H6V5z"/></svg>
+            </div>
+            <div>
+              <h3>Banka & Finansman Yönetimi</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Doğru dosya, doğru yapı</div>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li><i></i> Banka dili ve sunum standardı</li>
+            <li><i></i> Vade/teminat/yapı kurgusu</li>
+            <li><i></i> Limit tesis sürecinin yönetimi</li>
+            <li><i></i> Kredinin verimli kullanımı ve kontrolü</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="b" d="M4 4h16v16H4V4zm2 3h12v2H6V7zm0 4h12v2H6v-2zm0 4h8v2H6v-2z"/></svg>
+            </div>
+            <div>
+              <h3>Raporlama & Yönetim Ritmi</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Karar için görünürlük</div>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li><i></i> Aylık yönetim raporu (bilanço–gelir–nakit)</li>
+            <li><i></i> KPI seti (stok, tahsilat, marj, borçluluk)</li>
+            <li><i></i> Karar toplantısı gündemi ve ritmi</li>
+            <li><i></i> Sapma analizi ve düzeltici aksiyon</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="g" d="M12 2l9 5v10l-9 5-9-5V7l9-5zm0 4L6 9v6l6 3 6-3V9l-6-3z"/></svg>
+            </div>
+            <div>
+              <h3>Kârlılık & Fiyatlama</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Marjı ölç, fiyatı yönet</div>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li><i></i> Ürün/süreç/kanal bazlı kârlılık</li>
+            <li><i></i> İskonto disiplini ve fiyatlama mantığı</li>
+            <li><i></i> Verimlilik ölçümü ve iyileştirme</li>
+            <li><i></i> “Kâr var, nakit yok” kök neden analizi</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="b" d="M12 2l4 4-4 4-4-4 4-4zm-8 10h16v10H4V12z"/></svg>
+            </div>
+            <div>
+              <h3>Kurumsallaşma (KOBİ ölçeğinde)</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Patron şirketinden sisteme</div>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li><i></i> Organizasyon, rol ve sorumluluk netliği</li>
+            <li><i></i> Yetki matrisi ve harcama düzeni</li>
+            <li><i></i> Süreç/dokümantasyon (minimum ama yeterli)</li>
+            <li><i></i> Liyakat ve ölçüye dayalı yönetim</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="g" d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7zm0 9a2 2 0 100-4 2 2 0 000 4z"/></svg>
+            </div>
+            <div>
+              <h3>İlişkiler ve Hukuki Zemin</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Banka–devlet–piyasa uyumu</div>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li><i></i> Banka/devlet/piyasa ilişkilerinde doğru çerçeve</li>
+            <li><i></i> Kurallı iş akışı ve dokümantasyon</li>
+            <li><i></i> Şeffaf raporlama ile güven zemini</li>
+            <li><i></i> Kredi ve teminat yapısına uygun düzen</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <div class="cardTop">
+          <div class="thumb" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path class="b" d="M12 2l9 4v6c0 5-4 9-9 10C7 21 3 17 3 12V6l9-4zm0 6a4 4 0 100 8 4 4 0 000-8z"/></svg>
+          </div>
+          <div>
+            <h3>Güven bariyerini biliyoruz</h3>
+            <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">KOBİ’lerde danışmanlık kültürü ve tereddütler</div>
+          </div>
+        </div>
+        <p>
+          KOBİ’lerde danışmanlara karşı tereddüt olabiliyor: geçmişte duyulan olumsuz deneyimler, “sonuç alır mıyım?” kaygısı,
+          sürecin işletmeyi yoracağı endişesi… Bu yüzden ilk hedefimiz, <b>güvenilir bir çerçeve</b> kurmak:
+          netlik, ölçülebilirlik ve sahada uygulanabilirlik.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sectionAlt" id="model">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Model</h2>
+        <p>Yüksek seviyede basit: Fotoğraf → Öncelik → Uygulama → Takip. Her adım, ölçülebilir çıktıyla kapanır.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="g" d="M4 4h16v4H4V4zm0 6h10v10H4V10zm12 0h4v10h-4V10z"/></svg>
+            </div>
+            <div>
+              <h3>1) Finansal fotoğraf</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Mevcut durum – gerçek resim</div>
+            </div>
+          </div>
+          <div class="steps">
+            <div class="step"><div class="n">A</div><div><div class="t">Nakit ve vade</div><div class="d">Ödeme–tahsilat ritmi, vade uyumu, riskli alanlar</div></div></div>
+            <div class="step"><div class="n">B</div><div><div class="t">Raporlama</div><div class="d">Bilanço–gelir–nakit: yönetim amaçlı okunabilir hale gelir</div></div></div>
+            <div class="step"><div class="n">C</div><div><div class="t">Banka zemini</div><div class="d">Bankanın görmek istediği fotoğraf ve yapı netleşir</div></div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="b" d="M12 2l4 4-4 4-4-4 4-4zm0 12l4 4-4 4-4-4 4-4z"/></svg>
+            </div>
+            <div>
+              <h3>2) Öncelik ve uygulama</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Yanlış sırada çözüm = yeni risk</div>
+            </div>
+          </div>
+          <div class="steps">
+            <div class="step"><div class="n">1</div><div><div class="t">Stabilizasyon</div><div class="d">Nakit ritmi, tahsilat/ödeme disiplini, hızlı kazanımlar</div></div></div>
+            <div class="step"><div class="n">2</div><div><div class="t">Kontrol sistemi</div><div class="d">Aylık raporlama, KPI panosu, karar toplantısı düzeni</div></div></div>
+            <div class="step"><div class="n">3</div><div><div class="t">Finansman zemini</div><div class="d">Banka dosyası ve yapı; kredi “araç” olarak doğru kullanılır</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <div class="cardTop">
+          <div class="thumb" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path class="g" d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5v6l5 3-.9 1.5L11 14V7h2z"/></svg>
+          </div>
+          <div>
+            <h3>3) Takip ve iyileştirme</h3>
+            <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Finans yaşayan bir sistemdir</div>
+          </div>
+        </div>
+        <p>
+          Finans yönetimi “bir kere kurulur biter” değildir. Piyasa koşulları, vade yapısı, satış kanalı ve maliyetler değişir.
+          Bu yüzden ritim, izleme ve düzeltme mekanizması kalıcı başarı için şarttır.
+        </p>
+        <blockquote>
+          İşletmeyi hasta olarak düşünün: Doğru teşhis, doğru reçete ve disiplinli uygulama olmadan iyileşme kalıcı olmaz.
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cikti">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Ne kazandırır?</h2>
+        <p>Hedefimiz, işletmenin finansını patronun omzundan alıp sisteme taşımaktır. Sonuçlar; görünürlük, kontrol ve güven zemini olarak gelir.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="b" d="M3 12l7-7 4 4 7-7v6h-2V6.8l-5 5-4-4-7 7z"/></svg>
+            </div>
+            <div>
+              <h3>Öngörülebilir nakit</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Sürprizler azalır</div>
+            </div>
+          </div>
+          <p>Haftalık nakit ritmi ve kontrol göstergeleriyle ödeme planı yönetilebilir hale gelir.</p>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="g" d="M4 7h16v10H4V7zm2 2v6h12V9H6z"/></svg>
+            </div>
+            <div>
+              <h3>Profesyonel banka zemini</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Doğru fotoğraf + doğru yapı</div>
+            </div>
+          </div>
+          <p>Banka ilişkileri reaktif olmaktan çıkar; doğru doküman ve yapı ile yönetilir.</p>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="b" d="M5 3h14v2H5V3zm0 16h14v2H5v-2zm2-12h10v10H7V7z"/></svg>
+            </div>
+            <div>
+              <h3>Ölçülebilir yönetim</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Karar kalitesi yükselir</div>
+            </div>
+          </div>
+          <p>Kârlılık/verimlilik görünür olduğunda fiyatlama ve büyüme kararları güçlenir.</p>
+        </div>
+      </div>
+
+      <div class="grid2" style="margin-top:14px;">
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="g" d="M12 2l7 4v6c0 5-3.8 9.3-7 10-3.2-.7-7-5-7-10V6l7-4z"/></svg>
+            </div>
+            <div>
+              <h3>Güven ve düzen</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Kurallı işleyiş</div>
+            </div>
+          </div>
+          <p>Rol/yetki netliği ve süreç disiplini ile şirket “kişiye bağlı” olmaktan çıkar.</p>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="b" d="M12 3a9 9 0 109 9 9 9 0 00-9-9zm1 4v6h5v2h-7V7h2z"/></svg>
+            </div>
+            <div>
+              <h3>Zaman ve psikolojik rahatlama</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Patron yükü azalır</div>
+            </div>
+          </div>
+          <p>Finans “yangın” olmaktan çıkıp yönetilebilir hale geldikçe stres ve belirsizlik düşer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sectionAlt" id="sss">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>SSS</h2>
+        <p>KOBİ patronlarının tipik soruları; net, kısa ve gerçekçi cevaplarla.</p>
+      </div>
+
+      <div class="faqGrid">
+        <details open>
+          <summary>Kurumsal yapı bizim için ağır olmaz mı?</summary>
+          <p>Ağır prosedür kopyalamıyoruz. Kurumsal yapının sonuç üreten omurgasını alıp KOBİ için sadeleştiriyoruz: ritim, ölçü, kontrol.</p>
+        </details>
+        <details>
+          <summary>Öncelik kredi mi, sistem mi?</summary>
+          <p>Kredi araçtır. Sistem olmadan kredi, geçici rahatlama sağlayıp riski büyütebilir. Önce fotoğraf ve kontrol; sonra doğru finansman yapısı.</p>
+        </details>
+        <details>
+          <summary>Bu çalışma muhasebe işi mi?</summary>
+          <p>Hayır. Muhasebe kayıt işidir. Biz; nakit, raporlama, kontrol, banka dili ve karar düzeniyle yönetilebilir bir sistem kurarız.</p>
+        </details>
+        <details>
+          <summary>Ne kadar sürede etkisi görülür?</summary>
+          <p>İlk kazanımlar genelde nakit görünürlüğü ve disiplinle başlar. Kalıcı etki; raporlama, KPI ve süreç düzeni oturdukça güçlenir.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="iletisim">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Ön Görüşme</h2>
+        <p>Bu bir satış konuşması değildir. Mevcut durumu anlamak ve uygun çerçeveyi belirlemek içindir.</p>
+      </div>
+
+      <div class="contactGrid">
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="g" d="M4 4h16v16H4V4zm2 3h12v2H6V7zm0 4h9v2H6v-2zm0 4h7v2H6v-2z"/></svg>
+            </div>
+            <div>
+              <h3>İletişim</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Hızlı ulaşım kanalları</div>
+            </div>
+          </div>
+
+          <div class="links">
+            <a class="link" href="https://www.ustafinans.net" target="_blank" rel="noopener"><span>Web</span><b>www.ustafinans.net</b></a>
+            <a class="link" href="mailto:bulentusta@ustafinans.net"><span>E-posta</span><b>bulentusta@ustafinans.net</b></a>
+            <a class="link" href="https://wa.me/905334234855" target="_blank" rel="noopener"><span>WhatsApp</span><b>+90 533 423 48 55</b></a>
+          </div>
+
+          <div class="callout" style="margin-top:12px;">Not: İlk görüşmede amaç, işletmenin tablo ve önceliklerini netleştirmektir.</div>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path class="b" d="M4 4h16v16H4V4zm2 3h12v10H6V7zm1 1v2h10V8H7zm0 3v2h7v-2H7z"/></svg>
+            </div>
+            <div>
+              <h3>Form</h3>
+              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Talebinizi iletin, dönüş yapalım</div>
+            </div>
+          </div>
+
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="1e7c1cf7-ea36-4869-bbc0-283bdeb340ad" />
+            <input type="hidden" name="subject" value="KOBİ | Finans Danışmanı Ön Görüşme Talebi" />
+            <input type="hidden" name="from_name" value="Usta Finans - KOBİ" />
+            <input type="hidden" name="redirect" value="https://www.ustafinans.net/kobi/#tesekkurler" />
+            <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+
+            <div class="row">
+              <div class="field">
+                <label>Şirket Ünvanı</label>
+                <input name="company" placeholder="Örn: ABC Makina Sanayi" required />
+              </div>
+              <div class="field">
+                <label>Ad Soyad</label>
+                <input name="name" placeholder="Örn: Ahmet Yılmaz" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label>E-posta</label>
+                <input name="email" type="email" placeholder="ornek@firma.com" required />
+              </div>
+              <div class="field">
+                <label>Telefon</label>
+                <input name="phone" type="tel" placeholder="0(5xx) xxx xx xx" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label>İhtiyaç Alanı</label>
+                <select name="topic" required>
+                  <option value="" selected disabled>Seçiniz</option>
+                  <option>Nakit Akışı / Finansal Kontrol</option>
+                  <option>Banka / Finansman Yönetimi</option>
+                  <option>Raporlama / Yönetim Ritmi</option>
+                  <option>Kârlılık / Fiyatlama</option>
+                  <option>Kurumsallaşma (KOBİ Ölçeğinde)</option>
+                  <option>Genel Değerlendirme</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>İl/İlçe</label>
+                <input name="city" placeholder="Örn: Bodrum / Muğla" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Kısaca Durum</label>
+              <textarea name="message" rows="5" placeholder="Örn: Nakit akışı bozuldu / banka süreçleri tıkandı / kurumsallaşmak istiyoruz…" required></textarea>
+            </div>
+
+            <div class="actionsRow">
+              <button class="btn btnPrimary" type="submit">Gönder</button>
+              <a class="btn" href="https://wa.me/905334234855" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn" href="mailto:bulentusta@ustafinans.net?subject=KOB%C4%B0%20Finans%20Dan%C4%B1%C5%9Fman%C4%B1%20%C3%96n%20G%C3%B6r%C3%BC%C5%9Fme">E-posta</a>
+            </div>
+
+            <div class="fine">Talebiniz alınır. En kısa sürede dönüş yapılır.</div>
+          </form>
+
+          <div class="thanks" id="tesekkurler" style="display:none;">
+            <b>Teşekkürler!</b> Talebiniz alındı. En kısa sürede dönüş yapacağız.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
       <div>
-        <strong>Usta Finans</strong>
-        <span>Finans Danışmanı</span>
+        <b>Usta Finans</b> • Finans Danışmanı
+        <div style="margin-top:3px;">www.ustafinans.net • +90 533 423 48 55 • bulentusta@ustafinans.net</div>
+      </div>
+      <div>
+        <a href="#top" style="font-weight:950;">Başa dön</a>
       </div>
     </div>
+  </footer>
 
-    <nav>
-      <a href="#yaklasim">Yaklaşım</a>
-      <a href="#fark">Farkımız</a>
-      <a href="#iletisim" class="cta">Ön Görüşme</a>
-    </nav>
-  </div>
-</header>
+  <script>
+    // Mobile nav
+    const btn = document.querySelector('.navtoggle');
+    const mobileNav = document.querySelector('.mobileNav');
+    const links = document.querySelectorAll('.mobileNav a');
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container hero-inner">
-    <h1>
-      Kurumsal finans disiplinini<br>
-      <span>KOBİ ölçeğine uyarlarız.</span>
-    </h1>
+    function closeNav(){
+      if(!mobileNav) return;
+      mobileNav.hidden = true;
+      btn?.setAttribute('aria-expanded', 'false');
+    }
 
-    <p class="hero-text">
-      KOBİ’lerde finansal sorunların büyük kısmı finansman eksikliğinden değil,
-      finansal kontrolün kurulmamasından kaynaklanır.
-      Kurumsal şirketlerde bu kontrol bir sistemdir;
-      KOBİ’lerde ise çoğu zaman kişiye bağlıdır.
-    </p>
+    btn?.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      mobileNav.hidden = expanded;
+    });
+    links.forEach(a => a.addEventListener('click', closeNav));
 
-    <p class="hero-text strong">
-      Biz, kurumsal firmalarda çalışan finans ve banka yönetimi disiplinini
-      kopyalamaz; aynı sonucu üreten mekanizmayı
-      KOBİ’nin gerçekliğine göre yeniden tasarlarız.
-    </p>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
 
-    <div class="hero-actions">
-      <a href="#iletisim" class="btn-primary">Ön Görüşme Talep Et</a>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEM -->
-<section class="section">
-  <div class="container">
-    <div class="panel">
-      <h2>KOBİ’lerde gördüğümüz tablo</h2>
-      <p>
-        Büyüdükçe finansal yapı karmaşıklaşır.
-        Nakit akışı bozulur, banka ilişkileri reaktif hale gelir,
-        kararlar veri yerine sezgiyle alınır.
-      </p>
-      <p>
-        Kâr vardır; fakat nakit yoktur.
-        Finans, patronun omzuna biner.
-        Bu durum sürdürülebilir değildir.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- FARK -->
-<section id="fark" class="section alt">
-  <div class="container">
-    <div class="panel">
-      <h2>Nerede fark yaratıyoruz?</h2>
-
-      <div class="points">
-        <div class="point">
-          <strong>Kurumsal bakış</strong>
-          <span>Raporlama, kontrol ve banka dili bir bütündür.</span>
-        </div>
-        <div class="point">
-          <strong>KOBİ uyarlaması</strong>
-          <span>Ağır yapı değil; sade, kurulabilir ve sürdürülebilir sistem.</span>
-        </div>
-        <div class="point">
-          <strong>Uygulama odağı</strong>
-          <span>Sunum değil, sahada çalışan finansal disiplin.</span>
-        </div>
-      </div>
-
-      <p class="note">
-        Finans Danışmanı rolü, kredi bulmaktan ibaret değildir.
-        Asıl değer, krediyi de doğru kullandıracak yapıyı kurmaktır.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- YAKLAŞIM -->
-<section id="yaklasim" class="section">
-  <div class="container">
-    <div class="panel">
-      <h2>Yaklaşımımız</h2>
-
-      <ol class="steps">
-        <li>
-          <strong>Finansal fotoğraf</strong>
-          <span>Nakit akışı, borç-alacak dengesi, banka ilişkileri netleşir.</span>
-        </li>
-        <li>
-          <strong>Önceliklendirme</strong>
-          <span>Hangi sorun sebep, hangisi sonuç belirlenir.</span>
-        </li>
-        <li>
-          <strong>Uygulama ve takip</strong>
-          <span>Sistem kurulur, ölçülür ve disiplinle işletilir.</span>
-        </li>
-      </ol>
-
-      <blockquote>
-        Finansal sorunlar parayla değil,
-        doğru yönetim sistemiyle çözülür.
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-<!-- İLETİŞİM -->
-<section id="iletisim" class="section alt">
-  <div class="container">
-    <div class="panel contact">
-      <h2>Ön Görüşme</h2>
-      <p>
-        Bu bir satış görüşmesi değildir.
-        Mevcut durumu anlamak ve doğru çerçeveyi belirlemek içindir.
-      </p>
-
-      <div class="contact-info">
-        <p><strong>Web:</strong> www.ustafinans.net</p>
-        <p><strong>E-posta:</strong> bulentusta@ustafinans.net</p>
-        <p><strong>Telefon:</strong> +90 533 423 48 55</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    © Usta Finans • Finans Danışmanı
-  </div>
-</footer>
-
+    // Show thank-you block when redirected with hash
+    if(location.hash === '#tesekkurler'){
+      const t = document.getElementById('tesekkurler');
+      if(t) t.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
