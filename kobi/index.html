@@ -1206,114 +1206,77 @@
     </div>
   </section>
 
-  <section class="section" id="iletisim">
+  <section class="section" id="iletisim" class="section sectionAlt">
     <div class="container">
-      <div class="sectionHead">
-        <h2>Ön Görüşme</h2>
-        <p>Bu bir satış konuşması değildir. Mevcut durumu anlamak ve uygun çerçeveyi belirlemek içindir.</p>
-      </div>
-
-      <div class="contactGrid">
-        <div class="card">
-          <div class="cardTop">
-            <div class="thumb" aria-hidden="true">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path class="g" d="M12 2l3.2 6.8L22 10l-5 4.4L18.4 22 12 18.2 5.6 22 7 14.4 2 10l6.8-1.2L12 2z"/>
-              </svg>
-            </div>
-            <div>
-              <h3>İletişim</h3>
-              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Hızlı ulaşım kanalları</div>
-            </div>
+      <div class="card contactCard">
+        <div class="cardTop">
+          <div class="thumb" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="g" d="M4 4h16v16H4zM7 7h10v2H7zm0 4h10v2H7zm0 4h6v2H7z"/></svg>
           </div>
-
-          <div class="links">
-            <a class="link" href="https://www.ustafinans.net" target="_blank" rel="noopener"><span>Web</span><b>www.ustafinans.net</b></a>
-            <a class="link" href="mailto:bulentusta@ustafinans.net"><span>E-posta</span><b>bulentusta@ustafinans.net</b></a>
-            <a class="link" href="https://wa.me/905334234855" target="_blank" rel="noopener"><span>WhatsApp</span><b>+90 533 423 48 55</b></a>
+          <div>
+            <h3>Finansal Durum Ön Değerlendirmesi</h3>
+            <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Satış görüşmesi değildir • 20–30 dk</div>
           </div>
-
-          <div class="callout" style="margin-top:12px;">Not: İlk görüşmede amaç, işletmenin tablo ve önceliklerini netleştirmektir.</div>
         </div>
 
-        <div class="card">
-          <div class="cardTop">
-            <div class="thumb" aria-hidden="true">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path class="g" d="M12 2l3.2 6.8L22 10l-5 4.4L18.4 22 12 18.2 5.6 22 7 14.4 2 10l6.8-1.2L12 2z"/>
-              </svg>
+        <div class="contactGrid">
+          <div class="contactLeft">
+            <p>
+              Bu form, işletmenizin mevcut finansal tablosunu doğru çerçevede anlamak için tasarlanmıştır.
+              Amaç; kredi ya da ürün satmak değil, hangi noktada nasıl bir yol izlenmesi gerektiğini
+              netleştirmektir.
+            </p>
+
+            <ul class="checklist">
+              <li>Mevcut finansal tabloyu hızlıca anlamak</li>
+              <li>Nakit akışı ve banka ilişkilerinde öncelikleri belirlemek</li>
+              <li>Uygunluk varsa sonraki adımları netleştirmek</li>
+            </ul>
+
+            <div class="nextSteps">
+              <div class="ns"><span>1</span><p>Formu doldurun</p></div>
+              <div class="ns"><span>2</span><p>Kısa ön görüşme yapalım</p></div>
+              <div class="ns"><span>3</span><p>Uygunluk varsa yol haritasını konuşalım</p></div>
             </div>
-            <div>
-              <h3>Form</h3>
-              <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Talebinizi iletin, dönüş yapalım</div>
+
+            <div class="direct">
+              <strong>Doğrudan iletişim</strong>
+              <p>WhatsApp: <a href="https://wa.me/905334234855" target="_blank">+90 533 423 48 55</a></p>
+              <p>E‑posta: <a href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a></p>
             </div>
           </div>
 
-          <form action="https://api.web3forms.com/submit" method="POST">
+          <form class="contactForm" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="1e7c1cf7-ea36-4869-bbc0-283bdeb340ad" />
-            <input type="hidden" name="subject" value="KOBİ | Finans Danışmanı Ön Görüşme Talebi" />
-            <input type="hidden" name="from_name" value="Usta Finans - KOBİ" />
-            <input type="hidden" name="redirect" value="https://www.ustafinans.net/kobi/#tesekkurler" />
-            <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
-
-            <div class="row">
-              <div class="field">
-                <label>Şirket Ünvanı</label>
-                <input name="company" placeholder="Örn: ABC Makina Sanayi" required />
-              </div>
-              <div class="field">
-                <label>Ad Soyad</label>
-                <input name="name" placeholder="Örn: Ahmet Yılmaz" required />
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="field">
-                <label>E-posta</label>
-                <input name="email" type="email" placeholder="ornek@firma.com" required />
-              </div>
-              <div class="field">
-                <label>Telefon</label>
-                <input name="phone" type="tel" placeholder="0(5xx) xxx xx xx" />
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="field">
-                <label>İhtiyaç Alanı</label>
-                <select name="topic" required>
-                  <option value="" selected disabled>Seçiniz</option>
-                  <option>Nakit Akışı / Finansal Kontrol</option>
-                  <option>Banka / Finansman Yönetimi</option>
-                  <option>Raporlama / Yönetim Ritmi</option>
-                  <option>Kârlılık / Fiyatlama</option>
-                  <option>Kurumsallaşma (KOBİ Ölçeğinde)</option>
-                  <option>Genel Değerlendirme</option>
-                </select>
-              </div>
-              <div class="field">
-                <label>İl/İlçe</label>
-                <input name="city" placeholder="Örn: Bodrum / Muğla" />
-              </div>
-            </div>
+            <input type="hidden" name="subject" value="KOBİ Ön Değerlendirme Talebi" />
 
             <div class="field">
-              <label>Kısaca Durum</label>
-              <textarea name="message" rows="5" placeholder="Örn: Nakit akışı bozuldu / banka süreçleri tıkandı / kurumsallaşmak istiyoruz…" required></textarea>
+              <label>Ad Soyad</label>
+              <input type="text" name="name" required />
+            </div>
+            <div class="field">
+              <label>Şirket Ünvanı</label>
+              <input type="text" name="company" />
+            </div>
+            <div class="field">
+              <label>Telefon</label>
+              <input type="tel" name="phone" required />
+            </div>
+            <div class="field">
+              <label>E‑posta</label>
+              <input type="email" name="email" required />
+            </div>
+            <div class="field">
+              <label>Kısa Not (opsiyonel)</label>
+              <textarea name="message" rows="4"></textarea>
             </div>
 
-            <div class="actionsRow">
-              <button class="btn btnPrimary" type="submit">Gönder</button>
-              <a class="btn" href="https://wa.me/905334234855" target="_blank" rel="noopener">WhatsApp</a>
-              <a class="btn" href="mailto:bulentusta@ustafinans.net?subject=KOB%C4%B0%20Finans%20Dan%C4%B1%C5%9Fman%C4%B1%20%C3%96n%20G%C3%B6r%C3%BC%C5%9Fme">E-posta</a>
-            </div>
+            <button type="submit" class="btnPrimary">Ön Değerlendirme Talep Et</button>
 
-            <div class="fine">Talebiniz alınır. En kısa sürede dönüş yapılır.</div>
+            <p class="formNote">
+              Gönderilen bilgiler gizlidir ve üçüncü kişilerle paylaşılmaz.
+            </p>
           </form>
-
-          <div class="thanks" id="tesekkurler" style="display:none;">
-            <b>Teşekkürler!</b> Talebiniz alındı. En kısa sürede dönüş yapacağız.
-          </div>
         </div>
       </div>
     </div>
