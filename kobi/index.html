@@ -114,11 +114,11 @@
     }
     .brand__logo{
       width:72px; height:72px; object-fit:contain;
-      padding:10px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow2);
+      padding:12px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 20px 50px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,255,255,.08);
     }
     .brand__name{
       font-family: "Playfair Display", serif;
@@ -353,7 +353,7 @@
       box-shadow: 0 12px 30px rgba(0,0,0,.35);
       flex: 0 0 auto;
     }
-    .thumb svg{ width: 22px; height: 22px; }
+    .thumb svg{ width: 22px; height: 22px; opacity:.95; }
     .thumb .g{ fill: url(#gradGold); }
     .thumb .b{ fill: rgba(96,165,250,.95); }
 
@@ -552,13 +552,11 @@
   <div class="topbar">
     <div class="container">
       <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-        <span class="pill"><span class="spark" aria-hidden="true"></span> KOBİ Odaklı</span>
-        <span>Kurumsal finans disiplininin KOBİ ölçeğine uyarlanması</span>
+        <span class="pill"><span class="spark" aria-hidden="true"></span> Kurumsal Finans Tecrübesi</span>
+        <span>KOBİ ölçeğine uyarlanmış finans ve yönetim disiplini</span>
       </div>
       <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-        <a href="mailto:bulentusta@ustafinans.net">bulentusta@ustafinans.net</a>
-        <span class="dot">•</span>
-        <a href="https://www.ustafinans.net" target="_blank" rel="noopener">www.ustafinans.net</a>
+        <span>Kurumsal firmalar • Halka arz süreçleri • Tüm bankalarla çalışma tecrübesi</span>
       </div>
     </div>
   </div>
@@ -750,6 +748,26 @@
 
   <section class="section sectionAlt" id="fark">
     <div class="container">
+      <div class="card" style="margin-bottom:16px;">
+        <div class="cardTop">
+          <div class="thumb" aria-hidden="true">🏛️</div>
+          <div>
+            <h3>Kurumsal tecrübe, KOBİ gerçekliği</h3>
+            <div class="muted" style="font-weight:800; font-size:12.5px; margin-top:2px;">Büyük yapılardan öğrenilen, küçük ölçekte uygulanan</div>
+          </div>
+        </div>
+        <p>
+          Büyük ve kurumsal firmalarda çalışan finansal sistemler; güçlü raporlama, banka dili,
+          risk yönetimi ve disiplinli karar mekanizması üzerine kuruludur.
+          KOBİ’lerde sorun bu sistemlerin olmaması değil, birebir kopyalanmaya çalışılmasıdır.
+        </p>
+        <p>
+          Biz, kurumsal firmalarda başarıyla uygulanan bu yapıların özünü alır;
+          KOBİ’nin bütçesi, kadrosu ve operasyonel hızı dikkate alınarak
+          sadeleştirilmiş, uygulanabilir ve sürdürülebilir hale getiririz.
+        </p>
+      </div>
+    <div class="container">
       <div class="sectionHead">
         <h2>Farkımız</h2>
         <p>Bu sayfada süreçleri ifşa etmiyoruz. Ama şunu net söylüyoruz: problem–kök neden–uygulanabilir sistem–takip çizgisinde yürürüz.</p>
@@ -794,6 +812,7 @@
         </div>
       </div>
     </div>
+  </div>
   </section>
 
   <section class="section" id="hizmet">
