@@ -407,3 +407,46 @@ a{color:inherit;}
 .kobi-link:hover {
   color: #1e40af;   /* canlı mavi */
 }
+/* Genel link */
+.main-nav .nav-link{
+  position: relative;
+  display: inline-block;
+  padding: 10px 0;
+  margin-right: 26px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+/* Alt çizgi (detay) ortak yapı */
+.main-nav .nav-link::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  width: 0%;
+  border-radius: 2px;
+  transition: width .25s ease;
+}
+
+/* Hover’da çizgiyi aç */
+.main-nav .nav-link:hover::after{
+  width: 100%;
+}
+
+/* KOBİ: beyaz detay */
+.main-nav .nav-kobi::after{
+  background: #ffffff;
+}
+
+/* AKADEMİ: gold detay */
+.main-nav .nav-akademi::after{
+  background: #d4af37; /* gold */
+}
+
+/* Eğer sayfa aktifken çizgi sürekli dursun istersen:
+   ilgili sayfada linke "active" class'ı ver */
+.main-nav .nav-link.active::after{
+  width: 100%;
+}
