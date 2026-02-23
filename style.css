@@ -450,3 +450,46 @@ a{color:inherit;}
 .main-nav .nav-link.active::after{
   width: 100%;
 }
+/* Genel nav stil */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.main-nav .nav-link {
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: .03em;
+  font-size: 15px;
+  padding: 8px 14px;
+  transition: all .25s ease;
+}
+
+/* KOBİ - Mavi zemin, beyaz yazı */
+.nav-kobi {
+  background-color: #0b2c5f;  /* koyu kurumsal mavi */
+  color: #ffffff;
+  border-radius: 6px;
+}
+
+.nav-kobi:hover {
+  background-color: #123f8a;
+  transform: translateY(-2px);
+}
+
+/* AKADEMİ - Gold zemin, mavi yazı */
+.nav-akademi {
+  background-color: #d4af37;  /* gold */
+  color: #0b2c5f;             /* koyu mavi yazı */
+  border-radius: 6px;
+}
+
+.nav-akademi:hover {
+  background-color: #c39a2e;
+  transform: translateY(-2px);
+}
+.nav-kobi,
+.nav-akademi {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
