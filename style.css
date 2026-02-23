@@ -399,3 +399,11 @@ a{color:inherit;}
   .service-card img{height:210px;}
   .card-info{padding:24px;}
 }
+.kobi-link {
+  color: #0b1f3a;   /* koyu lacivert */
+  font-weight: 700;
+}
+
+.kobi-link:hover {
+  color: #1e40af;   /* canlı mavi */
+}
